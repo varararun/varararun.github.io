@@ -1,0 +1,60 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: $font-family-1;
+    font-weight: 100;
+    color: $font-color-1;
+    position: relative;
+    overflow: hidden;
+    background: $background-color;
+}
+
+a {
+    color: inherit !important;
+}
+
+ul,
+li {
+    list-style-type: none !important;
+    margin: 0;
+    padding: 0;
+}
+
+i,
+a,
+button,
+select,
+div {
+    text-decoration: none !important;
+    outline: none !important;
+}
+
+section,
+header {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    transition: $transition-long;
+}
+
+nav>ul>li {
+    cursor: pointer;
+    padding-left: 1em;
+    padding-bottom: 1em;
+    color: black;
+    background: white;
+    padding-right: 1em;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.tooltip {
+    z-index: 1;
+}
+
+.tooltip.top {
+    margin-left: -.5em !important;
+}

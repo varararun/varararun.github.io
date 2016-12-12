@@ -1,0 +1,518 @@
+.typed-cursor {
+    opacity: 1;
+    animation: blink 0.7s infinite;
+}
+
+.vr-btn {
+    position: fixed;
+    transition: $transition-short;
+    opacity: .6;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    font-size: 2em;
+    z-index: 6;
+    padding: .4em .5em;
+    .vr-icon {
+        opacity: .6;
+        transition: $transition-short;
+        &:hover {
+            opacity: 1;
+        }
+        .close-btn {
+            opacity: 0;
+            display: none;
+        }
+        i {
+            transition: $transition-short;
+        }
+    }
+}
+
+.vr-drag-demo {
+    opacity: 0;
+    display: none;
+    transition: $transition-short;
+    position: absolute;
+    left: 50%;
+    font-size: 1.3em;
+    margin: auto;
+    top: 1em;
+    transform: translate(-50%, 0);
+    z-index: 6;
+    cursor: pointer;
+    background: rgba(0,0,0,.5);
+    padding: 1em 2em;
+    border-radius: .2em;
+    text-shadow: $text-shadow;
+    .drag-icon {        
+        position: absolute;
+        left: 10%;
+    }
+    .demo-text {
+        border-bottom: 1px solid rgba(255,255,255,.4);
+        padding-Bottom: 0.5em;
+        text-align: center;
+    }
+    .fa-angle-right {
+        position: absolute;
+        right: 1.5em;
+        bottom: .6em;
+        opacity: .6;
+    }
+    .fa-angle-left {
+        position: absolute;
+        left: 1.5em;
+        bottom: .6em;
+        opacity: .6;
+    }
+    .fa-times {
+        cursor: pointer;
+        position: absolute;
+        right: 0;
+        top: 0;
+        opacity: .6;   
+        transition: $transition-short;
+        padding: 0.1em .2em;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.vr-drag-demo.demo {
+    display: block;
+    opacity: 1 !important;
+}
+
+.vr-drag-demo.demo .drag-icon{   
+    animation: drag-demo 1.8s infinite;
+    bottom: 0;
+}
+
+.vr-btn.vr-close>.vr-icon>.open-btn {
+    opacity: 0;
+    display: none;
+    visibility: hidden;
+}
+
+.vr-btn.vr-close>.vr-icon>.close-btn {
+    opacity: .9;
+    display: inline-block;
+    visibility: visible;
+    margin-top: .2em;
+}
+
+.email-btn {
+    position: fixed;
+    transition: $transition-short;
+    opacity: .6;
+    cursor: pointer;
+    bottom: 0;
+    right: 0;
+    font-size: 2em;
+    z-index: 4;
+    padding: .4em .5em;
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.shuffle-vr-btn {
+    display: none;
+    position: fixed;
+    cursor: pointer;
+    bottom: 0;
+    left: 0;
+    font-size: 2em;
+    z-index: 6;
+    padding: .4em .5em;
+    .fa {
+        opacity: .6;
+        transition: $transition-short;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.shuffle-bg-btn {
+    position: fixed;
+    cursor: pointer;
+    bottom: 0;
+    left: 0;
+    font-size: 2em;
+    z-index: 4;
+    padding: .4em .5em;
+    .fa {
+        opacity: .6;
+        transition: $transition-short;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.nav-btn {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 7;
+    font-size: 2em;
+    padding: .4em .5em;
+    cursor: pointer;
+    .nav-icon {
+        opacity: .6;
+        transition: $transition-short;
+        &:hover {
+            opacity: 1;
+        }
+        .close-btn {
+            opacity: 0;
+            display: none;
+        }
+        i {
+            transition: $transition-short;
+        }
+    }
+}
+
+.nav-btn.nav-close>.nav-icon>.open-btn {
+    opacity: 0;
+    display: none;
+    visibility: hidden;
+}
+
+.nav-btn.nav-close>.nav-icon>.close-btn {
+    opacity: .9;
+    display: inline-block;
+    visibility: visible;
+    margin-top: .2em;
+}
+
+.music-btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 4;
+    font-size: 2em;
+    padding: .4em .5em;
+    cursor: pointer;
+    opacity: .6;
+    transition: $transition-short;
+    &:hover {
+        opacity: 1;
+    }
+    .music-icon {
+        .pause-btn {
+            opacity: 0;
+            display: none;
+        }
+    }
+}
+
+.music-btn.music-play>.music-icon>.play-btn {
+    opacity: 0;
+    display: none;
+    visibility: hidden;
+}
+
+.music-btn.music-play>.music-icon>.pause-btn {
+    opacity: 1;
+    visibility: visible;
+    display: inline-block;
+}
+
+.nav {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    padding: 0.2em .4em;
+    height: 100%;
+    overflow-y: scroll;
+    width: 100%;
+    background: radial-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 1));
+    transition: $transition-short;
+    z-index: 6;
+    transform: translateY(100%);
+    .nav-menu-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+        align-content: stretch;
+        padding: 4em 0 1em;
+        .profile {
+            width: 10em;
+            height: 10em;
+            border-radius: 10em;
+            border: $border-thin;
+            transition: $transition-short;
+            filter: grayscale(100%);
+        }
+        .description {
+            width: 100%;
+            p {
+                text-align: center;
+                margin: 2em auto;
+                max-width: 40em;
+                opacity: .7;
+                .typed-text {
+                    font-weight: 400;
+                    font-size: .9em;
+                }
+            }
+        }
+        a {
+            .nav-menu-item {
+                align-self: stretch;
+                overflow: hidden;
+                text-align: center;
+                transition: $transition-short;
+                position: relative;
+                width: 30em;
+                height: 15em;
+                margin: 1em;
+                border-top: 1px solid rgba(255, 255, 255, 0.3);
+                border-right: 1px solid rgba(255, 255, 255, 0.3);
+                border-left: 1px solid rgba(255, 255, 255, 0.3);
+                border-radius: .3em;
+                .icon-overlay {
+                    width: 100%;
+                    position: absolute;
+                    top: 50%;
+                    color: white;
+                    font-size: 10em;
+                    transform: translate(0, -50%);
+                    filter: blur(0.02em);
+                    .fa {
+                        opacity: .15;
+                    }
+                }
+                .bg-img {
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    width: 100%;
+                    height: 100%;
+                    transition: transform $transition-short;
+                    transform: translateY(100%) scale(1);
+                    transform-origin: center;
+                }
+                .bg-overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(transparent, transparent, transparent, rgba(0, 0, 0, 0.5), black);
+                }
+                .content {
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translate(-50%, 40%);
+                    letter-spacing: .3em;
+                    font-weight: 400;
+                    padding: 0 .1em 1.5em;
+                    opacity: .7;
+                    transition: $transition-short;
+                }
+                &:hover {
+                    transform: perspective(20em) rotate3d(1, 0, 0, 10deg);
+                }
+            }
+        }
+    }
+    .nav-footer {
+        text-align: center;
+        opacity: .8;
+        letter-spacing: .2em;
+        padding-bottom: 1em;
+        .tags {
+            text-shadow: $text-shadow;
+            font-family: $font-family-1;
+            font-weight: 400;
+            font-size: .9em;
+            letter-spacing: 0.3em;
+        }
+        .copyright {
+            font-size: .9em;
+            text-shadow: $text-shadow;
+        }
+    }
+}
+
+.bg-img.portfolio {
+    background: url("../img/thumbnails/portfolio.jpg");
+}
+
+.bg-img.linkedin {
+    background: url("../img/thumbnails/linkedin.jpg");
+}
+
+.bg-img.resume {
+    background: url("../img/thumbnails/resume.jpg");
+}
+
+.bg-img.github {
+    background: url("../img/thumbnails/github.jpg");
+}
+
+.bg-img.travel {
+    background: url("../img/thumbnails/travel.jpg");
+}
+
+.bg-img.blog {
+    background: url("../img/thumbnails/blog.jpg");
+}
+
+.bg-img.facebook {
+    background: url("../img/thumbnails/facebook.jpg");
+}
+
+.bg-img.instagram {
+    background: url("../img/thumbnails/instagram.jpg");
+}
+
+.page-wrap {
+    .bg-vr {
+        opacity: 0;
+        transition: $transition-short;
+        .a-enter-vr {
+            display: none;
+        }
+    }
+    .bg-img {
+        background: url("../img/landing-bg.jpg");
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform-origin: center;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        background-position: center center !important;
+        transition: $transition-long;
+    }
+    .bg-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+        &:after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            bottom: 10px;
+            left: 10px;
+            border: $border-thin;
+        }
+    }
+    .bg-pattern {
+        opacity: .04 !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform-origin: center;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        background-position: center center !important;
+        background: url('../img/triangles.png');
+    }
+    .content {
+        text-align: center;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50% !important;
+        left: 50% !important;
+        max-height: 100%;
+        overflow-y: hidden;
+        padding: 2em 0;
+        .info {
+            .name {
+                text-shadow: $text-shadow;
+                font-family: $font-family-2;
+                font-size: 3em;
+            }
+            .hashtags {
+                text-shadow: $text-shadow;
+                font-family: $font-family-1;
+                font-weight: 400;
+                font-size: 1em;
+                letter-spacing: 0.3em;
+                min-height: 1.5em;
+                height: 1.5em;
+                width: 100%;
+                margin-bottom: 2.5em;
+                .typed-hashtags {
+                    text-align: center;
+                    margin: 0 auto;
+                    max-width: 40em;
+                }
+            }
+            .marker {
+                text-shadow: $text-shadow;
+                font-size: 1.5em;
+            }
+            .location {
+                font-size: 1em;
+                text-transform: uppercase;
+                text-shadow: $text-shadow;
+                font-family: $font-family-1;
+                font-weight: 400;
+                font-size: .9em;
+                letter-spacing: .3em;
+            }
+        }
+        .icons {
+            visibility: hidden;
+            padding: .5em;
+            padding-top: 2em;
+            font-size: 1.5em;
+            letter-spacing: .5em;
+            span {
+                .fa {
+                    opacity: .6;
+                    text-shadow: $text-shadow;
+                    transition: $transition-short;
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        .email {
+            visibility: hidden;
+            margin: .3em 0;
+            text-shadow: $text-shadow;
+            font-family: $font-family-1;
+            font-size: .9em;
+            font-weight: 400;
+            letter-spacing: 0.3em;
+            opacity: .7;
+            transition: $transition-short;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.a-enter-vr {
+    right: 0 !important;
+    .a-enter-vr-button {
+        padding-right: 0 !important; 
+        padding-top: 0 !important;  
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        margin: auto !important;
+        z-index: 3 !important;
+    }
+}

@@ -1,0 +1,29 @@
+.nav-menu-item:hover .content {
+    font-size: 1.1em !important;
+    letter-spacing: .6em !important;
+    opacity: 1 !important;
+}
+
+.nav-menu-item:hover .bg-img {
+    transform: translateY(0) scale(1.2) !important;
+}
+
+.nav.nav-open {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition: $transition-long;
+}
+
+.bg-vr.bg-vr-visible {
+    opacity: 1 !important;
+    z-index: 5;
+}
+
+.bg-vr.bg-vr-visible .a-enter-vr {
+    opacity: 1;
+}
+
+.bg-vr-loading {
+    filter: brightness(0);
+}

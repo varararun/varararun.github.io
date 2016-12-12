@@ -1,0 +1,48 @@
+@media handheld,
+(max-width: 640px),
+(max-height: 400px) {
+    .page-wrap>.content {
+        top: 1em !important;
+        left: 50% !important;
+        transform: translate(-50%, 0) !important;
+        overflow-y: scroll !important;
+    }
+    .icons {
+        font-size: 1.5em !important;
+        letter-spacing: .2em !important;
+    }
+    .email {
+        font-size: .7em !important;
+    }
+    .nav-menu-item {
+        width: 20em !important;
+        height: 11em !important;
+    }
+    .tooltip,
+    .email-btn,
+    .shuffle-bg-btn,
+    .shuffle-vr-btn {
+        display: none !important;
+    }
+    .page-wrap>.bg-img {
+        background: url('../img/bg/puertorico-h.jpg') !important;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        background-position: center center !important;
+        transition: 0s;
+    }
+    .icons,
+    .email {
+        visibility: visible !important;
+    }
+    .bg-vr.bg-vr-visible {
+        z-index: 0!important;
+    }
+    .vr-drag-demo {
+        display: none !important;
+        background: black !important;
+    }
+    .a-enter-vr {
+        display: none;
+    }
+}

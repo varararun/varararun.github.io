@@ -45,7 +45,7 @@ gulp.task('jshint', function() {
 gulp.task('format', function() {
     return gulp.src([
             'assets/css/avarghese.css',
-            'client/js/avarghesejs',
+            'client/js/avarghese.js',
             'index.html',
             '*.{js,json}'
         ], {

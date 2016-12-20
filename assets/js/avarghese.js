@@ -9,7 +9,7 @@ var AV = {
 		AV.loadTypedJS();
 		AV.loadBGEvents();
 		AV.loadTooltips();		
-		// AV.loadScrollEvents();
+		AV.loadScrollEvents();
 		AV.loadVREvents();
 		AV.loadKeybaordEvents();
 		console.info('all events loaded');

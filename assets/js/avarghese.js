@@ -176,7 +176,12 @@ var AV = {
 		'assets/img/bg/positano.jpg',
 		'assets/img/bg/puertorico.jpg',
 		'assets/img/bg/rome.jpg',
-		'assets/img/bg/santhiya.jpg',
+		'assets/img/bg/magicmountain.jpg',
+		'assets/img/bg/manava.jpg',
+		'assets/img/bg/moorea.jpg',
+		'assets/img/bg/moorealagoon.jpg',
+		'assets/img/bg/twobays.jpg',
+		'assets/img/bg/santhiya.jpg'
 	],
 	vrImgList: [
 		'assets/img/vr/example.jpg',

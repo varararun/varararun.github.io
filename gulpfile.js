@@ -28,7 +28,9 @@ gulp.task('scss', function() {
         .pipe(autoprefixer({
             browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
         }))
-        .pipe(header(banner, { pkg: pkg }))
+        .pipe(header(banner, {
+            pkg: pkg
+        }))
         .pipe(gulp.dest('assets/css'));
 });
 
@@ -57,20 +59,28 @@ gulp.task('format', function() {
 
 gulp.task('minify-css', ['scss'], function() {
     return gulp.src([
-        'assets/css/avarghese.css'
+            'assets/css/avarghese.css'
         ])
-        .pipe(cleanCSS({ compatibility: 'ie8' }))
-        .pipe(rename({ suffix: '.min' }))
+        .pipe(cleanCSS({
+            compatibility: 'ie8'
+        }))
+        .pipe(rename({
+            suffix: '.min'
+        }))
         .pipe(gulp.dest('assets/css'));
 });
 
 gulp.task('minify-js', function() {
     return gulp.src([
-        'assets/js/avarghese.js'
+            'assets/js/avarghese.js'
         ])
         .pipe(uglify())
-        .pipe(header(banner, { pkg: pkg }))
-        .pipe(rename({ suffix: '.min' }))
+        .pipe(header(banner, {
+            pkg: pkg
+        }))
+        .pipe(rename({
+            suffix: '.min'
+        }))
         .pipe(gulp.dest('assets/js'));
 });
 
@@ -90,7 +100,7 @@ gulp.task('serve', ['browserSync', 'scss', 'minify-css', 'minify-js'], function(
     gulp.watch([
         'assets/js/avarghese.min.js',
         'assets/css/avarghese.min.css'
-        ], browserSync.reload);
+    ], browserSync.reload);
 });
 
 module.exports = gulp;

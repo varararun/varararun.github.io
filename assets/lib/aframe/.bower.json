@@ -9,7 +9,6 @@
     "commit": "de2dd6cb9e5be64a60f2c108a2382d699bf59052"
   },
   "_source": "https://github.com/aframevr/aframe.git",
-  "_target": "^0.3.2",
-  "_originalSource": "aframe",
-  "_direct": true
+  "_target": "0.3.2",
+  "_originalSource": "aframe"
 }

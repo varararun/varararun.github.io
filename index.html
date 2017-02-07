@@ -26,10 +26,10 @@
         <span class="music-icon">
             <i class="fa fa-fw fa-volume-up pause-btn"></i> 
             <i class="fa fa-fw fa-volume-off play-btn wow bounceIn"></i>
-        </span> 
-        <audio id="bg-audio"><span class="music-btn hidden">
+        </span>
+    <audio id="bg-audio"><span class="music-btn hidden">
             <source src="assets/audio/Melvv-Glide.mp3" type="audio/mp3"></span>
-        </audio>
+    </audio>
     </span>
     <span class="shuffle-bg-btn animated bounceIn" data-toggle="tooltip" title="Shuffle Background!" data-placement="right">
         <i class="fa fa-fw fa-retweet"></i>
@@ -42,25 +42,24 @@
             <i class="fa fa-fw fa-envelope"></i>
         </a>
     </span>
-
     <span class="vr-btn animated bounceIn" data-toggle="tooltip" title="Follow Me in VR!" data-placement="right">
         <span class="vr-icon">
             <i class="fa fa-fw fa-street-view open-btn"></i>
             <i class="fa fa-fw fa-times-circle-o close-btn wow bounceIn" data-wow-delay=".3s"></i>
         </span>
     </span>
-    <div class="vr-drag-demo">  
+    <div class="vr-drag-demo">
         <span class="drag-icon"><i class="fa fa-hand-pointer-o"></i></span>
         <div class="demo-text">Grab and Drag the Picture to View 360&deg;!</div>
         <i class="fa fa-angle-left"></i>
-        <i class="fa fa-angle-right"></i>      
+        <i class="fa fa-angle-right"></i>
         <i class="fa fa-times"></i>
     </div>
     <nav class="nav">
         <div class="nav-menu-grid">
             <img class="profile" src="assets/img/thumbnails/profile.jpg">
             <div class="description">
-                <p><i class="fa fa-quote-left"></i>&nbsp; <span class="typed-text">I'm a full stack developer with a passion for design, coding, and creating tangible deliverables through problem solving and creative thinking! In my free time I enjoy traveling and exploring new places around the globe! To learn more about me or get in contact with me, checkout the links below!</span> &nbsp;<i class="fa fa-quote-right"></i></p>
+                <p><i class="fa fa-quote-left"></i>&nbsp; <span class="typed-text">I'm a full stack developer with a passion for design, coding, and creating tangible deliverables through problem solving and creative thinking! In my free time I enjoy traveling and exploring new places around the globe! To learn more about me or get in contact with me, checkout the links below!</span>                    &nbsp;<i class="fa fa-quote-right"></i></p>
             </div>
             <a href="http://avarghese.me/portfolio" target="">
                 <div class="nav-menu-item">
@@ -167,7 +166,7 @@
     </nav>
     <section class="page-wrap">
         <div class="bg-img"></div>
-        <a-scene class="bg-vr">            
+        <a-scene class="bg-vr">
             <a-sky src="assets/img/vr/example.jpg" rotation="0 -130 0"></a-sky>
         </a-scene>
         <div class="bg-overlay wow fadeIn"></div>
@@ -224,9 +223,9 @@
     <script src="assets/js/avarghese.min.js">
     </script>
     <script>
-        (function(i, s, o, g, r, a, m) {
+        (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function() {
+            i[r] = i[r] || function () {
                 (i[r].q = i[r].q || []).push(arguments)
             }, i[r].l = 1 * new Date();
             a = s.createElement(o),
@@ -238,6 +237,9 @@
 
         ga('create', 'UA-88384820-1', 'auto');
         ga('send', 'pageview');
+    </script>
+    <script>
+        new WOW().init();
     </script>
 </body>
 

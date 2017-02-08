@@ -2,7 +2,7 @@
   "name": "arvarghese.github.io",
   "title": "arvarghese.github.io",
   "version": "",
-  "description": "Photo Tiles, JS implementation of Mac's Photo Tiles Screensaver",
+  "description": "My Home page",
   "main": "server.js",
   "engines": {
     "node": "5.7.1",

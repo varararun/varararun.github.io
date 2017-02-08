@@ -40,9 +40,6 @@ gulp.task('scss', function () {
     .pipe(autoprefixer({
       browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
     }))
-    .pipe(header(banner, {
-      pkg: pkg
-    }))
     .pipe(gulp.dest('assets/css'));
 });
 
@@ -97,6 +94,9 @@ gulp.task('minify-css', ['scss'], function () {
     ])
     .pipe(cleanCSS({
       compatibility: 'ie8'
+    }))
+    .pipe(header(banner, {
+      pkg: pkg
     }))
     .pipe(rename({
       suffix: '.min'

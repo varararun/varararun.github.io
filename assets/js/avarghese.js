@@ -15,7 +15,6 @@ var AV = {
     },
     loadKeyboardEvents: function () {
         document.onkeydown = function (e) {
-            console.log(e.keyCode);
             switch (e.keyCode) {
                 case 40:
                     if ($("nav").hasClass("nav-open")) {
@@ -190,4 +189,3 @@ var AV = {
         "assets/img/vr/example.jpg"
     ]
 };
-AV.initialize();

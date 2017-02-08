@@ -15,7 +15,6 @@ let AV = {
   },
   loadKeyboardEvents: () => {
     document.onkeydown = (e) => {
-      console.log(e.keyCode);
       switch (e.keyCode) {
         case 40: // spacebar					
           if ($("nav").hasClass("nav-open")) {
@@ -66,7 +65,7 @@ let AV = {
   },
   loadScrollEvents: () => {
     $("body").bind("mousewheel DOMMouseScroll", (e) => {
-      let delta = ( (<WheelEvent>e.originalEvent).wheelDelta || -(<WheelEvent>e.originalEvent).detail);
+      let delta = ((<WheelEvent>e.originalEvent).wheelDelta || -(<WheelEvent>e.originalEvent).detail);
       let conditions = delta < 0 && !$(".nav").hasClass("nav-open") && ($(".page-wrap>.content")[0].scrollHeight - $(".page-wrap>.content").scrollTop() === $(".page-wrap>.content").outerHeight());
       if (conditions) {
         $(".nav-btn").click();
@@ -152,7 +151,7 @@ let AV = {
         } else {
           $("#bg-audio").pause();
         }
-      } catch (err) {}
+      } catch (err) { }
     });
   },
   panImage: (e) => {
@@ -185,4 +184,4 @@ let AV = {
     "assets/img/vr/example.jpg"
   ]
 };
-AV.initialize();
+

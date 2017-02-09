@@ -412,6 +412,9 @@ nav > ul > li {
 .bg-img.dribbble {
   background: url("../img/thumbnails/dribbble.jpg"); }
 
+.bg-img.codepen {
+  background: url("../img/thumbnails/codepen.jpg"); }
+
 .page-wrap .bg-vr {
   opacity: 0;
   -webkit-transition: 0.4s cubic-bezier(0.83, -0.03, 0.54, 0.99);

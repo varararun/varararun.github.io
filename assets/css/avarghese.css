@@ -406,6 +406,12 @@ nav > ul > li {
 .bg-img.instagram {
   background: url("../img/thumbnails/instagram.jpg"); }
 
+.bg-img.behance {
+  background: url("../img/thumbnails/behance.jpg"); }
+
+.bg-img.dribbble {
+  background: url("../img/thumbnails/dribbble.jpg"); }
+
 .page-wrap .bg-vr {
   opacity: 0;
   -webkit-transition: 0.4s cubic-bezier(0.83, -0.03, 0.54, 0.99);

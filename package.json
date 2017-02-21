@@ -1,6 +1,6 @@
 {
-  "name": "arvarghese.github.io",
-  "title": "arvarghese.github.io",
+  "name": "varararun.github.io",
+  "title": "varararun.github.io",
   "version": "",
   "description": "My Home page",
   "main": "server.js",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/arvarghese/arvarghese.github.io.git"
+    "url": "https://github.com/varararun/varararun.github.io.git"
   },
   "author": "arun varghese",
   "contributors": [{
@@ -24,9 +24,9 @@
   }],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/arvarghese/arvarghese.github.io/issues"
+    "url": "https://github.com/varararun/varararun.github.io/issues"
   },
-  "homepage": "https://github.com/arvarghese/arvarghese.github.io",
+  "homepage": "https://github.com/varararun/varararun.github.io",
   "keywords": [
     "avarghese",
     "tiles"

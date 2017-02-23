@@ -16,7 +16,7 @@ let AV = {
   loadKeyboardEvents: () => {
     document.onkeydown = (e) => {
       switch (e.keyCode) {
-        case 40: // spacebar					
+        case 40: // spacebar 					
           if ($("nav").hasClass("nav-open")) {
             if ($("nav")[0].scrollHeight - $("nav").scrollTop() < $("nav").outerHeight() + 5) {
               $(".nav-btn").click();

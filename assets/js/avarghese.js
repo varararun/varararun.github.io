@@ -183,7 +183,8 @@ var AV = {
         "assets/img/bg/moorea.jpg",
         "assets/img/bg/moorealagoon.jpg",
         "assets/img/bg/twobays.jpg",
-        "assets/img/bg/santhiya.jpg"
+        "assets/img/bg/santhiya.jpg",
+        "assets/img/bg/sanfrancisco.jpg"
     ],
     vrImgList: [
         "assets/img/vr/example.jpg"

@@ -16,28 +16,28 @@ let AV = {
   loadKeyboardEvents: () => {
     document.onkeydown = (e) => {
       switch (e.keyCode) {
-        case 40: // spacebar 					
+        case 40: // spacebar
           if ($("nav").hasClass("nav-open")) {
             if ($("nav")[0].scrollHeight - $("nav").scrollTop() < $("nav").outerHeight() + 5) {
               $(".nav-btn").click();
             }
           }
           break;
-        case 27: // esc					
+        case 27: // esc
           if ($("nav").hasClass("nav-open")) {
             $(".nav-btn").click();
           } else if ($(".bg-vr").hasClass("bg-vr-visible")) {
             $(".vr-btn").click();
           }
           break;
-        case 8: // delete/backspace					
+        case 8: // delete/backspace
           if ($("nav").hasClass("nav-open")) {
             $(".nav-btn").click();
           } else if ($(".bg-vr").hasClass("bg-vr-visible")) {
             $(".vr-btn").click();
           }
           break;
-        case 32: // spacebar					
+        case 32: // spacebar
           $(".nav-btn").click();
           break;
       }
@@ -178,7 +178,8 @@ let AV = {
     "assets/img/bg/moorea.jpg",
     "assets/img/bg/moorealagoon.jpg",
     "assets/img/bg/twobays.jpg",
-    "assets/img/bg/santhiya.jpg"
+    "assets/img/bg/santhiya.jpg",
+    "assets/img/bg/sanfrancisco.jpg"
   ],
   vrImgList: [
     "assets/img/vr/example.jpg"

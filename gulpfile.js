@@ -15,6 +15,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync').create();
 var autoprefixer = require('gulp-autoprefixer');
+var imagemin = require('gulp-imagemin');
 
 var paths = {
     scss: 'assets/css/avarghese.scss',
@@ -53,6 +54,14 @@ gulp.task('format', function() {
         })
         .pipe(beautify())
         .pipe(gulp.dest('./'));
+});
+
+/** Image Tasks **/
+
+gulp.task('minify-images', function() {
+    gulp.src('assets/img/**/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('assets/img'))
 });
 
 /** JavaScript Tasks **/
@@ -163,7 +172,7 @@ gulp.task('css', function() {
 });
 
 gulp.task('minify', function() {
-    return runSequence('css', 'js');
+    return runSequence('css', 'js', 'minify-images');
 });
 
 gulp.task('serve', function() {

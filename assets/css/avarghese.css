@@ -337,7 +337,7 @@ nav > ul > li {
         position: absolute;
         top: 50%;
         color: white;
-        font-size: 10em;
+        font-size: 8em;
         -webkit-transform: translate(0, -50%);
                 transform: translate(0, -50%);
         -webkit-filter: blur(0.02em);

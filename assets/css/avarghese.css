@@ -257,8 +257,8 @@ nav > ul > li {
   -webkit-transition: 0.4s cubic-bezier(0.83, -0.03, 0.54, 0.99);
   transition: 0.4s cubic-bezier(0.83, -0.03, 0.54, 0.99);
   z-index: 6;
-  -webkit-transform: translateY(100%);
-          transform: translateY(100%); }
+  -webkit-transform: translateY(10%);
+          transform: translateY(10%); }
   .nav .nav-menu-grid {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -368,6 +368,9 @@ nav > ul > li {
         transition: 0.4s cubic-bezier(0.83, -0.03, 0.54, 0.99);
         opacity: 0; }
       .nav .nav-menu-grid a .nav-menu-item .content {
+        width: 100%;
+        background: -webkit-linear-gradient(transparent, black);
+        background: linear-gradient(transparent, black);
         position: absolute;
         bottom: 0;
         left: 50%;
@@ -376,7 +379,8 @@ nav > ul > li {
         letter-spacing: .3em;
         font-weight: 400;
         padding: 0 .1em 1.5em;
-        opacity: .7;
+        opacity: .8;
+        font-size: 1.2em;
         -webkit-transition: 0.4s cubic-bezier(0.83, -0.03, 0.54, 0.99);
         transition: 0.4s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
       .nav .nav-menu-grid a .nav-menu-item:hover {
@@ -616,7 +620,9 @@ nav > ul > li {
     display: none !important;
     background: black !important; }
   .a-enter-vr {
-    display: none; } }
+    display: none; }
+  .content-hidden {
+    display: none !important; } }
 
 .nav-menu-item:hover .content {
   font-size: 1.1em !important;

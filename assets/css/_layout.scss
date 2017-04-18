@@ -492,6 +492,15 @@
                 font-family: $font-family-2;
                 font-size: 3em;
             }
+            .role {
+                font-size: .9em;
+                font-weight: 400;
+                text-transform: uppercase;
+                margin: .4em 0 1em;
+                letter-spacing: .4em;
+                text-shadow: $text-shadow;
+                font-family: $font-family-1;
+            }
             .hashtags {
                 text-shadow: $text-shadow;
                 font-family: $font-family-1;
@@ -520,12 +529,12 @@
                 font-weight: 400;
                 font-size: .9em;
                 letter-spacing: .3em;
+                margin-bottom: 1.5em;
             }
         }
         .icons {
             visibility: hidden;
             padding: .5em;
-            padding-top: 2em;
             font-size: 1.5em;
             letter-spacing: .5em;
             span {

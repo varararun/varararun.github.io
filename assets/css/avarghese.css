@@ -137,7 +137,7 @@ nav > ul > li {
     top: 0;
     left: 0;
     font-size: 2em;
-    z-index: 4;
+    z-index: 6;
     padding: .4em .5em; }
     .control-btns .vr-btn .vr-icon {
       opacity: .6;
@@ -219,7 +219,7 @@ nav > ul > li {
   background: radial-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5), black);
   -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
   transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
-  z-index: 6;
+  z-index: 7;
   -webkit-transform: scale(1.1);
           transform: scale(1.1); }
   .nav.nav-open {

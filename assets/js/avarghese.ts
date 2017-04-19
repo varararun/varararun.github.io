@@ -103,6 +103,9 @@ let AV = {
   },
   loadNavEvents: () => {
     $('.nav-btn,.nav-menu-item>.content>a,.nav-menu-grid').click(() => {
+      if ($('.bg-vr').hasClass('bg-vr-visible')) {
+        $('.vr-btn').click();
+      }
       $('.nav-btn').toggleClass('nav-close');
       $('.nav-btn>.nav-icon>.close-btn,.nav-btn>.nav-icon>.open-btn').addClass('animated bounceIn');
       $('nav').toggleClass('nav-open');
@@ -111,6 +114,9 @@ let AV = {
     });
     $('.nav-menu-item').on('mousemove', AV.panImage);
     $('.open-nav-btn').click(() => {
+      if ($('.bg-vr').hasClass('bg-vr-visible')) {
+        $('.vr-btn').click();
+      }
       $('.nav-btn').click();
     });
   },

@@ -89,7 +89,7 @@
         top: 0;
         left: 0;
         font-size: 2em;
-        z-index: 4;
+        z-index: 6;
         padding: .4em .5em;
         .vr-icon {
             opacity: .6;
@@ -181,7 +181,7 @@
     width: 100%;
     background: radial-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .5), rgba(0, 0, 0, 1));
     transition: $transition-short;
-    z-index: 6;
+    z-index: 7;
     transform: scale(1.1);
     &.nav-open {
         visibility: visible;

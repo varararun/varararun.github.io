@@ -172,7 +172,7 @@ gulp.task('css', function() {
 });
 
 gulp.task('minify', function() {
-    return runSequence('css', 'js', 'minify-images');
+    return runSequence('css', 'js');
 });
 
 gulp.task('serve', function() {

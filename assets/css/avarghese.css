@@ -383,9 +383,6 @@ nav > ul > li {
         font-size: 1.2em;
         -webkit-transition: 0.4s cubic-bezier(0.83, -0.03, 0.54, 0.99);
         transition: 0.4s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
-      .nav .nav-menu-grid a .nav-menu-item:hover {
-        -webkit-transform: perspective(20em) rotate3d(1, 0, 0, 10deg);
-                transform: perspective(20em) rotate3d(1, 0, 0, 10deg); }
       .nav .nav-menu-grid a .nav-menu-item:hover > .content {
         bottom: 10%; }
       .nav .nav-menu-grid a .nav-menu-item:hover > .bg-overlay {
@@ -630,7 +627,9 @@ nav > ul > li {
   .a-enter-vr {
     display: none; }
   .content-hidden {
-    display: none !important; } }
+    display: none !important; }
+  .icon-overlay {
+    font-size: 5em !important; } }
 
 .nav-menu-item:hover .content {
   font-size: 1.1em !important;

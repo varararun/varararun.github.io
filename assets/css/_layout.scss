@@ -338,7 +338,7 @@
                     transition: $transition-short;
                 }
                 &:hover {
-                    transform: perspective(20em) rotate3d(1, 0, 0, 10deg);
+                    //transform: perspective(20em) rotate3d(1, 0, 0, 10deg);
                 }
                 &:hover>.content {
                     bottom: 10%;

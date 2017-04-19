@@ -1,6 +1,9 @@
-.typed-cursor {
-    opacity: 1;
-    animation: blink 0.7s infinite;
+.tooltip {
+    z-index: 10;
+}
+
+.tooltip.top {
+    margin-left: -.5em !important;
 }
 
 .vr-drag-demo {
@@ -145,36 +148,6 @@
             &:hover {
                 opacity: 1;
             }
-        }
-    }
-    .music-btn {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        z-index: 4;
-        font-size: 2em;
-        padding: .4em .5em;
-        cursor: pointer;
-        opacity: .6;
-        transition: $transition-short;
-        &:hover {
-            opacity: 1;
-        }
-        .music-icon {
-            .pause-btn {
-                opacity: 0;
-                display: none;
-            }
-        }
-        &.music-play>.music-icon>.play-btn {
-            opacity: 0;
-            display: none;
-            visibility: hidden;
-        }
-        &.music-play>.music-icon>.pause-btn {
-            opacity: 1;
-            visibility: visible;
-            display: inline-block;
         }
     }
 }
@@ -451,7 +424,7 @@
         }
     }
     .bg-img {
-        background: url("../img/landing-bg.jpg");
+        background: url("../img/bg/puertorico.jpg");
         position: absolute;
         top: 0;
         left: 0;

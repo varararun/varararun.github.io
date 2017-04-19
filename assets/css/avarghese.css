@@ -11,6 +11,11 @@ body {
   overflow: hidden;
   background: #282f35; }
 
+*,
+*:before,
+*:after {
+  box-sizing: border-box; }
+
 a {
   color: inherit !important; }
 
@@ -52,11 +57,6 @@ nav > ul > li {
 
 .tooltip.top {
   margin-left: -.5em !important; }
-
-.typed-cursor {
-  opacity: 1;
-  -webkit-animation: blink 0.7s infinite;
-          animation: blink 0.7s infinite; }
 
 .vr-drag-demo {
   opacity: 0;
@@ -189,30 +189,6 @@ nav > ul > li {
       transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
       .control-btns .shuffle-bg-btn .fa:hover {
         opacity: 1; }
-  .control-btns .music-btn {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 4;
-    font-size: 2em;
-    padding: .4em .5em;
-    cursor: pointer;
-    opacity: .6;
-    -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
-    transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
-    .control-btns .music-btn:hover {
-      opacity: 1; }
-    .control-btns .music-btn .music-icon .pause-btn {
-      opacity: 0;
-      display: none; }
-    .control-btns .music-btn.music-play > .music-icon > .play-btn {
-      opacity: 0;
-      display: none;
-      visibility: hidden; }
-    .control-btns .music-btn.music-play > .music-icon > .pause-btn {
-      opacity: 1;
-      visibility: visible;
-      display: inline-block; }
 
 .nav-btn {
   position: fixed;
@@ -475,7 +451,7 @@ nav > ul > li {
     .page-wrap .bg-vr .a-enter-vr {
       display: none; }
   .page-wrap .bg-img {
-    background: url("../img/landing-bg.jpg");
+    background: url("../img/bg/puertorico.jpg");
     position: absolute;
     top: 0;
     left: 0;
@@ -629,7 +605,6 @@ nav > ul > li {
   .shuffle-vr-btn {
     display: none !important; }
   .page-wrap > .bg-img {
-    background: url("../img/bg/puertorico-h.jpg") !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
     background-position: center center !important;
@@ -649,22 +624,6 @@ nav > ul > li {
     display: none !important; }
   .icon-overlay {
     font-size: 5em !important; } }
-
-@-webkit-keyframes blink {
-  0% {
-    opacity: 1; }
-  50% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-
-@keyframes blink {
-  0% {
-    opacity: 1; }
-  50% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
 
 @-webkit-keyframes drag-demo {
   0% {

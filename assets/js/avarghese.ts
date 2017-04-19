@@ -3,14 +3,12 @@ let AV = {
     AV.loadEvents();
   },
   loadEvents: () => {
-    AV.loadMusicBtnEvents();
+    new WOW().init();
     AV.loadNavEvents();
-    AV.loadTypedJS();
     AV.loadBGEvents();
     AV.loadTooltips();
     AV.loadVREvents();
     AV.loadKeyboardEvents();
-    // AV.loadScrollEvents();
     console.info('All events loaded.');
   },
   loadKeyboardEvents: () => {
@@ -73,7 +71,7 @@ let AV = {
     });
   },
   loadTooltips: () => {
-    $('[data-toggle="tooltip"]').tooltip();
+    // $('[data-toggle="tooltip"]').tooltip();
   },
   loadBGEvents: () => {
     $('.shuffle-bg-btn').click(() => {
@@ -117,18 +115,6 @@ let AV = {
       $('.shuffle-vr-btn').show();
     };
     bgImg.src = imgUrl;
-  },
-  loadTypedJS: () => {
-    $('.typed-hashtags').typed({
-      strings: ['#engineer', '#traveler', '#husband', '#engineer&nbsp;#traveler\n#husband'],
-      contentType: 'html',
-      startDelay: 1000,
-      backDelay: 1000,
-      typeSpeed: 50,
-      backSpeed: 100,
-      showCursor: true,
-      cursorChar: '|'
-    });
   },
   loadNavEvents: () => {
     $('.nav-btn,.nav-menu-item>.content>a,.nav-menu-grid').click(() => {

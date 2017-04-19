@@ -4,12 +4,19 @@ var AV = {
     },
     loadEvents: function () {
         AV.loadNavEvents();
-        AV.loadBGEvents();
         AV.loadVREvents();
         AV.loadKeyboardEvents();
         $('.page-wrap').removeClass('loading');
-        AV.loadInitialBG();
+        AV.loadBGEvents();
         console.info('All events loaded.');
+    },
+    loadInitialVR: function () {
+        var imgUrl = AV.vrImgList[0];
+        var vrImg = new Image();
+        vrImg.onload = function () {
+            $('.vr-img').attr("src", imgUrl);
+        };
+        vrImg.src = imgUrl;
     },
     loadInitialBG: function () {
         var imgUrl = 'assets/img/bg/puertorico.jpg';
@@ -68,6 +75,7 @@ var AV = {
         $('.vr-drag-demo').click(function () {
             $('.vr-drag-demo').removeClass('demo');
         });
+        AV.loadInitialVR();
     },
     loadScrollEvents: function () {
         $('body').bind('mousewheel DOMMouseScroll', function (e) {
@@ -85,6 +93,7 @@ var AV = {
         setInterval(function () {
             AV.loadNextBg();
         }, 10000);
+        AV.loadInitialBG();
     },
     loadNextBg: function () {
         var imgUrl = AV.bgImgList[~~(Math.random() * AV.bgImgList.length)];

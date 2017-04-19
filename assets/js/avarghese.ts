@@ -4,12 +4,19 @@ let AV = {
   },
   loadEvents: () => {
     AV.loadNavEvents();
-    AV.loadBGEvents();
     AV.loadVREvents();
     AV.loadKeyboardEvents();
     $('.page-wrap').removeClass('loading');
-    AV.loadInitialBG();
+    AV.loadBGEvents();
     console.info('All events loaded.');
+  },
+  loadInitialVR: () => {
+    let imgUrl = AV.vrImgList[0];
+    let vrImg = new Image();
+    vrImg.onload = () => {
+      $('.vr-img').attr("src", imgUrl);
+    };
+    vrImg.src = imgUrl;
   },
   loadInitialBG: () => {
     let imgUrl = 'assets/img/bg/puertorico.jpg';
@@ -66,6 +73,7 @@ let AV = {
     $('.vr-drag-demo').click(() => {
       $('.vr-drag-demo').removeClass('demo');
     });
+    AV.loadInitialVR();
   },
   loadScrollEvents: () => {
     $('body').bind('mousewheel DOMMouseScroll', (e) => {
@@ -83,6 +91,7 @@ let AV = {
     setInterval(() => {
       AV.loadNextBg();
     }, 10000);
+    AV.loadInitialBG();
   },
   loadNextBg: () => {
     let imgUrl = AV.bgImgList[~~(Math.random() * AV.bgImgList.length)];

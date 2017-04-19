@@ -384,8 +384,8 @@ nav > ul > li {
         height: 20%;
         -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
         transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
-        background: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.7));
-        background: linear-gradient(transparent, rgba(0, 0, 0, 0.7)); }
+        background: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8));
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)); }
       .nav .nav-menu-grid a .nav-menu-item .content {
         width: 100%;
         position: absolute;

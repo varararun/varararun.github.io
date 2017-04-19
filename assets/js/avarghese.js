@@ -12,7 +12,7 @@ var AV = {
         console.info('All events loaded.');
     },
     loadInitialBG: function () {
-        var imgUrl = AV.bgImgList[~~(Math.random() * AV.bgImgList.length)];
+        var imgUrl = 'assets/img/bg/puertorico.jpg';
         var bgUrl = "url('" + imgUrl + "')";
         var bgImg = new Image();
         bgImg.onload = function () {
@@ -60,18 +60,13 @@ var AV = {
             $('.bg-vr').toggleClass('bg-vr-visible');
             if ($('.vr-btn').hasClass('vr-close')) {
                 $('.vr-drag-demo').addClass('demo');
-                $('.shuffle-vr-btn').show();
             }
             else {
                 $('.vr-drag-demo').removeClass('demo');
-                $('.shuffle-vr-btn').hide();
             }
         });
         $('.vr-drag-demo').click(function () {
             $('.vr-drag-demo').removeClass('demo');
-        });
-        $('.shuffle-vr-btn').click(function () {
-            AV.loadNextVR();
         });
     },
     loadScrollEvents: function () {
@@ -94,7 +89,7 @@ var AV = {
     loadNextBg: function () {
         var imgUrl = AV.bgImgList[~~(Math.random() * AV.bgImgList.length)];
         var bgUrl = "url('" + imgUrl + "')";
-        if ($('.page-wrap>.bg-img').css('background').includes('puertorico-h.jpg') || $('.bg-vr.bg-vr-visible').css('visibility') === 'visible') {
+        if ($('.email-btn').css('display') === 'none') {
             return;
         }
         if ($('.page-wrap>.bg-img').attr('src') === imgUrl) {
@@ -105,24 +100,6 @@ var AV = {
         bgImg.onload = function () {
             $('.page-wrap>.bg-img').css('background-image', bgUrl);
             $('.shuffle-bg-btn').show();
-        };
-        bgImg.src = imgUrl;
-    },
-    loadNextVR: function () {
-        var imgUrl = AV.vrImgList[~~(Math.random() * AV.vrImgList.length)];
-        if ($('.page-wrap>.bg-img').css('background').includes('puertorico-h.jpg') || !($('.bg-vr.bg-vr-visible').css('visibility') === 'visible')) {
-            return;
-        }
-        if ($('a-sky').attr('src') === imgUrl) {
-            return;
-        }
-        $('.bg-vr').addClass('bg-vr-loading');
-        $('.shuffle-vr-btn').hide();
-        var bgImg = new Image();
-        bgImg.onload = function () {
-            $('a-sky').attr('src', imgUrl);
-            $('.bg-vr').removeClass('bg-vr-loading');
-            $('.shuffle-vr-btn').show();
         };
         bgImg.src = imgUrl;
     },

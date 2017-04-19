@@ -12,10 +12,9 @@ let AV = {
     console.info('All events loaded.');
   },
   loadInitialBG: () => {
-    let imgUrl = AV.bgImgList[~~(Math.random() * AV.bgImgList.length)];
+    let imgUrl = 'assets/img/bg/puertorico.jpg';
     let bgUrl = `url('${imgUrl}')`;
     let bgImg = new Image();
-
     bgImg.onload = () => {
       $('.page-wrap>.bg-img').css('background-image', bgUrl);
 
@@ -60,17 +59,12 @@ let AV = {
       $('.bg-vr').toggleClass('bg-vr-visible');
       if ($('.vr-btn').hasClass('vr-close')) {
         $('.vr-drag-demo').addClass('demo');
-        $('.shuffle-vr-btn').show();
       } else {
         $('.vr-drag-demo').removeClass('demo');
-        $('.shuffle-vr-btn').hide();
       }
     });
     $('.vr-drag-demo').click(() => {
       $('.vr-drag-demo').removeClass('demo');
-    });
-    $('.shuffle-vr-btn').click(() => {
-      AV.loadNextVR();
     });
   },
   loadScrollEvents: () => {
@@ -93,7 +87,7 @@ let AV = {
   loadNextBg: () => {
     let imgUrl = AV.bgImgList[~~(Math.random() * AV.bgImgList.length)];
     let bgUrl = `url('${imgUrl}')`;
-    if ($('.page-wrap>.bg-img').css('background').includes('puertorico-h.jpg') || $('.bg-vr.bg-vr-visible').css('visibility') === 'visible') {
+    if ($('.email-btn').css('display') === 'none') {
       return;
     }
     if ($('.page-wrap>.bg-img').attr('src') === imgUrl) {
@@ -104,24 +98,6 @@ let AV = {
     bgImg.onload = () => {
       $('.page-wrap>.bg-img').css('background-image', bgUrl);
       $('.shuffle-bg-btn').show();
-    };
-    bgImg.src = imgUrl;
-  },
-  loadNextVR: () => {
-    let imgUrl = AV.vrImgList[~~(Math.random() * AV.vrImgList.length)];
-    if ($('.page-wrap>.bg-img').css('background').includes('puertorico-h.jpg') || !($('.bg-vr.bg-vr-visible').css('visibility') === 'visible')) {
-      return;
-    }
-    if ($('a-sky').attr('src') === imgUrl) {
-      return;
-    }
-    $('.bg-vr').addClass('bg-vr-loading');
-    $('.shuffle-vr-btn').hide();
-    let bgImg = new Image();
-    bgImg.onload = () => {
-      $('a-sky').attr('src', imgUrl);
-      $('.bg-vr').removeClass('bg-vr-loading');
-      $('.shuffle-vr-btn').show();
     };
     bgImg.src = imgUrl;
   },

@@ -137,7 +137,7 @@ nav > ul > li {
     top: 0;
     left: 0;
     font-size: 2em;
-    z-index: 6;
+    z-index: 4;
     padding: .4em .5em; }
     .control-btns .vr-btn .vr-icon {
       opacity: .6;
@@ -258,7 +258,7 @@ nav > ul > li {
       text-align: center; }
       .nav .nav-menu-grid .description div {
         margin: 2em auto;
-        padding: 0 2em;
+        padding: 0 2.5em;
         max-width: 40em;
         opacity: .7;
         position: relative;
@@ -295,9 +295,9 @@ nav > ul > li {
       -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
       transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
       position: relative;
-      width: 30em;
+      width: 25em;
       height: 15em;
-      margin: 1em;
+      margin: .5em;
       border-top: 1px solid rgba(255, 255, 255, 0.3);
       border-right: 1px solid rgba(255, 255, 255, 0.3);
       border-left: 1px solid rgba(255, 255, 255, 0.3);
@@ -418,7 +418,8 @@ nav > ul > li {
 .page-wrap {
   -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
   transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
-  .page-wrap.page-wrap-disable {
+  .page-wrap.page-wrap-disable .content,
+  .page-wrap.page-wrap-disable .bg-img {
     -webkit-filter: blur(3px);
             filter: blur(3px); }
   .page-wrap.loading .bg-overlay {
@@ -603,8 +604,8 @@ nav > ul > li {
   .email {
     font-size: .7em !important; }
   .nav-menu-item {
-    width: 20em !important;
-    height: 11em !important; }
+    width: 18em !important;
+    height: 10em !important; }
   .email-btn,
   .shuffle-bg-btn {
     display: none !important; }

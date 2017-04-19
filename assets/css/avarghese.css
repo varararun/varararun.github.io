@@ -342,12 +342,8 @@ nav > ul > li {
       border-left: 1px solid rgba(255, 255, 255, 0.3);
       border-radius: .3em; }
       .nav .nav-menu-grid a .nav-menu-item:hover .bg-img {
-        -webkit-transform: translateY(0) scale(1.2) !important;
-                transform: translateY(0) scale(1.2) !important;
         opacity: 1; }
       .nav .nav-menu-grid a .nav-menu-item:hover .content {
-        font-size: 1.1em !important;
-        letter-spacing: .6em !important;
         opacity: 1 !important; }
       .nav .nav-menu-grid a .nav-menu-item:hover {
         box-shadow: 0 0 1em 0.1em rgba(0, 0, 0, 0.8); }
@@ -376,19 +372,20 @@ nav > ul > li {
         transition-property: opacity, transform;
         transition-property: opacity, transform, -webkit-transform;
         opacity: 0;
-        -webkit-transform: translateY(10px) scale(1.2);
-                transform: translateY(10px) scale(1.2);
+        -webkit-transform: scale(1.2);
+                transform: scale(1.2);
         -webkit-transform-origin: center;
                 transform-origin: center; }
       .nav .nav-menu-grid a .nav-menu-item .bg-overlay {
         position: absolute;
-        top: 0;
+        bottom: 0;
         left: 0;
         width: 100%;
-        height: 100%;
+        height: 20%;
         -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
         transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
-        opacity: 0; }
+        background: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.7)); }
       .nav .nav-menu-grid a .nav-menu-item .content {
         width: 100%;
         position: absolute;
@@ -403,12 +400,6 @@ nav > ul > li {
         font-size: 1.2em;
         -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
         transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
-      .nav .nav-menu-grid a .nav-menu-item:hover > .content {
-        bottom: 10%; }
-      .nav .nav-menu-grid a .nav-menu-item:hover > .bg-overlay {
-        opacity: 1;
-        background: -webkit-linear-gradient(transparent, transparent, transparent, rgba(0, 0, 0, 0.5), black);
-        background: linear-gradient(transparent, transparent, transparent, rgba(0, 0, 0, 0.5), black); }
   .nav .nav-footer {
     text-align: center;
     opacity: .8;

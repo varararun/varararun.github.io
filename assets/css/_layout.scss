@@ -332,56 +332,46 @@
     }
 }
 
-.bg-img.stackoverflow {
-    background: url("../img/thumbnails/stackoverflow.jpg");
-}
-
-.bg-img.about {
-    background: url("../img/thumbnails/about.jpg");
-}
-
-.bg-img.portfolio {
-    background: url("../img/thumbnails/portfolio.jpg");
-}
-
-.bg-img.linkedin {
-    background: url("../img/thumbnails/linkedin.jpg");
-}
-
-.bg-img.resume {
-    background: url("../img/thumbnails/resume.jpg");
-}
-
-.bg-img.github {
-    background: url("../img/thumbnails/github.jpg");
-}
-
-.bg-img.travel {
-    background: url("../img/thumbnails/travel.jpg");
-}
-
-.bg-img.blog {
-    background: url("../img/thumbnails/blog.jpg");
-}
-
-.bg-img.facebook {
-    background: url("../img/thumbnails/facebook.jpg");
-}
-
-.bg-img.instagram {
-    background: url("../img/thumbnails/instagram.jpg");
-}
-
-.bg-img.behance {
-    background: url("../img/thumbnails/behance.jpg");
-}
-
-.bg-img.dribbble {
-    background: url("../img/thumbnails/dribbble.jpg");
-}
-
-.bg-img.codepen {
-    background: url("../img/thumbnails/codepen.jpg");
+.bg-img {
+    &.stackoverflow {
+        background-image: url("../img/thumbnails/stackoverflow.jpg");
+    }
+    &.about {
+        background-image: url("../img/thumbnails/about.jpg");
+    }
+    &.portfolio {
+        background-image: url("../img/thumbnails/portfolio.jpg");
+    }
+    &.linkedin {
+        background-image: url("../img/thumbnails/linkedin.jpg");
+    }
+    &.resume {
+        background-image: url("../img/thumbnails/resume.jpg");
+    }
+    &.github {
+        background-image: url("../img/thumbnails/github.jpg");
+    }
+    &.travel {
+        background-image: url("../img/thumbnails/travel.jpg");
+    }
+    &.blog {
+        background-image: url("../img/thumbnails/blog.jpg");
+    }
+    &.facebook {
+        background-image: url("../img/thumbnails/facebook.jpg");
+    }
+    &.instagram {
+        background-image: url("../img/thumbnails/instagram.jpg");
+    }
+    &.behance {
+        background-image: url("../img/thumbnails/behance.jpg");
+    }
+    &.dribbble {
+        background-image: url("../img/thumbnails/dribbble.jpg");
+    }
+    &.codepen {
+        background-image: url("../img/thumbnails/codepen.jpg");
+    }
 }
 
 .page-wrap {
@@ -466,7 +456,7 @@
         background-size: cover !important;
         background-repeat: no-repeat !important;
         background-position: center center !important;
-        background: url('../img/triangles.png');
+        background-image: url('../img/triangles.png');
     }
     .content {
         text-align: center;

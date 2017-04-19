@@ -10,14 +10,6 @@ var AV = {
         AV.loadBGEvents();
         console.info('All events loaded.');
     },
-    loadInitialVR: function () {
-        var imgUrl = AV.vrImgList[0];
-        var vrImg = new Image();
-        vrImg.onload = function () {
-            $('.vr-img').attr("src", imgUrl);
-        };
-        vrImg.src = imgUrl;
-    },
     loadInitialBG: function () {
         var imgUrl = 'assets/img/bg/puertorico.jpg';
         var bgUrl = "url('" + imgUrl + "')";
@@ -31,19 +23,9 @@ var AV = {
     loadKeyboardEvents: function () {
         document.onkeydown = function (e) {
             switch (e.keyCode) {
-                case 40:
-                    if ($('nav').hasClass('nav-open')) {
-                        if ($('nav')[0].scrollHeight - $('nav').scrollTop() < $('nav').outerHeight() + 5) {
-                            $('.nav-btn').click();
-                        }
-                    }
-                    break;
                 case 27:
                     if ($('nav').hasClass('nav-open')) {
                         $('.nav-btn').click();
-                    }
-                    else if ($('.bg-vr').hasClass('bg-vr-visible')) {
-                        $('.vr-btn').click();
                     }
                     break;
                 case 8:
@@ -75,7 +57,6 @@ var AV = {
         $('.vr-drag-demo').click(function () {
             $('.vr-drag-demo').removeClass('demo');
         });
-        AV.loadInitialVR();
     },
     loadScrollEvents: function () {
         $('body').bind('mousewheel DOMMouseScroll', function (e) {

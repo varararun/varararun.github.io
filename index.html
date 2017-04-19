@@ -14,38 +14,6 @@
 </head>
 
 <body>
-    <span class="nav-btn animated bounceIn" data-toggle="tooltip" title="More About Me!" data-placement="left">
-        <span class="nav-icon">
-            <i class="fa fa-fw fa-user-circle-o open-btn"></i>
-            <i class="fa fa-fw fa-times-circle-o close-btn"></i>
-        </span>
-    </span>
-    <div class="control-btns">
-        <span class="shuffle-bg-btn animated bounceIn" data-toggle="tooltip" title="Shuffle Background!" data-placement="right">
-            <i class="fa fa-fw fa-retweet"></i>
-        </span>
-        <span class="shuffle-vr-btn animated bounceIn" data-toggle="tooltip" title="Shuffle VR Image!" data-placement="right">
-            <i class="fa fa-fw fa-retweet"></i>
-        </span>
-        <span class="email-btn" data-toggle="tooltip" title="Contact Me!" data-placement="left">
-        <a href="mailto:arunv4700@gmail.com" tabindex="0">
-            <i class="fa fa-fw fa-envelope"></i>
-        </a>
-    </span>
-        <span class="vr-btn animated bounceIn" data-toggle="tooltip" title="Follow Me in VR!" data-placement="right">
-        <span class="vr-icon">
-            <i class="fa fa-fw fa-street-view open-btn"></i>
-            <i class="fa fa-fw fa-times-circle-o close-btn wow bounceIn" data-wow-delay=".3s"></i>
-        </span>
-        </span>
-    </div>
-    <div class="vr-drag-demo">
-        <span class="drag-icon"><i class="fa fa-hand-pointer-o"></i></span>
-        <div class="demo-text">Grab and Drag the Picture to View 360&deg;!</div>
-        <i class="fa fa-angle-left"></i>
-        <i class="fa fa-angle-right"></i>
-        <i class="fa fa-times"></i>
-    </div>
     <nav class="nav">
         <div class="nav-menu-grid">
             <img class="profile" src="assets/img/thumbnails/profile.jpg">
@@ -218,21 +186,52 @@
             </div><span class="copyright">&copy; 2016 by Arun Varghese &nbsp;| <a href="https://github.com/varararun/varararun.github.io"><i class="fa fa-fw fa-github"></i></a></span>
         </div>
     </nav>
-    <section class="page-wrap">
-        <div class="bg-img"></div>
+    <section class="page-wrap loading">
+        <div class="control-btns">
+            <span class="nav-btn animated bounceIn">
+        <span class="nav-icon">
+            <i class="fa fa-fw fa-user-circle-o open-btn"></i>
+            <i class="fa fa-fw fa-times-circle-o close-btn"></i>
+        </span>
+            </span>
+            <span class="shuffle-bg-btn animated bounceIn">
+            <i class="fa fa-fw fa-retweet"></i>
+        </span>
+            <span class="email-btn">
+        <a href="mailto:arunv4700@gmail.com" tabindex="0">
+            <i class="fa fa-fw fa-envelope"></i>
+        </a>
+    </span>
+            <span class="vr-btn animated bounceIn">
+        <span class="vr-icon">
+            <i class="fa fa-fw fa-street-view open-btn"></i>
+            <i class="fa fa-fw fa-times-circle-o close-btn bounceIn"></i>
+        </span>
+            </span>
+        </div>
+        <div class="vr-drag-demo">
+            <span class="drag-icon"><i class="fa fa-hand-pointer-o"></i></span>
+            <div class="demo-text">
+                My Travels in VR!
+                <br> Grab and Drag the Picture to View 360&deg;!</div>
+            <i class="fa fa-angle-left"></i>
+            <i class="fa fa-angle-right"></i>
+            <i class="fa fa-times"></i>
+        </div>
+        <div class="bg-img loading"></div>
         <a-scene class="bg-vr">
             <a-sky src="assets/img/vr/example.jpg" rotation="0 -130 0"></a-sky>
         </a-scene>
-        <div class="bg-overlay wow fadeIn"></div>
+        <div class="bg-overlay fadeIn"></div>
         <div class="bg-pattern"></div>
-        <div class="content wow fadeIn">
+        <div class="content fadeIn">
             <div class="info">
                 <div class="name">
                     <span class="first">ARUN</span> <span class="last">VARGHESE</span>
                 </div>
                 <div class="role">Senior Full Stack Developer</div>
-                <div class="marker wow bounceIn" data-wow-delay=".5s">
-                    <i class="fa fa-fw fa-map-marker" data-toggle="tooltip" title="Where I'm Based!" data-placement="right"></i>
+                <div class="marker bounceIn">
+                    <i class="fa fa-fw fa-map-marker"></i>
                 </div>
                 <div class="location">
                     Dallas, Texas
@@ -240,16 +239,16 @@
             </div>
             <div class="icons">
                 <span>
-                    <a href="http://avarghese.me/resume/" data-toggle="tooltip" title="My Resume" data-placement="left"><i class="fa fa-fw fa-file-text-o social-icon"></i></a>
+                    <a href="http://avarghese.me/resume/"><i class="fa fa-fw fa-file-text-o social-icon"></i></a>
                 </span>
                 <span>
-                    <a href="https://github.com/vararun" data-toggle="tooltip" title="Github" data-placement="top"><i class="fa fa-fw fa-github-square social-icon"></i></a>
+                    <a href="https://github.com/vararun"><i class="fa fa-fw fa-github-square social-icon"></i></a>
                 </span>
                 <span>
-                    <a href="https://www.linkedin.com/in/varghesearun" data-toggle="tooltip" title="LinkedIn" data-placement="top"><i class="fa fa-fw fa-linkedin-square social-icon"></i></a>
+                    <a href="https://www.linkedin.com/in/varghesearun"><i class="fa fa-fw fa-linkedin-square social-icon"></i></a>
                 </span>
                 <span>
-                    <a href="https://codepen.io/avarghese" data-toggle="tooltip" title="Codepen" data-placement="right"><i class="fa fa-fw fa-codepen social-icon"></i></a>
+                    <a href="https://codepen.io/avarghese"><i class="fa fa-fw fa-codepen social-icon"></i></a>
                 </span>
             </div>
             <div class="email">
@@ -259,7 +258,6 @@
     </section>
     <script src="assets/lib/jquery/dist/jquery.min.js"></script>
     <script src="assets/lib/aframe/dist/aframe.min.js"></script>
-    <script src="assets/lib/wow/dist/wow.min.js"></script>
     <script src="assets/js/avarghese.min.js"></script>
     <script>
         AV.initialize();

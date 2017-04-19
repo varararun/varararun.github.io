@@ -160,21 +160,6 @@ nav > ul > li {
       display: inline-block;
       visibility: visible;
       margin-top: .2em; }
-  .control-btns .shuffle-vr-btn {
-    display: none;
-    position: fixed;
-    cursor: pointer;
-    bottom: 0;
-    left: 0;
-    font-size: 2em;
-    z-index: 6;
-    padding: .4em .5em; }
-    .control-btns .shuffle-vr-btn .fa {
-      opacity: .6;
-      -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
-      transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
-      .control-btns .shuffle-vr-btn .fa:hover {
-        opacity: 1; }
   .control-btns .shuffle-bg-btn {
     position: fixed;
     cursor: pointer;
@@ -431,9 +416,23 @@ nav > ul > li {
   background: url("../img/thumbnails/codepen.jpg"); }
 
 .page-wrap {
-  -webkit-transition: 0.5s cubic-bezier(0.83, -0.03, 0.54, 0.99);
-  transition: 0.5s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
+  -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
+  transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
   .page-wrap.page-wrap-disable {
+    -webkit-filter: blur(3px);
+            filter: blur(3px); }
+  .page-wrap.loading .bg-overlay {
+    opacity: 0;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    -webkit-filter: blur(3px);
+            filter: blur(3px); }
+  .page-wrap.loading .content {
+    opacity: 0;
+    -webkit-filter: blur(3px);
+            filter: blur(3px); }
+  .page-wrap.loading .control-btns {
+    opacity: 0;
     -webkit-filter: blur(3px);
             filter: blur(3px); }
   .page-wrap .bg-vr {
@@ -451,7 +450,6 @@ nav > ul > li {
     .page-wrap .bg-vr .a-enter-vr {
       display: none; }
   .page-wrap .bg-img {
-    background: url("../img/bg/puertorico.jpg");
     position: absolute;
     top: 0;
     left: 0;
@@ -464,6 +462,12 @@ nav > ul > li {
     background-position: center center !important;
     -webkit-transition: 0.5s cubic-bezier(0.83, -0.03, 0.54, 0.99);
     transition: 0.5s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
+    .page-wrap .bg-img.loading {
+      opacity: 0;
+      -webkit-transform: scale(1.2);
+              transform: scale(1.2);
+      -webkit-filter: blur(3px);
+              filter: blur(3px); }
   .page-wrap .bg-overlay {
     position: absolute;
     top: 0;
@@ -471,7 +475,9 @@ nav > ul > li {
     width: 100%;
     height: 100%;
     background: -webkit-radial-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9));
-    background: radial-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)); }
+    background: radial-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9));
+    -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
+    transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
     .page-wrap .bg-overlay:after {
       content: '';
       position: absolute;
@@ -599,17 +605,9 @@ nav > ul > li {
   .nav-menu-item {
     width: 20em !important;
     height: 11em !important; }
-  .tooltip,
   .email-btn,
-  .shuffle-bg-btn,
-  .shuffle-vr-btn {
+  .shuffle-bg-btn {
     display: none !important; }
-  .page-wrap > .bg-img {
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-    background-position: center center !important;
-    -webkit-transition: 0s;
-    transition: 0s; }
   .icons,
   .email {
     visibility: visible !important; }

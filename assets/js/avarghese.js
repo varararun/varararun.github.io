@@ -3,13 +3,23 @@ var AV = {
         AV.loadEvents();
     },
     loadEvents: function () {
-        new WOW().init();
         AV.loadNavEvents();
         AV.loadBGEvents();
-        AV.loadTooltips();
         AV.loadVREvents();
         AV.loadKeyboardEvents();
+        $('.page-wrap').removeClass('loading');
+        AV.loadInitialBG();
         console.info('All events loaded.');
+    },
+    loadInitialBG: function () {
+        var imgUrl = AV.bgImgList[~~(Math.random() * AV.bgImgList.length)];
+        var bgUrl = "url('" + imgUrl + "')";
+        var bgImg = new Image();
+        bgImg.onload = function () {
+            $('.page-wrap>.bg-img').css('background-image', bgUrl);
+            $('.page-wrap>.bg-img').removeClass('loading');
+        };
+        bgImg.src = imgUrl;
     },
     loadKeyboardEvents: function () {
         document.onkeydown = function (e) {
@@ -73,9 +83,6 @@ var AV = {
             }
         });
     },
-    loadTooltips: function () {
-        // $('[data-toggle="tooltip"]').tooltip();
-    },
     loadBGEvents: function () {
         $('.shuffle-bg-btn').click(function () {
             AV.loadNextBg();
@@ -96,7 +103,7 @@ var AV = {
         $('.shuffle-bg-btn').hide();
         var bgImg = new Image();
         bgImg.onload = function () {
-            $('.page-wrap>.bg-img').css('background', bgUrl);
+            $('.page-wrap>.bg-img').css('background-image', bgUrl);
             $('.shuffle-bg-btn').show();
         };
         bgImg.src = imgUrl;
@@ -130,21 +137,6 @@ var AV = {
         $('.nav-menu-item').on('mousemove', AV.panImage);
         $('.open-nav-btn').click(function () {
             $('.nav-btn').click();
-        });
-    },
-    loadMusicBtnEvents: function () {
-        $('.music-btn').click(function () {
-            $('.music-btn').toggleClass('music-play');
-            $('.play-btn,.pause-btn').addClass('animated bounceIn');
-            try {
-                if ($('.music-btn').hasClass('music-play')) {
-                    $('#bg-audio').play();
-                }
-                else {
-                    $('#bg-audio').pause();
-                }
-            }
-            catch (err) { }
         });
     },
     panImage: function (e) {

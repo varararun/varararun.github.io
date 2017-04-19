@@ -117,23 +117,6 @@
             margin-top: .2em;
         }
     }
-    .shuffle-vr-btn {
-        display: none;
-        position: fixed;
-        cursor: pointer;
-        bottom: 0;
-        left: 0;
-        font-size: 2em;
-        z-index: 6;
-        padding: .4em .5em;
-        .fa {
-            opacity: .6;
-            transition: $transition-short;
-            &:hover {
-                opacity: 1;
-            }
-        }
-    }
     .shuffle-bg-btn {
         position: fixed;
         cursor: pointer;
@@ -402,8 +385,21 @@
 }
 
 .page-wrap {
-    transition: $transition-long;
+    transition: $transition-short;
     &.page-wrap-disable {
+        filter: blur(3px);
+    }
+    &.loading .bg-overlay {
+        opacity: 0;
+        transform: scale(1.2);
+        filter: blur(3px);
+    }
+    &.loading .content {
+        opacity: 0;
+        filter: blur(3px);
+    }
+    &.loading .control-btns {
+        opacity: 0;
         filter: blur(3px);
     }
     .bg-vr {
@@ -424,7 +420,6 @@
         }
     }
     .bg-img {
-        background: url("../img/bg/puertorico.jpg");
         position: absolute;
         top: 0;
         left: 0;
@@ -435,6 +430,11 @@
         background-repeat: no-repeat !important;
         background-position: center center !important;
         transition: $transition-long;
+        &.loading {
+            opacity: 0;
+            transform: scale(1.2);
+            filter: blur(3px);
+        }
     }
     .bg-overlay {
         position: absolute;
@@ -443,6 +443,7 @@
         width: 100%;
         height: 100%;
         background: radial-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9));
+        transition: $transition-short;
         &:after {
             content: '';
             position: absolute;

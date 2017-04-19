@@ -3,13 +3,25 @@ let AV = {
     AV.loadEvents();
   },
   loadEvents: () => {
-    new WOW().init();
     AV.loadNavEvents();
     AV.loadBGEvents();
-    AV.loadTooltips();
     AV.loadVREvents();
     AV.loadKeyboardEvents();
+    $('.page-wrap').removeClass('loading');
+    AV.loadInitialBG();
     console.info('All events loaded.');
+  },
+  loadInitialBG: () => {
+    let imgUrl = AV.bgImgList[~~(Math.random() * AV.bgImgList.length)];
+    let bgUrl = `url('${imgUrl}')`;
+    let bgImg = new Image();
+
+    bgImg.onload = () => {
+      $('.page-wrap>.bg-img').css('background-image', bgUrl);
+
+      $('.page-wrap>.bg-img').removeClass('loading');
+    };
+    bgImg.src = imgUrl;
   },
   loadKeyboardEvents: () => {
     document.onkeydown = (e) => {
@@ -70,9 +82,6 @@ let AV = {
       }
     });
   },
-  loadTooltips: () => {
-    // $('[data-toggle="tooltip"]').tooltip();
-  },
   loadBGEvents: () => {
     $('.shuffle-bg-btn').click(() => {
       AV.loadNextBg();
@@ -93,7 +102,7 @@ let AV = {
     $('.shuffle-bg-btn').hide();
     let bgImg = new Image();
     bgImg.onload = () => {
-      $('.page-wrap>.bg-img').css('background', bgUrl);
+      $('.page-wrap>.bg-img').css('background-image', bgUrl);
       $('.shuffle-bg-btn').show();
     };
     bgImg.src = imgUrl;
@@ -127,19 +136,6 @@ let AV = {
     $('.nav-menu-item').on('mousemove', AV.panImage);
     $('.open-nav-btn').click(() => {
       $('.nav-btn').click();
-    });
-  },
-  loadMusicBtnEvents: () => {
-    $('.music-btn').click(() => {
-      $('.music-btn').toggleClass('music-play');
-      $('.play-btn,.pause-btn').addClass('animated bounceIn');
-      try {
-        if ($('.music-btn').hasClass('music-play')) {
-          $('#bg-audio').play();
-        } else {
-          $('#bg-audio').pause();
-        }
-      } catch (err) { }
     });
   },
   panImage: (e) => {

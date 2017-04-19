@@ -216,6 +216,7 @@
 
 .nav {
     opacity: 0;
+    filter: blur(5px);
     visibility: hidden;
     position: fixed;
     padding: 0.2em .4em;
@@ -225,7 +226,13 @@
     background: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, .3), rgba(0, 0, 0, 1));
     transition: $transition-short;
     z-index: 6;
-    transform: translateY(10%);
+    transform: scale(1.1);
+    &.nav-open {
+        visibility: visible;
+        opacity: 1;
+        transform: initial;
+        filter: blur(0);
+    }
     .nav-menu-grid {
         display: flex;
         flex-wrap: wrap;
@@ -292,6 +299,14 @@
                 border-right: 1px solid rgba(255, 255, 255, 0.3);
                 border-left: 1px solid rgba(255, 255, 255, 0.3);
                 border-radius: .3em;
+                &:hover .bg-img {
+                    transform: translateY(0) scale(1.2) !important;
+                }
+                &:hover .content {
+                    font-size: 1.1em !important;
+                    letter-spacing: .6em !important;
+                    opacity: 1 !important;
+                }
                 .icon-overlay {
                     width: 100%;
                     position: absolute;
@@ -429,6 +444,16 @@
     .bg-vr {
         opacity: 0;
         transition: $transition-short;
+        &.bg-vr-loading {
+            filter: brightness(0);
+        }
+        &.bg-vr-visible {
+            opacity: 1 !important;
+            z-index: 5;
+        }
+        &.bg-vr-visible .a-enter-vr {
+            opacity: 1;
+        }
         .a-enter-vr {
             display: none;
         }
@@ -564,7 +589,7 @@
         }
         &.content-hidden {
             opacity: 0;
-            transform: translate(-50%, -60%);
+            transform: translate(-50%, -50%) scale(.8);
         }
     }
 }

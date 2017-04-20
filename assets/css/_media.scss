@@ -38,12 +38,12 @@
         }
     }
     .icons {
-        display: initial;
+        display: initial !important;
         font-size: 1.5em !important;
-        letter-spacing: .2em !important;
+        margin-left: -.5em;
     }
     .email {
-        display: initial;
+        display: initial !important;
         font-size: .7em !important;
     }
     .nav-menu-item {
@@ -61,10 +61,6 @@
         .bg-pattern {
             background-image: none !important;
         }
-    }
-    .icons,
-    .email {
-        visibility: visible !important;
     }
     .bg-vr.bg-vr-visible {
         z-index: 0!important;

@@ -125,7 +125,7 @@ nav > ul > li {
     right: 0;
     font-size: 2em;
     z-index: 4;
-    padding: .4em .5em; }
+    padding: .5em .5em; }
     .control-btns .email-btn:hover {
       opacity: 1; }
   .control-btns .vr-btn {
@@ -250,7 +250,7 @@ nav > ul > li {
       width: 10em;
       height: 10em;
       border-radius: 10em;
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
       transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
       -webkit-filter: grayscale(100%);
@@ -475,7 +475,7 @@ nav > ul > li {
       right: 10px;
       bottom: 10px;
       left: 10px;
-      border: 1px solid rgba(255, 255, 255, 0.3); }
+      border: 1px solid rgba(255, 255, 255, 0.2); }
   .page-wrap .bg-pattern {
     opacity: .04 !important;
     position: absolute;
@@ -487,8 +487,7 @@ nav > ul > li {
             transform-origin: center;
     background-size: cover !important;
     background-repeat: no-repeat !important;
-    background-position: center center !important;
-    background-image: url("../img/triangles.png"); }
+    background-position: center center !important; }
   .page-wrap .content {
     text-align: center;
     position: absolute;
@@ -613,11 +612,11 @@ nav > ul > li {
     .page-wrap > .content .name {
       font-size: 2em !important; }
   .icons {
-    display: initial;
+    display: initial !important;
     font-size: 1.5em !important;
-    letter-spacing: .2em !important; }
+    margin-left: -.5em; }
   .email {
-    display: initial;
+    display: initial !important;
     font-size: .7em !important; }
   .nav-menu-item {
     width: 15em !important;
@@ -630,9 +629,6 @@ nav > ul > li {
       font-size: 3em !important; }
     .nav-menu-item .bg-pattern {
       background-image: none !important; }
-  .icons,
-  .email {
-    visibility: visible !important; }
   .bg-vr.bg-vr-visible {
     z-index: 0 !important; }
   .vr-drag-demo {

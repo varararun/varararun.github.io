@@ -135,9 +135,11 @@ var AV = {
         'assets/img/bg/manava.jpg',
         'assets/img/bg/moorea.jpg',
         'assets/img/bg/moorealagoon.jpg',
+        'assets/img/bg/moorearestaurant.jpg',
         'assets/img/bg/twobays.jpg',
         'assets/img/bg/santhiya.jpg',
-        'assets/img/bg/sanfrancisco.jpg'
+        'assets/img/bg/sanfrancisco.jpg',
+        'assets/img/bg/segovialedge.jpg'
     ],
     vrImgList: [
         'assets/img/vr/example.jpg'

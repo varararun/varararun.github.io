@@ -204,8 +204,6 @@ nav > ul > li {
 
 .nav {
   opacity: 0;
-  -webkit-filter: blur(5px);
-          filter: blur(5px);
   visibility: hidden;
   position: fixed;
   padding: 0.2em .4em;
@@ -216,9 +214,7 @@ nav > ul > li {
   background: radial-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5), black);
   -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
   transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
-  z-index: 7;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1); }
+  z-index: 7; }
   .nav.nav-open {
     visibility: visible;
     opacity: 1;
@@ -414,6 +410,11 @@ nav > ul > li {
             transform: scale(1.2);
     -webkit-filter: blur(3px);
             filter: blur(3px); }
+  .page-wrap.loading .bg-pattern {
+    opacity: 0;
+    -webkit-filter: blur(3px);
+            filter: blur(3px);
+    background-size: 3em, cover; }
   .page-wrap.loading .content {
     opacity: 0;
     -webkit-filter: blur(3px);
@@ -451,8 +452,8 @@ nav > ul > li {
     transition: 0.5s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
     .page-wrap .bg-img.loading {
       opacity: 0;
-      -webkit-transform: scale(1.2);
-              transform: scale(1.2);
+      -webkit-transform: scale(1.1);
+              transform: scale(1.1);
       -webkit-filter: blur(3px);
               filter: blur(3px); }
   .page-wrap .bg-overlay {
@@ -474,17 +475,16 @@ nav > ul > li {
       left: 10px;
       border: 1px solid rgba(255, 255, 255, 0.2); }
   .page-wrap .bg-pattern {
-    opacity: .04 !important;
+    opacity: .1 !important;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    -webkit-transform-origin: center;
-            transform-origin: center;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-    background-position: center center !important; }
+    background-size: 2em, cover !important;
+    background-position: center center !important;
+    -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
+    transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
   .page-wrap .content {
     cursor: pointer;
     text-align: center;

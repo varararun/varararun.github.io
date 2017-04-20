@@ -16,8 +16,8 @@ let AV = {
     let bgImg = new Image();
     bgImg.onload = () => {
       $('.page-wrap>.bg-img').css('background-image', bgUrl);
-
       $('.page-wrap>.bg-img').removeClass('loading');
+      $('.shuffle-bg-btn>i').toggleClass('fa-cog fa-spin').toggleClass('fa-retweet');
     };
     bgImg.src = imgUrl;
   },
@@ -67,19 +67,24 @@ let AV = {
     AV.loadInitialBG();
   },
   loadNextBg: () => {
+    if ($('.shuffle-bg-btn>i').hasClass('fa-cog')){
+      return true;
+    }
     let imgUrl = AV.bgImgList[~~(Math.random() * AV.bgImgList.length)];
     let bgUrl = `url('${imgUrl}')`;
     if ($('.shuffle-bg-btn').css('display') === 'none') {
-      return;
+      return true;
     }
     if ($('.page-wrap>.bg-img').attr('src') === imgUrl) {
-      return;
+      return true;
     }
-    $('.shuffle-bg-btn').hide();
+    $('.shuffle-bg-btn>i').toggleClass('fa-retweet').toggleClass('fa-cog fa-spin');
     let bgImg = new Image();
     bgImg.onload = () => {
       $('.page-wrap>.bg-img').css('background-image', bgUrl);
-      $('.shuffle-bg-btn').show();
+      setTimeout(() => {
+        $('.shuffle-bg-btn>i').toggleClass('fa-retweet').toggleClass('fa-cog fa-spin');
+      }, 200)
     };
     bgImg.src = imgUrl;
   },

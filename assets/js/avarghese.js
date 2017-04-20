@@ -17,6 +17,7 @@ var AV = {
         bgImg.onload = function () {
             $('.page-wrap>.bg-img').css('background-image', bgUrl);
             $('.page-wrap>.bg-img').removeClass('loading');
+            $('.shuffle-bg-btn>i').toggleClass('fa-cog fa-spin').toggleClass('fa-retweet');
         };
         bgImg.src = imgUrl;
     },
@@ -68,19 +69,24 @@ var AV = {
         AV.loadInitialBG();
     },
     loadNextBg: function () {
+        if ($('.shuffle-bg-btn>i').hasClass('fa-cog')) {
+            return true;
+        }
         var imgUrl = AV.bgImgList[~~(Math.random() * AV.bgImgList.length)];
         var bgUrl = "url('" + imgUrl + "')";
         if ($('.shuffle-bg-btn').css('display') === 'none') {
-            return;
+            return true;
         }
         if ($('.page-wrap>.bg-img').attr('src') === imgUrl) {
-            return;
+            return true;
         }
-        $('.shuffle-bg-btn').hide();
+        $('.shuffle-bg-btn>i').toggleClass('fa-retweet').toggleClass('fa-cog fa-spin');
         var bgImg = new Image();
         bgImg.onload = function () {
             $('.page-wrap>.bg-img').css('background-image', bgUrl);
-            $('.shuffle-bg-btn').show();
+            setTimeout(function () {
+                $('.shuffle-bg-btn>i').toggleClass('fa-retweet').toggleClass('fa-cog fa-spin');
+            }, 200);
         };
         bgImg.src = imgUrl;
     },

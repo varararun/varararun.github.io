@@ -1,6 +1,12 @@
-@media handheld,
-(max-width: 640px),
-(max-height: 400px) {
+@media only screen and (max-width: 400px) {
+    /* phones */
+    .email-btn,
+    .shuffle-bg-btn,
+    .vr-drag-demo,
+    .a-enter-vr,
+    .content-hidden {
+        display: none !important;
+    }
     .page-wrap>.content {
         top: 1em !important;
         left: 50% !important;
@@ -15,15 +21,20 @@
         font-size: .7em !important;
     }
     .nav-menu-item {
-        width: 18em !important;
-        height: 10em !important;
+        width: 15em !important;
+        height: 8em !important;
+        .content {
+            font-size: .9em !important;
+        }
         .bg-img {
             background-image: none !important;
         }
-    }
-    .email-btn,
-    .shuffle-bg-btn {
-        display: none !important;
+        .icon-overlay {
+            font-size: 3em !important;
+        }
+        .bg-pattern {
+            background-image: none !important;
+        }
     }
     .icons,
     .email {
@@ -33,19 +44,6 @@
         z-index: 0!important;
     }
     .vr-drag-demo {
-        display: none !important;
         background: black !important;
-    }
-    .a-enter-vr {
-        display: none;
-    }
-    .content-hidden {
-        display: none !important;
-    }
-    .icon-overlay {
-        font-size: 5em !important;
-    }
-    .bg-pattern {
-        background-image: none !important;
     }
 }

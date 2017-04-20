@@ -243,7 +243,9 @@ nav > ul > li {
             align-items: stretch;
     -ms-flex-line-pack: stretch;
         align-content: stretch;
-    padding: 4em 0 1em; }
+    padding: 4em 0 1em;
+    max-width: 80em;
+    margin: auto; }
     .nav .nav-menu-grid .profile {
       width: 10em;
       height: 10em;
@@ -295,8 +297,8 @@ nav > ul > li {
       -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
       transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
       position: relative;
-      width: 25em;
-      height: 15em;
+      width: 22em;
+      height: 12em;
       margin: .5em;
       border-top: 1px solid rgba(255, 255, 255, 0.3);
       border-right: 1px solid rgba(255, 255, 255, 0.3);
@@ -578,7 +580,14 @@ nav > ul > li {
     margin: auto !important;
     z-index: 3 !important; }
 
-@media handheld, (max-width: 640px), (max-height: 400px) {
+@media only screen and (max-width: 400px) {
+  /* phones */
+  .email-btn,
+  .shuffle-bg-btn,
+  .vr-drag-demo,
+  .a-enter-vr,
+  .content-hidden {
+    display: none !important; }
   .page-wrap > .content {
     top: 1em !important;
     left: 50% !important;
@@ -591,29 +600,23 @@ nav > ul > li {
   .email {
     font-size: .7em !important; }
   .nav-menu-item {
-    width: 18em !important;
-    height: 10em !important; }
+    width: 15em !important;
+    height: 8em !important; }
+    .nav-menu-item .content {
+      font-size: .9em !important; }
     .nav-menu-item .bg-img {
       background-image: none !important; }
-  .email-btn,
-  .shuffle-bg-btn {
-    display: none !important; }
+    .nav-menu-item .icon-overlay {
+      font-size: 3em !important; }
+    .nav-menu-item .bg-pattern {
+      background-image: none !important; }
   .icons,
   .email {
     visibility: visible !important; }
   .bg-vr.bg-vr-visible {
     z-index: 0 !important; }
   .vr-drag-demo {
-    display: none !important;
-    background: black !important; }
-  .a-enter-vr {
-    display: none; }
-  .content-hidden {
-    display: none !important; }
-  .icon-overlay {
-    font-size: 5em !important; }
-  .bg-pattern {
-    background-image: none !important; } }
+    background: black !important; } }
 
 @-webkit-keyframes drag-demo {
   0% {

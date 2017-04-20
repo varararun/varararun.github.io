@@ -196,6 +196,8 @@
         align-items: stretch;
         align-content: stretch;
         padding: 4em 0 1em;
+        max-width: 80em;
+        margin: auto;
         .profile {
             width: 10em;
             height: 10em;
@@ -248,8 +250,8 @@
                 text-align: center;
                 transition: $transition-short;
                 position: relative;
-                width: 25em;
-                height: 15em;
+                width: 22em;
+                height: 12em;
                 margin: .5em;
                 border-top: 1px solid rgba(255, 255, 255, 0.3);
                 border-right: 1px solid rgba(255, 255, 255, 0.3);

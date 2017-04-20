@@ -337,6 +337,32 @@ nav > ul > li {
                 transform: scale(1.2);
         -webkit-transform-origin: center;
                 transform-origin: center; }
+        .nav .nav-menu-grid a .nav-menu-item .bg-img.stackoverflow {
+          background-image: url("../img/thumbnails/stackoverflow.jpg"); }
+        .nav .nav-menu-grid a .nav-menu-item .bg-img.about {
+          background-image: url("../img/thumbnails/about.jpg"); }
+        .nav .nav-menu-grid a .nav-menu-item .bg-img.portfolio {
+          background-image: url("../img/thumbnails/portfolio.jpg"); }
+        .nav .nav-menu-grid a .nav-menu-item .bg-img.linkedin {
+          background-image: url("../img/thumbnails/linkedin.jpg"); }
+        .nav .nav-menu-grid a .nav-menu-item .bg-img.resume {
+          background-image: url("../img/thumbnails/resume.jpg"); }
+        .nav .nav-menu-grid a .nav-menu-item .bg-img.github {
+          background-image: url("../img/thumbnails/github.jpg"); }
+        .nav .nav-menu-grid a .nav-menu-item .bg-img.travel {
+          background-image: url("../img/thumbnails/travel.jpg"); }
+        .nav .nav-menu-grid a .nav-menu-item .bg-img.blog {
+          background-image: url("../img/thumbnails/blog.jpg"); }
+        .nav .nav-menu-grid a .nav-menu-item .bg-img.facebook {
+          background-image: url("../img/thumbnails/facebook.jpg"); }
+        .nav .nav-menu-grid a .nav-menu-item .bg-img.instagram {
+          background-image: url("../img/thumbnails/instagram.jpg"); }
+        .nav .nav-menu-grid a .nav-menu-item .bg-img.behance {
+          background-image: url("../img/thumbnails/behance.jpg"); }
+        .nav .nav-menu-grid a .nav-menu-item .bg-img.dribbble {
+          background-image: url("../img/thumbnails/dribbble.jpg"); }
+        .nav .nav-menu-grid a .nav-menu-item .bg-img.codepen {
+          background-image: url("../img/thumbnails/codepen.jpg"); }
       .nav .nav-menu-grid a .nav-menu-item .bg-overlay {
         position: absolute;
         bottom: 0;
@@ -375,45 +401,6 @@ nav > ul > li {
     .nav .nav-footer .copyright {
       font-size: .9em;
       text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.7); }
-
-.bg-img_.stackoverflow {
-  background-image: url("../img/thumbnails/stackoverflow.jpg"); }
-
-.bg-img_.about {
-  background-image: url("../img/thumbnails/about.jpg"); }
-
-.bg-img_.portfolio {
-  background-image: url("../img/thumbnails/portfolio.jpg"); }
-
-.bg-img_.linkedin {
-  background-image: url("../img/thumbnails/linkedin.jpg"); }
-
-.bg-img_.resume {
-  background-image: url("../img/thumbnails/resume.jpg"); }
-
-.bg-img_.github {
-  background-image: url("../img/thumbnails/github.jpg"); }
-
-.bg-img_.travel {
-  background-image: url("../img/thumbnails/travel.jpg"); }
-
-.bg-img_.blog {
-  background-image: url("../img/thumbnails/blog.jpg"); }
-
-.bg-img_.facebook {
-  background-image: url("../img/thumbnails/facebook.jpg"); }
-
-.bg-img_.instagram {
-  background-image: url("../img/thumbnails/instagram.jpg"); }
-
-.bg-img_.behance {
-  background-image: url("../img/thumbnails/behance.jpg"); }
-
-.bg-img_.dribbble {
-  background-image: url("../img/thumbnails/dribbble.jpg"); }
-
-.bg-img_.codepen {
-  background-image: url("../img/thumbnails/codepen.jpg"); }
 
 .page-wrap {
   -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
@@ -606,6 +593,8 @@ nav > ul > li {
   .nav-menu-item {
     width: 18em !important;
     height: 10em !important; }
+    .nav-menu-item .bg-img {
+      background-image: none !important; }
   .email-btn,
   .shuffle-bg-btn {
     display: none !important; }

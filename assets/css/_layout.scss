@@ -287,6 +287,45 @@
                     opacity: 0;
                     transform: scale(1.2);
                     transform-origin: center;
+                    &.stackoverflow {
+                        background-image: url("../img/thumbnails/stackoverflow.jpg");
+                    }
+                    &.about {
+                        background-image: url("../img/thumbnails/about.jpg");
+                    }
+                    &.portfolio {
+                        background-image: url("../img/thumbnails/portfolio.jpg");
+                    }
+                    &.linkedin {
+                        background-image: url("../img/thumbnails/linkedin.jpg");
+                    }
+                    &.resume {
+                        background-image: url("../img/thumbnails/resume.jpg");
+                    }
+                    &.github {
+                        background-image: url("../img/thumbnails/github.jpg");
+                    }
+                    &.travel {
+                        background-image: url("../img/thumbnails/travel.jpg");
+                    }
+                    &.blog {
+                        background-image: url("../img/thumbnails/blog.jpg");
+                    }
+                    &.facebook {
+                        background-image: url("../img/thumbnails/facebook.jpg");
+                    }
+                    &.instagram {
+                        background-image: url("../img/thumbnails/instagram.jpg");
+                    }
+                    &.behance {
+                        background-image: url("../img/thumbnails/behance.jpg");
+                    }
+                    &.dribbble {
+                        background-image: url("../img/thumbnails/dribbble.jpg");
+                    }
+                    &.codepen {
+                        background-image: url("../img/thumbnails/codepen.jpg");
+                    }
                 }
                 .bg-overlay {
                     position: absolute;
@@ -329,48 +368,6 @@
             font-size: .9em;
             text-shadow: $text-shadow;
         }
-    }
-}
-
-.bg-img_ {
-    &.stackoverflow {
-        background-image: url("../img/thumbnails/stackoverflow.jpg");
-    }
-    &.about {
-        background-image: url("../img/thumbnails/about.jpg");
-    }
-    &.portfolio {
-        background-image: url("../img/thumbnails/portfolio.jpg");
-    }
-    &.linkedin {
-        background-image: url("../img/thumbnails/linkedin.jpg");
-    }
-    &.resume {
-        background-image: url("../img/thumbnails/resume.jpg");
-    }
-    &.github {
-        background-image: url("../img/thumbnails/github.jpg");
-    }
-    &.travel {
-        background-image: url("../img/thumbnails/travel.jpg");
-    }
-    &.blog {
-        background-image: url("../img/thumbnails/blog.jpg");
-    }
-    &.facebook {
-        background-image: url("../img/thumbnails/facebook.jpg");
-    }
-    &.instagram {
-        background-image: url("../img/thumbnails/instagram.jpg");
-    }
-    &.behance {
-        background-image: url("../img/thumbnails/behance.jpg");
-    }
-    &.dribbble {
-        background-image: url("../img/thumbnails/dribbble.jpg");
-    }
-    &.codepen {
-        background-image: url("../img/thumbnails/codepen.jpg");
     }
 }
 

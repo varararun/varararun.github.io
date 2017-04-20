@@ -17,6 +17,9 @@
     .nav-menu-item {
         width: 18em !important;
         height: 10em !important;
+        .bg-img {
+            background-image: none !important;
+        }
     }
     .email-btn,
     .shuffle-bg-btn {

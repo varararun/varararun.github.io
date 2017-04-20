@@ -500,7 +500,8 @@ nav > ul > li {
     overflow-y: hidden;
     padding: 2em 0;
     -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
-    transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
+    transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
+    width: 100%; }
     .page-wrap .content .info .name {
       text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.7);
       font-family: "Nothing You Could Do", cursive !important;
@@ -540,7 +541,7 @@ nav > ul > li {
       letter-spacing: .3em;
       margin-bottom: 1.5em; }
     .page-wrap .content .icons {
-      visibility: hidden;
+      display: none;
       padding: .5em;
       font-size: 1.5em;
       letter-spacing: .5em; }
@@ -552,7 +553,7 @@ nav > ul > li {
         .page-wrap .content .icons span .fa:hover {
           opacity: 1; }
     .page-wrap .content .email {
-      visibility: hidden;
+      display: none;
       margin: .3em 0;
       text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.7);
       font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
@@ -580,6 +581,19 @@ nav > ul > li {
     margin: auto !important;
     z-index: 3 !important; }
 
+@media only screen and (min-width: 400px) and (max-width: 1100px) {
+  .nav-menu-item {
+    width: 15em !important;
+    height: 8em !important; }
+    .nav-menu-item .content {
+      font-size: .9em !important; }
+    .nav-menu-item .bg-img {
+      background-image: none !important; }
+    .nav-menu-item .icon-overlay {
+      font-size: 3em !important; }
+    .nav-menu-item .bg-pattern {
+      background-image: none !important; } }
+
 @media only screen and (max-width: 400px) {
   /* phones */
   .email-btn,
@@ -589,15 +603,21 @@ nav > ul > li {
   .content-hidden {
     display: none !important; }
   .page-wrap > .content {
-    top: 1em !important;
+    top: 20% !important;
     left: 50% !important;
     -webkit-transform: translate(-50%, 0) !important;
             transform: translate(-50%, 0) !important;
-    overflow-y: scroll !important; }
+    overflow-y: scroll !important;
+    font-size: 1em !important;
+    max-width: 20em !important; }
+    .page-wrap > .content .name {
+      font-size: 2em !important; }
   .icons {
+    display: initial;
     font-size: 1.5em !important;
     letter-spacing: .2em !important; }
   .email {
+    display: initial;
     font-size: .7em !important; }
   .nav-menu-item {
     width: 15em !important;

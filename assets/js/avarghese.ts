@@ -72,13 +72,13 @@ let AV = {
     });
     setInterval(() => {
       AV.loadNextBg();
-    }, 10000);
+    }, 20000);
     AV.loadInitialBG();
   },
   loadNextBg: () => {
     let imgUrl = AV.bgImgList[~~(Math.random() * AV.bgImgList.length)];
     let bgUrl = `url('${imgUrl}')`;
-    if ($('.email-btn').css('display') === 'none') {
+    if ($('.shuffle-bg-btn').css('display') === 'none') {
       return;
     }
     if ($('.page-wrap>.bg-img').attr('src') === imgUrl) {

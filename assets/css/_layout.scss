@@ -467,6 +467,7 @@
         overflow-y: hidden;
         padding: 2em 0;
         transition: $transition-short;
+        width: 100%;
         .info {
             .name {
                 text-shadow: $text-shadow;
@@ -514,7 +515,7 @@
             }
         }
         .icons {
-            visibility: hidden;
+            display: none;
             padding: .5em;
             font-size: 1.5em;
             letter-spacing: .5em;
@@ -530,7 +531,7 @@
             }
         }
         .email {
-            visibility: hidden;
+            display: none;
             margin: .3em 0;
             text-shadow: $text-shadow;
             font-family: $font-family-1;

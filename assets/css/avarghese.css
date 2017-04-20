@@ -622,7 +622,9 @@ nav > ul > li {
   .content-hidden {
     display: none !important; }
   .icon-overlay {
-    font-size: 5em !important; } }
+    font-size: 5em !important; }
+  .bg-pattern {
+    background-image: none !important; } }
 
 @-webkit-keyframes drag-demo {
   0% {

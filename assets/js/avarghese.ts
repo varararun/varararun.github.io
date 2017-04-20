@@ -57,15 +57,6 @@ let AV = {
       $('.vr-drag-demo').removeClass('demo');
     });
   },
-  loadScrollEvents: () => {
-    $('body').bind('mousewheel DOMMouseScroll', (e) => {
-      let delta = ((<WheelEvent>e.originalEvent).wheelDelta || -(<WheelEvent>e.originalEvent).detail);
-      let conditions = delta < 0 && !$('.nav').hasClass('nav-open') && ($('.page-wrap>.content')[0].scrollHeight - $('.page-wrap>.content').scrollTop() === $('.page-wrap>.content').outerHeight());
-      if (conditions) {
-        $('.nav-btn').click();
-      }
-    });
-  },
   loadBGEvents: () => {
     $('.shuffle-bg-btn').click(() => {
       AV.loadNextBg();

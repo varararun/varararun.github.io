@@ -58,15 +58,6 @@ var AV = {
             $('.vr-drag-demo').removeClass('demo');
         });
     },
-    loadScrollEvents: function () {
-        $('body').bind('mousewheel DOMMouseScroll', function (e) {
-            var delta = (e.originalEvent.wheelDelta || -e.originalEvent.detail);
-            var conditions = delta < 0 && !$('.nav').hasClass('nav-open') && ($('.page-wrap>.content')[0].scrollHeight - $('.page-wrap>.content').scrollTop() === $('.page-wrap>.content').outerHeight());
-            if (conditions) {
-                $('.nav-btn').click();
-            }
-        });
-    },
     loadBGEvents: function () {
         $('.shuffle-bg-btn').click(function () {
             AV.loadNextBg();

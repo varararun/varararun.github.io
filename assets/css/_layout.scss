@@ -1,11 +1,3 @@
-.tooltip {
-    z-index: 10;
-}
-
-.tooltip.top {
-    margin-left: -.5em !important;
-}
-
 .vr-drag-demo {
     opacity: 0;
     display: none;
@@ -458,6 +450,7 @@
         // background-image: url('../img/triangles.png');
     }
     .content {
+        cursor: pointer;
         text-align: center;
         position: absolute;
         transform: translate(-50%, -50%);
@@ -469,6 +462,7 @@
         transition: $transition-short;
         width: 100%;
         .info {
+            margin-bottom: 1.5em;
             .name {
                 text-shadow: $text-shadow;
                 font-family: $font-family-2;
@@ -482,22 +476,6 @@
                 letter-spacing: .4em;
                 text-shadow: $text-shadow;
                 font-family: $font-family-1;
-            }
-            .hashtags {
-                text-shadow: $text-shadow;
-                font-family: $font-family-1;
-                font-weight: 400;
-                font-size: 1em;
-                letter-spacing: 0.3em;
-                min-height: 1.5em;
-                height: 1.5em;
-                width: 100%;
-                margin-bottom: 2.5em;
-                .typed-hashtags {
-                    text-align: center;
-                    margin: 0 auto;
-                    max-width: 40em;
-                }
             }
             .marker {
                 text-shadow: $text-shadow;

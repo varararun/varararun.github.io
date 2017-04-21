@@ -308,7 +308,7 @@ nav > ul > li {
         position: absolute;
         top: 50%;
         color: white;
-        font-size: 8em;
+        font-size: 6.5em;
         -webkit-transform: translate(0, -50%);
                 transform: translate(0, -50%);
         -webkit-filter: blur(0.02em);
@@ -386,7 +386,8 @@ nav > ul > li {
     text-align: center;
     opacity: .8;
     letter-spacing: .2em;
-    padding-bottom: 1em; }
+    padding-bottom: 1em;
+    font-size: 0.8em; }
     .nav .nav-footer .tags {
       text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.7);
       font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
@@ -498,7 +499,8 @@ nav > ul > li {
     padding: 2em 0;
     -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
     transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
-    width: 100%; }
+    width: 100%;
+    max-width: 40em; }
     .page-wrap .content .info {
       margin-bottom: 1.5em; }
       .page-wrap .content .info .name {

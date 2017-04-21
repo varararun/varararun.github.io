@@ -11,7 +11,7 @@ let AV = {
     console.info('All events loaded.');
   },
   loadInitialBG: () => {
-    let imgUrl = 'assets/img/bg/puertorico.jpg';
+    let imgUrl = AV.bgImgList[AV.bgImgIndex];
     let bgUrl = `url('${imgUrl}')`;
     let bgImg = new Image();
     bgImg.onload = () => {
@@ -28,6 +28,9 @@ let AV = {
           if ($('nav').hasClass('nav-open')) {
             $('.nav-btn').click();
           }
+          if ($('.bg-vr').hasClass('bg-vr-visible')) {
+            $('.vr-btn').click();
+          }
           break;
         case 8: // delete/backspace
           if ($('nav').hasClass('nav-open')) {
@@ -38,6 +41,22 @@ let AV = {
           break;
         case 32: // spacebar
           $('.nav-btn').click();
+          break;
+        case 37: // left arrow
+          AV.loadNextBg(true);
+          break;
+        case 38: // up arrow
+          break;
+        case 39: // right arrow
+          AV.loadNextBg();
+          break;
+        case 40: // down arrow
+          break;
+        case 190: // right angle
+          AV.loadNextBg();
+          break;
+        case 188: // left angle
+          AV.loadNextBg(true);
           break;
       }
     };
@@ -66,11 +85,17 @@ let AV = {
     }, 20000);
     AV.loadInitialBG();
   },
-  loadNextBg: () => {
-    if ($('.shuffle-bg-btn>i').hasClass('fa-cog')){
+  loadNextBg: (previous = false) => {
+    if ($('.shuffle-bg-btn>i').hasClass('fa-cog')) {
       return true;
     }
-    let imgUrl = AV.bgImgList[~~(Math.random() * AV.bgImgList.length)];
+    AV.bgImgIndex = previous ? --AV.bgImgIndex : ++AV.bgImgIndex;
+    if(AV.bgImgIndex < 0) {
+      AV.bgImgIndex = AV.bgImgList.length-1;
+    } else if(!AV.bgImgList[AV.bgImgIndex]) {
+      AV.bgImgIndex = 0;
+    }
+    let imgUrl = AV.bgImgList[AV.bgImgIndex];
     let bgUrl = `url('${imgUrl}')`;
     if ($('.shuffle-bg-btn').css('display') === 'none') {
       return true;
@@ -113,27 +138,28 @@ let AV = {
       'transform-origin': `${((e.pageX - $(item).offset().left) / $(item).width()) * 100}% ${((e.pageY - $(item).offset().top) / $(item).height()) * 100}%`
     });
   },
+  bgImgIndex: 0,
   bgImgList: [
-    'assets/img/bg/muaythai.jpg',
-    'assets/img/bg/phangngabay.jpg',
-    'assets/img/bg/chicago.jpg',
-    'assets/img/bg/colorado.jpg',
-    'assets/img/bg/costarica.jpg',
-    'assets/img/bg/denver.jpg',
-    'assets/img/bg/eastcoastbeach.jpg',
-    'assets/img/bg/parcguell.jpg',
-    'assets/img/bg/phuket.jpg',
-    'assets/img/bg/positano.jpg',
     'assets/img/bg/puertorico.jpg',
     'assets/img/bg/rome.jpg',
+    'assets/img/bg/phangngabay.jpg',
+    'assets/img/bg/sanfrancisco.jpg',
+    'assets/img/bg/positano.jpg',
+    'assets/img/bg/eastcoastbeach.jpg',
+    'assets/img/bg/colorado.jpg',
+    'assets/img/bg/moorearestaurant.jpg',
+    'assets/img/bg/muaythai.jpg',
+    'assets/img/bg/chicago.jpg',
+    'assets/img/bg/costarica.jpg',
+    'assets/img/bg/denver.jpg',
+    'assets/img/bg/parcguell.jpg',
+    'assets/img/bg/phuket.jpg',
     'assets/img/bg/magicmountain.jpg',
     'assets/img/bg/manava.jpg',
     'assets/img/bg/moorea.jpg',
     'assets/img/bg/moorealagoon.jpg',
-    'assets/img/bg/moorearestaurant.jpg',
     'assets/img/bg/twobays.jpg',
     'assets/img/bg/santhiya.jpg',
-    'assets/img/bg/sanfrancisco.jpg',
     'assets/img/bg/segovialedge.jpg'
   ],
   vrImgList: [

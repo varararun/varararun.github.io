@@ -6,8 +6,8 @@ var AV = {
         AV.loadNavEvents();
         AV.loadVREvents();
         AV.loadKeyboardEvents();
-        $('.page-wrap').removeClass('loading');
         AV.loadBGEvents();
+        AV.loadScrollEvents();
         console.info('All events loaded.');
     },
     loadInitialBG: function () {
@@ -86,6 +86,7 @@ var AV = {
             AV.loadNextBg();
         }, 20000);
         AV.loadInitialBG();
+        $('.page-wrap').removeClass('loading');
     },
     loadNextBg: function (previous) {
         if (previous === void 0) { previous = false; }
@@ -119,6 +120,7 @@ var AV = {
     },
     loadNavEvents: function () {
         $('.nav-btn,.nav-menu-item>.content>a,.nav-menu-grid').click(function () {
+            $('.info-bar').addClass('hidden');
             if ($('.bg-vr').hasClass('bg-vr-visible')) {
                 $('.vr-btn').click();
             }
@@ -134,6 +136,19 @@ var AV = {
                 $('.vr-btn').click();
             }
             $('.nav-btn').click();
+        });
+    },
+    loadScrollEvents: function () {
+        $("body").bind("mousewheel DOMMouseScroll", function (e) {
+            var delta = (e.originalEvent.wheelDelta || -e.originalEvent.detail);
+            if (delta < 0) {
+                // scroll up
+                $('.info-bar').removeClass('hidden');
+            }
+            else if (delta > 0) {
+                // scroll down
+                $('.info-bar').addClass('hidden');
+            }
         });
     },
     panImage: function (e) {

@@ -6,8 +6,8 @@ let AV = {
     AV.loadNavEvents();
     AV.loadVREvents();
     AV.loadKeyboardEvents();
-    $('.page-wrap').removeClass('loading');
     AV.loadBGEvents();
+    AV.loadScrollEvents();
     console.info('All events loaded.');
   },
   loadInitialBG: () => {
@@ -84,15 +84,16 @@ let AV = {
       AV.loadNextBg();
     }, 20000);
     AV.loadInitialBG();
+    $('.page-wrap').removeClass('loading');
   },
   loadNextBg: (previous = false) => {
     if ($('.shuffle-bg-btn>i').hasClass('fa-cog')) {
       return true;
     }
     AV.bgImgIndex = previous ? --AV.bgImgIndex : ++AV.bgImgIndex;
-    if(AV.bgImgIndex < 0) {
-      AV.bgImgIndex = AV.bgImgList.length-1;
-    } else if(!AV.bgImgList[AV.bgImgIndex]) {
+    if (AV.bgImgIndex < 0) {
+      AV.bgImgIndex = AV.bgImgList.length - 1;
+    } else if (!AV.bgImgList[AV.bgImgIndex]) {
       AV.bgImgIndex = 0;
     }
     let imgUrl = AV.bgImgList[AV.bgImgIndex];
@@ -115,6 +116,7 @@ let AV = {
   },
   loadNavEvents: () => {
     $('.nav-btn,.nav-menu-item>.content>a,.nav-menu-grid').click(() => {
+      $('.info-bar').addClass('hidden');
       if ($('.bg-vr').hasClass('bg-vr-visible')) {
         $('.vr-btn').click();
       }
@@ -130,6 +132,18 @@ let AV = {
         $('.vr-btn').click();
       }
       $('.nav-btn').click();
+    });
+  },
+  loadScrollEvents: function () {
+    $("body").bind("mousewheel DOMMouseScroll", function (e) {
+      var delta = (e.originalEvent.wheelDelta || -e.originalEvent.detail);
+      if (delta < 0) {
+        // scroll up
+        $('.info-bar').removeClass('hidden');
+      } else if (delta > 0) {
+        // scroll down
+        $('.info-bar').addClass('hidden');
+      }
     });
   },
   panImage: (e) => {

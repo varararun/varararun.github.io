@@ -1,0 +1,13 @@
+/* vendor library overrides */
+
+.a-enter-vr {
+    right: 0 !important;
+    .a-enter-vr-button {
+        padding-right: 0 !important;
+        padding-top: 0 !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        margin: auto !important;
+        z-index: 3 !important;
+    }
+}

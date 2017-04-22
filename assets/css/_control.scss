@@ -1,0 +1,74 @@
+.control-btns {
+    transition: $transition-short;
+    .email-btn {
+        position: fixed;
+        transition: $transition-short;
+        opacity: .6;
+        cursor: pointer;
+        bottom: 0;
+        right: 0;
+        font-size: 2em;
+        z-index: 4;
+        padding: .5em .5em;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    .vr-btn {
+        position: fixed;
+        transition: $transition-short;
+        opacity: .6;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        font-size: 2em;
+        z-index: 6;
+        padding: .4em .5em;
+        .vr-icon {
+            opacity: .6;
+            transition: $transition-short;
+            &:hover {
+                opacity: 1;
+            }
+            .close-btn {
+                opacity: 0;
+                display: none;
+            }
+            i {
+                transition: $transition-short;
+            }
+        }
+        &.vr-close>.vr-icon>.open-btn {
+            opacity: 0;
+            display: none;
+            visibility: hidden;
+        }
+        &.vr-close>.vr-icon>.close-btn {
+            opacity: .9;
+            display: inline-block;
+            visibility: visible;
+            margin-top: .2em;
+        }
+    }
+    .shuffle-bg-btn {
+        position: fixed;
+        cursor: pointer;
+        bottom: 0;
+        left: 0;
+        font-size: 2em;
+        z-index: 4;
+        padding: .4em .5em;
+        i {
+            &.fa {
+                opacity: .6;
+                transition: $transition-short;
+                &:hover {
+                    opacity: 1;
+                }
+            }
+            &.fa-spin {
+                filter: blur(1px);
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+/* information bar */
+
+.info-bar {
+    position: fixed;
+    bottom: 0;
+    transform: translateX(-50%);
+    left: 50%;
+    text-align: center;
+    transition: $transition-short;
+    cursor: pointer;
+    .info {
+        transition: $transition-short;
+        font-size: 1em;
+        font-weight: 400;
+        opacity: .6;
+        letter-spacing: 0.2em;
+        line-height: 3.5em;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    &.hidden {
+        bottom: -100%;
+    }
+}

@@ -12,11 +12,77 @@ $font-color-1: #fff;
 $text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.7);
 $border-thin: 1px solid rgba(255, 255, 255, 0.2);
 
+/* general styling */
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: $font-family-1;
+    font-weight: 100;
+    color: $font-color-1;
+    position: relative;
+    overflow: hidden;
+    background: $background-color;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit !important;
+}
+
+ul,
+li {
+    list-style-type: none !important;
+    margin: 0;
+    padding: 0;
+}
+
+i,
+a,
+button,
+select,
+div {
+    text-decoration: none !important;
+    outline: none !important;
+}
+
+section,
+header {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    transition: $transition-long;
+}
+
+nav>ul>li {
+    cursor: pointer;
+    padding-left: 1em;
+    padding-bottom: 1em;
+    color: black;
+    background: white;
+    padding-right: 1em;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
 /* imports */
 
 @import url("https://fonts.googleapis.com/css?family=Nothing+You+Could+Do");
 @import url("https://fonts.googleapis.com/css?family=Montserrat+Subrayada");
-@import 'base';
-@import 'layout';
+@import 'page-wrap';
+@import 'nav';
+@import 'control';
+@import 'vr';
 @import 'media';
 @import 'animations';
+@import 'overrides';
+@import 'info-bar';

@@ -17,6 +17,9 @@
             background-image: none !important;
         }
     }
+    .info-bar {
+        display: none !important;
+    }
 }
 
 
@@ -71,5 +74,8 @@
     }
     .vr-drag-demo {
         background: black !important;
+    }
+    .info-bar {
+        display: none !important;
     }
 }

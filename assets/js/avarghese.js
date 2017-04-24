@@ -143,7 +143,9 @@ var AV = {
             var delta = (e.originalEvent.wheelDelta || -e.originalEvent.detail);
             if (delta < 0) {
                 // scroll up
-                $('.info-bar').removeClass('hidden');
+                if (!$('.nav').hasClass('nav-open')) {
+                    $('.info-bar').removeClass('hidden');
+                }
             }
             else if (delta > 0) {
                 // scroll down

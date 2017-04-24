@@ -64,6 +64,11 @@ var AV = {
     },
     loadVREvents: function () {
         $('.vr-btn').click(function () {
+            $('.vr-content').empty();
+            if (!$('.vr-btn').hasClass('vr-close')) {
+                $('.vr-content').append('<a-scene class="bg-vr"><a-sky class="vr-img" src="' + AV.vrImgList[0] + '" rotation="0 -130 0"></a-sky></a-scene>');
+            }
+            ;
             $('.vr-btn').toggleClass('vr-close');
             $('.vr-btn>.vr-icon>.close-btn,.vr-btn>.vr-icon>.open-btn').addClass('animated bounceIn');
             $('.bg-vr').toggleClass('bg-vr-visible');

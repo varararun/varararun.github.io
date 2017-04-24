@@ -16,6 +16,7 @@ var runSequence = require('run-sequence');
 var browserSync = require('browser-sync').create();
 var autoprefixer = require('gulp-autoprefixer');
 var imagemin = require('gulp-imagemin');
+var plumber = require('gulp-plumber');
 
 var paths = {
     scss: 'assets/css/avarghese.scss',
@@ -38,6 +39,7 @@ gulp.task('jshint', function() {
             paths.ts,
             '*.js'
         ])
+        .pipe(plumber())
         .pipe(jshint())
         .pipe(jshint.reporter(stylish))
         .pipe(jshint.reporter('fail'));
@@ -52,6 +54,7 @@ gulp.task('format', function() {
         ], {
             base: './'
         })
+        .pipe(plumber())
         .pipe(beautify())
         .pipe(gulp.dest('./'));
 });
@@ -60,6 +63,7 @@ gulp.task('format', function() {
 
 gulp.task('minify-images', function() {
     gulp.src('assets/img/**/*')
+        .pipe(plumber())
         .pipe(imagemin())
         .pipe(gulp.dest('assets/img'))
 });
@@ -77,6 +81,7 @@ gulp.task('clean-js', function() {
 
 gulp.task('typescript', function() {
     tsProject.src()
+        .pipe(plumber())
         .pipe(tsProject())
         .js.pipe(gulp.dest('assets/js'));
 });
@@ -85,6 +90,7 @@ gulp.task('minify-js', function() {
     return gulp.src([
             paths.js
         ])
+        .pipe(plumber())
         .pipe(uglify())
         .pipe(header(banner, {
             pkg: pkg
@@ -100,6 +106,7 @@ gulp.task('sourcemap-js', function() {
             'assets/js/*.min.js',
             '!assets/js/*spec.js'
         ])
+        .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('assets/js'));
@@ -129,6 +136,7 @@ gulp.task('minify-css', ['scss'], function() {
     return gulp.src([
             paths.css
         ])
+        .pipe(plumber())
         .pipe(cleanCSS({
             compatibility: 'ie8'
         }))
@@ -145,6 +153,7 @@ gulp.task('sourcemap-css', function() {
     return gulp.src([
             'assets/css/*.min.css'
         ])
+        .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('assets/css'));

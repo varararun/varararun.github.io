@@ -63,6 +63,10 @@ let AV = {
   },
   loadVREvents: () => {
     $('.vr-btn').click(() => {
+      $('.vr-content').empty();
+      if (!$('.vr-btn').hasClass('vr-close')) {
+        $('.vr-content').append('<a-scene class="bg-vr"><a-sky class="vr-img" src="' + AV.vrImgList[0] + '" rotation="0 -130 0"></a-sky></a-scene>');
+      };
       $('.vr-btn').toggleClass('vr-close');
       $('.vr-btn>.vr-icon>.close-btn,.vr-btn>.vr-icon>.open-btn').addClass('animated bounceIn');
       $('.bg-vr').toggleClass('bg-vr-visible');
@@ -139,7 +143,7 @@ let AV = {
       var delta = (e.originalEvent.wheelDelta || -e.originalEvent.detail);
       if (delta < 0) {
         // scroll up
-        if(!$('.nav').hasClass('nav-open')){
+        if (!$('.nav').hasClass('nav-open')) {
           $('.info-bar').removeClass('hidden');
         }
       } else if (delta > 0) {

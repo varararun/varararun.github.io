@@ -90,7 +90,7 @@ let AV = {
     AV.loadInitialBG();
     $('.page-wrap').removeClass('loading');
   },
-  loadNextBg: (previous = false) => {
+  loadNextBg: (previous:boolean = false) => {
     if ($('.shuffle-bg-btn>i').hasClass('fa-cog')) {
       return true;
     }
@@ -139,7 +139,7 @@ let AV = {
     });
   },
   loadScrollEvents: function () {
-    $("body").bind("mousewheel DOMMouseScroll", function (e) {
+    $("body").bind("mousewheel DOMMouseScroll", function (e:any) {
       var delta = (e.originalEvent.wheelDelta || -e.originalEvent.detail);
       if (delta < 0) {
         // scroll up
@@ -152,7 +152,7 @@ let AV = {
       }
     });
   },
-  panImage: (e) => {
+  panImage: (e:any) => {
     let item = e.target.parentNode;
     $(item).children('.bg-img').css({
       'transform-origin': `${((e.pageX - $(item).offset().left) / $(item).width()) * 100}% ${((e.pageY - $(item).offset().top) / $(item).height()) * 100}%`

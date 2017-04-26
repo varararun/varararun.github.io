@@ -17,12 +17,16 @@ var browserSync = require('browser-sync').create();
 var autoprefixer = require('gulp-autoprefixer');
 var imagemin = require('gulp-imagemin');
 var plumber = require('gulp-plumber');
+var jade = require('gulp-jade');
+var htmlmin = require('gulp-htmlmin');
 
 var paths = {
     scss: 'assets/css/avarghese.scss',
     css: 'assets/css/avarghese.css',
     ts: 'assets/js/avarghese.ts',
-    js: 'assets/js/avarghese.js'
+    js: 'assets/js/avarghese.js',
+    jade: 'index.jade',
+    html: 'index.html'
 }
 
 var banner = ['/*\n',
@@ -159,6 +163,32 @@ gulp.task('sourcemap-css', function() {
         .pipe(gulp.dest('assets/css'));
 });
 
+/** HTML Tasks **/
+
+gulp.task('clean-html', function() {
+    return del.sync([
+        paths.html
+    ], {
+        force: true
+    });
+});
+
+gulp.task('jade', function() {
+    return gulp.src('./index.jade')
+        .pipe(plumber())
+        .pipe(jade({
+            pretty: true
+        }))
+        .pipe(gulp.dest('.'))
+});
+
+gulp.task('minify-html', function() {
+    return gulp.src(paths.html)
+        .pipe(plumber())
+        .pipe(htmlmin({ collapseWhitespace: true }))
+        .pipe(gulp.dest('.'));
+});
+
 /** Server Task **/
 
 gulp.task('browserSync', function() {
@@ -180,6 +210,10 @@ gulp.task('css', function() {
     return runSequence('clean-css', 'scss', 'minify-css', 'sourcemap-css');
 });
 
+gulp.task('html', function() {
+    return runSequence('clean-html', 'jade', 'minify-html');
+});
+
 gulp.task('minify', function() {
     return runSequence('css', 'js');
 });
@@ -188,7 +222,7 @@ gulp.task('serve', function() {
     runSequence('minify', 'browserSync');
     gulp.watch('assets/css/**/*.scss', ['css', browserSync.reload]);
     gulp.watch('assets/js/**/*.ts', ['js', browserSync.reload]);
-    gulp.watch('index.html', browserSync.reload);
+    gulp.watch('index.jade', ['html', browserSync.reload]);
 });
 
 gulp.task('default', ['serve']);

@@ -118,6 +118,9 @@ let AV = {
     };
     bgImg.src = imgUrl;
   },
+  navToggle: () => {
+    $('.nav-btn').click();
+  },
   loadNavEvents: () => {
     $('.nav-btn,.nav-menu-item>.content>a,.nav-menu-grid').click(() => {
       $('.info-bar').addClass('hidden');

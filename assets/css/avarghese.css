@@ -56,6 +56,9 @@ nav > ul > li {
 ::-webkit-scrollbar {
   display: none; }
 
+.remove {
+  display: none; }
+
 /* imports */
 /* main content */
 .page-wrap {
@@ -578,6 +581,7 @@ nav > ul > li {
       font-size: 3em !important; }
     .nav-menu-item .bg-pattern {
       background-image: none !important; }
+  .help-text,
   .info-bar {
     display: none !important; } }
 
@@ -621,6 +625,7 @@ nav > ul > li {
     z-index: 0 !important; }
   .vr-drag-demo {
     background: black !important; }
+  .help-text,
   .info-bar {
     display: none !important; } }
 

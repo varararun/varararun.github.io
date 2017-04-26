@@ -123,6 +123,9 @@ var AV = {
         };
         bgImg.src = imgUrl;
     },
+    navToggle: function () {
+        $('.nav-btn').click();
+    },
     loadNavEvents: function () {
         $('.nav-btn,.nav-menu-item>.content>a,.nav-menu-grid').click(function () {
             $('.info-bar').addClass('hidden');

@@ -23,7 +23,7 @@
         left: 0;
         font-size: 2em;
         z-index: 6;
-        padding: .4em .5em;
+        padding: .55em .5em;
         .vr-icon {
             opacity: .6;
             transition: $transition-short;
@@ -68,6 +68,40 @@
             }
             &.fa-spin {
                 filter: blur(1px);
+            }
+        }
+    }
+    .nav-btn {
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 7;
+        font-size: 2em;
+        padding: .55em .5em;
+        cursor: pointer;
+        &.nav-close>.nav-icon>.open-btn {
+            opacity: 0;
+            display: none;
+            visibility: hidden;
+        }
+        &.nav-close>.nav-icon>.close-btn {
+            opacity: .9;
+            display: inline-block;
+            visibility: visible;
+            margin-top: .2em;
+        }
+        .nav-icon {
+            opacity: .6;
+            transition: $transition-short;
+            &:hover {
+                opacity: 1;
+            }
+            .close-btn {
+                opacity: 0;
+                display: none;
+            }
+            i {
+                transition: $transition-short;
             }
         }
     }

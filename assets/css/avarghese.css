@@ -221,36 +221,6 @@ nav > ul > li {
               transform: translate(-50%, -50%) scale(0.8); }
 
 /* navigation page*/
-.nav-btn {
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 7;
-  font-size: 2em;
-  padding: .4em .5em;
-  cursor: pointer; }
-  .nav-btn.nav-close > .nav-icon > .open-btn {
-    opacity: 0;
-    display: none;
-    visibility: hidden; }
-  .nav-btn.nav-close > .nav-icon > .close-btn {
-    opacity: .9;
-    display: inline-block;
-    visibility: visible;
-    margin-top: .2em; }
-  .nav-btn .nav-icon {
-    opacity: .6;
-    -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
-    transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
-    .nav-btn .nav-icon:hover {
-      opacity: 1; }
-    .nav-btn .nav-icon .close-btn {
-      opacity: 0;
-      display: none; }
-    .nav-btn .nav-icon i {
-      -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
-      transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
-
 .nav {
   opacity: 0;
   visibility: hidden;
@@ -473,7 +443,7 @@ nav > ul > li {
     left: 0;
     font-size: 2em;
     z-index: 6;
-    padding: .4em .5em; }
+    padding: .55em .5em; }
     .control-btns .vr-btn .vr-icon {
       opacity: .6;
       -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
@@ -512,6 +482,35 @@ nav > ul > li {
     .control-btns .shuffle-bg-btn i.fa-spin {
       -webkit-filter: blur(1px);
               filter: blur(1px); }
+  .control-btns .nav-btn {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 7;
+    font-size: 2em;
+    padding: .55em .5em;
+    cursor: pointer; }
+    .control-btns .nav-btn.nav-close > .nav-icon > .open-btn {
+      opacity: 0;
+      display: none;
+      visibility: hidden; }
+    .control-btns .nav-btn.nav-close > .nav-icon > .close-btn {
+      opacity: .9;
+      display: inline-block;
+      visibility: visible;
+      margin-top: .2em; }
+    .control-btns .nav-btn .nav-icon {
+      opacity: .6;
+      -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
+      transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
+      .control-btns .nav-btn .nav-icon:hover {
+        opacity: 1; }
+      .control-btns .nav-btn .nav-icon .close-btn {
+        opacity: 0;
+        display: none; }
+      .control-btns .nav-btn .nav-icon i {
+        -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
+        transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
 
 /* vr page */
 .vr-drag-demo {

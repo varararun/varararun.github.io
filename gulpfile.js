@@ -25,8 +25,8 @@ var paths = {
     css: 'assets/css/avarghese.css',
     ts: 'assets/js/avarghese.ts',
     js: 'assets/js/avarghese.js',
-    jade: 'index.jade',
-    html: 'index.html'
+    jade: 'assets/html/index.jade',
+    html: 'assets/html/index.html'
 }
 
 var banner = ['/*\n',
@@ -167,25 +167,34 @@ gulp.task('sourcemap-css', function() {
 
 gulp.task('clean-html', function() {
     return del.sync([
-        paths.html
+        paths.html,
+        'index.html'
     ], {
         force: true
     });
 });
 
 gulp.task('jade', function() {
-    return gulp.src('./index.jade')
+    return gulp.src(paths.jade)
         .pipe(plumber())
         .pipe(jade({
             pretty: true
         }))
-        .pipe(gulp.dest('.'))
+        .pipe(gulp.dest('assets/html'))
 });
 
 gulp.task('minify-html', function() {
     return gulp.src(paths.html)
         .pipe(plumber())
-        .pipe(htmlmin({ collapseWhitespace: true }))
+        .pipe(htmlmin({
+            collapseWhitespace: true
+        }))
+        .pipe(gulp.dest('assets/html'));
+});
+
+gulp.task('move-html', function() {
+    return gulp.src(paths.html)
+        .pipe(plumber())
         .pipe(gulp.dest('.'));
 });
 
@@ -211,7 +220,7 @@ gulp.task('css', function() {
 });
 
 gulp.task('html', function() {
-    return runSequence('clean-html', 'jade', 'minify-html');
+    return runSequence('clean-html', 'jade', 'minify-html', 'move-html');
 });
 
 gulp.task('minify', function() {
@@ -222,7 +231,7 @@ gulp.task('serve', function() {
     runSequence('minify', 'browserSync');
     gulp.watch('assets/css/**/*.scss', ['css', browserSync.reload]);
     gulp.watch('assets/js/**/*.ts', ['js', browserSync.reload]);
-    gulp.watch('index.jade', ['html', browserSync.reload]);
+    gulp.watch('assets/html/**/*.jade', ['html', browserSync.reload]);
 });
 
 gulp.task('default', ['serve']);

@@ -481,7 +481,7 @@ nav > ul > li {
       .control-btns .shuffle-bg-btn i.fa:hover {
         opacity: 1; }
     .control-btns .shuffle-bg-btn i.fa-cog {
-      cursor: not-allowed !important; }
+      cursor: progress !important; }
     .control-btns .shuffle-bg-btn i.fa-spin {
       -webkit-filter: blur(1px);
               filter: blur(1px); }

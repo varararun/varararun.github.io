@@ -63,6 +63,14 @@ var AV = {
         };
     },
     loadVREvents: function () {
+        $('.vr-btn').hide();
+        var imgUrl = AV.vrImgList[0];
+        var bgUrl = "url('" + imgUrl + "')";
+        var bgImg = new Image();
+        bgImg.onload = function () {
+            $('.vr-btn').show();
+        };
+        bgImg.src = imgUrl;
         $('.vr-btn').click(function () {
             $('.vr-content').empty();
             if (!$('.vr-btn').hasClass('vr-close')) {

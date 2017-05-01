@@ -177,12 +177,13 @@ var AV = {
     },
     bgImgIndex: 0,
     bgImgList: [
-        'assets/img/bg/puertorico.jpg',
+        'http://i.imgur.com/R1KRe85h.jpg',
+        // 'assets/img/bg/puertorico.jpg',
+        'assets/img/bg/eastcoastbeach.jpg',
         'assets/img/bg/rome.jpg',
         'assets/img/bg/phangngabay.jpg',
         'assets/img/bg/sanfrancisco.jpg',
         'assets/img/bg/positano.jpg',
-        'assets/img/bg/eastcoastbeach.jpg',
         'assets/img/bg/colorado.jpg',
         'assets/img/bg/moorearestaurant.jpg',
         'assets/img/bg/muaythai.jpg',
@@ -200,6 +201,7 @@ var AV = {
         'assets/img/bg/segovialedge.jpg'
     ],
     vrImgList: [
+        'http://i.imgur.com/PLBWJHx.jpg',
         'assets/img/vr/example.jpg'
     ]
 };

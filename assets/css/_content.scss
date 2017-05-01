@@ -107,6 +107,9 @@
                 text-shadow: $text-shadow;
                 font-family: $font-family-2;
                 font-size: 3em;
+                .first {
+                    padding-right: 0.5em;
+                }
             }
             .role {
                 font-size: .9em;

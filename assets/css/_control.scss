@@ -66,6 +66,9 @@
                     opacity: 1;
                 }
             }
+            &.fa-cog {
+                cursor: not-allowed !important;
+            }
             &.fa-spin {
                 filter: blur(1px);
             }

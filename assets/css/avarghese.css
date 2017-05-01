@@ -480,6 +480,8 @@ nav > ul > li {
       transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
       .control-btns .shuffle-bg-btn i.fa:hover {
         opacity: 1; }
+    .control-btns .shuffle-bg-btn i.fa-cog {
+      cursor: not-allowed !important; }
     .control-btns .shuffle-bg-btn i.fa-spin {
       -webkit-filter: blur(1px);
               filter: blur(1px); }

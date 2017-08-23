@@ -380,6 +380,8 @@ nav > ul > li {
           background-image: url("../img/thumbnails/dribbble.jpg"); }
         .nav .nav-menu-grid a .nav-menu-item .bg-img.codepen {
           background-image: url("../img/thumbnails/codepen.jpg"); }
+        .nav .nav-menu-grid a .nav-menu-item .bg-img.youtube {
+          background-image: url("../img/thumbnails/youtube.jpg"); }
       .nav .nav-menu-grid a .nav-menu-item .bg-overlay {
         position: absolute;
         bottom: 0;

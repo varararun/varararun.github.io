@@ -24,7 +24,7 @@ var AV = {
     loadKeyboardEvents: function () {
         document.onkeydown = function (e) {
             switch (e.keyCode) {
-                case 27:
+                case 27: // esc
                     if ($('nav').hasClass('nav-open')) {
                         $('.nav-btn').click();
                     }
@@ -32,7 +32,7 @@ var AV = {
                         $('.vr-btn').click();
                     }
                     break;
-                case 8:
+                case 8: // delete/backspace
                     if ($('nav').hasClass('nav-open')) {
                         $('.nav-btn').click();
                     }
@@ -40,23 +40,23 @@ var AV = {
                         $('.vr-btn').click();
                     }
                     break;
-                case 32:
+                case 32: // spacebar
                     $('.nav-btn').click();
                     break;
-                case 37:
+                case 37: // left arrow
                     AV.loadNextBg(true);
                     break;
-                case 38:
+                case 38: // up arrow
                     break;
-                case 39:
+                case 39: // right arrow
                     AV.loadNextBg();
                     break;
-                case 40:
+                case 40: // down arrow
                     break;
-                case 190:
+                case 190: // right angle
                     AV.loadNextBg();
                     break;
-                case 188:
+                case 188: // left angle
                     AV.loadNextBg(true);
                     break;
             }

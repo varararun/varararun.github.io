@@ -203,7 +203,7 @@ gulp.task('move-html', () => {
 gulp.task('browserSync', () => {
     return browserSync.init({
         server: {
-            baseDir: ''
+            baseDir: '.'
         },
         port: process.env.PORT || 4790
     });

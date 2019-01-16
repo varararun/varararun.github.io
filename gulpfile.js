@@ -21,11 +21,11 @@ let htmlmin = require('gulp-htmlmin');
 
 let paths = {
   scss: 'assets/css/avarghese.scss',
-  css: 'assets/css/avarghese.css',  
-  ts:'assets/js/avarghese.ts',
-  js:'assets/js/avarghese.js',
+  css: 'assets/css/avarghese.css',
+  ts: 'assets/js/avarghese.ts',
+  js: 'assets/js/avarghese.js',
   jade: 'assets/html/index.jade',
-  html: 'assets/html/index.html'
+  html: 'index.html'
 }
 
 const banner = ['/*\n',
@@ -37,8 +37,8 @@ const banner = ['/*\n',
 
 /** Miscellaneous Tasks **/
 
-function jshintReport(done) {
-  gulp.src([
+function jshintReport() {
+  return gulp.src([
       paths.ts,
       '*.js'
     ])
@@ -47,13 +47,12 @@ function jshintReport(done) {
     .pipe(jshint.reporter(stylish))
     .pipe(jshint.reporter('fail'));
 
-    done();
 };
 
-function format(done) {
-  gulp.src([
-       paths.scss,
-       paths.ts,
+function format() {
+  return gulp.src([
+      paths.scss,
+      paths.ts,
       'index.html',
       '*.{js,json}'
     ], {
@@ -63,18 +62,16 @@ function format(done) {
     .pipe(beautify())
     .pipe(gulp.dest('./'));
 
-    done();
 };
 
 /** Image Tasks **/
 
-function minifyImages(done) {
-  gulp.src('assets/img/**/*')
+function minifyImages() {
+  return gulp.src('assets/img/**/*')
     .pipe(plumber())
     .pipe(imagemin())
     .pipe(gulp.dest('assets/img'));
 
-    done();
 };
 
 /** JavaScript Tasks **/
@@ -90,18 +87,16 @@ function cleanJs(done) {
   done();
 };
 
-function typescript(done) {
-  tsProject.src()
+function typescript() {
+  return tsProject.src()
     .pipe(plumber())
     .pipe(tsProject())
     .js.pipe(gulp.dest('assets/js'));
-
-    done();
 };
 
-function minifyJs(done) {
-  gulp.src([
-       paths.js
+function minifyJs() {
+  return gulp.src([
+      paths.js
     ])
     .pipe(plumber())
     .pipe(uglify())
@@ -112,12 +107,10 @@ function minifyJs(done) {
       suffix: '.min'
     }))
     .pipe(gulp.dest('assets/js'));
-
-    done();
 };
 
-function sourcemapJs(done) {
-  gulp.src([
+function sourcemapJs() {
+  return gulp.src([
       'assets/js/*.min.js',
       '!assets/js/*spec.js'
     ])
@@ -125,8 +118,6 @@ function sourcemapJs(done) {
     .pipe(sourcemaps.init())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('assets/js'));
-
-    done();
 };
 
 /** CSS Tasks **/
@@ -142,20 +133,18 @@ function cleanCss(done) {
   done();
 };
 
-function scss(done) {
-  gulp.src('assets/css/**/*.scss')
+function scss() {
+  return gulp.src('assets/css/**/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({
       browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
     }))
     .pipe(gulp.dest('assets/css'));
-
-    done();
 };
 
-function minifyCss(done) {
-  gulp.src([
-       paths.css
+function minifyCss() {
+  return gulp.src([
+      paths.css
     ])
     .pipe(plumber())
     .pipe(cleanCSS({
@@ -168,12 +157,10 @@ function minifyCss(done) {
       suffix: '.min'
     }))
     .pipe(gulp.dest('assets/css'));
-
-    done();
 };
 
-function sourcemapCss(done) {
-  gulp.src([
+function sourcemapCss() {
+  return gulp.src([
       'assets/css/*.min.css'
     ])
     .pipe(plumber())
@@ -181,49 +168,36 @@ function sourcemapCss(done) {
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('assets/css'));
 
-    done();
 };
 
 /** HTML Tasks **/
 
 function cleanHtml(done) {
-    del.sync([
-        paths.html,
-        'index.html'
-    ], {
-        force: true
-    });
+  del.sync([
+    paths.html
+  ], {
+    force: true,
+  });
 
-    done();
+  done();
 };
 
-function jadeTemplate(done) {
-    gulp.src(paths.jade)
-        .pipe(plumber())
-        .pipe(jade({
-            pretty: true
-        }))
-        .pipe(gulp.dest('assets/html'))
-
-        done();
+function jadeTemplate() {
+  return gulp.src(paths.jade)
+    .pipe(plumber())
+    .pipe(jade({
+      pretty: true
+    }))
+    .pipe(gulp.dest('.'))
 };
 
-function minifyHtml(done) {
-    gulp.src(paths.html)
-        .pipe(plumber())
-        .pipe(htmlmin({
-            collapseWhitespace: true
-        }))
-        .pipe(gulp.dest('assets/html'));
-
-    done();
-};
-
-function moveHtml(done) {
-    gulp.src(paths.html)
-        .pipe(gulp.dest('.'));
-
-    done();
+function minifyHtml() {
+  return gulp.src(paths.html)
+    .pipe(plumber())
+    .pipe(htmlmin({
+      collapseWhitespace: true
+    }))
+    .pipe(gulp.dest('.'));
 };
 
 /** Server Task **/
@@ -235,6 +209,7 @@ function serve(done) {
     },
     port: process.env.PORT || 4790
   });
+
   done();
 };
 
@@ -249,17 +224,16 @@ const js = gulp.series(cleanJs, typescript, minifyJs, sourcemapJs, reload);
 
 const css = gulp.series(cleanCss, scss, minifyCss, sourcemapCss, reload);
 
-const html = gulp.series(cleanHtml, jadeTemplate, minifyHtml, moveHtml, reload);
+const html = gulp.series(cleanHtml, jadeTemplate, minifyHtml, reload);
 
-const minify = gulp.series(css, js);
+const compile = gulp.series(css, js, html);
 
 function watch() {
   gulp.watch('assets/css/**/*.scss', css);
   gulp.watch('assets/js/**/*.ts', js);
-  gulp.watch('index.html', reload);
-  // gulp.watch('assets/html/**/*.jade', html);
+  gulp.watch('assets/html/**/*.jade', html);
 };
 
-gulp.task('default', gulp.series(minify, serve, watch));
+gulp.task('default', gulp.series(compile, serve, watch));
 
 module.exports = gulp;

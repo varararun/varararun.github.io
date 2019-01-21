@@ -353,12 +353,8 @@ nav > ul > li {
                 transform: scale(1.2);
         -webkit-transform-origin: center;
                 transform-origin: center; }
-        .nav .nav-menu-grid a .nav-menu-item .bg-img.stackoverflow {
-          background-image: url("../img/thumbnails/stackoverflow.jpg"); }
         .nav .nav-menu-grid a .nav-menu-item .bg-img.about {
           background-image: url("../img/thumbnails/about.jpg"); }
-        .nav .nav-menu-grid a .nav-menu-item .bg-img.portfolio {
-          background-image: url("../img/thumbnails/portfolio.jpg"); }
         .nav .nav-menu-grid a .nav-menu-item .bg-img.linkedin {
           background-image: url("../img/thumbnails/linkedin.jpg"); }
         .nav .nav-menu-grid a .nav-menu-item .bg-img.resume {
@@ -367,20 +363,10 @@ nav > ul > li {
           background-image: url("../img/thumbnails/github.jpg"); }
         .nav .nav-menu-grid a .nav-menu-item .bg-img.travel {
           background-image: url("../img/thumbnails/travel.jpg"); }
-        .nav .nav-menu-grid a .nav-menu-item .bg-img.blog {
-          background-image: url("../img/thumbnails/blog.jpg"); }
         .nav .nav-menu-grid a .nav-menu-item .bg-img.facebook {
           background-image: url("../img/thumbnails/facebook.jpg"); }
-        .nav .nav-menu-grid a .nav-menu-item .bg-img.instagram {
-          background-image: url("../img/thumbnails/instagram.jpg"); }
-        .nav .nav-menu-grid a .nav-menu-item .bg-img.behance {
-          background-image: url("../img/thumbnails/behance.jpg"); }
-        .nav .nav-menu-grid a .nav-menu-item .bg-img.dribbble {
-          background-image: url("../img/thumbnails/dribbble.jpg"); }
         .nav .nav-menu-grid a .nav-menu-item .bg-img.codepen {
           background-image: url("../img/thumbnails/codepen.jpg"); }
-        .nav .nav-menu-grid a .nav-menu-item .bg-img.youtube {
-          background-image: url("../img/thumbnails/youtube.jpg"); }
       .nav .nav-menu-grid a .nav-menu-item .bg-overlay {
         position: absolute;
         bottom: 0;

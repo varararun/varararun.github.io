@@ -177,7 +177,7 @@ var AV = {
     },
     bgImgIndex: 0,
     bgImgList: [
-        'http://i.imgur.com/R1KRe85h.jpg',
+        'https://i.imgur.com/R1KRe85h.jpg',
         // 'assets/img/bg/puertorico.jpg',
         'assets/img/bg/eastcoastbeach.jpg',
         'assets/img/bg/rome.jpg',
@@ -204,7 +204,7 @@ var AV = {
         'assets/img/bg/segovialedge.jpg'
     ],
     vrImgList: [
-        'http://i.imgur.com/PLBWJHx.jpg',
+        'https://i.imgur.com/PLBWJHx.jpg',
         'assets/img/vr/example.jpg'
     ]
 };

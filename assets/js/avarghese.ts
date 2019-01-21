@@ -4,11 +4,9 @@ let AV = {
   },
   loadEvents: () => {
     AV.loadNavEvents();
-    AV.loadVREvents();
     AV.loadKeyboardEvents();
     AV.loadBGEvents();
     AV.loadScrollEvents();
-    console.info('All events loaded.');
   },
   loadInitialBG: () => {
     let imgUrl = AV.bgImgList[AV.bgImgIndex];
@@ -60,33 +58,6 @@ let AV = {
           break;
       }
     };
-  },
-  loadVREvents: () => {
-    $('.vr-btn').hide();
-    let imgUrl = AV.vrImgList[0];
-    let bgUrl = `url('${imgUrl}')`;
-    let bgImg = new Image();
-    bgImg.onload = () => {
-      $('.vr-btn').show();
-    };
-    bgImg.src = imgUrl;
-    $('.vr-btn').click(() => {
-      $('.vr-content').empty();
-      if (!$('.vr-btn').hasClass('vr-close')) {
-        $('.vr-content').append('<a-scene class="bg-vr"><a-sky class="vr-img" src="' + AV.vrImgList[0] + '" rotation="0 -130 0"></a-sky></a-scene>');
-      };
-      $('.vr-btn').toggleClass('vr-close');
-      $('.vr-btn>.vr-icon>.close-btn,.vr-btn>.vr-icon>.open-btn').addClass('animated bounceIn');
-      $('.bg-vr').toggleClass('bg-vr-visible');
-      if ($('.vr-btn').hasClass('vr-close')) {
-        $('.vr-drag-demo').addClass('demo');
-      } else {
-        $('.vr-drag-demo').removeClass('demo');
-      }
-    });
-    $('.vr-drag-demo').click(() => {
-      $('.vr-drag-demo').removeClass('demo');
-    });
   },
   loadBGEvents: () => {
     $('.shuffle-bg-btn').click(() => {

@@ -491,7 +491,7 @@ nav > ul > li {
   .control-btns .nav-btn {
     position: fixed;
     top: 0;
-    right: 0;
+    left: 0;
     z-index: 7;
     font-size: 2em;
     padding: .55em .5em;
@@ -517,61 +517,6 @@ nav > ul > li {
       .control-btns .nav-btn .nav-icon i {
         -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
         transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
-
-/* vr page */
-.vr-drag-demo {
-  opacity: 0;
-  display: none;
-  -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
-  transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
-  position: absolute;
-  left: 50%;
-  font-size: 1.3em;
-  margin: auto;
-  top: 1em;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
-  z-index: 6;
-  cursor: pointer;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 1em 2em;
-  border-radius: .2em;
-  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.7); }
-  .vr-drag-demo .drag-icon {
-    position: absolute;
-    left: 10%; }
-  .vr-drag-demo .demo-text {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-    padding-bottom: 0.5em;
-    text-align: center; }
-  .vr-drag-demo .fa-angle-right {
-    position: absolute;
-    right: 1.5em;
-    bottom: .6em;
-    opacity: .6; }
-  .vr-drag-demo .fa-angle-left {
-    position: absolute;
-    left: 1.5em;
-    bottom: .6em;
-    opacity: .6; }
-  .vr-drag-demo .fa-times {
-    cursor: pointer;
-    position: absolute;
-    right: 0;
-    top: 0;
-    opacity: .6;
-    -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
-    transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
-    padding: 0.1em .2em; }
-    .vr-drag-demo .fa-times:hover {
-      opacity: 1; }
-  .vr-drag-demo.demo {
-    display: block;
-    opacity: 1 !important; }
-  .vr-drag-demo.demo .drag-icon {
-    -webkit-animation: drag-demo 1.8s infinite;
-            animation: drag-demo 1.8s infinite;
-    bottom: 0; }
 
 /* information bar */
 .info-bar {

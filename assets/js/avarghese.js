@@ -4,11 +4,9 @@ var AV = {
     },
     loadEvents: function () {
         AV.loadNavEvents();
-        AV.loadVREvents();
         AV.loadKeyboardEvents();
         AV.loadBGEvents();
         AV.loadScrollEvents();
-        console.info('All events loaded.');
     },
     loadInitialBG: function () {
         var imgUrl = AV.bgImgList[AV.bgImgIndex];
@@ -61,35 +59,6 @@ var AV = {
                     break;
             }
         };
-    },
-    loadVREvents: function () {
-        $('.vr-btn').hide();
-        var imgUrl = AV.vrImgList[0];
-        var bgUrl = "url('" + imgUrl + "')";
-        var bgImg = new Image();
-        bgImg.onload = function () {
-            $('.vr-btn').show();
-        };
-        bgImg.src = imgUrl;
-        $('.vr-btn').click(function () {
-            $('.vr-content').empty();
-            if (!$('.vr-btn').hasClass('vr-close')) {
-                $('.vr-content').append('<a-scene class="bg-vr"><a-sky class="vr-img" src="' + AV.vrImgList[0] + '" rotation="0 -130 0"></a-sky></a-scene>');
-            }
-            ;
-            $('.vr-btn').toggleClass('vr-close');
-            $('.vr-btn>.vr-icon>.close-btn,.vr-btn>.vr-icon>.open-btn').addClass('animated bounceIn');
-            $('.bg-vr').toggleClass('bg-vr-visible');
-            if ($('.vr-btn').hasClass('vr-close')) {
-                $('.vr-drag-demo').addClass('demo');
-            }
-            else {
-                $('.vr-drag-demo').removeClass('demo');
-            }
-        });
-        $('.vr-drag-demo').click(function () {
-            $('.vr-drag-demo').removeClass('demo');
-        });
     },
     loadBGEvents: function () {
         $('.shuffle-bg-btn').click(function () {

@@ -7,6 +7,14 @@ let AV = {
     AV.loadKeyboardEvents();
     AV.loadBGEvents();
   },
+  closeLoader: () => {
+    setTimeout(()=> {
+      $('#loader').addClass('hide');    
+    },2000);    
+    setTimeout(()=> {
+      $('#loader').remove();    
+    },3000);    
+  },
   loadInitialBG: () => {
     let imgUrl = AV.bgImgList[AV.bgImgIndex];
     let bgUrl = `url('${imgUrl}')`;
@@ -117,7 +125,6 @@ let AV = {
   bgImgIndex: 0,
   bgImgList: [
     'https://i.imgur.com/R1KRe85h.jpg',
-    // 'assets/img/bg/puertorico.jpg',
     'assets/img/bg/eastcoastbeach.jpg',
     'assets/img/bg/rome.jpg',
     'assets/img/bg/phangngabay.jpg',

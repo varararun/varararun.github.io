@@ -7,6 +7,14 @@ var AV = {
         AV.loadKeyboardEvents();
         AV.loadBGEvents();
     },
+    closeLoader: function () {
+        setTimeout(function () {
+            $('#loader').addClass('hide');
+        }, 2000);
+        setTimeout(function () {
+            $('#loader').remove();
+        }, 3000);
+    },
     loadInitialBG: function () {
         var imgUrl = AV.bgImgList[AV.bgImgIndex];
         var bgUrl = "url('" + imgUrl + "')";
@@ -119,7 +127,6 @@ var AV = {
     bgImgIndex: 0,
     bgImgList: [
         'https://i.imgur.com/R1KRe85h.jpg',
-        // 'assets/img/bg/puertorico.jpg',
         'assets/img/bg/eastcoastbeach.jpg',
         'assets/img/bg/rome.jpg',
         'assets/img/bg/phangngabay.jpg',

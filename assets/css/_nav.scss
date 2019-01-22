@@ -9,15 +9,25 @@
     overflow-y: scroll;
     width: 100%;
     background: radial-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .5), rgba(0, 0, 0, 1));
-    transition: $transition-short;
+    transition: $transition-medium;
     z-index: 7;
     &.nav-open {
         visibility: visible;
         opacity: 1;
         transform: initial;
         filter: blur(0);
+        > .nav-menu-grid {
+            transform: initial;
+        }
+        > .nav-menu-grid > a > .nav-menu-item {
+            margin: .5em;
+        }
+        > .nav-menu-grid > .profile {
+            transform: initial;
+        }
     }
     .nav-menu-grid {
+        transform: translateY(20%);
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -26,13 +36,15 @@
         padding: 4em 0 1em;
         max-width: 80em;
         margin: auto;
+        transition: $transition-medium;
         .profile {
             width: 10em;
             height: 10em;
             border-radius: 10em;
             border: $border-thin;
-            transition: $transition-short;
+            transition: $transition-medium;
             filter: grayscale(100%);
+            transform: translateY(-100%);
         }
         .description {
             width: 100%;
@@ -73,14 +85,14 @@
         }
         a {
             .nav-menu-item {
+                transition: $transition-medium;
                 align-self: stretch;
                 overflow: hidden;
                 text-align: center;
-                transition: $transition-short;
                 position: relative;
                 width: 22em;
                 height: 12em;
-                margin: .5em;
+                margin: 2em;
                 border-top: 1px solid rgba(255, 255, 255, 0.3);
                 border-right: 1px solid rgba(255, 255, 255, 0.3);
                 border-left: 1px solid rgba(255, 255, 255, 0.3);

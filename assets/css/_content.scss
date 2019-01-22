@@ -24,23 +24,6 @@
         opacity: 0;
         filter: blur(3px);
     }
-    .bg-vr {
-        opacity: 0;
-        transition: $transition-short;
-        &.bg-vr-loading {
-            filter: brightness(0);
-        }
-        &.bg-vr-visible {
-            opacity: 1 !important;
-            z-index: 5;
-        }
-        &.bg-vr-visible .a-enter-vr {
-            opacity: 1;
-        }
-        .a-enter-vr {
-            display: none;
-        }
-    }
     .bg-img {
         position: absolute;
         top: 0;
@@ -98,7 +81,7 @@
         max-height: 100%;
         overflow-y: hidden;
         padding: 2em 0;
-        transition: $transition-short;
+        transition: $transition-medium;
         width: 100%;
         max-width: 40em;
         .info {

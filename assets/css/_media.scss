@@ -29,8 +29,6 @@
 @media only screen and (max-width: 400px) {
     .email-btn,
     .shuffle-bg-btn,
-    .vr-drag-demo,
-    .a-enter-vr,
     .content-hidden {
         display: none !important;
     }
@@ -66,12 +64,6 @@
         .bg-pattern {
             background-image: none !important;
         }
-    }
-    .bg-vr.bg-vr-visible {
-        z-index: 0!important;
-    }
-    .vr-drag-demo {
-        background: black !important;
     }
     .help-text,
     .info-bar {

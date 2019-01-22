@@ -402,7 +402,7 @@ nav > ul > li {
         letter-spacing: .3em;
         font-weight: 400;
         padding: 0 .1em 1.5em;
-        opacity: .8;
+        opacity: 8;
         font-size: 1.2em;
         -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
         transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
@@ -429,7 +429,7 @@ nav > ul > li {
     position: fixed;
     -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
     transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
-    opacity: .6;
+    opacity: 8;
     cursor: pointer;
     bottom: 0;
     right: 0;
@@ -447,7 +447,7 @@ nav > ul > li {
     z-index: 4;
     padding: .4em .5em; }
     .control-btns .shuffle-bg-btn i.fa {
-      opacity: .6;
+      opacity: 8;
       -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
       transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
       .control-btns .shuffle-bg-btn i.fa:hover {
@@ -475,7 +475,7 @@ nav > ul > li {
       visibility: visible;
       margin-top: .2em; }
     .control-btns .nav-btn .nav-icon {
-      opacity: .6;
+      opacity: 8;
       -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
       transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
       .control-btns .nav-btn .nav-icon:hover {
@@ -577,16 +577,13 @@ section#loader {
 .loader {
   color: #fff;
   font-size: 15px;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
   -webkit-animation-delay: -0.16s;
-  animation-delay: -0.16s;
+          animation-delay: -0.16s;
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  opacity: .6;
   -webkit-filter: blur(1px);
           filter: blur(1px); }
 

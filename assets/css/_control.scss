@@ -3,7 +3,7 @@
     .email-btn {
         position: fixed;
         transition: $transition-short;
-        opacity: .6;
+        opacity: $faded;
         cursor: pointer;
         bottom: 0;
         right: 0;
@@ -24,7 +24,7 @@
         padding: .4em .5em;
         i {
             &.fa {
-                opacity: .6;
+                opacity: $faded;
                 transition: $transition-short;
                 &:hover {
                     opacity: 1;
@@ -58,7 +58,7 @@
             margin-top: .2em;
         }
         .nav-icon {
-            opacity: .6;
+            opacity: $faded;
             transition: $transition-short;
             &:hover {
                 opacity: 1;

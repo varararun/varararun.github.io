@@ -26,16 +26,10 @@ var AV = {
                     if ($('nav').hasClass('nav-open')) {
                         $('.nav-btn').click();
                     }
-                    if ($('.bg-vr').hasClass('bg-vr-visible')) {
-                        $('.vr-btn').click();
-                    }
                     break;
                 case 8: // delete/backspace
                     if ($('nav').hasClass('nav-open')) {
                         $('.nav-btn').click();
-                    }
-                    else if ($('.bg-vr').hasClass('bg-vr-visible')) {
-                        $('.vr-btn').click();
                     }
                     break;
                 case 32: // spacebar
@@ -106,9 +100,6 @@ var AV = {
     loadNavEvents: function () {
         $('.nav-btn,.nav-menu-item>.content>a,.nav-menu-grid').click(function () {
             $('.info-bar').addClass('hidden');
-            if ($('.bg-vr').hasClass('bg-vr-visible')) {
-                $('.vr-btn').click();
-            }
             $('.nav-btn').toggleClass('nav-close');
             $('.nav-btn>.nav-icon>.close-btn,.nav-btn>.nav-icon>.open-btn').addClass('animated bounceIn');
             $('nav').toggleClass('nav-open');
@@ -117,9 +108,6 @@ var AV = {
         });
         $('.nav-menu-item').on('mousemove', AV.panImage);
         $('.open-nav-btn').click(function () {
-            if ($('.bg-vr').hasClass('bg-vr-visible')) {
-                $('.vr-btn').click();
-            }
             $('.nav-btn').click();
         });
     },
@@ -171,9 +159,5 @@ var AV = {
         'assets/img/bg/twobays.jpg',
         'assets/img/bg/santhiya.jpg',
         'assets/img/bg/segovialedge.jpg'
-    ],
-    vrImgList: [
-        'https://i.imgur.com/PLBWJHx.jpg',
-        'assets/img/vr/example.jpg'
     ]
 };

@@ -6,7 +6,6 @@ var AV = {
         AV.loadNavEvents();
         AV.loadKeyboardEvents();
         AV.loadBGEvents();
-        AV.loadScrollEvents();
     },
     loadInitialBG: function () {
         var imgUrl = AV.bgImgList[AV.bgImgIndex];
@@ -109,21 +108,6 @@ var AV = {
         $('.nav-menu-item').on('mousemove', AV.panImage);
         $('.open-nav-btn').click(function () {
             $('.nav-btn').click();
-        });
-    },
-    loadScrollEvents: function () {
-        $("body").bind("mousewheel DOMMouseScroll", function (e) {
-            var delta = (e.originalEvent.wheelDelta || -e.originalEvent.detail);
-            if (delta < 0) {
-                // scroll up
-                if (!$('.nav').hasClass('nav-open')) {
-                    $('.info-bar').removeClass('hidden');
-                }
-            }
-            else if (delta > 0) {
-                // scroll down
-                $('.info-bar').addClass('hidden');
-            }
         });
     },
     panImage: function (e) {

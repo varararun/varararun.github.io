@@ -27,7 +27,6 @@
         }
     }
     .nav-menu-grid {
-        transform: translateY(20%);
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -44,7 +43,7 @@
             border: $border-thin;
             transition: $transition-medium;
             filter: grayscale(100%);
-            transform: translateY(-100%);
+            transform: translateY(-10%);
         }
         .description {
             width: 100%;
@@ -92,7 +91,7 @@
                 position: relative;
                 width: 22em;
                 height: 12em;
-                margin: 2em;
+                margin: 1em;
                 border-top: 1px solid rgba(255, 255, 255, 0.3);
                 border-right: 1px solid rgba(255, 255, 255, 0.3);
                 border-left: 1px solid rgba(255, 255, 255, 0.3);

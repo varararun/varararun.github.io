@@ -6,7 +6,6 @@ let AV = {
     AV.loadNavEvents();
     AV.loadKeyboardEvents();
     AV.loadBGEvents();
-    AV.loadScrollEvents();
   },
   loadInitialBG: () => {
     let imgUrl = AV.bgImgList[AV.bgImgIndex];
@@ -107,20 +106,6 @@ let AV = {
     $('.nav-menu-item').on('mousemove', AV.panImage);
     $('.open-nav-btn').click(() => {
       $('.nav-btn').click();
-    });
-  },
-  loadScrollEvents: function () {
-    $("body").bind("mousewheel DOMMouseScroll", function (e: any) {
-      var delta = (e.originalEvent.wheelDelta || -e.originalEvent.detail);
-      if (delta < 0) {
-        // scroll up
-        if (!$('.nav').hasClass('nav-open')) {
-          $('.info-bar').removeClass('hidden');
-        }
-      } else if (delta > 0) {
-        // scroll down
-        $('.info-bar').addClass('hidden');
-      }
     });
   },
   panImage: (e: any) => {

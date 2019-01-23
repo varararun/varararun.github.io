@@ -34,7 +34,7 @@
         background-size: cover !important;
         background-repeat: no-repeat !important;
         background-position: center center !important;
-        transition: $transition-long;
+        transition: $transition-medium;
         &.loading {
             opacity: 0;
             transform: scale(1.1);

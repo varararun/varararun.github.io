@@ -21,6 +21,9 @@
     .info-bar {
         display: none !important;
     }
+    .page-wrap>.content {
+        transition: .1s;
+    }
 }
 
 
@@ -42,6 +45,7 @@
         .name {
             font-size: 2em !important;
         }
+        transition: .1s;
     }
     .icons {
         display: initial !important;

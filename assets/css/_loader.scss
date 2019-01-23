@@ -1,105 +1,121 @@
 section#loader {
-	background-color: $background-color;
-	z-index: 10;
-	transition: $transition-medium;
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	&.hide {
-		opacity: 0;
-		filter: blur(10px);
-		>.loader-container {
-			opacity: 0;
-		}
-	}
-	.loader-container {
-		width: 100%;
-		height: 100%;
-	}
+    background-color: $background-color;
+    z-index: 10;
+    transition: $transition-medium;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    &.hide {
+        opacity: 0;
+        filter: blur(10px);
+
+        >.loader-container {
+            opacity: 0;
+        }
+    }
+
+    .loader-container {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 
 /* cube loader */
 
 .cube {
-	cursor: progress !important;
-	width: 80px;
-	height: 80px;
-	line-height: 80px;
-	text-align: center;
-	font-size: 50px;
-	transform-style: preserve-3d;
-	transition: transform 0.5s 0.1s;
-	perspective: 9999px;
-	color: $font-color-1;
-	margin: -40px 0 0 -40px;
-	margin: 0 auto;
-	position: absolute;
-	left: 50%;
-	margin-left: -37px;
-	top: 65px;
-	opacity: 1;
-	&.panel-load {
-		z-index: 11;
-		top: 50%;
-		margin-top: -60px;
-		animation: panel 2.2s infinite forwards;
-		.cube-face {
-			color: $font-color-1;
-			box-shadow: inset 0 0 2px 1px $font-color-1, 0 0 2px 1px $font-color-1;
-		}
-	}
+    cursor: progress !important;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    font-size: 50px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s 0.1s;
+    perspective: 9999px;
+    color: $font-color-1;
+    margin: -40px 0 0 -40px;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    margin-left: -37px;
+    top: 65px;
+    opacity: 1;
 
-	.cube-face {
-		width: inherit;
-		height: inherit;
-		position: absolute;
-		background: $background-color+db;
-		box-shadow: inset 0 0 2px 1px $font-color-1, 0 0 2px 1px $font-color-1;
-		opacity: 1;
-		i {
-			filter: blur(1px);
-		}
-	}
+    &.panel-load {
+        z-index: 11;
+        top: 50%;
+        margin-top: -60px;
+        animation: panel 2.2s infinite forwards;
 
-	.cube-face-front {
-		transform: translate3d(0, 0, 40px);
-		font-size: 57px;
-	}
-	.cube-face-back {
-		transform: rotateY(180deg) translate3d(0, 0, 40px);
-	}
-	.cube-face-left {
-		transform: rotateY(-90deg) translate3d(0, 0, 40px);
-	}
-	.cube-face-right {
-		transform: rotateY(90deg) translate3d(0, 0, 40px);
-	}
-	.cube-face-top {
-		transform: rotateX(90deg) translate3d(0, 0, 40px);
-	}
-	.cube-face-bottom {
-		transform: rotateX(-90deg) translate3d(0, 0, 40px);
-	}
+        .cube-face {
+            color: $font-color-1;
+            box-shadow: inset 0 0 2px 1px $font-color-1, 0 0 2px 1px $font-color-1;
+        }
+    }
+
+    .cube-face {
+        width: inherit;
+        height: inherit;
+        position: absolute;
+        background: $background-color+db;
+        box-shadow: inset 0 0 2px 1px $font-color-1, 0 0 2px 1px $font-color-1;
+        opacity: 1;
+
+        i {
+            filter: blur(1px);
+        }
+    }
+
+    .cube-face-front {
+        transform: translate3d(0, 0, 40px);
+        font-size: 57px;
+    }
+
+    .cube-face-back {
+        transform: rotateY(180deg) translate3d(0, 0, 40px);
+    }
+
+    .cube-face-left {
+        transform: rotateY(-90deg) translate3d(0, 0, 40px);
+    }
+
+    .cube-face-right {
+        transform: rotateY(90deg) translate3d(0, 0, 40px);
+    }
+
+    .cube-face-top {
+        transform: rotateX(90deg) translate3d(0, 0, 40px);
+    }
+
+    .cube-face-bottom {
+        transform: rotateX(-90deg) translate3d(0, 0, 40px);
+    }
 }
 
 @keyframes panel {
-	0% {
-		transform: rotateY(0deg) rotateZ(0deg);
-	}
-	20% {
-		transform: rotateY(90deg) rotateZ(0deg);
-	}
-	40% {
-		transform: rotateX(45deg) rotateZ(45deg);
-	}
-	60% {
-		transform: rotateX(90deg) rotateY(180deg) rotateX(90deg);
-	}
-	80% {
-		transform: rotateX(310deg) rotateZ(230deg)
-	}
-	100% {
-		transform: rotateX(360deg) rotateZ(360deg)
-	}
+    0% {
+        transform: rotateY(0deg) rotateZ(0deg);
+    }
+
+    20% {
+        transform: rotateY(90deg) rotateZ(0deg);
+    }
+
+    40% {
+        transform: rotateX(45deg) rotateZ(45deg);
+    }
+
+    60% {
+        transform: rotateX(90deg) rotateY(180deg) rotateX(90deg);
+    }
+
+    80% {
+        transform: rotateX(310deg) rotateZ(230deg)
+    }
+
+    100% {
+        transform: rotateX(360deg) rotateZ(360deg)
+    }
 }

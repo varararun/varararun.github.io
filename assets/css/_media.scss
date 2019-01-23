@@ -4,23 +4,29 @@
     .nav-menu-item {
         width: 15em !important;
         height: 8em !important;
+
         .content {
             font-size: .9em !important;
         }
+
         .bg-img {
             background-image: none !important;
         }
+
         .icon-overlay {
             font-size: 3em !important;
         }
+
         .bg-pattern {
             background-image: none !important;
         }
     }
+
     .help-text,
     .info-bar {
         display: none !important;
     }
+
     .page-wrap>.content {
         transition: .1s;
     }
@@ -30,11 +36,13 @@
 /* phones */
 
 @media only screen and (max-width: 400px) {
+
     .email-btn,
     .shuffle-bg-btn,
     .content-hidden {
         display: none !important;
     }
+
     .page-wrap>.content {
         top: 20% !important;
         left: 50% !important;
@@ -42,33 +50,43 @@
         overflow-y: scroll !important;
         font-size: 1em !important;
         max-width: 20em !important;
+
         .name {
             font-size: 2em !important;
         }
+
         transition: .1s;
     }
+
     .icons {
         display: initial !important;
     }
+
     .email {
         display: initial !important;
     }
+
     .nav-menu-item {
         width: 15em !important;
         height: 8em !important;
+
         .content {
             font-size: .9em !important;
         }
+
         .bg-img {
             background-image: none !important;
         }
+
         .icon-overlay {
             font-size: 3em !important;
         }
+
         .bg-pattern {
             background-image: none !important;
         }
     }
+
     .help-text,
     .info-bar {
         display: none !important;

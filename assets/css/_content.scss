@@ -2,28 +2,34 @@
 
 .page-wrap {
     transition: $transition-short;
+
     &.page-wrap-disable .content,
     &.page-wrap-disable .bg-img {
         filter: blur(3px);
     }
+
     &.loading .bg-overlay {
         opacity: 0;
         transform: scale(1.2);
         filter: blur(3px);
     }
+
     &.loading .bg-pattern {
         opacity: 0;
         filter: blur(3px);
         background-size: 3em, cover;
     }
+
     &.loading .content {
         opacity: 0;
         filter: blur(3px);
     }
+
     &.loading .control-btns {
         opacity: 0;
         filter: blur(3px);
     }
+
     .bg-img {
         position: absolute;
         top: 0;
@@ -35,12 +41,14 @@
         background-repeat: no-repeat !important;
         background-position: center center !important;
         transition: $transition-medium;
+
         &.loading {
             opacity: 0;
             transform: scale(1.1);
             filter: blur(3px);
         }
     }
+
     .bg-overlay {
         position: absolute;
         top: 0;
@@ -49,6 +57,7 @@
         height: 100%;
         background: radial-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9));
         transition: $transition-short;
+
         &:after {
             content: '';
             position: absolute;
@@ -59,6 +68,7 @@
             border: $border-thin;
         }
     }
+
     .bg-pattern {
         opacity: .1 !important;
         position: absolute;
@@ -71,6 +81,7 @@
         // background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         transition: $transition-short;
     }
+
     .content {
         cursor: pointer;
         text-align: center;
@@ -84,16 +95,20 @@
         transition: $transition-medium;
         width: 100%;
         max-width: 40em;
+
         .info {
             margin-bottom: 1.5em;
+
             .name {
                 text-shadow: $text-shadow;
                 font-family: $font-family-2;
                 font-size: 3em;
+
                 .first {
                     padding-right: 0.5em;
                 }
             }
+
             .role {
                 font-size: .8em;
                 font-weight: 400;
@@ -103,10 +118,12 @@
                 text-shadow: $text-shadow;
                 font-family: $font-family-1;
             }
+
             .marker {
                 text-shadow: $text-shadow;
                 font-size: 1.5em;
             }
+
             .location {
                 font-size: 1em;
                 text-transform: uppercase;
@@ -118,22 +135,27 @@
                 margin-bottom: 1.5em;
             }
         }
+
         .icons {
             display: none;
             font-size: 1.6em;
             margin-left: -0.4em;
+
             span {
                 padding: .4em;
+
                 .fa {
                     opacity: $faded;
                     text-shadow: $text-shadow;
                     transition: $transition-short;
+
                     &:hover {
                         opacity: 1;
                     }
                 }
             }
         }
+
         .email {
             display: none;
             margin: .3em 0;
@@ -144,10 +166,12 @@
             letter-spacing: 0.3em;
             opacity: $faded;
             transition: $transition-short;
+
             &:hover {
                 opacity: 1;
             }
         }
+
         &.content-hidden {
             opacity: 0;
             transform: translate(-50%, -50%) scale(.8);

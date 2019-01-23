@@ -125,7 +125,7 @@
             span {
                 padding: .4em;
                 .fa {
-                    opacity: .6;
+                    opacity: $faded;
                     text-shadow: $text-shadow;
                     transition: $transition-short;
                     &:hover {
@@ -142,7 +142,7 @@
             font-size: .7em !important;
             font-weight: 400;
             letter-spacing: 0.3em;
-            opacity: .7;
+            opacity: $faded;
             transition: $transition-short;
             &:hover {
                 opacity: 1;

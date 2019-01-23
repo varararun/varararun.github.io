@@ -16,7 +16,6 @@ section#loader {
 .loader:before,
 .loader:after {
 	background: #fff;
-	-webkit-animation: load1 1s infinite ease-in-out;
 	animation: load1 1s infinite ease-in-out;
 	width: 1em;
 	height: 4em;
@@ -31,6 +30,11 @@ section#loader {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	filter: blur(1px);
+	opacity: .5;
+	transition: $transition-short;
+	&:hover {
+		opacity: 1;
+	}
 }
 
 .loader:before,
@@ -42,7 +46,6 @@ section#loader {
 
 .loader:before {
 	left: -1.5em;
-	-webkit-animation-delay: -0.32s;
 	animation-delay: -0.32s;
 }
 

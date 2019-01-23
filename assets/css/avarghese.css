@@ -197,7 +197,7 @@ nav > ul > li {
       .page-wrap .content .icons span {
         padding: .4em; }
         .page-wrap .content .icons span .fa {
-          opacity: .6;
+          opacity: 7;
           text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.7);
           -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
           transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
@@ -211,7 +211,7 @@ nav > ul > li {
       font-size: .7em !important;
       font-weight: 400;
       letter-spacing: 0.3em;
-      opacity: .7;
+      opacity: 7;
       -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
       transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
       .page-wrap .content .email:hover {
@@ -287,7 +287,6 @@ nav > ul > li {
         margin: 2em auto;
         padding: 0 2.5em;
         max-width: 40em;
-        opacity: .7;
         position: relative;
         font-weight: 400;
         font-size: .9em; }
@@ -346,7 +345,7 @@ nav > ul > li {
         -webkit-filter: blur(0.02em);
                 filter: blur(0.02em); }
         .nav .nav-menu-grid a .nav-menu-item .icon-overlay .fa {
-          opacity: .35; }
+          opacity: 7; }
       .nav .nav-menu-grid a .nav-menu-item .bg-img {
         background-size: contain;
         background-repeat: no-repeat;
@@ -402,7 +401,7 @@ nav > ul > li {
         letter-spacing: .3em;
         font-weight: 400;
         padding: 0 .1em 1.5em;
-        opacity: 8;
+        opacity: 7;
         font-size: 1.2em;
         -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
         transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
@@ -429,7 +428,7 @@ nav > ul > li {
     position: fixed;
     -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
     transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
-    opacity: 8;
+    opacity: 7;
     cursor: pointer;
     bottom: 0;
     right: 0;
@@ -447,7 +446,7 @@ nav > ul > li {
     z-index: 4;
     padding: .4em .5em; }
     .control-btns .shuffle-bg-btn i.fa {
-      opacity: 8;
+      opacity: 7;
       -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
       transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
       .control-btns .shuffle-bg-btn i.fa:hover {
@@ -472,10 +471,9 @@ nav > ul > li {
     .control-btns .nav-btn.nav-close > .nav-icon > .close-btn {
       opacity: .9;
       display: inline-block;
-      visibility: visible;
-      margin-top: .2em; }
+      visibility: visible; }
     .control-btns .nav-btn .nav-icon {
-      opacity: 8;
+      opacity: 7;
       -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
       transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
       .control-btns .nav-btn .nav-icon:hover {
@@ -570,7 +568,7 @@ section#loader {
 .loader:after {
   background: #fff;
   -webkit-animation: load1 1s infinite ease-in-out;
-  animation: load1 1s infinite ease-in-out;
+          animation: load1 1s infinite ease-in-out;
   width: 1em;
   height: 4em; }
 
@@ -585,7 +583,12 @@ section#loader {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   -webkit-filter: blur(1px);
-          filter: blur(1px); }
+          filter: blur(1px);
+  opacity: .5;
+  -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
+  transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
+  .loader:hover {
+    opacity: 1; }
 
 .loader:before,
 .loader:after {
@@ -596,7 +599,7 @@ section#loader {
 .loader:before {
   left: -1.5em;
   -webkit-animation-delay: -0.32s;
-  animation-delay: -0.32s; }
+          animation-delay: -0.32s; }
 
 .loader:after {
   left: 1.5em; }

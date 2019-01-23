@@ -234,8 +234,10 @@ function watch() {
     gulp.watch('assets/html/**/*.jade', html);
 };
 
-gulp.task('default', gulp.series(compile, serve, watch));
-
 gulp.task('format', format);
+
+gulp.task('minifyImages', minifyImages);
+
+gulp.task('default', gulp.series(compile, serve, watch));
 
 module.exports = gulp;

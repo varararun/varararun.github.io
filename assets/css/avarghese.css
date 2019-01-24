@@ -383,6 +383,8 @@ nav > ul > li {
           background-image: url("../img/thumbnails/instagram.jpg"); }
         .nav .nav-menu-grid a .nav-menu-item .bg-img.youtube {
           background-image: url("../img/thumbnails/youtube.jpg"); }
+        .nav .nav-menu-grid a .nav-menu-item .bg-img.email {
+          background-image: url("../img/thumbnails/email.jpg"); }
       .nav .nav-menu-grid a .nav-menu-item .bg-overlay {
         position: absolute;
         bottom: 0;
@@ -423,10 +425,6 @@ nav > ul > li {
       font-size: .9em;
       text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.7); }
 
-.close-btn {
-  height: 1.3em;
-  margin-top: -8px; }
-
 .control-btns {
   -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
   transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
@@ -447,6 +445,9 @@ nav > ul > li {
       opacity: 7;
       -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
       transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
+      .control-btns .nav-btn .nav-icon .close-btn {
+        height: 1.3em;
+        margin-top: -8px; }
       .control-btns .nav-btn .nav-icon:hover {
         opacity: 1; }
       .control-btns .nav-btn .nav-icon .close-btn {
@@ -469,19 +470,12 @@ nav > ul > li {
       font-size: 3em !important; }
     .nav-menu-item .bg-pattern {
       background-image: none !important; }
-  .help-text,
-  .info-bar {
-    display: none !important; }
   .page-wrap > .content {
     -webkit-transition: .1s;
     transition: .1s; } }
 
 /* phones */
 @media only screen and (max-width: 400px) {
-  .email-btn,
-  .shuffle-bg-btn,
-  .content-hidden {
-    display: none !important; }
   .page-wrap > .content {
     top: 20% !important;
     left: 50% !important;
@@ -508,10 +502,7 @@ nav > ul > li {
     .nav-menu-item .icon-overlay {
       font-size: 3em !important; }
     .nav-menu-item .bg-pattern {
-      background-image: none !important; }
-  .help-text,
-  .info-bar {
-    display: none !important; } }
+      background-image: none !important; } }
 
 /* vendor library overrides */
 section#loader {
@@ -519,7 +510,7 @@ section#loader {
   z-index: 10;
   -webkit-transition: 0.6s cubic-bezier(0.2, 0.74, 0.54, 0.99);
   transition: 0.6s cubic-bezier(0.2, 0.74, 0.54, 0.99);
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%; }
   section#loader.hide {

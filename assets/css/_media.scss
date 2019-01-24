@@ -22,11 +22,6 @@
         }
     }
 
-    .help-text,
-    .info-bar {
-        display: none !important;
-    }
-
     .page-wrap>.content {
         transition: .1s;
     }
@@ -36,12 +31,6 @@
 /* phones */
 
 @media only screen and (max-width: 400px) {
-
-    .email-btn,
-    .shuffle-bg-btn,
-    .content-hidden {
-        display: none !important;
-    }
 
     .page-wrap>.content {
         top: 20% !important;
@@ -62,10 +51,10 @@
         display: initial !important;
     }
 
-    .email {
+   .email {
         display: initial !important;
     }
-
+    
     .nav-menu-item {
         width: 15em !important;
         height: 8em !important;
@@ -85,10 +74,5 @@
         .bg-pattern {
             background-image: none !important;
         }
-    }
-
-    .help-text,
-    .info-bar {
-        display: none !important;
     }
 }

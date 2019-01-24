@@ -2,7 +2,7 @@ section#loader {
     background-color: $background-color;
     z-index: 10;
     transition: $transition-medium;
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
 

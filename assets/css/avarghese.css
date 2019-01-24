@@ -203,19 +203,6 @@ nav > ul > li {
           transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
           .page-wrap .content .icons span .fa:hover {
             opacity: 1; }
-    .page-wrap .content .email {
-      display: none;
-      margin: .3em 0;
-      text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.7);
-      font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
-      font-size: .7em !important;
-      font-weight: 400;
-      letter-spacing: 0.3em;
-      opacity: 7;
-      -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
-      transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
-      .page-wrap .content .email:hover {
-        opacity: 1; }
     .page-wrap .content.content-hidden {
       opacity: 0;
       -webkit-transform: translate(-50%, -50%) scale(0.8);
@@ -489,8 +476,6 @@ nav > ul > li {
     .page-wrap > .content .name {
       font-size: 2em !important; }
   .icons {
-    display: initial !important; }
-  .email {
     display: initial !important; }
   .nav-menu-item {
     width: 15em !important;

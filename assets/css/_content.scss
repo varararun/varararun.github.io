@@ -156,22 +156,6 @@
             }
         }
 
-        .email {
-            display: none;
-            margin: .3em 0;
-            text-shadow: $text-shadow;
-            font-family: $font-family-1;
-            font-size: .7em !important;
-            font-weight: 400;
-            letter-spacing: 0.3em;
-            opacity: $faded;
-            transition: $transition-short;
-
-            &:hover {
-                opacity: 1;
-            }
-        }
-
         &.content-hidden {
             opacity: 0;
             transform: translate(-50%, -50%) scale(.8);

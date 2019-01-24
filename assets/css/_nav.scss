@@ -129,7 +129,7 @@
                     transform: translate(0, -50%);
                     filter: blur(0.02em);
                     transition: $transition-medium;
-                    
+
                     .fa {
                         opacity: $faded;
                     }
@@ -182,6 +182,7 @@
                     &.youtube {
                         background-image: url('../img/thumbnails/youtube.jpg');
                     }
+
                     &.email {
                         background-image: url('../img/thumbnails/email.jpg');
                     }

@@ -18,12 +18,10 @@
         "url": "https://github.com/varararun/varararun.github.io.git"
     },
     "author": "arun varghese",
-    "contributors": [
-        {
-            "name": "avarghese4790",
-            "email": "arunv4700@gmail.com"
-        }
-    ],
+    "contributors": [{
+        "name": "avarghese4790",
+        "email": "arunv4700@gmail.com"
+    }],
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/varararun/varararun.github.io/issues"

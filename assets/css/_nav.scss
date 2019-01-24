@@ -66,7 +66,7 @@
                 font-size: .9em;
 
                 &:before {
-                    content: "\f10d";
+                    content: '\f10d';
                     font: normal normal normal 14px/1 FontAwesome;
                     color: initial;
                     position: absolute;
@@ -79,7 +79,7 @@
                 }
 
                 &:after {
-                    content: "\f10e";
+                    content: '\f10e';
                     font: normal normal normal 14px/1 FontAwesome;
                     color: initial;
                     position: absolute;
@@ -128,7 +128,8 @@
                     font-size: 6.5em;
                     transform: translate(0, -50%);
                     filter: blur(0.02em);
-
+                    transition: $transition-medium;
+                    
                     .fa {
                         opacity: $faded;
                     }
@@ -147,39 +148,39 @@
                     transform-origin: center;
 
                     &.about {
-                        background-image: url("../img/thumbnails/about.jpg");
+                        background-image: url('../img/thumbnails/about.jpg');
                     }
 
                     &.linkedin {
-                        background-image: url("../img/thumbnails/linkedin.jpg");
+                        background-image: url('../img/thumbnails/linkedin.jpg');
                     }
 
                     &.resume {
-                        background-image: url("../img/thumbnails/resume.jpg");
+                        background-image: url('../img/thumbnails/resume.jpg');
                     }
 
                     &.github {
-                        background-image: url("../img/thumbnails/github.jpg");
+                        background-image: url('../img/thumbnails/github.jpg');
                     }
 
                     &.travel {
-                        background-image: url("../img/thumbnails/travel.jpg");
+                        background-image: url('../img/thumbnails/travel.jpg');
                     }
 
                     &.facebook {
-                        background-image: url("../img/thumbnails/facebook.jpg");
+                        background-image: url('../img/thumbnails/facebook.jpg');
                     }
 
                     &.codepen {
-                        background-image: url("../img/thumbnails/codepen.jpg");
+                        background-image: url('../img/thumbnails/codepen.jpg');
                     }
 
                     &.instagram {
-                        background-image: url("../img/thumbnails/instagram.jpg");
+                        background-image: url('../img/thumbnails/instagram.jpg');
                     }
 
                     &.youtube {
-                        background-image: url("../img/thumbnails/youtube.jpg");
+                        background-image: url('../img/thumbnails/youtube.jpg');
                     }
                 }
 

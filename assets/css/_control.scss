@@ -1,65 +1,19 @@
+.close-btn {
+    height: 1.3em;
+    margin-top: -8px;
+}
+
 .control-btns {
     transition: $transition-short;
-
-    .email-btn {
-        position: fixed;
-        transition: $transition-short;
-        opacity: $faded;
-        cursor: pointer;
-        bottom: 0;
-        right: 0;
-        font-size: 2em;
-        z-index: 4;
-        padding: .5em .5em;
-
-        &:hover {
-            opacity: 1;
-        }
-    }
-
-    .shuffle-bg-btn {
-        position: fixed;
-        cursor: pointer;
-        bottom: 0;
-        left: 0;
-        font-size: 2em;
-        z-index: 4;
-        padding: .4em .5em;
-
-        i {
-            &.fa {
-                opacity: $faded;
-                transition: $transition-short;
-
-                &:hover {
-                    opacity: 1;
-                }
-            }
-
-            &.fa-cog {
-                cursor: progress !important;
-            }
-
-            &.fa-spin {
-                filter: blur(1px);
-            }
-        }
-    }
 
     .nav-btn {
         position: fixed;
         top: 0;
-        left: 0;
+        right: 0;
         z-index: 7;
         font-size: 2em;
         padding: .55em .5em;
         cursor: pointer;
-
-        &.nav-close>.nav-icon>.open-btn {
-            opacity: 0;
-            display: none;
-            visibility: hidden;
-        }
 
         &.nav-close>.nav-icon>.close-btn {
             opacity: .9;
@@ -68,6 +22,7 @@
         }
 
         .nav-icon {
+            color: $font-color-1;
             opacity: $faded;
             transition: $transition-short;
 

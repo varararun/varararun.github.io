@@ -291,7 +291,7 @@ nav > ul > li {
         font-weight: 400;
         font-size: .9em; }
         .nav .nav-menu-grid .description div:before {
-          content: "\f10d";
+          content: '\f10d';
           font: normal normal normal 14px/1 FontAwesome;
           color: initial;
           position: absolute;
@@ -302,7 +302,7 @@ nav > ul > li {
           top: 0;
           color: inherit; }
         .nav .nav-menu-grid .description div:after {
-          content: "\f10e";
+          content: '\f10e';
           font: normal normal normal 14px/1 FontAwesome;
           color: initial;
           position: absolute;
@@ -343,7 +343,9 @@ nav > ul > li {
         -webkit-transform: translate(0, -50%);
                 transform: translate(0, -50%);
         -webkit-filter: blur(0.02em);
-                filter: blur(0.02em); }
+                filter: blur(0.02em);
+        -webkit-transition: 0.6s cubic-bezier(0.2, 0.74, 0.54, 0.99);
+        transition: 0.6s cubic-bezier(0.2, 0.74, 0.54, 0.99); }
         .nav .nav-menu-grid a .nav-menu-item .icon-overlay .fa {
           opacity: 7; }
       .nav .nav-menu-grid a .nav-menu-item .bg-img {
@@ -421,58 +423,27 @@ nav > ul > li {
       font-size: .9em;
       text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.7); }
 
+.close-btn {
+  height: 1.3em;
+  margin-top: -8px; }
+
 .control-btns {
   -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
   transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
-  .control-btns .email-btn {
-    position: fixed;
-    -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
-    transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
-    opacity: 7;
-    cursor: pointer;
-    bottom: 0;
-    right: 0;
-    font-size: 2em;
-    z-index: 4;
-    padding: .5em .5em; }
-    .control-btns .email-btn:hover {
-      opacity: 1; }
-  .control-btns .shuffle-bg-btn {
-    position: fixed;
-    cursor: pointer;
-    bottom: 0;
-    left: 0;
-    font-size: 2em;
-    z-index: 4;
-    padding: .4em .5em; }
-    .control-btns .shuffle-bg-btn i.fa {
-      opacity: 7;
-      -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
-      transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
-      .control-btns .shuffle-bg-btn i.fa:hover {
-        opacity: 1; }
-    .control-btns .shuffle-bg-btn i.fa-cog {
-      cursor: progress !important; }
-    .control-btns .shuffle-bg-btn i.fa-spin {
-      -webkit-filter: blur(1px);
-              filter: blur(1px); }
   .control-btns .nav-btn {
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     z-index: 7;
     font-size: 2em;
     padding: .55em .5em;
     cursor: pointer; }
-    .control-btns .nav-btn.nav-close > .nav-icon > .open-btn {
-      opacity: 0;
-      display: none;
-      visibility: hidden; }
     .control-btns .nav-btn.nav-close > .nav-icon > .close-btn {
       opacity: .9;
       display: inline-block;
       visibility: visible; }
     .control-btns .nav-btn .nav-icon {
+      color: #fff;
       opacity: 7;
       -webkit-transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
       transition: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99); }

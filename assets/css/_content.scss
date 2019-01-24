@@ -139,7 +139,6 @@
         .icons {
             display: none;
             font-size: 1.6em;
-            margin-left: -0.4em;
 
             span {
                 padding: .4em;
@@ -156,9 +155,61 @@
             }
         }
 
+        .mouse-click-icon {
+            position: relative;
+            cursor: pointer;
+            width: 3em;
+            height: 4.5em;
+            border-radius: 15px;
+            margin: 4.5em auto 0;
+            border: 1px solid;
+            transition: $transition-medium;
+
+            &:hover {
+                box-shadow: 0 0 1em 0.1em rgba(0, 0, 0, 0.8);
+            }
+
+            .click {
+                margin: .4em auto;
+                width: .7em;
+                height: .7em;
+                border: 1px solid #fff8;
+                border-radius: 1em;
+                background: #fff8;
+                transition: $transition-medium;
+                animation: click 4s cubic-bezier(0.83, -0.03, 0.54, 0.99) infinite;
+            }
+        }
+
         &.content-hidden {
             opacity: 0;
             transform: translate(-50%, -50%) scale(.8);
         }
+    }
+}
+
+@keyframes click {
+    20% {
+        transform: scale(2);
+        filter: blur(35px);
+        background: transparent;
+    }
+
+    45% {
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1);
+        filter: blur(0px);
+        background: #fff8;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
     }
 }

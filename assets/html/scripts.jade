@@ -1,7 +1,7 @@
 script(src='assets/lib/jquery/dist/jquery.min.js')
 script(src='assets/js/avarghese.min.js')
 script(type='text/javascript') AV.initialize();
-script(type='text/javascript') $(window).load(function() {AV.closeLoader();});
+script(type='text/javascript') $(window).on('load', function() {AV.closeLoader();});
 script(type='text/javascript').
     (function(i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;

@@ -92,8 +92,8 @@ var AV = {
     },
     loadNavEvents: function () {
         $('.nav-btn,.nav-menu-item>.content>a,.nav-menu-grid').click(function () {
-            $('.nav-btn').toggleClass('nav-close');
-            $('.nav-btn>.nav-icon>.close-btn').addClass('animated bounceIn');
+            $('.nav-btn').toggleClass('nav-closed');
+            $('.nav-btn').addClass('animated bounceIn');
             $('nav').toggleClass('nav-open');
             $('.page-wrap').toggleClass('page-wrap-disable');
             $('.page-wrap>.content').toggleClass('content-hidden');

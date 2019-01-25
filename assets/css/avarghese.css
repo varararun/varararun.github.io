@@ -470,8 +470,9 @@ nav > ul > li {
 /* tablets */
 @media only screen and (min-width: 400px) and (max-width: 1100px) {
   .nav-menu-item {
-    width: 15em !important;
-    height: 8em !important; }
+    width: 20em !important;
+    height: 10em !important;
+    margin: .5em !important; }
     .nav-menu-item .content {
       font-size: .9em !important; }
     .nav-menu-item .bg-img {
@@ -501,8 +502,9 @@ nav > ul > li {
   .icons {
     display: initial !important; }
   .nav-menu-item {
-    width: 15em !important;
-    height: 8em !important; }
+    width: 10em !important;
+    height: 10em !important;
+    margin: .5em !important; }
     .nav-menu-item .content {
       font-size: .9em !important; }
     .nav-menu-item .bg-img {

@@ -73,7 +73,6 @@
                     position: absolute;
                     left: .5em;
                     font-size: 1.3em;
-                    -webkit-filter: blur(1.2px);
                     filter: blur(1.2px);
                     top: 0;
                     color: inherit;
@@ -87,7 +86,6 @@
                     position: absolute;
                     right: .5em;
                     font-size: 1.3em;
-                    -webkit-filter: blur(1.2px);
                     filter: blur(1.2px);
                     top: 0;
                     color: inherit;
@@ -129,7 +127,6 @@
                     color: white;
                     font-size: 6.5em;
                     transform: translate(0, -50%);
-                    filter: blur(0.02em);
                     transition: $transition-medium;
 
                     .fa {

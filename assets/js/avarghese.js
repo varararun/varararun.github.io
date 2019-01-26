@@ -9,7 +9,9 @@ var AV = {
     },
     closeLoader: function () {
         setTimeout(function () {
-            $('#loader').addClass('hide');
+            $('#loader').addClass('loaded');
+            AV.loadInitialBG();
+            $('.page-wrap').removeClass('loading');
         }, 2000);
         setTimeout(function () {
             $('#loader').remove();
@@ -64,8 +66,6 @@ var AV = {
         setInterval(function () {
             AV.loadNextBg();
         }, 20000);
-        AV.loadInitialBG();
-        $('.page-wrap').removeClass('loading');
     },
     loadNextBg: function (reverse) {
         if (reverse === void 0) { reverse = false; }

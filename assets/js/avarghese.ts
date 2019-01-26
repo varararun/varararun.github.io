@@ -9,7 +9,9 @@ let AV = {
   },
   closeLoader: () => {
     setTimeout(()=> {
-      $('#loader').addClass('hide');    
+      $('#loader').addClass('loaded');  
+      AV.loadInitialBG();
+      $('.page-wrap').removeClass('loading');  
     },2000);    
     setTimeout(()=> {
       $('#loader').remove();    
@@ -63,9 +65,7 @@ let AV = {
   loadBGEvents: () => {
     setInterval(() => {
       AV.loadNextBg();
-    }, 20000);
-    AV.loadInitialBG();
-    $('.page-wrap').removeClass('loading');
+    }, 20000);    
   },
   loadNextBg: (reverse: boolean = false) => {
     AV.bgImgIndex = reverse ? --AV.bgImgIndex : ++AV.bgImgIndex;

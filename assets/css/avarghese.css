@@ -465,8 +465,6 @@ nav > ul > li {
     transition: .1s; }
     .page-wrap > .content .name {
       font-size: 2em !important; }
-  .icons {
-    display: initial !important; }
   .nav-menu-item {
     width: 10em !important;
     height: 10em !important;

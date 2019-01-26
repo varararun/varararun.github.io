@@ -222,16 +222,8 @@ nav > ul > li {
     .page-wrap .content .more-info-btn {
       position: relative;
       cursor: pointer;
-      margin: 2em auto 0;
-      -webkit-transition: 0.6s cubic-bezier(0.2, 0.74, 0.54, 0.99);
-      transition: 0.6s cubic-bezier(0.2, 0.74, 0.54, 0.99); }
-      .page-wrap .content .more-info-btn i {
-        -webkit-transition: 0.6s cubic-bezier(0.2, 0.74, 0.54, 0.99);
-        transition: 0.6s cubic-bezier(0.2, 0.74, 0.54, 0.99);
-        opacity: .7; }
-        .page-wrap .content .more-info-btn i:hover {
-          text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.7);
-          opacity: 1; }
+      margin: 3em auto 0;
+      text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.7); }
     .page-wrap .content.content-hidden {
       opacity: 0;
       -webkit-transform: translate(-50%, -50%) scale(0.8);

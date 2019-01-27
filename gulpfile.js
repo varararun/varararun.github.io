@@ -238,6 +238,6 @@ gulp.task('format', format);
 
 gulp.task('minifyImages', minifyImages);
 
-gulp.task('default', gulp.series(compile, serve, watch));
+gulp.task('default', gulp.series(minifyImages, compile, serve, watch));
 
 module.exports = gulp;

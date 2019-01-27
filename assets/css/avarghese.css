@@ -347,7 +347,7 @@ nav > ul > li {
       .nav .nav-menu-grid a .nav-menu-item .icon-overlay {
         width: 100%;
         position: absolute;
-        top: 50%;
+        top: 45%;
         color: white;
         font-size: 6.5em;
         -webkit-transform: translate(0, -50%);

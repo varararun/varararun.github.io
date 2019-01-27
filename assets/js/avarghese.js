@@ -17,6 +17,12 @@ var AV = {
             $('#loader').remove();
         }, 2000);
     },
+    loadNavImages: function () {
+        $('img.bg-img').each(function (index, img) {
+            var src = $(img).attr('data-src');
+            $(img).attr({ 'src': src });
+        });
+    },
     loadInitialBG: function () {
         var imgUrl = AV.bgImgList[AV.bgImgIndex];
         var bgUrl = "url('" + imgUrl + "')";
@@ -92,6 +98,9 @@ var AV = {
     },
     loadNavEvents: function () {
         $('.nav-btn,.nav-menu-item>.content>a,.nav-menu-grid').click(function () {
+            if ($('img.bg-img').attr('src') === undefined) {
+                AV.loadNavImages();
+            }
             $('.nav-btn').toggleClass('nav-closed');
             $('.nav-btn').addClass('animated bounceIn');
             $('nav').toggleClass('nav-open');

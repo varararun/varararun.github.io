@@ -328,26 +328,6 @@ div {
                 transform: scale(1.2);
         -webkit-transform-origin: center;
                 transform-origin: center; }
-        .nav .nav-menu-grid a .nav-menu-item .bg-img.about {
-          background-image: url("../img/thumbnails/about.jpg"); }
-        .nav .nav-menu-grid a .nav-menu-item .bg-img.linkedin {
-          background-image: url("../img/thumbnails/linkedin.jpg"); }
-        .nav .nav-menu-grid a .nav-menu-item .bg-img.resume {
-          background-image: url("../img/thumbnails/resume.jpg"); }
-        .nav .nav-menu-grid a .nav-menu-item .bg-img.github {
-          background-image: url("../img/thumbnails/github.jpg"); }
-        .nav .nav-menu-grid a .nav-menu-item .bg-img.travel {
-          background-image: url("../img/thumbnails/travel.jpg"); }
-        .nav .nav-menu-grid a .nav-menu-item .bg-img.facebook {
-          background-image: url("../img/thumbnails/facebook.jpg"); }
-        .nav .nav-menu-grid a .nav-menu-item .bg-img.codepen {
-          background-image: url("../img/thumbnails/codepen.jpg"); }
-        .nav .nav-menu-grid a .nav-menu-item .bg-img.instagram {
-          background-image: url("../img/thumbnails/instagram.jpg"); }
-        .nav .nav-menu-grid a .nav-menu-item .bg-img.youtube {
-          background-image: url("../img/thumbnails/youtube.jpg"); }
-        .nav .nav-menu-grid a .nav-menu-item .bg-img.email {
-          background-image: url("../img/thumbnails/email.jpg"); }
       .nav .nav-menu-grid a .nav-menu-item .bg-overlay {
         position: absolute;
         bottom: 0;

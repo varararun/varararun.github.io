@@ -143,46 +143,6 @@
                     opacity: 0;
                     transform: scale(1.2);
                     transform-origin: center;
-
-                    &.about {
-                        background-image: url('../img/thumbnails/about.jpg');
-                    }
-
-                    &.linkedin {
-                        background-image: url('../img/thumbnails/linkedin.jpg');
-                    }
-
-                    &.resume {
-                        background-image: url('../img/thumbnails/resume.jpg');
-                    }
-
-                    &.github {
-                        background-image: url('../img/thumbnails/github.jpg');
-                    }
-
-                    &.travel {
-                        background-image: url('../img/thumbnails/travel.jpg');
-                    }
-
-                    &.facebook {
-                        background-image: url('../img/thumbnails/facebook.jpg');
-                    }
-
-                    &.codepen {
-                        background-image: url('../img/thumbnails/codepen.jpg');
-                    }
-
-                    &.instagram {
-                        background-image: url('../img/thumbnails/instagram.jpg');
-                    }
-
-                    &.youtube {
-                        background-image: url('../img/thumbnails/youtube.jpg');
-                    }
-
-                    &.email {
-                        background-image: url('../img/thumbnails/email.jpg');
-                    }
                 }
 
                 .bg-overlay {

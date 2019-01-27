@@ -14,9 +14,15 @@ let AV = {
       $('.page-wrap').removeClass('loading');  
     },1500);    
     setTimeout(()=> {
-      $('#loader').remove();    
+      $('#loader').remove();          
     },2000);    
   },
+  loadNavImages: () => {
+    $('img.bg-img').each(function(index, img) {
+      let src = $(img).attr('data-src');
+      $(img).attr({'src': src});
+    }); 
+  },  
   loadInitialBG: () => {
     let imgUrl = AV.bgImgList[AV.bgImgIndex];
     let bgUrl = `url('${imgUrl}')`;
@@ -90,6 +96,9 @@ let AV = {
   },
   loadNavEvents: () => {
     $('.nav-btn,.nav-menu-item>.content>a,.nav-menu-grid').click(() => {
+      if($('img.bg-img').attr('src') === undefined){
+        AV.loadNavImages();  
+      }
       $('.nav-btn').toggleClass('nav-closed');
       $('.nav-btn').addClass('animated bounceIn');
       $('nav').toggleClass('nav-open');

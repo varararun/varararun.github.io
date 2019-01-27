@@ -12,10 +12,10 @@ var AV = {
             $('#loader').addClass('loaded');
             AV.loadInitialBG();
             $('.page-wrap').removeClass('loading');
-        }, 2000);
+        }, 1500);
         setTimeout(function () {
             $('#loader').remove();
-        }, 3000);
+        }, 2000);
     },
     loadInitialBG: function () {
         var imgUrl = AV.bgImgList[AV.bgImgIndex];

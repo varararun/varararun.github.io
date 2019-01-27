@@ -1,14 +1,14 @@
-$font-family-1: 'Montserrat',
+$font-family-primary: 'Montserrat',
 'Helvetica Neue',
 Arial,
 sans-serif;
-$font-family-2: 'Nothing You Could Do';
+$font-family-secondary: 'Nothing You Could Do';
+$font-color-primary: #fff;
+$text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.7);
 $transition-short: 0.2s cubic-bezier(0.83, -0.03, 0.54, 0.99);
 $transition-medium: .6s cubic-bezier(0.2, 0.74, 0.54, 0.99);
 $transition-long: 1s cubic-bezier(0.83, -0.03, 0.54, 0.99);
 $background-color: #282f35;
-$font-color-1: #fff;
-$text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.7);
 $border-thin: 1px solid rgba(255, 255, 255, 0.2);
 $faded: 7;
 
@@ -17,12 +17,12 @@ html,
 body {
     height: 100%;
     width: 100%;
-    font-family: $font-family-1;
+    font-family: $font-family-primary;
+    color: $font-color-primary;
+    background: $background-color;
     font-weight: 100;
-    color: $font-color-1;
     position: relative;
     overflow: hidden;
-    background: $background-color;
     margin: 0;
     padding: 0;
 }
@@ -53,34 +53,15 @@ div {
     outline: none !important;
 }
 
-section,
-header {
+.page-wrap {
     position: relative;
     height: 100%;
     width: 100%;
     transition: $transition-long;
 }
 
-nav>ul>li {
-    cursor: pointer;
-    padding-left: 1em;
-    padding-bottom: 1em;
-    color: black;
-    background: white;
-    padding-right: 1em;
-}
-
-::-webkit-scrollbar {
-    display: none;
-}
-
-.remove {
-    display: none;
-}
-
 @import 'fonts';
 @import 'content';
 @import 'nav';
 @import 'media';
-@import 'overrides';
 @import 'loader';

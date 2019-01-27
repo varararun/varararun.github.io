@@ -40,31 +40,31 @@
         background: #282f35db;
         color: #fff;
     }
-}
 
-.cube-loader .cube-face-front {
-    transform: translate3d(0, 0, 40px);
-    font-size: 57px;
-}
+    .cube-face-front {
+        transform: translate3d(0, 0, 40px);
+        font-size: 57px;
+    }
 
-.cube-loader .cube-face-back {
-    transform: rotateY(180deg) translate3d(0, 0, 40px);
-}
+    .cube-face-back {
+        transform: rotateY(180deg) translate3d(0, 0, 40px);
+    }
 
-.cube-loader .cube-face-left {
-    transform: rotateY(-90deg) translate3d(0, 0, 40px);
-}
+    .cube-face-left {
+        transform: rotateY(-90deg) translate3d(0, 0, 40px);
+    }
 
-.cube-loader .cube-face-right {
-    transform: rotateY(90deg) translate3d(0, 0, 40px);
-}
+    .cube-face-right {
+        transform: rotateY(90deg) translate3d(0, 0, 40px);
+    }
 
-.cube-loader .cube-face-top {
-    transform: rotateX(90deg) translate3d(0, 0, 40px);
-}
+    .cube-face-top {
+        transform: rotateX(90deg) translate3d(0, 0, 40px);
+    }
 
-.cube-loader .cube-face-bottom {
-    transform: rotateX(-90deg) translate3d(0, 0, 40px);
+    .cube-face-bottom {
+        transform: rotateX(-90deg) translate3d(0, 0, 40px);
+    }
 }
 
 @keyframes rotate {

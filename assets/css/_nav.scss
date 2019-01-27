@@ -1,13 +1,13 @@
 /* navigation page*/
 
 .nav {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
     opacity: 0;
     visibility: hidden;
     position: fixed;
     padding: 0.2em .4em;
     height: 100%;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
     width: 100%;
     background: radial-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .5), rgba(0, 0, 0, 1));
     transition: $transition-medium;
@@ -73,7 +73,6 @@
                     position: absolute;
                     left: .5em;
                     font-size: 1.3em;
-                    filter: blur(1.2px);
                     top: 0;
                     color: inherit;
                 }
@@ -86,7 +85,6 @@
                     position: absolute;
                     right: .5em;
                     font-size: 1.3em;
-                    filter: blur(1.2px);
                     top: 0;
                     color: inherit;
                 }
@@ -223,7 +221,6 @@
 
         .tags {
             text-shadow: $text-shadow;
-            font-family: $font-family-1;
             font-weight: 400;
             font-size: .9em;
             letter-spacing: 0.3em;

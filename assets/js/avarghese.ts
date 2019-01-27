@@ -94,7 +94,7 @@ let AV = {
       $('.nav-btn').addClass('animated bounceIn');
       $('nav').toggleClass('nav-open');
       $('.page-wrap').toggleClass('page-wrap-disable');
-      $('.page-wrap>.content').toggleClass('content-hidden');
+      $('.page-wrap>.content-container').toggleClass('content-hidden');
     });
     $('.nav-menu-item').on('mousemove', AV.panImage);
   },

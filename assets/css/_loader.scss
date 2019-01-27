@@ -22,14 +22,11 @@
     perspective: 9999px;
     color: #333;
     margin: -40px 0 0 -40px;
-    margin: 0 auto;
     position: absolute;
     left: 50%;
-    margin-left: -37px;
     top: 50%;
     z-index: 11;
-    animation: rotate 2s infinite forwards;
-    margin-top: -50px;
+    animation: rotate 2.2s infinite forwards;
 
     .cube-face {
         color: black;
@@ -43,7 +40,6 @@
 
     .cube-face-front {
         transform: translate3d(0, 0, 40px);
-        font-size: 57px;
     }
 
     .cube-face-back {

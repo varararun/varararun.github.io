@@ -10,6 +10,7 @@ let jshint = require('gulp-jshint');
 let stylish = require('jshint-stylish');
 let beautify = require('gulp-jsbeautifier');
 let cleanCSS = require('gulp-clean-css');
+let concat = require('gulp-concat');
 let tsProject = ts.createProject('tsconfig.json');
 let sourcemaps = require('gulp-sourcemaps');
 let browserSync = require('browser-sync').create();
@@ -159,6 +160,16 @@ function minifyCss() {
         .pipe(gulp.dest('assets/css'));
 };
 
+function bundleCss() {
+    return gulp.src([
+            'assets/css/avarghese.min.css',
+            'assets/lib/animate.css/animate.min.css',
+            'assets/lib/devicon/devicon.min.css'
+        ])
+        .pipe(concat('bundled.min.css'))
+        .pipe(gulp.dest('assets/css'));
+}
+
 function sourcemapCss() {
     return gulp.src([
             'assets/css/*.min.css'
@@ -222,7 +233,7 @@ function reload(done) {
 
 const js = gulp.series(cleanJs, typescript, minifyJs, sourcemapJs, reload);
 
-const css = gulp.series(cleanCss, scss, minifyCss, sourcemapCss, reload);
+const css = gulp.series(cleanCss, scss, minifyCss, bundleCss, sourcemapCss, reload);
 
 const html = gulp.series(cleanHtml, jadeTemplate, minifyHtml, reload);
 
@@ -235,6 +246,8 @@ function watch() {
 };
 
 gulp.task('format', format);
+
+gulp.task('bundleCss', bundleCss);
 
 gulp.task('minifyImages', minifyImages);
 

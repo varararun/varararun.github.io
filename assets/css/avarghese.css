@@ -376,7 +376,7 @@ div {
     .nav-menu-item .content {
       font-size: .9em !important; }
     .nav-menu-item .bg-img {
-      background-image: none !important; }
+      display: none !important; }
     .nav-menu-item .icon-overlay {
       font-size: 3em !important; }
     .nav-menu-item .bg-pattern {
@@ -406,7 +406,7 @@ div {
     .nav-menu-item .content {
       font-size: .9em !important; }
     .nav-menu-item .bg-img {
-      background-image: none !important; }
+      display: none !important; }
     .nav-menu-item .icon-overlay {
       font-size: 3em !important; }
     .nav-menu-item .bg-pattern {

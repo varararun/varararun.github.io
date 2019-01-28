@@ -74,6 +74,11 @@ let AV = {
     }, 20000);    
   },
   loadNextBg: (reverse: boolean = false) => {
+    if ($('.bg-loading-icon, .page-wrap').hasClass('loading')) {
+      return true;
+    } else {
+      $('.bg-loading-icon').toggleClass('loading');
+    }
     AV.bgImgIndex = reverse ? --AV.bgImgIndex : ++AV.bgImgIndex;
     if (AV.bgImgIndex < 0) {
       AV.bgImgIndex = AV.bgImgList.length - 1;
@@ -88,6 +93,9 @@ let AV = {
     let bgImg = new Image();
     bgImg.onload = () => {
       $('.page-wrap>.bg-img').css('background-image', bgUrl);
+      setTimeout(() => {
+        $('.bg-loading-icon').toggleClass('loading');
+      }, 200)
     };
     bgImg.src = imgUrl;
   },

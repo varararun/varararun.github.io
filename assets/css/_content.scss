@@ -18,7 +18,22 @@
     &.nav-closed {
         display: none;
     }
+}
 
+.bg-loading-icon {
+    cursor: wait;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 7;
+    font-size: 2em;
+    padding: .55em .5em;
+    transition: $transition-medium;
+    opacity: 0;
+
+    &.loading {
+        opacity: 1;
+    }
 }
 
 .page-wrap {

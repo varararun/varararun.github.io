@@ -76,7 +76,6 @@ div {
     display: none; }
 
 .bg-loading-icon {
-  cursor: wait;
   position: fixed;
   bottom: 0;
   left: 0;

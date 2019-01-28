@@ -2,6 +2,7 @@
 
 .nav {
     -webkit-overflow-scrolling: touch;
+    pointer-events: none;
     overflow-y: scroll;
     opacity: 0;
     visibility: hidden;
@@ -14,6 +15,7 @@
     z-index: 7;
 
     &.nav-open {
+        pointer-events: all;
         visibility: visible;
         opacity: 1;
         transform: initial;

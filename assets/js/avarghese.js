@@ -126,7 +126,7 @@ var AV = {
     },
     bgImgIndex: 0,
     bgImgList: [
-        'https://i.imgur.com/R1KRe85h.jpg',
+        'assets/img/bg/initial.jpg',
         'assets/img/bg/eastcoastbeach.jpg',
         'assets/img/bg/rome.jpg',
         'assets/img/bg/phangngabay.jpg',

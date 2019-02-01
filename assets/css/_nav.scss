@@ -1,5 +1,22 @@
 /* navigation page*/
 
+.nav-btn {
+    font-size: 2em;
+    padding: .55em .5em 0;
+    cursor: pointer;
+    display: block;
+    transition: $transition-medium;
+
+    i {
+        height: 1.3em;
+        margin-top: -8px;
+    }
+
+    &.nav-closed {
+        display: none;
+    }
+}
+
 .nav {
     -webkit-overflow-scrolling: touch;
     pointer-events: none;
@@ -40,7 +57,7 @@
         justify-content: center;
         align-items: stretch;
         align-content: stretch;
-        padding: 4em 0 1em;
+        padding-bottom: 1em;
         max-width: 80em;
         margin: auto;
         transition: $transition-medium;
@@ -107,10 +124,6 @@
                 border-right: 1px solid rgba(255, 255, 255, 0.3);
                 border-left: 1px solid rgba(255, 255, 255, 0.3);
                 border-radius: .3em;
-
-                &:hover .bg-img {
-                    opacity: 1;
-                }
 
                 &:hover .content {
                     opacity: 1 !important;
@@ -193,4 +206,9 @@
             text-shadow: $text-shadow;
         }
     }
+}
+
+/* hover events */
+.no-touch .nav-menu-item img:hover .bg-img {
+    opacity: 1;
 }

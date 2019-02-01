@@ -4,11 +4,13 @@
     height: 100%;
     z-index: 10;
     position: fixed;
+    filter: blur(1em);
+    transition: .6s cubic-bezier(0.2, 0.74, 0.54, 0.99);
+    opacity: 0;
 
-    &.loaded {
-        filter: blur(1em);
-        transition: .6s cubic-bezier(0.2, 0.74, 0.54, 0.99);
-        opacity: 0;
+    &.loading {
+        filter: blur(0);
+        opacity: 1;
     }
 }
 
@@ -35,7 +37,7 @@
         width: inherit;
         height: inherit;
         position: absolute;
-        background: #282f35db;
+        background: #121212e0;
         color: #fff;
     }
 

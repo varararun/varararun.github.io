@@ -23,16 +23,6 @@
         filter: blur(3px);
     }
 
-    &.loading .bg-overlay {
-        opacity: 0;
-        filter: blur(3px);
-    }
-
-    &.loading .content-container {
-        opacity: 0;
-        filter: blur(3px);
-    }
-
     .bg-img {
         position: absolute;
         top: 0;
@@ -44,12 +34,10 @@
         background-repeat: no-repeat !important;
         background-position: center center !important;
         transition: $transition-medium;
-        background: $background-color;
+        background: $background-color url('../img/bg/code-lq.png');
 
         &.loading {
             opacity: 0;
-            transform: scale(1.1);
-            filter: blur(3px);
         }
     }
 
@@ -61,16 +49,6 @@
         height: 100%;
         background: radial-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9));
         transition: $transition-short;
-
-        &:after {
-            content: '';
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            bottom: 10px;
-            left: 10px;
-            border: $border-thin;
-        }
     }
 
     .content-container {
@@ -86,6 +64,11 @@
         transition: opacity $transition-medium;
         width: 100%;
         max-width: 40em;
+
+        &.loading {
+            opacity: 0;
+            filter: blur(3px);
+        }
 
         .info {
             margin-bottom: 1.5em;

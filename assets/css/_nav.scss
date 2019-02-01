@@ -23,7 +23,7 @@
     padding: 0.2em .4em;
     height: 100%;
     width: 100%;
-    background: radial-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .5), rgba(0, 0, 0, 1));
+    background: radial-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .3), rgba(0, 0, 0, .5));
     transition: $transition-medium;
     z-index: 10;
 
@@ -36,10 +36,6 @@
 
         >.nav-menu-grid {
             transform: initial;
-        }
-
-        >.nav-menu-grid>a>.nav-menu-item {
-            margin: .5em;
         }
 
         >.nav-menu-grid>.profile {

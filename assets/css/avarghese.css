@@ -195,7 +195,7 @@ div {
   background: radial-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5), black);
   -webkit-transition: 0.6s cubic-bezier(0.2, 0.74, 0.54, 0.99);
   transition: 0.6s cubic-bezier(0.2, 0.74, 0.54, 0.99);
-  z-index: 7; }
+  z-index: 10; }
   .nav.nav-open {
     pointer-events: all;
     visibility: visible;

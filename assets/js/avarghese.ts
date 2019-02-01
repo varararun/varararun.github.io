@@ -18,7 +18,7 @@ let AV = {
     },2000);    
   },
   loadNavImages: () => {
-    $('img.bg-img').each(function(index, img) {
+    $('img.nav-item-bg-img').each(function(index, img) {
       let src = $(img).attr('data-src');
       $(img).attr({'src': src});
     }); 
@@ -104,7 +104,7 @@ let AV = {
   },
   loadNavEvents: () => {
     $('.nav-btn,.nav-menu-item>.content>a,.nav-menu-grid').click(() => {
-      if($('img.bg-img').attr('src') === undefined){
+      if($('img.nav-item-bg-img').attr('src') === undefined){
         AV.loadNavImages();  
       }
       $('nav').toggleClass('nav-open');
@@ -115,7 +115,7 @@ let AV = {
   },
   panImage: (e: any) => {
     let item = e.target.parentNode;
-    $(item).children('.bg-img').css({
+    $(item).children('.nav-item-bg-img').css({
       'transform-origin': `${((e.pageX - $(item).offset().left) / $(item).width()) * 100}% ${((e.pageY - $(item).offset().top) / $(item).height()) * 100}%`
     });
   },

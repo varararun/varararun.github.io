@@ -7,6 +7,7 @@ let AV = {
     AV.loadNavEvents();
     AV.loadKeyboardEvents();
     AV.loadLinkEvents();
+    AV.loadBGEvents();
   },
   loading: () => {
       $('.bg-img, .bg-overlay, .content-container').addClass('loading');
@@ -74,7 +75,7 @@ let AV = {
   loadBGEvents: () => {
     setInterval(() => {
       AV.loadNextBg();
-    }, 20000);    
+    }, 10000);    
   },
   loadNextBg: (reverse: boolean = false) => {
     if ($('.bg-loading-icon, .page-wrap').hasClass('loading')) {

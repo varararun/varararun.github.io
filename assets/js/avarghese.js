@@ -7,6 +7,7 @@ var AV = {
         AV.loadNavEvents();
         AV.loadKeyboardEvents();
         AV.loadLinkEvents();
+        AV.loadBGEvents();
     },
     loading: function () {
         $('.bg-img, .bg-overlay, .content-container').addClass('loading');
@@ -74,7 +75,7 @@ var AV = {
     loadBGEvents: function () {
         setInterval(function () {
             AV.loadNextBg();
-        }, 20000);
+        }, 10000);
     },
     loadNextBg: function (reverse) {
         if (reverse === void 0) { reverse = false; }

@@ -19,8 +19,6 @@ body {
     width: 100%;
     font-family: $font-family-primary;
     color: $font-color-primary;
-    background: $background-color;
-    font-weight: 100;
     position: relative;
     overflow: hidden;
     margin: 0;
@@ -58,6 +56,10 @@ div {
     height: 100%;
     width: 100%;
     transition: $transition-long;
+}
+
+.loading {
+    opacity: 0;
 }
 
 @import 'fonts';

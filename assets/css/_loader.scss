@@ -5,10 +5,11 @@
     z-index: 10;
     position: fixed;
     filter: blur(1em);
-    transition: .6s cubic-bezier(0.2, 0.74, 0.54, 0.99);
+    transition: $transition-short;
     opacity: 0;
 
     &.loading {
+        transition: $transition-long;
         filter: blur(0);
         opacity: 1;
     }

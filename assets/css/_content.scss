@@ -24,7 +24,7 @@
     }
 
     .bg-img {
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
@@ -34,15 +34,11 @@
         background-repeat: no-repeat !important;
         background-position: center center !important;
         transition: $transition-medium;
-        background: $background-color url('../img/bg/code-lq.png');
-
-        &.loading {
-            opacity: 0;
-        }
+        background: $background-color url('../img/bg/code.jpg');
     }
 
     .bg-overlay {
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
@@ -66,7 +62,6 @@
         max-width: 40em;
 
         &.loading {
-            opacity: 0;
             filter: blur(3px);
         }
 

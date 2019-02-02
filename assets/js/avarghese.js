@@ -3,14 +3,17 @@ var AV = {
         AV.loadEvents();
     },
     loadEvents: function () {
+        $('#loader').addClass('loading');
         AV.loadNavEvents();
         AV.loadKeyboardEvents();
-        // AV.loadBGEvents();
+        AV.loadLinkEvents();
+    },
+    loading: function () {
+        $('.bg-img, .bg-overlay, .content-container').addClass('loading');
     },
     closeLoader: function () {
         setTimeout(function () {
             $('.loading').removeClass('loading');
-            // AV.loadInitialBG();
         }, 1000);
         setTimeout(function () {
             $('#loader').remove();
@@ -22,15 +25,14 @@ var AV = {
             $(img).attr({ 'src': src });
         });
     },
-    loadInitialBG: function () {
-        var imgUrl = AV.bgImgList[AV.bgImgIndex];
-        var bgUrl = "url('" + imgUrl + "')";
-        var bgImg = new Image();
-        bgImg.onload = function () {
-            $('.page-wrap>.bg-img').css('background-image', bgUrl);
-            $('.page-wrap>.bg-img').removeClass('loading');
-        };
-        bgImg.src = imgUrl;
+    loadLinkEvents: function () {
+        $('a').click(function (e) {
+            AV.loading();
+            e.preventDefault();
+            setTimeout(function () {
+                window.open(e.currentTarget.href, '_self');
+            }, 1000);
+        });
     },
     loadKeyboardEvents: function () {
         document.onkeydown = function (e) {
@@ -128,6 +130,29 @@ var AV = {
     },
     bgImgIndex: 0,
     bgImgList: [
-        'assets/img/bg/code-lq.png'
+        'assets/img/bg/code.jpg',
+        'assets/img/bg/puertorico.jpg',
+        'assets/img/bg/dubrovnik.jpg',
+        'assets/img/bg/eastcoastbeach.jpg',
+        'assets/img/bg/phangngabay.jpg',
+        'assets/img/bg/sanfrancisco.jpg',
+        'assets/img/bg/positano.jpg',
+        'assets/img/bg/rome.jpg',
+        'assets/img/bg/varennaledge.jpg',
+        'assets/img/bg/torontoniagra.jpg',
+        'assets/img/bg/colorado.jpg',
+        'assets/img/bg/gourdonledge.jpg',
+        'assets/img/bg/moorearestaurant.jpg',
+        'assets/img/bg/muaythai.jpg',
+        'assets/img/bg/chicago.jpg',
+        'assets/img/bg/costarica.jpg',
+        'assets/img/bg/denver.jpg',
+        'assets/img/bg/phuket.jpg',
+        'assets/img/bg/magicmountain.jpg',
+        'assets/img/bg/manava.jpg',
+        'assets/img/bg/moorealagoon.jpg',
+        'assets/img/bg/twobays.jpg',
+        'assets/img/bg/santhiya.jpg',
+        'assets/img/bg/segovialedge.jpg'
     ]
 };

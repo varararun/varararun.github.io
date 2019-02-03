@@ -27,7 +27,7 @@ var AV = {
         });
     },
     loadLinkEvents: function () {
-        $('a').click(function (e) {
+        $("a[animate-link='true']").click(function (e) {
             AV.loading();
             e.preventDefault();
             setTimeout(function () {

@@ -75,15 +75,17 @@ var AV = {
     loadBGEvents: function () {
         setInterval(function () {
             AV.loadNextBg();
-        }, 10000);
+        }, 20000);
     },
     loadNextBg: function (reverse) {
         if (reverse === void 0) { reverse = false; }
-        if ($('.bg-loading-icon, .page-wrap').hasClass('loading')) {
+        if ($('.page-wrap').hasClass('loading') ||
+            $('.bg-loading-icon').hasClass('loading-img') ||
+            $('nav').hasClass('nav-open')) {
             return true;
         }
         else {
-            $('.bg-loading-icon').toggleClass('loading');
+            $('.bg-loading-icon, .bg-btn').toggleClass('loading-img');
         }
         AV.bgImgIndex = reverse ? --AV.bgImgIndex : ++AV.bgImgIndex;
         if (AV.bgImgIndex < 0) {
@@ -99,10 +101,10 @@ var AV = {
         }
         var bgImg = new Image();
         bgImg.onload = function () {
-            $('.page-wrap>.bg-img').css('background-image', bgUrl);
             setTimeout(function () {
-                $('.bg-loading-icon').toggleClass('loading');
-            }, 200);
+                $('.page-wrap>.bg-img').css('background-image', bgUrl);
+                $('.bg-loading-icon, .bg-btn').toggleClass('loading-img');
+            }, 1000);
         };
         bgImg.src = imgUrl;
     },

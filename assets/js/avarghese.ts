@@ -122,7 +122,7 @@ let AV = {
     $('.nav-btn').click();
   },
   loadNavEvents: () => {
-    $('.nav-btn,.nav-menu-item>.content>a,.nav-menu-grid').click(() => {
+    $('.nav-btn,.nav-menu-item>.content>a,.nav-menu-grid,.copyright>a').click(() => {
       if($('#loader').length > 0){
         return false;
       }

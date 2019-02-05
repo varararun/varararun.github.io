@@ -125,7 +125,7 @@ var AV = {
         $('.nav-btn').click();
     },
     loadNavEvents: function () {
-        $('.nav-btn,.nav-menu-item>.content>a,.nav-menu-grid').click(function () {
+        $('.nav-btn,.nav-menu-item>.content>a,.nav-menu-grid,.copyright>a').click(function () {
             if ($('#loader').length > 0) {
                 return false;
             }

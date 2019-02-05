@@ -3,7 +3,6 @@
 .nav-btn {
     font-size: 2em;
     padding: .55em .5em 0;
-    cursor: pointer;
     display: block;
     transition: $transition-medium;
 
@@ -25,7 +24,7 @@
     width: 100%;
     background: radial-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .3), rgba(0, 0, 0, .5));
     transition: $transition-medium;
-    z-index: 10;
+    z-index: 15;
 
     &.nav-open {
         pointer-events: all;

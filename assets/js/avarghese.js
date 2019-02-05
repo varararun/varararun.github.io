@@ -79,8 +79,11 @@ var AV = {
     },
     loadNextBg: function (reverse) {
         if (reverse === void 0) { reverse = false; }
-        if ($('.page-wrap').hasClass('loading') ||
+        if ($('#loader').hasClass('loading') ||
+            $('.page-wrap').hasClass('loading') ||
             $('.bg-loading-icon').hasClass('loading-img') ||
+            $('.bg-img.left').length > 0 ||
+            $('.bg-img.right').length > 0 ||
             $('nav').hasClass('nav-open')) {
             return true;
         }
@@ -96,15 +99,25 @@ var AV = {
         }
         var imgUrl = AV.bgImgList[AV.bgImgIndex];
         var bgUrl = "url('" + imgUrl + "')";
-        if ($('.page-wrap>.bg-img').attr('src') === imgUrl) {
+        if ($('.page-wrap>.bg-img.center').css('background-image') === imgUrl) {
             return true;
         }
         var bgImg = new Image();
         bgImg.onload = function () {
+            var direction = reverse ? 'right' : 'left';
+            var selector = ".page-wrap>.bg-img." + direction;
+            $('.page-wrap').prepend("<div class=\"bg-img " + direction + "\"></div>");
+            $(selector).css('background-image', bgUrl);
             setTimeout(function () {
-                $('.page-wrap>.bg-img').css('background-image', bgUrl);
+                $(selector).addClass('load-img');
+            }, 500);
+            setTimeout(function () {
+                $('.page-wrap>.bg-img.center').css('background-image', bgUrl);
+            }, 1500);
+            setTimeout(function () {
+                $(selector).remove();
                 $('.bg-loading-icon, .bg-btn').toggleClass('loading-img');
-            }, 1000);
+            }, 2200);
         };
         bgImg.src = imgUrl;
     },

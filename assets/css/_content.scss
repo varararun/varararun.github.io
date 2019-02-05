@@ -2,11 +2,10 @@
 
 .bg-btn {
     position: fixed;
-    top: 62%;
+    top: 61.5%;
     color: $font-color-primary;
     z-index: 1;
-    cursor: pointer;
-    transition: $transition-long;
+    transition: $transition-medium;
     font-size: 30px;
 
     i {
@@ -27,7 +26,7 @@
 }
 
 .bg-loading-icon {
-    transition: $transition-long;
+    transition: $transition-medium;
     margin-top: 2em;
     opacity: 0;
 
@@ -59,6 +58,37 @@
         background-position: center center !important;
         transition: $transition-medium;
         background: $background-color url('../img/bg/code.jpg');
+
+        &.left {
+            left: -105%;
+            z-index: 2;
+            box-shadow: 0 0 1em 0.1em rgba(0, 0, 0, .8);
+
+            &.load-img {
+                transform: translateX(105%);
+                transition: $transition-long;
+            }
+        }
+
+        &.right {
+            left: auto;
+            right: -105%;
+            z-index: 2;
+            box-shadow: 0 0 1em 0.1em rgba(0, 0, 0, .8);
+
+            &.load-img {
+                transform: translateX(-105%);
+                transition: $transition-long;
+            }
+        }
+
+        &.center {
+            left: 0
+        }
+
+        &.hide {
+            opacity: 0
+        }
     }
 
     .bg-overlay {
@@ -68,7 +98,8 @@
         width: 100%;
         height: 100%;
         background: radial-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9));
-        transition: $transition-short;
+        transition: $transition-medium;
+        z-index: 5;
     }
 
     .content-container {
@@ -83,6 +114,7 @@
         transition: opacity $transition-medium;
         width: 100%;
         max-width: 40em;
+        z-index: 10;
 
         &.loading {
             filter: blur(3px);

@@ -77,10 +77,13 @@ let AV = {
       AV.loadNextBg();
     }, 20000);    
   },
-  loadNextBg: (reverse: boolean = false) => {
-    if ($('.page-wrap').hasClass('loading') || 
+  loadNextBg: (reverse: boolean = false) => {    
+    if ($('#loader').hasClass('loading') ||
+        $('.page-wrap').hasClass('loading') || 
         $('.bg-loading-icon').hasClass('loading-img') ||
-        $('nav').hasClass('nav-open')) {
+        $('.bg-img.left').length > 0 ||
+        $('.bg-img.right').length > 0 ||
+        $('nav').hasClass('nav-open')) { 
       return true;
     } else {
       $('.bg-loading-icon, .bg-btn').toggleClass('loading-img');
@@ -93,15 +96,25 @@ let AV = {
     }
     let imgUrl = AV.bgImgList[AV.bgImgIndex];
     let bgUrl = `url('${imgUrl}')`;
-    if ($('.page-wrap>.bg-img').attr('src') === imgUrl) {
+    if ($('.page-wrap>.bg-img.center').css('background-image') === imgUrl) {
       return true;
     }
     let bgImg = new Image();
     bgImg.onload = () => {      
+      let direction = reverse ? 'right' : 'left';
+      let selector = `.page-wrap>.bg-img.${direction}`;
+      $('.page-wrap').prepend(`<div class="bg-img ${direction}"></div>`);
+      $(selector).css('background-image', bgUrl);
       setTimeout(() => {
-        $('.page-wrap>.bg-img').css('background-image', bgUrl);
-        $('.bg-loading-icon, .bg-btn').toggleClass('loading-img');
-      }, 1000);
+        $(selector).addClass('load-img');                      
+      }, 500);
+       setTimeout(() => {
+        $('.page-wrap>.bg-img.center').css('background-image', bgUrl);         
+      }, 1500);
+      setTimeout(() => {
+        $(selector).remove();        
+        $('.bg-loading-icon, .bg-btn').toggleClass('loading-img'); 
+      }, 2200);
     };
     bgImg.src = imgUrl;
   },

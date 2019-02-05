@@ -1,10 +1,10 @@
-div.bg-img.loading
+div.bg-img.center.loading
 div.bg-overlay.loading
 div.content-container.loading
   span.next.bg-btn(onclick='AV.loadNextBg();')
-    i.fa-fw.fas.fa-chevron-right
+    i.fa-fw.fas.fa-chevron-right.selectable
   span.prev.bg-btn(onclick='AV.loadNextBg(true);')
-    i.fa-fw.fas.fa-chevron-left 
+    i.fa-fw.fas.fa-chevron-left.selectable 
   div.info(onclick='AV.navToggle();')
     div.name
       span.first ARUN
@@ -14,7 +14,7 @@ div.content-container.loading
       i.fa.fa-fw.fa-map-pin
     div.location Plano, TX
   div.more-info-btn(onclick='AV.navToggle();')
-    i.fa-fw.fas.fa-info-circle.fa-2x
+    i.fa-fw.fas.fa-info-circle.fa-2x.selectable
   div.bg-loading-icon
     i.fa-fw.fas.fa-cog.fa-spin
 

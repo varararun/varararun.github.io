@@ -62,6 +62,10 @@ div {
     opacity: 0;
 }
 
+.selectable {
+    cursor: pointer;
+}
+
 @import 'fonts';
 @import 'content';
 @import 'nav';

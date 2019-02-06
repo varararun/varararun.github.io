@@ -118,8 +118,8 @@ div {
       .page-wrap .bg-img.left.load-img {
         -webkit-transform: translateX(105%);
                 transform: translateX(105%);
-        -webkit-transition: 1s cubic-bezier(0.83, -0.03, 0.54, 0.99);
-        transition: 1s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
+        -webkit-transition: 1s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+        transition: 1s cubic-bezier(0.51, 0.92, 0.24, 1.15); }
     .page-wrap .bg-img.right {
       left: auto;
       right: -105%;
@@ -129,8 +129,8 @@ div {
       .page-wrap .bg-img.right.load-img {
         -webkit-transform: translateX(-105%);
                 transform: translateX(-105%);
-        -webkit-transition: 1s cubic-bezier(0.83, -0.03, 0.54, 0.99);
-        transition: 1s cubic-bezier(0.83, -0.03, 0.54, 0.99); }
+        -webkit-transition: 1s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+        transition: 1s cubic-bezier(0.51, 0.92, 0.24, 1.15); }
     .page-wrap .bg-img.center {
       left: 0; }
     .page-wrap .bg-img.hide {

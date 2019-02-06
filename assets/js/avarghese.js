@@ -113,11 +113,13 @@ var AV = {
             }, 500);
             setTimeout(function () {
                 $('.page-wrap>.bg-img.center').css('background-image', bgUrl);
-            }, 1500);
+            }, 2000);
+            setTimeout(function () {
+                $('.bg-loading-icon, .bg-btn').toggleClass('loading-img');
+            }, 2000);
             setTimeout(function () {
                 $(selector).remove();
-                $('.bg-loading-icon, .bg-btn').toggleClass('loading-img');
-            }, 2200);
+            }, 2600);
         };
         bgImg.src = imgUrl;
     },

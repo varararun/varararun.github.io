@@ -110,11 +110,14 @@ let AV = {
       }, 500);
        setTimeout(() => {
         $('.page-wrap>.bg-img.center').css('background-image', bgUrl);         
-      }, 1500);
-      setTimeout(() => {
-        $(selector).remove();        
+      }, 2000);
+      setTimeout(() => {               
         $('.bg-loading-icon, .bg-btn').toggleClass('loading-img'); 
-      }, 2200);
+      }, 2000);
+      setTimeout(() => {               
+        $(selector).remove(); 
+      }, 2600);
+      
     };
     bgImg.src = imgUrl;
   },

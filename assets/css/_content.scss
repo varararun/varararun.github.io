@@ -50,8 +50,8 @@
         position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
+        width: 100vw;
+        height: 100vh;
         transform-origin: center;
         background-size: cover !important;
         background-repeat: no-repeat !important;
@@ -83,11 +83,15 @@
         }
 
         &.center {
-            left: 0
+            left: 0;
+            width: 106vw;
+            height: 106vh;
+            margin-left: -5vw;
+            margin-top: -3vh;
         }
 
         &.hide {
-            opacity: 0
+            opacity: 0;
         }
     }
 
@@ -104,10 +108,6 @@
 
     .content-container {
         text-align: center;
-        position: absolute;
-        transform: translate(-50%, -50%);
-        top: 50% !important;
-        left: 50% !important;
         max-height: 100%;
         overflow-y: hidden;
         padding: 1em 0;

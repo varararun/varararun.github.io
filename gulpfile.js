@@ -110,6 +110,16 @@ function minifyJs() {
         .pipe(gulp.dest('assets/js'));
 };
 
+function bundleJs() {
+    return gulp.src([
+            'assets/lib/gsap/src/minified/TweenMax.min.js',
+            'assets/lib/jquery/dist/jquery.min.js',
+            'assets/js/avarghese.min.js'
+        ])
+        .pipe(concat('bundled.min.js'))
+        .pipe(gulp.dest('assets/js'));
+}
+
 function sourcemapJs() {
     return gulp.src([
             'assets/js/*.min.js',
@@ -162,9 +172,8 @@ function minifyCss() {
 
 function bundleCss() {
     return gulp.src([
-            'assets/css/avarghese.min.css',
             'assets/lib/animate.css/animate.min.css',
-            'assets/lib/devicon/devicon.min.css'
+            'assets/css/avarghese.min.css'
         ])
         .pipe(concat('bundled.min.css'))
         .pipe(gulp.dest('assets/css'));
@@ -231,7 +240,7 @@ function reload(done) {
 
 /** Task Flows **/
 
-const js = gulp.series(cleanJs, typescript, minifyJs, sourcemapJs, reload);
+const js = gulp.series(cleanJs, typescript, minifyJs, bundleJs, sourcemapJs, reload);
 
 const css = gulp.series(cleanCss, scss, minifyCss, bundleCss, sourcemapCss, reload);
 
@@ -248,6 +257,8 @@ function watch() {
 gulp.task('format', format);
 
 gulp.task('bundleCss', bundleCss);
+
+gulp.task('bundleJs', bundleJs);
 
 gulp.task('minifyImages', minifyImages);
 

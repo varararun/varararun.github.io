@@ -8,6 +8,7 @@ let AV = {
     AV.loadKeyboardEvents();
     AV.loadLinkEvents();
     AV.loadBGEvents();
+    AV.loadMouseEvents();
   },
   loading: () => {
       $('.bg-img, .bg-overlay, .content-container').addClass('loading');
@@ -74,7 +75,7 @@ let AV = {
   },
   loadBGEvents: () => {
     setInterval(() => {
-      AV.loadNextBg();
+      // AV.loadNextBg();
     }, 20000);    
   },
   loadNextBg: (reverse: boolean = false) => {    
@@ -87,6 +88,7 @@ let AV = {
       return true;
     } else {
       $('.bg-loading-icon, .bg-btn').toggleClass('loading-img');
+        AV.parallaxDisabled = true;
     }
     AV.bgImgIndex = reverse ? --AV.bgImgIndex : ++AV.bgImgIndex;
     if (AV.bgImgIndex < 0) {
@@ -116,6 +118,7 @@ let AV = {
       }, 2000);
       setTimeout(() => {               
         $(selector).remove(); 
+        AV.parallaxDisabled = false;
       }, 2600);
       
     };
@@ -144,6 +147,26 @@ let AV = {
       'transform-origin': `${((e.pageX - $(item).offset().left) / $(item).width()) * 100}% ${((e.pageY - $(item).offset().top) / $(item).height()) * 100}%`
     });
   },
+  loadMouseEvents: () => {
+    $('.page-wrap').mousemove(function(e) {
+      if(AV.parallaxDisabled){
+          return true;
+      }
+      AV.parallax(e, '.content-container', -100);
+      AV.parallax(e, '.bg-img.center', -30);
+    })
+  },
+  parallax: (e, target, movement) => {
+    let $this = $('.page-wrap');
+    let relX = e.pageX - $this.offset().left;
+    let relY = e.pageY - $this.offset().top;
+
+    TweenMax.to(target, 1, {
+      x: (relX - $this.width() / 2) / $this.width() * movement,
+      y: (relY - $this.height() / 2) / $this.height() * movement
+    });
+  },
+  parallaxDisabled: false,
   bgImgIndex: 0,
   bgImgList: [   
     'assets/img/bg/code.jpg',

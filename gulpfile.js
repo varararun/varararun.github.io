@@ -112,8 +112,6 @@ function minifyJs() {
 
 function bundleJs() {
     return gulp.src([
-            'assets/lib/gsap/src/minified/TweenMax.min.js',
-            'assets/lib/jquery/dist/jquery.min.js',
             'assets/js/avarghese.min.js'
         ])
         .pipe(concat('bundled.min.js'))
@@ -172,7 +170,6 @@ function minifyCss() {
 
 function bundleCss() {
     return gulp.src([
-            'assets/lib/animate.css/animate.min.css',
             'assets/css/avarghese.min.css'
         ])
         .pipe(concat('bundled.min.css'))

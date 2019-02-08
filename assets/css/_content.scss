@@ -2,25 +2,11 @@
 
 .bg-btn {
     position: absolute;
-    top: 61.5%;
+    top: 50%;
     color: $font-color-primary;
     z-index: 1;
     transition: $transition-long;
     font-size: 30px;
-
-    &:after {
-        content: "";
-        border: 1px solid #fff;
-        border-radius: 50%;
-        height: 2em;
-        width: 2em;
-        position: absolute;
-        top: -13px;
-        left: 4px;
-        opacity: 0;
-        transition: $transition-short;
-        cursor: pointer;
-    }
 
     i {
         text-shadow: $text-shadow;
@@ -36,6 +22,7 @@
 
     &.loading-img {
         opacity: 0;
+        transition: $transition-short;
     }
 }
 
@@ -54,7 +41,10 @@
 }
 
 .page-wrap {
-    transition: $transition-short;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    transition: $transition-long;
 
     &.page-wrap-disable .bg-img {
         filter: blur(3px);
@@ -113,13 +103,16 @@
     }
 
     .content-container {
-        position: relative;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) translateY(0);
         text-align: center;
         max-height: 100%;
         padding: 1em 0;
         transition: $transition-medium;
         width: 100%;
-        max-width: 40em;
+        max-width: 95vw;
         z-index: 10;
 
         &.loading {
@@ -127,21 +120,10 @@
         }
 
         .more-info-btn {
-            transition: $transition-medium;
             position: relative;
 
-            &:after {
-                content: "";
-                border: 1px solid #fff;
-                border-radius: 50%;
-                height: 2em;
-                width: 2em;
-                position: absolute;
-                top: -13px;
-                left: 4px;
-                opacity: 0;
-                transition: $transition-short;
-                cursor: pointer;
+            i {
+                transition: $transition-medium;
             }
         }
 
@@ -186,10 +168,11 @@
 
         &.content-hidden {
             opacity: 0;
-            transform: translateY(-20px);
+            transform: translate(-50%, -50%) translateY(-20px);
 
-            .more-info-btn {
-                transform: translateY(20px);
+            .more-info-btn>i {
+                transform: translateY(30px);
+                opacity: 0;
             }
 
             .info {
@@ -204,19 +187,5 @@
                 transform: translateX(-20px);
             }
         }
-    }
-}
-
-/* hover events */
-
-
-.no-touch .more-info-btn:hover {
-    &:after {
-        height: 3em;
-        width: 3em;
-        top: -21px;
-        left: -4px;
-        opacity: 1;
-        filter: blur(3px);
     }
 }

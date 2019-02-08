@@ -8,7 +8,7 @@ $text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.7);
 $transition-short: 0.2s ease-out;
 $transition-medium: .6s ease-out;
 $transition-long: 1s ease-out;
-$transition-long-bounce: 1s cubic-bezier(.51, .92, .24, 1.15);
+$transition-long-bounce: 1.5s cubic-bezier(0.67, 0.9, 0.24, 1.15);
 $background-color: #282f35;
 $border-thin: 1px solid rgba(255, 255, 255, 0.2);
 $faded: .9;
@@ -52,16 +52,6 @@ select,
 div {
     text-decoration: none !important;
     outline: none !important;
-}
-
-.page-wrap {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    transition: $transition-long;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .loading {

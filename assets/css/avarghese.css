@@ -37,22 +37,6 @@ div {
   text-decoration: none !important;
   outline: none !important; }
 
-.page-wrap {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  -webkit-transition: 1s ease-out;
-  transition: 1s ease-out;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center; }
-
 .loading {
   opacity: 0; }
 
@@ -78,25 +62,12 @@ div {
 /* main content */
 .bg-btn {
   position: absolute;
-  top: 61.5%;
+  top: 50%;
   color: #fff;
   z-index: 1;
   -webkit-transition: 1s ease-out;
   transition: 1s ease-out;
   font-size: 30px; }
-  .bg-btn:after {
-    content: "";
-    border: 1px solid #fff;
-    border-radius: 50%;
-    height: 2em;
-    width: 2em;
-    position: absolute;
-    top: -13px;
-    left: 4px;
-    opacity: 0;
-    -webkit-transition: 0.2s ease-out;
-    transition: 0.2s ease-out;
-    cursor: pointer; }
   .bg-btn i {
     text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.7); }
   .bg-btn.prev {
@@ -104,7 +75,9 @@ div {
   .bg-btn.next {
     right: 0; }
   .bg-btn.loading-img {
-    opacity: 0; }
+    opacity: 0;
+    -webkit-transition: 0.2s ease-out;
+    transition: 0.2s ease-out; }
 
 .bg-loading-icon {
   -webkit-transition: 0.6s ease-out;
@@ -117,8 +90,11 @@ div {
     opacity: 1; }
 
 .page-wrap {
-  -webkit-transition: 0.2s ease-out;
-  transition: 0.2s ease-out; }
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  -webkit-transition: 1s ease-out;
+  transition: 1s ease-out; }
   .page-wrap.page-wrap-disable .bg-img {
     -webkit-filter: blur(3px);
             filter: blur(3px); }
@@ -133,8 +109,8 @@ div {
     background-size: cover !important;
     background-repeat: no-repeat !important;
     background-position: center center !important;
-    -webkit-transition: 1s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-    transition: 1s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+    -webkit-transition: 1.5s cubic-bezier(0.67, 0.9, 0.24, 1.15);
+    transition: 1.5s cubic-bezier(0.67, 0.9, 0.24, 1.15);
     background: #282f35 url("../img/bg/code.jpg"); }
     .page-wrap .bg-img.left {
       left: -105%;
@@ -144,8 +120,8 @@ div {
       .page-wrap .bg-img.left.load-img {
         -webkit-transform: translateX(105%);
                 transform: translateX(105%);
-        -webkit-transition: 1s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-        transition: 1s cubic-bezier(0.51, 0.92, 0.24, 1.15); }
+        -webkit-transition: 1.5s cubic-bezier(0.67, 0.9, 0.24, 1.15);
+        transition: 1.5s cubic-bezier(0.67, 0.9, 0.24, 1.15); }
     .page-wrap .bg-img.right {
       left: auto;
       right: -105%;
@@ -155,8 +131,8 @@ div {
       .page-wrap .bg-img.right.load-img {
         -webkit-transform: translateX(-105%);
                 transform: translateX(-105%);
-        -webkit-transition: 1s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-        transition: 1s cubic-bezier(0.51, 0.92, 0.24, 1.15); }
+        -webkit-transition: 1.5s cubic-bezier(0.67, 0.9, 0.24, 1.15);
+        transition: 1.5s cubic-bezier(0.67, 0.9, 0.24, 1.15); }
     .page-wrap .bg-img.center {
       left: 0; }
   .page-wrap .bg-overlay {
@@ -170,35 +146,27 @@ div {
     transition: 0.6s ease-out;
     z-index: 5; }
   .page-wrap .content-container {
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%) translateY(0);
+            transform: translate(-50%, -50%) translateY(0);
     text-align: center;
     max-height: 100%;
     padding: 1em 0;
     -webkit-transition: 0.6s ease-out;
     transition: 0.6s ease-out;
     width: 100%;
-    max-width: 40em;
+    max-width: 95vw;
     z-index: 10; }
     .page-wrap .content-container.loading {
       -webkit-filter: blur(3px);
               filter: blur(3px); }
     .page-wrap .content-container .more-info-btn {
-      -webkit-transition: 0.6s ease-out;
-      transition: 0.6s ease-out;
       position: relative; }
-      .page-wrap .content-container .more-info-btn:after {
-        content: "";
-        border: 1px solid #fff;
-        border-radius: 50%;
-        height: 2em;
-        width: 2em;
-        position: absolute;
-        top: -13px;
-        left: 4px;
-        opacity: 0;
-        -webkit-transition: 0.2s ease-out;
-        transition: 0.2s ease-out;
-        cursor: pointer; }
+      .page-wrap .content-container .more-info-btn i {
+        -webkit-transition: 0.6s ease-out;
+        transition: 0.6s ease-out; }
     .page-wrap .content-container .info {
       margin-bottom: 1.5em;
       -webkit-transition: 0.6s ease-out;
@@ -229,11 +197,12 @@ div {
         margin-bottom: 1.5em; }
     .page-wrap .content-container.content-hidden {
       opacity: 0;
-      -webkit-transform: translateY(-20px);
-              transform: translateY(-20px); }
-      .page-wrap .content-container.content-hidden .more-info-btn {
-        -webkit-transform: translateY(20px);
-                transform: translateY(20px); }
+      -webkit-transform: translate(-50%, -50%) translateY(-20px);
+              transform: translate(-50%, -50%) translateY(-20px); }
+      .page-wrap .content-container.content-hidden .more-info-btn > i {
+        -webkit-transform: translateY(30px);
+                transform: translateY(30px);
+        opacity: 0; }
       .page-wrap .content-container.content-hidden .info {
         -webkit-transform: translateY(-20px);
                 transform: translateY(-20px); }
@@ -243,16 +212,6 @@ div {
       .page-wrap .content-container.content-hidden .prev.bg-btn {
         -webkit-transform: translateX(-20px);
                 transform: translateX(-20px); }
-
-/* hover events */
-.no-touch .more-info-btn:hover:after {
-  height: 3em;
-  width: 3em;
-  top: -21px;
-  left: -4px;
-  opacity: 1;
-  -webkit-filter: blur(3px);
-          filter: blur(3px); }
 
 /* navigation page*/
 .nav-btn {
@@ -445,6 +404,8 @@ div {
 
 /* tablets */
 @media only screen and (max-width: 1100px) {
+  .page-wrap > .content-container {
+    max-width: 95vw; }
   .nav-menu-item {
     width: 19em !important;
     height: 10em !important;
@@ -457,9 +418,7 @@ div {
 /* phones */
 @media only screen and (max-width: 450px) {
   .page-wrap > .content-container {
-    overflow-y: scroll !important;
-    font-size: 1em !important;
-    max-width: 20em !important; }
+    font-size: 1em !important; }
     .page-wrap > .content-container .name {
       font-size: 2em !important; }
   .nav-menu-item {

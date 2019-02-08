@@ -5,8 +5,22 @@
     top: 61.5%;
     color: $font-color-primary;
     z-index: 1;
-    transition: $transition-medium;
+    transition: $transition-long;
     font-size: 30px;
+
+    &:after {
+        content: "";
+        border: 1px solid #fff;
+        border-radius: 50%;
+        height: 2em;
+        width: 2em;
+        position: absolute;
+        top: -13px;
+        left: 4px;
+        opacity: 0;
+        transition: $transition-short;
+        cursor: pointer;
+    }
 
     i {
         text-shadow: $text-shadow;
@@ -56,7 +70,7 @@
         background-size: cover !important;
         background-repeat: no-repeat !important;
         background-position: center center !important;
-        transition: $transition-medium;
+        transition: $transition-long-bounce;
         background: $background-color url('../img/bg/code.jpg');
 
         &.left {
@@ -83,7 +97,7 @@
         }
 
         &.center {
-            left: 0       
+            left: 0
         }
     }
 
@@ -102,9 +116,8 @@
         position: relative;
         text-align: center;
         max-height: 100%;
-        overflow-y: hidden;
         padding: 1em 0;
-        transition: opacity $transition-medium;
+        transition: $transition-medium;
         width: 100%;
         max-width: 40em;
         z-index: 10;
@@ -113,8 +126,28 @@
             filter: blur(3px);
         }
 
+        .more-info-btn {
+            transition: $transition-medium;
+            position: relative;
+
+            &:after {
+                content: "";
+                border: 1px solid #fff;
+                border-radius: 50%;
+                height: 2em;
+                width: 2em;
+                position: absolute;
+                top: -13px;
+                left: 4px;
+                opacity: 0;
+                transition: $transition-short;
+                cursor: pointer;
+            }
+        }
+
         .info {
             margin-bottom: 1.5em;
+            transition: $transition-medium;
 
             .name {
                 text-shadow: $text-shadow;
@@ -153,6 +186,37 @@
 
         &.content-hidden {
             opacity: 0;
+            transform: translateY(-20px);
+
+            .more-info-btn {
+                transform: translateY(20px);
+            }
+
+            .info {
+                transform: translateY(-20px);
+            }
+
+            .next.bg-btn {
+                transform: translateX(20px);
+            }
+
+            .prev.bg-btn {
+                transform: translateX(-20px);
+            }
         }
+    }
+}
+
+/* hover events */
+
+
+.no-touch .more-info-btn:hover {
+    &:after {
+        height: 3em;
+        width: 3em;
+        top: -21px;
+        left: -4px;
+        opacity: 1;
+        filter: blur(3px);
     }
 }

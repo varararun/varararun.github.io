@@ -18,6 +18,7 @@ var AV = {
         }, 1000);
         setTimeout(function () {
             $('#loader').remove();
+            $('.content-container').removeClass('content-hidden');
         }, 1500);
     },
     loadNavImages: function () {
@@ -74,7 +75,7 @@ var AV = {
     },
     loadBGEvents: function () {
         setInterval(function () {
-            // AV.loadNextBg();
+            AV.loadNextBg();
         }, 20000);
     },
     loadNextBg: function (reverse) {
@@ -119,7 +120,7 @@ var AV = {
             }, 2000);
             setTimeout(function () {
                 $(selector).remove();
-            }, 2600);
+            }, 3000);
         };
         bgImg.src = imgUrl;
     },

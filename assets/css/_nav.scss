@@ -23,7 +23,7 @@
     height: 100%;
     width: 100%;
     background: radial-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .3), rgba(0, 0, 0, .5));
-    transition: $transition-medium;
+    transition: $transition-long;
     z-index: 15;
 
     &.nav-open {
@@ -51,7 +51,8 @@
         padding-bottom: 1em;
         max-width: 80em;
         margin: auto;
-        transition: $transition-medium;
+        transition: $transition-long;
+        transform: translateY(20px);
 
         .profile {
             width: 10em;
@@ -60,7 +61,6 @@
             border: $border-thin;
             transition: $transition-medium;
             filter: grayscale(100%);
-            transform: translateY(-10%);
         }
 
         .description {

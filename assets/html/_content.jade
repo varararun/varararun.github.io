@@ -1,6 +1,6 @@
 div.bg-img.center.loading
 div.bg-overlay.loading
-div.content-container.loading
+div.content-container.loading.content-hidden
   span.next.bg-btn(onclick='AV.loadNextBg();')
     i.fa-fw.fas.fa-chevron-right.selectable
   span.prev.bg-btn(onclick='AV.loadNextBg(true);')
@@ -13,7 +13,7 @@ div.content-container.loading
     div.marker
       i.fa.fa-fw.fa-map-pin
     div.location Plano, TX
-  div.more-info-btn(onclick='AV.navToggle();')
+  span.more-info-btn(onclick='AV.navToggle();')
     i.fa-fw.fas.fa-info-circle.fa-2x.selectable
   div.bg-loading-icon
     i.fa-fw.fas.fa-cog.fa-spin

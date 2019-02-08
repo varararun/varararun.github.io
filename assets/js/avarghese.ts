@@ -19,7 +19,8 @@ let AV = {
       $('.loading').removeClass('loading');        
     },1000);    
     setTimeout(()=> {
-      $('#loader').remove();          
+      $('#loader').remove();     
+      $('.content-container').removeClass('content-hidden');
     },1500);    
   },
   loadNavImages: () => {
@@ -76,7 +77,7 @@ let AV = {
   },
   loadBGEvents: () => {
     setInterval(() => {
-      // AV.loadNextBg();
+      AV.loadNextBg();
     }, 20000);    
   },
   loadNextBg: (reverse: boolean = false) => {    
@@ -118,7 +119,7 @@ let AV = {
       }, 2000);
       setTimeout(() => {               
         $(selector).remove();         
-      }, 2600);
+      }, 3000);
       
     };
     bgImg.src = imgUrl;

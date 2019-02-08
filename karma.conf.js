@@ -15,12 +15,6 @@ module.exports = function(config) {
 
         // list of files / patterns to load in the browser
         files: [
-            "assets/lib/jquery/dist/jquery.min.js",
-            "assets/lib/wow/dist/wow.min.js",
-            "assets/lib/bootstrap/dist/js/bootstrap.min.js",
-            "assets/lib/aframe/dist/aframe.min.js",
-            "assets/lib/typed.js/dist/typed.min.js",
-            "assets/lib/particles.js/particles.min.js",
             "assets/js/avarghese.js",
             "assets/js/avarghese.spec.js"
         ],

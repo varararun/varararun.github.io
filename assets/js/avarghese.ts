@@ -135,9 +135,20 @@ let AV = {
       if($('img.nav-item-bg-img').attr('src') === undefined){
         AV.loadNavImages();  
       }
-      $('nav').toggleClass('nav-open');
-      $('.page-wrap').toggleClass('page-wrap-disable');
-      $('.page-wrap>.content-container').toggleClass('content-hidden');
+
+      if($('nav').hasClass('nav-open')){
+        $('nav').toggleClass('nav-open');
+          $('.page-wrap').toggleClass('page-wrap-disable');
+        setTimeout(() => {
+          $('.page-wrap>.content-container').toggleClass('content-hidden');          
+        }, 300);          
+      } else {
+        $('.page-wrap>.content-container').toggleClass('content-hidden');
+        setTimeout(() => {
+          $('nav').toggleClass('nav-open');
+          $('.page-wrap').toggleClass('page-wrap-disable');
+        }, 300);            
+      }      
     });
     $('.nav-menu-item').on('mousemove', AV.panImage);
   },

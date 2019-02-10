@@ -110,7 +110,7 @@
         text-align: center;
         max-height: 100%;
         padding: 1em 0;
-        transition: $transition-medium;
+        transition: $transition-long;
         width: 100%;
         max-width: 95vw;
         z-index: 10;
@@ -130,7 +130,7 @@
 
         .info {
             margin-bottom: 1.5em;
-            transition: $transition-medium;
+            transition: $transition-long;
 
             .name {
                 text-shadow: $text-shadow;

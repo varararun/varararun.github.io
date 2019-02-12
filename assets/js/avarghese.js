@@ -140,14 +140,14 @@ var AV = {
                 $('.page-wrap').toggleClass('page-wrap-disable');
                 setTimeout(function () {
                     $('.page-wrap>.content-container').toggleClass('content-hidden');
-                }, 300);
+                }, 1000);
             }
             else {
                 $('.page-wrap>.content-container').toggleClass('content-hidden');
                 setTimeout(function () {
                     $('nav').toggleClass('nav-open');
                     $('.page-wrap').toggleClass('page-wrap-disable');
-                }, 300);
+                }, 1000);
             }
         });
         $('.nav-menu-item').on('mousemove', AV.panImage);

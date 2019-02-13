@@ -25,6 +25,7 @@
     background: radial-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .3), rgba(0, 0, 0, .5));
     transition: $transition-long;
     z-index: 15;
+    will-change: transform;
 
     &.nav-open {
         pointer-events: all;

@@ -1,0 +1,18 @@
+:root {
+    --primary-font: 'DM Sans', Montserrat, 'Helvetica Neue', Arial, sans-serif;
+    --code-font: 'Fira Code', 'Fira Mono', 'Roboto Mono', 'Lucida Console', Monaco, Monospace;
+    --black: black;
+    --black-30: rgb(0 0 0 / 30%);
+    --black-60: rgb(0 0 0 / 60%);
+    --white: white;
+    --white-30: rgb(255 255 255 / 30%);
+    --white-60: rgb(255 255 255 / 60%);
+    --blue: #089ee5;
+    --blue-60: #089ee569;
+    --bg-0: transparent;
+    --border-radius: 3px;
+    --divider: "/";
+    --transition: all 0.2s ease-in-out;
+    --box-shadow: 0 0 5px 0px rgb(0 0 0 / 60%);
+    --cursor-type: pointer;
+}

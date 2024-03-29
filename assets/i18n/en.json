@@ -379,10 +379,11 @@
             "Logo": "assets/images/logos/logo-utd.png"
         }
     ],
-    "FeatureProjects.Title": "Projects",
-    "FeatureProjects.Label": "Featured Project",
-    "FeatureProjects.Projects": [
+    "Projects.Title": "My Projects",
+    "Projects.Tags": ["featured", "personal", "work", "patents",""],
+    "Projects.Projects": [
         {
+            "Tags": ["featured", "work","patents"],
             "Title": "US Patent 9491178 B2",
             "CompanyLogo": "assets/images/logos/logo-fidelity.png",
             "Description": "Identifying a measure of online security. A computer-implemented method includes retrieving, by one or more processing devices and from one or more data repositories, user information; generating, based on the retrieved user information, a digital personal profile that is a composite of a set of pre-defined attributes. ",
@@ -391,6 +392,7 @@
             ]
         },
         {
+            "Tags": ["featured", "work"],
             "Title": "ISC Portal",
             "Company": "Comcast",
             "CompanyLogo": "assets/images/logos/logo-comcast.png",
@@ -409,6 +411,7 @@
             ]
         },
         {
+            "Tags": ["work"],
             "Title": "Landscape",
             "Company": "Masergy",
             "CompanyLogo": "assets/images/logos/logo-masergy.png",
@@ -428,6 +431,7 @@
             ]
         },
         {
+            "Tags": ["work"],
             "Title": "Nspire Platform",
             "CompanyLogo": "assets/images/logos/logo-spireon.png",
             "Description": "Groovy/Grails web application used for internal company operations such as warehousing, customer support, problem diagnosis, and migration operations.",
@@ -444,6 +448,7 @@
             ]
         },
         {
+            "Tags": ["work"],
             "Title": "Fund Reference",
             "CompanyLogo": "assets/images/logos/logo-fidelity.png",
             "Description": "Java and Spring based web application for consolidating/provisioning fund attributes to downstream systems.",
@@ -456,11 +461,9 @@
                 "IBM HATS",
                 "Apache Solr"
             ]
-        }
-    ],
-    "PersonalProjects.Title": "Personal projects",
-    "PersonalProjects.Projects": [
+        },
         {
+            "Tags": ["featured", "personal"],
             "Title": "Personal Website",
             "Description": "Latest iteration of my personal website. Designed and developed to showcase my web development and design skills using the latest front end technologies.",
             "GithubLink": "https://github.com/varararun/varararun.github.io",
@@ -477,6 +480,7 @@
             ]
         },
         {
+            "Tags": ["personal"],
             "Title": "Personal Website v3",
             "Description": "3rd iteration of my personal website, Hosted on Github Pages. Designed and developed to showcase my web development and design skills.",
             "GithubLink": "https://github.com/varararun/version-3",
@@ -491,6 +495,7 @@
             ]
         },
         {
+            "Tags": ["personal"],
             "Title": "Photo Tiles",
             "Description": "Front End package, javascript implementation of Mac's Photo Tiles Screensaver.",
             "GithubLink": "https://github.com/varararun/photo-tiles",
@@ -505,6 +510,7 @@
             ]
         },
         {
+            "Tags": ["personal"],
             "Title": "Personal Website v2",
             "Description": "2nd iteration of my personal website. Incorporated better design and included build process automation to streamline development.",
             "GithubLink": "https://github.com/varararun/version-2",
@@ -516,6 +522,7 @@
             ]
         },
         {
+            "Tags": ["personal"],
             "Title": "Personal Website v1",
             "Description": "1st iteration of my personal website created to learn more about front end development.",
             "GithubLink": "https://github.com/varararun/version-1",
@@ -526,6 +533,7 @@
             ]
         },
         {
+            "Tags": ["personal"],
             "Title": "Resume Builder",
             "Description": "Web application used as a tool for Resume edit/proofread/format/styles/guidelines.",
             "Technologies": [
@@ -536,6 +544,7 @@
             ]
         },
         {
+            "Tags": ["personal"],
             "Title": "Car Dashboard",
             "Description": "Web application used for viewing, tracking, and assigning expenses for friends' investments in a rally car.",
             "GithubLink": "https://github.com/gitwrecked/carDashAng2CliV2",

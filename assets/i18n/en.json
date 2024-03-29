@@ -398,15 +398,12 @@
             "CompanyLogo": "assets/images/logos/logo-comcast.png",
             "Description": "Customer facing web application that unifies network and application management with real-time visibility, analytics and service control purpose-built for multi-cloud enterprises.",
             "Technologies": [
-                "MacOS",
                 "Angular 15",
                 "Docker",
                 "Kubernetes",
                 "Spring Boot",
                 "Maven",
                 "MyBatis",
-                "BitBucket",
-                "Elastic",
                 "MySQL"
             ]
         },
@@ -417,15 +414,11 @@
             "CompanyLogo": "assets/images/logos/logo-masergy.png",
             "Description": "Web application used by internal users to support customers and perform network management across all business domains.",
             "Technologies": [
-                "MacOS",
                 "Angular 15",
                 "Micro Services",
                 "Zuul",
                 "Keycloak",
-                "NX",
-                "NPM",
-                "Github",
-                "IntelliJ",
+                "Node",
                 "TypeScript",
                 "SCSS"
             ]
@@ -438,13 +431,11 @@
             "Technologies": [
                 "Linux",
                 "Tomcat",
-                "MySql",
                 "MongoDB",
                 "Elastic Search",
                 "RabbitMQ",
                 "Logic Monitor",
-                "Redis",
-                "Vendor APIs"
+                "Redis"
             ]
         },
         {
@@ -472,11 +463,7 @@
                 "Angular 17",
                 "TypeScript",
                 "Github Pages",
-                "SCSS",
-                "Node",
-                "NX",
-                "Husky",
-                "Font Awesome"
+                "SCSS"
             ]
         },
         {
@@ -492,21 +479,6 @@
                 "SCSS",
                 "Node",
                 "Gulp"
-            ]
-        },
-        {
-            "Tags": ["personal"],
-            "Title": "Photo Tiles",
-            "Description": "Front End package, javascript implementation of Mac's Photo Tiles Screensaver.",
-            "GithubLink": "https://github.com/varararun/photo-tiles",
-            "Technologies": [
-                "HTML",
-                "Javascript",
-                "SCSS",
-                "Travis-CI",
-                "Hound-CI",
-                "Gulp",
-                "Bower"
             ]
         },
         {
@@ -534,13 +506,17 @@
         },
         {
             "Tags": ["personal"],
-            "Title": "Resume Builder",
-            "Description": "Web application used as a tool for Resume edit/proofread/format/styles/guidelines.",
+            "Title": "Photo Tiles",
+            "Description": "Front End package, javascript implementation of Mac's Photo Tiles Screensaver.",
+            "GithubLink": "https://github.com/varararun/photo-tiles",
             "Technologies": [
-                "Angular 1.5",
-                "Heroku",
-                "Mongo",
-                "Travis-CI"
+                "HTML",
+                "Javascript",
+                "SCSS",
+                "Travis-CI",
+                "Hound-CI",
+                "Gulp",
+                "Bower"
             ]
         },
         {

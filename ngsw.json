@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1711667810560,
+  "timestamp": 1711675819582,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -13,12 +13,12 @@
       "urls": [
         "/favicon.ico",
         "/index.html",
-        "/main.2d83d2d80814d432.js",
+        "/main.3d442b3c37f60720.js",
         "/manifest.webmanifest",
         "/polyfills.52cc0357bf7004c1.js",
         "/runtime.f6dd5f88699dca97.js",
         "/scripts.68ed26d13e2edc19.js",
-        "/styles.e73ceca07ee96e8b.css"
+        "/styles.b9e882f8ad86a795.css"
       ],
       "patterns": []
     },
@@ -125,7 +125,7 @@
     "/assets/images/logos/logo-utd.png": "44d5f5ee8b67c91294d8f6407448d8d42677d447",
     "/assets/images/profile/profile-small.png": "4d327473e9b25cc485165cf2bf6379af9ab5d8b3",
     "/assets/resume/arunvarghese_resume.pdf": "3c19fd36d2af48ba04a2528deede65d9ecfaa756",
-    "/assets/styles/_themes.scss": "ec268df3e3f03ec019d1563b4c8995727d1bccdf",
+    "/assets/styles/_themes.scss": "650cb8c225c6545335040ce5a746239ca1e5e980",
     "/assets/styles/_variables.scss": "50cc1f3cd02759e6bf0c041746db0f79d4a78da7",
     "/code.16a3865523dbc845.png": "f1e4c00741ed423e59d51639b06cfc29acac646d",
     "/fa-brands-400.497d236266eba0e3.woff": "fddb95d7a0f48d2bf90a5ee3095e8264dca18053",
@@ -144,14 +144,14 @@
     "/fa-solid-900.b92fed3a3d54558b.ttf": "874c650701d0cbfb8f1de48a496dabed3bbf22e6",
     "/fa-solid-900.ebf38adec9c54094.eot": "96a5637429426764ea9b28bf4d1eb55ae10de57e",
     "/favicon.ico": "8797acfdb45cd1fbb050e549e08fe63534b090d6",
-    "/index.html": "daa67c65cb99f4e467b22e856dc556f30870002e",
-    "/main.2d83d2d80814d432.js": "8c5f0602797843d6435654726dfc171ef87d8207",
+    "/index.html": "a8fd44769f80dd2b8e3983b1b790f5b55b8cc9db",
+    "/main.3d442b3c37f60720.js": "dbda9e27e58535dbfe2c0cd9a4c271153d038ed0",
     "/manifest.webmanifest": "3dcbda17a011c152e46afc0a3d09ccd363ce7d52",
     "/polyfills.52cc0357bf7004c1.js": "e729b641dcfefbb5c992bbbf949ec58400b8114b",
     "/profile-small.ecbf4c7d4abd7003.png": "4d327473e9b25cc485165cf2bf6379af9ab5d8b3",
     "/runtime.f6dd5f88699dca97.js": "c40352e79467d02c9ee85f27f4f154635fe09b48",
     "/scripts.68ed26d13e2edc19.js": "cffb6dcf1e317b2859024c20248dd0c50ce6b885",
-    "/styles.e73ceca07ee96e8b.css": "aa089f487e1bf946af6fd02420a2cc69689924e7"
+    "/styles.b9e882f8ad86a795.css": "2a959fc28ed33404ac6271c83290079f51390cfd"
   },
   "navigationUrls": [
     {

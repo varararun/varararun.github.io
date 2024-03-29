@@ -386,7 +386,6 @@
             "Title": "US Patent 9491178 B2",
             "CompanyLogo": "assets/images/logos/logo-fidelity.png",
             "Description": "Identifying a measure of online security. A computer-implemented method includes retrieving, by one or more processing devices and from one or more data repositories, user information; generating, based on the retrieved user information, a digital personal profile that is a composite of a set of pre-defined attributes. ",
-            "DemoLink": "https://patents.google.com/patent/US9491178",
             "Technologies": [
                 "Published November 2016"
             ]
@@ -465,7 +464,6 @@
             "Title": "Personal Website",
             "Description": "Latest iteration of my personal website. Designed and developed to showcase my web development and design skills using the latest front end technologies.",
             "GithubLink": "https://github.com/varararun/varararun.github.io",
-            "DemoLink": "https://avarghese.me",
             "Technologies": [
                 "PWA",
                 "Angular 17",
@@ -482,7 +480,6 @@
             "Title": "Personal Website v3",
             "Description": "3rd iteration of my personal website, Hosted on Github Pages. Designed and developed to showcase my web development and design skills.",
             "GithubLink": "https://github.com/varararun/version-3",
-            "DemoLink": "https://avarghese.me/version-3",
             "Technologies": [
                 "Github Pages",
                 "PWA",
@@ -497,7 +494,6 @@
             "Title": "Photo Tiles",
             "Description": "Front End package, javascript implementation of Mac's Photo Tiles Screensaver.",
             "GithubLink": "https://github.com/varararun/photo-tiles",
-            "DemoLink": "https://avarghese.me/photo-tiles",
             "Technologies": [
                 "HTML",
                 "Javascript",
@@ -512,7 +508,6 @@
             "Title": "Personal Website v2",
             "Description": "2nd iteration of my personal website. Incorporated better design and included build process automation to streamline development.",
             "GithubLink": "https://github.com/varararun/version-2",
-            "DemoLink": "https://avarghese.me/version-2",
             "Technologies": [
                 "JavaScript",
                 "HTML",
@@ -524,7 +519,6 @@
             "Title": "Personal Website v1",
             "Description": "1st iteration of my personal website created to learn more about front end development.",
             "GithubLink": "https://github.com/varararun/version-1",
-            "DemoLink": "https://avarghese.me/version-1",
             "Technologies": [
                 "JavaScript",
                 "HTML",
@@ -545,7 +539,6 @@
             "Title": "Car Dashboard",
             "Description": "Web application used for viewing, tracking, and assigning expenses for friends' investments in a rally car.",
             "GithubLink": "https://github.com/gitwrecked/carDashAng2CliV2",
-            "DemoLink": "https://www.car-dash.site/",
             "Technologies": [
                 "Angular 2",
                 "Heroku",

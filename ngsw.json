@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1711675819582,
+  "timestamp": 1711722398021,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -13,12 +13,12 @@
       "urls": [
         "/favicon.ico",
         "/index.html",
-        "/main.3d442b3c37f60720.js",
+        "/main.a2d6f9c7a221bea8.js",
         "/manifest.webmanifest",
         "/polyfills.52cc0357bf7004c1.js",
         "/runtime.f6dd5f88699dca97.js",
         "/scripts.68ed26d13e2edc19.js",
-        "/styles.b9e882f8ad86a795.css"
+        "/styles.5f6f7f85d8424652.css"
       ],
       "patterns": []
     },
@@ -64,7 +64,6 @@
         "/assets/images/logos/logo-spireon.png",
         "/assets/images/logos/logo-utd.png",
         "/assets/images/profile/profile-small.png",
-        "/assets/resume/arunvarghese_resume.pdf",
         "/assets/styles/_themes.scss",
         "/assets/styles/_variables.scss",
         "/code.16a3865523dbc845.png",
@@ -106,7 +105,7 @@
     "/assets/fonts/fira_code/woff2/FiraCode-SemiBold.woff2": "87e580bb92ddd579c16c706c8e834e6978ef7a54",
     "/assets/fonts/fira_code/woff2/FiraCode-VF.woff2": "c0262297738727f73a9873057161c9ec2b65ec90",
     "/assets/fonts/fonts.scss": "7cdc0e5b838fbe4c94a8c5b23e30750e33fcbbe4",
-    "/assets/i18n/en.json": "c77efef00afe3ccb35294bb5b7eb1359d566a98c",
+    "/assets/i18n/en.json": "5028436bac4bcf8c9712ede071be03fea5493622",
     "/assets/icons/icon.png": "418c3d8993827eee73806f5ce8e7e87eef64cf65",
     "/assets/icons/icon_x128.png": "5205e243b98c3f2d12ebce99f6032c17972fb665",
     "/assets/icons/icon_x192.png": "07c9a31f137cedaffb64e6b10eb30d698c6ce57f",
@@ -124,9 +123,8 @@
     "/assets/images/logos/logo-spireon.png": "9b60821dd93a62756de3eb97484ec8f6851022cf",
     "/assets/images/logos/logo-utd.png": "44d5f5ee8b67c91294d8f6407448d8d42677d447",
     "/assets/images/profile/profile-small.png": "4d327473e9b25cc485165cf2bf6379af9ab5d8b3",
-    "/assets/resume/arunvarghese_resume.pdf": "3c19fd36d2af48ba04a2528deede65d9ecfaa756",
-    "/assets/styles/_themes.scss": "650cb8c225c6545335040ce5a746239ca1e5e980",
-    "/assets/styles/_variables.scss": "50cc1f3cd02759e6bf0c041746db0f79d4a78da7",
+    "/assets/styles/_themes.scss": "b4f41358710242cabea96f034ce88dfde4b4d582",
+    "/assets/styles/_variables.scss": "ad1055faced075577478c7562f58341efcdd8724",
     "/code.16a3865523dbc845.png": "f1e4c00741ed423e59d51639b06cfc29acac646d",
     "/fa-brands-400.497d236266eba0e3.woff": "fddb95d7a0f48d2bf90a5ee3095e8264dca18053",
     "/fa-brands-400.7dbae49a9e18b449.svg": "99dff0739882276ad6c434d73228efc7971b0a66",
@@ -144,14 +142,14 @@
     "/fa-solid-900.b92fed3a3d54558b.ttf": "874c650701d0cbfb8f1de48a496dabed3bbf22e6",
     "/fa-solid-900.ebf38adec9c54094.eot": "96a5637429426764ea9b28bf4d1eb55ae10de57e",
     "/favicon.ico": "8797acfdb45cd1fbb050e549e08fe63534b090d6",
-    "/index.html": "a8fd44769f80dd2b8e3983b1b790f5b55b8cc9db",
-    "/main.3d442b3c37f60720.js": "dbda9e27e58535dbfe2c0cd9a4c271153d038ed0",
+    "/index.html": "124ee3af0e8342e4d051b2871eba3f798c02ad09",
+    "/main.a2d6f9c7a221bea8.js": "038ca3fb73f404ea4acdaeb65d48125b78762034",
     "/manifest.webmanifest": "3dcbda17a011c152e46afc0a3d09ccd363ce7d52",
     "/polyfills.52cc0357bf7004c1.js": "e729b641dcfefbb5c992bbbf949ec58400b8114b",
     "/profile-small.ecbf4c7d4abd7003.png": "4d327473e9b25cc485165cf2bf6379af9ab5d8b3",
     "/runtime.f6dd5f88699dca97.js": "c40352e79467d02c9ee85f27f4f154635fe09b48",
     "/scripts.68ed26d13e2edc19.js": "cffb6dcf1e317b2859024c20248dd0c50ce6b885",
-    "/styles.b9e882f8ad86a795.css": "2a959fc28ed33404ac6271c83290079f51390cfd"
+    "/styles.5f6f7f85d8424652.css": "1cd6694ef90f4a44917ff75fab93ba54e5995540"
   },
   "navigationUrls": [
     {

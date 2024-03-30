@@ -1,12 +1,35 @@
 {
     "Email": "arunv4700@gmail.com",
-    "Github": "https://github.com/vararun",
-    "LinkedIn": "https://www.linkedin.com/in/varghesearun/",
-    "Instagram": "https://www.instagram.com/chasing_arun/",
-    "CodePen": "https://codepen.io/avarghese/",
     "Repo": "https://github.com/varararun/varararun.github.io",
     "Resume": "https://drive.google.com/file/d/13ArYspuFX5xR65nLsRX7WSDFokPaQAIg/view",
     "Background.Img": "assets/images/background/code.png",
+    "SocialIcons": [
+        {
+            "Label": "Email",
+            "link": "arunv4700@gmail.com",
+            "Icon": "fas fa-envelope"
+        },
+        {
+            "Label": "GitHub",
+            "link": "https://github.com/vararun",
+            "Icon": "fab fa-github"
+        },
+        {
+            "Label": "CodePen",
+            "link": "https://codepen.io/avarghese/",
+            "Icon": "fab fa-codepen"
+        },
+        {
+            "Label": "LinkedIn",
+            "link": "https://www.linkedin.com/in/varghesearun/",
+            "Icon": "fab fa-linkedin"
+        },
+        {
+            "Label": "Instagram",
+            "link": "https://www.instagram.com/chasing_arun/",
+            "Icon": "fab fa-instagram"
+        }
+    ],
     "Menu.Initials": "AV",
     "Menu.Img": "assets/images/profile/profile-small.png",
     "Menu.NavItems": [

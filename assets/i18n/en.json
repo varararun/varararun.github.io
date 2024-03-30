@@ -3,6 +3,7 @@
     "Github": "https://github.com/vararun",
     "LinkedIn": "https://www.linkedin.com/in/varghesearun/",
     "Instagram": "https://www.instagram.com/chasing_arun/",
+    "CodePen": "https://codepen.io/avarghese/",
     "Repo": "https://github.com/varararun/varararun.github.io",
     "Resume": "https://drive.google.com/file/d/13ArYspuFX5xR65nLsRX7WSDFokPaQAIg/view",
     "Background.Img": "assets/images/background/code.png",
@@ -38,7 +39,7 @@
     "About.Name": "Arun Varghese",
     "About.Role": "Software Engineer",
     "About.Description": "Over <span class='highlight'>10 years</span> of full-stack experience in the complete development life cycle of distributed web applications, from design to delivery. In my free time, I work on front-end web development with popular frameworks to learn more about <span class='highlight'>UI/UX</span> and <span class='highlight'>Software Architecture</span>",
-    "About.ResumeBtn": "View My Resume",
+    "About.ResumeBtn": "Download Resume",
     "Highlights.Title": "Highlights",
     "Highlights.Qualifications": [
         "10+ years of java development experience using agile methodology",
@@ -510,10 +511,10 @@
         },
         {
             "Tags": ["personal"],
-            "Title": "Photo Tiles",
-            "Description": "Front End package, javascript implementation of Mac's Photo Tiles Screensaver.",
-            "GithubLink": "https://github.com/varararun/photo-tiles",
-            "Link": "https://avarghese.me/photo-tiles",
+            "Title": "Online Resume",
+            "Description": "1st iteration of my online resume using a simple static page.",
+            "GithubLink": "https://github.com/varararun/resume",
+            "Link": "https://avarghese.me/resume",
             "Technologies": [
                 "HTML",
                 "Javascript",

@@ -399,10 +399,10 @@
         }
     ],
     "Projects.Title": "My Projects",
-    "Projects.Tags": ["featured", "personal", "work", "patents",""],
+    "Projects.Tags": ["featured", "personal", "work", ""],
     "Projects.Projects": [
         {
-            "Tags": ["featured", "work", "patents"],
+            "Tags": ["featured", "work"],
             "Title": "US Patent 9491178 B2",
             "Description": "Identifying a measure of online security. A computer-implemented method includes retrieving, by one or more processing devices and from one or more data repositories, user information; generating, based on the retrieved user information, a digital personal profile that is a composite of a set of pre-defined attributes. ",
             "Link": "https://patents.google.com/patent/US9491178",
@@ -415,13 +415,12 @@
             "CompanyLogo": "assets/images/logos/logo-comcast.png",
             "Description": "Customer facing web application that unifies network and application management with real-time visibility, analytics and service control purpose-built for multi-cloud enterprises.",
             "TechIcons": [
-                "devicon devicon-angularjs-plain colored",
-                "devicon devicon-docker-plain colored",
-                "devicon devicon-kubernetes-plain colored",
-                "devicon devicon-spring-original colored",
-                "devicon devicon-maven-plain colored",
-                "devicon devicon-hibernate-plain colored",
-                "devicon devicon-mysql-original colored"
+                "fab fa-linux",
+                "fab fa-java",
+                "fab fa-angular",
+                "fab fa-npm",
+                "fab fa-js",
+                "fab fa-docker"
             ]
         },
         {
@@ -431,12 +430,13 @@
             "CompanyLogo": "assets/images/logos/logo-masergy.png",
             "Description": "Web application used by internal users to support customers and perform network management across all business domains.",
             "TechIcons": [
-                "devicon devicon-angularjs-plain colored",
-                "devicon devicon-nodejs-plain colored",
-                "devicon devicon-npm-original-wordmark colored",
-                "devicon devicon-typescript-plain colored",
-                "devicon devicon-html5-plain colored",
-                "devicon devicon-sass-original colored"
+                "fab fa-linux",
+                "fab fa-java",
+                "fab fa-angular",
+                "fab fa-npm",
+                "fab fa-js",
+                "fab fa-html5",
+                "fab fa-sass"
             ]
         },
         {
@@ -445,12 +445,11 @@
             "CompanyLogo": "assets/images/logos/logo-spireon.png",
             "Description": "Groovy/Grails web application used for internal company operations such as warehousing, customer support, problem diagnosis, and migration operations.",
             "TechIcons": [
-                "devicon devicon-linux-plain",
-                "devicon devicon-tomcat-line colored",
-                "devicon devicon-mongodb-plain colored",
-                "devicon devicon-elasticsearch-plain colored",
-                "devicon devicon-rabbitmq-original colored",
-                "devicon devicon-redis-plain colored"
+                "fab fa-linux",
+                "fab fa-angular",
+                "fab fa-java",
+                "fas fa-server",
+                "fas fa-database"
             ]
         },
         {
@@ -459,11 +458,10 @@
             "CompanyLogo": "assets/images/logos/logo-fidelity.png",
             "Description": "Java and Spring based web application for consolidating/provisioning fund attributes to downstream systems.",
             "TechIcons": [
-                "devicon devicon-linux-plain",
-                "devicon devicon-tomcat-line colored",
-                "devicon devicon-oracle-original colored",
-                "devicon devicon-redhat-plain colored",
-                "devicon devicon-apache-plain colored"
+                "fab fa-java",
+                "fas fa-server",
+                "fas fa-database",
+                "fab fa-redhat"
             ]
         },
         {
@@ -473,12 +471,12 @@
             "GithubLink": "https://github.com/varararun/varararun.github.io",
             "Link": "https://avarghese.me/ng",
             "TechIcons": [
-                "devicon devicon-angularjs-plain colored",
-                "devicon devicon-typescript-plain colored",
-                "devicon devicon-sass-original colored",
-                "devicon devicon-npm-original-wordmark colored",
-                "devicon devicon-docker-plain colored",
-                "devicon devicon-amazonwebservices-plain-wordmark colored"
+                "fab fa-angular",
+                "fab fa-js",
+                "fab fa-html5",
+                "fab fa-sass",
+                "fab fa-npm",
+                "fab fa-docker"
             ]
         },
         {
@@ -488,11 +486,11 @@
             "GithubLink": "https://github.com/varararun/version-3",
             "Link": "https://avarghese.me/version-3",
             "TechIcons": [
-                "devicon devicon-typescript-plain colored",
-                "devicon devicon-html5-plain colored",
-                "devicon devicon-sass-original colored",
-                "devicon devicon-nodejs-plain colored",
-                "devicon devicon-gulp-plain colored"
+                "fab fa-js",
+                "fab fa-html5",
+                "fab fa-sass",
+                "fab fa-node-js",
+                "fab fa-gulp"
             ]
         },
         {
@@ -502,10 +500,10 @@
             "GithubLink": "https://github.com/varararun/version-2",
             "Link": "https://avarghese.me/version-2",
             "TechIcons": [
-                "devicon devicon-html5-plain colored",
-                "devicon devicon-javascript-plain colored",
-                "devicon devicon-css3-plain colored",
-                "devicon devicon-gulp-plain colored"
+                "fab fa-html5",
+                "fab fa-js",
+                "fab fa-css3",
+                "fab fa-gulp"
             ]
         },
         {
@@ -515,53 +513,36 @@
             "GithubLink": "https://github.com/varararun/version-1",
             "Link": "https://avarghese.me/version-1",
             "TechIcons": [
-                "devicon devicon-html5-plain colored",
-                "devicon devicon-javascript-plain colored",
-                "devicon devicon-css3-plain colored",
-                "devicon devicon-bower-plain colored"
+                "fab fa-html5",
+                "fab fa-js",
+                "fab fa-css3"
             ]
         },
         {
             "Tags": ["personal"],
             "Title": "Online Resume",
-            "Description": "1st iteration of my online resume using a simple static page.",
+            "Description": "1st iteration of my online resume using a simple static page and dev pipeline using gulp.",
             "GithubLink": "https://github.com/varararun/resume",
             "Link": "https://avarghese.me/resume",
             "TechIcons": [
-                "devicon devicon-html5-plain colored",
-                "devicon devicon-javascript-plain colored",
-                "devicon devicon-sass-original colored",
-                "devicon devicon-gulp-plain colored",
-                "devicon devicon-travis-plain",
-                "devicon devicon-bower-plain colored"
+                "fab fa-html5",
+                "fab fa-js",
+                "fab fa-sass",
+                "fab fa-gulp",
+                "fab fa-jenkins"
             ]
         },
         {
             "Tags": ["personal", "featured"],
             "Title": "Photo Tiles",
-            "Description": "Front End package, javascript implementation of Mac's Photo Tiles Screensaver.",
+            "Description": "Front End published NPM package, javascript implementation of Mac's Photo Tiles Screensaver.",
             "GithubLink": "https://github.com/varararun/photo-tiles",
             "Link": "https://avarghese.me/photo-tiles",
             "TechIcons": [
-                "devicon devicon-javascript-plain colored",
-                "devicon devicon-sass-original colored",
-                "devicon devicon-gulp-plain colored",
-                "devicon devicon-travis-plain",
-                "devicon devicon-bower-plain colored"
-            ]
-        },
-        {
-            "Tags": ["personal"],
-            "Title": "Car Dashboard",
-            "Description": "Web application used for viewing, tracking, and assigning expenses for friends' investments in a rally car.",
-            "GithubLink": "https://github.com/gitwrecked/carDashAng2CliV2",
-            "TechIcons": [
-                "devicon devicon-angularjs-plain colored",
-                "devicon devicon-heroku-original colored",
-                "devicon devicon-mongodb-plain colored",
-                "devicon devicon-travis-plain",
-                "devicon devicon-nodejs-plain colored",
-                "devicon devicon-express-original"
+                "fab fa-js",
+                "fab fa-sass",
+                "fab fa-gulp",
+                "fab fa-jenkins"
             ]
         }
     ],

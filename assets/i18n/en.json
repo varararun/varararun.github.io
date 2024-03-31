@@ -5,9 +5,9 @@
     "Background.Img": "assets/images/background/code.png",
     "SocialIcons": [
         {
-            "Label": "Email",
-            "link": "arunv4700@gmail.com",
-            "Icon": "fas fa-envelope"
+            "Label": "LinkedIn",
+            "link": "https://www.linkedin.com/in/varghesearun/",
+            "Icon": "fab fa-linkedin"
         },
         {
             "Label": "GitHub",
@@ -18,11 +18,6 @@
             "Label": "CodePen",
             "link": "https://codepen.io/avarghese/",
             "Icon": "fab fa-codepen"
-        },
-        {
-            "Label": "LinkedIn",
-            "link": "https://www.linkedin.com/in/varghesearun/",
-            "Icon": "fab fa-linkedin"
         },
         {
             "Label": "Instagram",
@@ -411,9 +406,7 @@
             "Title": "US Patent 9491178 B2",
             "Description": "Identifying a measure of online security. A computer-implemented method includes retrieving, by one or more processing devices and from one or more data repositories, user information; generating, based on the retrieved user information, a digital personal profile that is a composite of a set of pre-defined attributes. ",
             "Link": "https://patents.google.com/patent/US9491178",
-            "Technologies": [
-                "Published November 2016"
-            ]
+            "Tech": ["Published November 2016"]
         },
         {
             "Tags": ["featured", "work"],
@@ -421,14 +414,14 @@
             "Company": "Comcast",
             "CompanyLogo": "assets/images/logos/logo-comcast.png",
             "Description": "Customer facing web application that unifies network and application management with real-time visibility, analytics and service control purpose-built for multi-cloud enterprises.",
-            "Technologies": [
-                "Angular 15",
-                "Docker",
-                "Kubernetes",
-                "Spring Boot",
-                "Maven",
-                "MyBatis",
-                "MySQL"
+            "TechIcons": [
+                "devicon devicon-angularjs-plain colored",
+                "devicon devicon-docker-plain colored",
+                "devicon devicon-kubernetes-plain colored",
+                "devicon devicon-spring-original colored",
+                "devicon devicon-maven-plain colored",
+                "devicon devicon-hibernate-plain colored",
+                "devicon devicon-mysql-original colored"
             ]
         },
         {
@@ -437,14 +430,13 @@
             "Company": "Masergy",
             "CompanyLogo": "assets/images/logos/logo-masergy.png",
             "Description": "Web application used by internal users to support customers and perform network management across all business domains.",
-            "Technologies": [
-                "Angular 15",
-                "Micro Services",
-                "Zuul",
-                "Keycloak",
-                "Node",
-                "TypeScript",
-                "SCSS"
+            "TechIcons": [
+                "devicon devicon-angularjs-plain colored",
+                "devicon devicon-nodejs-plain colored",
+                "devicon devicon-npm-original-wordmark colored",
+                "devicon devicon-typescript-plain colored",
+                "devicon devicon-html5-plain colored",
+                "devicon devicon-sass-original colored"
             ]
         },
         {
@@ -452,14 +444,13 @@
             "Title": "Nspire Platform",
             "CompanyLogo": "assets/images/logos/logo-spireon.png",
             "Description": "Groovy/Grails web application used for internal company operations such as warehousing, customer support, problem diagnosis, and migration operations.",
-            "Technologies": [
-                "Linux",
-                "Tomcat",
-                "MongoDB",
-                "Elastic Search",
-                "RabbitMQ",
-                "Logic Monitor",
-                "Redis"
+            "TechIcons": [
+                "devicon devicon-linux-plain",
+                "devicon devicon-tomcat-line colored",
+                "devicon devicon-mongodb-plain colored",
+                "devicon devicon-elasticsearch-plain colored",
+                "devicon devicon-rabbitmq-original colored",
+                "devicon devicon-redis-plain colored"
             ]
         },
         {
@@ -467,14 +458,12 @@
             "Title": "Fund Reference",
             "CompanyLogo": "assets/images/logos/logo-fidelity.png",
             "Description": "Java and Spring based web application for consolidating/provisioning fund attributes to downstream systems.",
-            "Technologies": [
-                "Linux",
-                "Tomcat",
-                "Oracle database",
-                "IPP",
-                "PowerCenter",
-                "IBM HATS",
-                "Apache Solr"
+            "TechIcons": [
+                "devicon devicon-linux-plain",
+                "devicon devicon-tomcat-line colored",
+                "devicon devicon-oracle-original colored",
+                "devicon devicon-redhat-plain colored",
+                "devicon devicon-apache-plain colored"
             ]
         },
         {
@@ -483,12 +472,13 @@
             "Description": "Latest iteration of my personal website. Designed and developed to showcase my web development and design skills using the latest front end technologies.",
             "GithubLink": "https://github.com/varararun/varararun.github.io",
             "Link": "https://avarghese.me/ng",
-            "Technologies": [
-                "PWA",
-                "Angular 17",
-                "TypeScript",
-                "Github Pages",
-                "SCSS"
+            "TechIcons": [
+                "devicon devicon-angularjs-plain colored",
+                "devicon devicon-typescript-plain colored",
+                "devicon devicon-sass-original colored",
+                "devicon devicon-npm-original-wordmark colored",
+                "devicon devicon-docker-plain colored",
+                "devicon devicon-amazonwebservices-plain-wordmark colored"
             ]
         },
         {
@@ -497,14 +487,12 @@
             "Description": "3rd iteration of my personal website, Hosted on Github Pages. Designed and developed to showcase my web development and design skills.",
             "GithubLink": "https://github.com/varararun/version-3",
             "Link": "https://avarghese.me/version-3",
-            "Technologies": [
-                "Github Pages",
-                "PWA",
-                "TypeScript",
-                "HTML",
-                "SCSS",
-                "Node",
-                "Gulp"
+            "TechIcons": [
+                "devicon devicon-typescript-plain colored",
+                "devicon devicon-html5-plain colored",
+                "devicon devicon-sass-original colored",
+                "devicon devicon-nodejs-plain colored",
+                "devicon devicon-gulp-plain colored"
             ]
         },
         {
@@ -513,11 +501,11 @@
             "Description": "2nd iteration of my personal website. Incorporated better design and included build process automation to streamline development.",
             "GithubLink": "https://github.com/varararun/version-2",
             "Link": "https://avarghese.me/version-2",
-            "Technologies": [
-                "JavaScript",
-                "HTML",
-                "CSS3",
-                "Gulp"
+            "TechIcons": [
+                "devicon devicon-html5-plain colored",
+                "devicon devicon-javascript-plain colored",
+                "devicon devicon-css3-plain colored",
+                "devicon devicon-gulp-plain colored"
             ]
         },
         {
@@ -526,10 +514,11 @@
             "Description": "1st iteration of my personal website created to learn more about front end development.",
             "GithubLink": "https://github.com/varararun/version-1",
             "Link": "https://avarghese.me/version-1",
-            "Technologies": [
-                "JavaScript",
-                "HTML",
-                "CSS"
+            "TechIcons": [
+                "devicon devicon-html5-plain colored",
+                "devicon devicon-javascript-plain colored",
+                "devicon devicon-css3-plain colored",
+                "devicon devicon-bower-plain colored"
             ]
         },
         {
@@ -538,14 +527,13 @@
             "Description": "1st iteration of my online resume using a simple static page.",
             "GithubLink": "https://github.com/varararun/resume",
             "Link": "https://avarghese.me/resume",
-            "Technologies": [
-                "HTML",
-                "Javascript",
-                "SCSS",
-                "Travis-CI",
-                "Hound-CI",
-                "Gulp",
-                "Bower"
+            "TechIcons": [
+                "devicon devicon-html5-plain colored",
+                "devicon devicon-javascript-plain colored",
+                "devicon devicon-sass-original colored",
+                "devicon devicon-gulp-plain colored",
+                "devicon devicon-travis-plain",
+                "devicon devicon-bower-plain colored"
             ]
         },
         {
@@ -554,14 +542,12 @@
             "Description": "Front End package, javascript implementation of Mac's Photo Tiles Screensaver.",
             "GithubLink": "https://github.com/varararun/photo-tiles",
             "Link": "https://avarghese.me/photo-tiles",
-            "Technologies": [
-                "HTML",
-                "Javascript",
-                "SCSS",
-                "Travis-CI",
-                "Hound-CI",
-                "Gulp",
-                "Bower"
+            "TechIcons": [
+                "devicon devicon-javascript-plain colored",
+                "devicon devicon-sass-original colored",
+                "devicon devicon-gulp-plain colored",
+                "devicon devicon-travis-plain",
+                "devicon devicon-bower-plain colored"
             ]
         },
         {
@@ -569,14 +555,13 @@
             "Title": "Car Dashboard",
             "Description": "Web application used for viewing, tracking, and assigning expenses for friends' investments in a rally car.",
             "GithubLink": "https://github.com/gitwrecked/carDashAng2CliV2",
-            "Technologies": [
-                "Angular 2",
-                "Heroku",
-                "Mongo",
-                "Travis-CI",
-                "Node",
-                "Express",
-                "Frisby.js"
+            "TechIcons": [
+                "devicon devicon-angularjs-plain colored",
+                "devicon devicon-heroku-original colored",
+                "devicon devicon-mongodb-plain colored",
+                "devicon devicon-travis-plain",
+                "devicon devicon-nodejs-plain colored",
+                "devicon devicon-express-original"
             ]
         }
     ],
@@ -584,6 +569,5 @@
     "Projects.ShowLessBtn": "Show Less",
     "Contact.Pretitle": "Contact",
     "Contact.Title": "Get in Touch!",
-    "Contact.Btn": "Send me an Email",
-    "Footer.Logo": "assets/images/logos/logo-angular.png"
+    "Contact.Btn": "Send me an Email"
 }

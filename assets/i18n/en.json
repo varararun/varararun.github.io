@@ -549,7 +549,7 @@
             ]
         },
         {
-            "Tags": ["personal"],
+            "Tags": ["personal", "featured"],
             "Title": "Photo Tiles",
             "Description": "Front End package, javascript implementation of Mac's Photo Tiles Screensaver.",
             "GithubLink": "https://github.com/varararun/photo-tiles",

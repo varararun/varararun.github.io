@@ -30,7 +30,7 @@
     "Menu.NavItems": [
         {
             "label": "Home",
-            "link": "home"
+            "link": ""
         },
         {
             "label": "Highlights",

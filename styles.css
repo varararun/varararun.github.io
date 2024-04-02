@@ -7963,7 +7963,6 @@ a {
 }
 a:hover {
   text-decoration: none;
-  color: var(--accent-color);
 }
 
 ol, ul, li {

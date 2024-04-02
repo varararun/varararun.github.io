@@ -6,22 +6,22 @@
     "SocialIcons": [
         {
             "Label": "LinkedIn",
-            "link": "https://www.linkedin.com/in/varghesearun/",
+            "Link": "https://www.linkedin.com/in/varghesearun/",
             "Icon": "fab fa-linkedin"
         },
         {
             "Label": "GitHub",
-            "link": "https://github.com/vararun",
+            "Link": "https://github.com/vararun",
             "Icon": "fab fa-github"
         },
         {
             "Label": "CodePen",
-            "link": "https://codepen.io/avarghese/",
+            "Link": "https://codepen.io/avarghese/",
             "Icon": "fab fa-codepen"
         },
         {
             "Label": "Instagram",
-            "link": "https://www.instagram.com/chasing_arun/",
+            "Link": "https://www.instagram.com/chasing_arun/",
             "Icon": "fab fa-instagram"
         }
     ],
@@ -29,28 +29,28 @@
     "Menu.Img": "assets/images/profile/profile-small.png",
     "Menu.NavItems": [
         {
-            "label": "Home",
-            "link": ""
+            "Label": "Home",
+            "Link": ""
         },
         {
-            "label": "Highlights",
-            "link": "highlights"
+            "Label": "Highlights",
+            "Link": "highlights"
         },
         {
-            "label": "Experience",
-            "link": "experience"
+            "Label": "Experience",
+            "Link": "experience"
         },
         {
-            "label": "Projects",
-            "link": "projects"
+            "Label": "Projects",
+            "Link": "projects"
         },
         {
-            "label": "Contact",
-            "link": "contact"
+            "Label": "Contact",
+            "Link": "contact"
         },
         {
-            "label": "Resume",
-            "link": ""
+            "Label": "Resume",
+            "Link": ""
         }
     ],
     "About.Pretitle": "Hello! My name is",

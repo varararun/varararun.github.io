@@ -57,7 +57,7 @@ export class MenuComponent implements OnInit {
     }
 
     navigate(item) {
-        if (item.label === 'Resume') {
+        if (item['Label'] === 'Resume') {
             this.downloadResume();
         }
         this.router.navigate([item['Link']]);

@@ -50,6 +50,10 @@
             "Link": "projects"
         },
         {
+            "Label": "Contact",
+            "Link": "contact"
+        },
+        {
             "Label": "Terminal",
             "Link": "terminal"
         },

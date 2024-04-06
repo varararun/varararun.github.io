@@ -20,7 +20,10 @@
     <ol class="menu-bar-items" [ngClass]="{'show-menu-bg': scrollPosition > 100}">
         <li *ngFor='let item of "Menu.NavItems" | translate; let i = index' class="menu-bar-item"
             data-aos="fade-down" data-aos-duration="500" [attr.data-aos-delay]="i*100">
-            <span (click)="navigate(item)" [class.active]="item['Label'].toLowerCase() === route">{{item['Label']}}</span>
+                <span (click)="navigate(item)" [class.active]="item['Label'].toLowerCase() === route">
+                    <span *ngIf="item['Label'] !== 'Home'">{{item['Label']}}</span>
+                    <i class="fas fa-home" *ngIf="item['Label'] === 'Home'"></i>
+                </span>
         </li>
         <li class="menu-bar-item theme-toggle" (click)="switchTheme()" data-aos="fade-down" data-aos-duration="500"
             data-aos-delay="700">

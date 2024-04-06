@@ -1,6 +1,12 @@
 <footer>
     <ul class="footer-left-bar" data-aos="fade-up" data-aos-duration="500">
-        <li  *ngFor='let item of "SocialIcons" | translate; let i = index'>
+        <li>
+            <a routerLink="terminal">
+                <i class="fas fa-terminal"></i>
+            </a>
+            <span class="label">Terminal</span>
+        </li>
+        <li *ngFor='let item of "SocialIcons" | translate; let i = index'>
             <a href="{{item['Link'] | translate}}" target='_blank'>
                 <i class="{{item['Icon']}}"></i>
             </a>

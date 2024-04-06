@@ -56,6 +56,7 @@
 .menu-overlay {
     display: none;
     position: fixed;
+    overflow: scroll;
     width: 100vw;
     height: 100vh;
     top: 0;
@@ -69,6 +70,7 @@
         top: 15%;
         left: 0;
         margin: auto;
+        padding-bottom: 100px;
         list-style: none;
         color: var(--primary-color);
         font-family: var(--primary-font);
@@ -140,9 +142,10 @@
             &:after {
                 content: var(--divider);
                 color: var(--accent-color);
+                font-size: small;
                 font-weight: 600;
                 opacity: .7;
-                margin: 10px;
+                margin: 6px;
             }
 
             &:last-child:after {
@@ -200,6 +203,15 @@
     }
     .menu-overlay {
         display: block;
+    }
+}
+
+@media (max-width: 550px) {
+    .menu-item {
+        font-size: 2.5em !important;
+    }
+    .overlay-theme-toggle {
+        margin-left: 38px !important;
     }
 }
 

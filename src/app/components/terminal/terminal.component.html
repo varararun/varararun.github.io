@@ -1,0 +1,24 @@
+<div class="t-wrapper">
+    <div class="t-container">
+        <div class="t-menu">
+            <div class="t-buttons">
+                <a routerLink="home">
+                    <div class="t-button t-button-red"></div>
+                </a>
+                <div class="t-button t-button-yellow"></div>
+                <div class="t-button t-button-green"></div>
+            </div>
+            <div class="t-title">
+                <a href="https://github.com/vararun" target="_blank"><i class='fab fa-github'></i> ~/arun-varghese -avsh</a>
+            </div>
+        </div>
+        <div id="terminal">
+            <li><br></li>
+            <li *ngFor="let line of lines; let i = index" [innerHTML]="line"></li>
+            <li *ngIf="waitForInput">$ <input class="t-input"></li>
+            <li><br></li>
+            <li><br></li>
+            <li><br></li>
+        </div>
+    </div>
+</div>

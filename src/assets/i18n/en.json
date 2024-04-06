@@ -5,6 +5,11 @@
     "Background.Img": "assets/images/background/code.png",
     "SocialIcons": [
         {
+            "Label": "Email",
+            "Link": "mailto:arunv4700@gmail.com",
+            "Icon": "fas fa-envelope"
+        },
+        {
             "Label": "LinkedIn",
             "Link": "https://www.linkedin.com/in/varghesearun/",
             "Icon": "fab fa-linkedin"
@@ -47,6 +52,10 @@
         {
             "Label": "Contact",
             "Link": "contact"
+        },
+        {
+            "Label": "Terminal",
+            "Link": "terminal"
         },
         {
             "Label": "Resume",

@@ -11,7 +11,7 @@
         },
         {
             "Label": "LinkedIn",
-            "Link": "https://www.linkedin.com/in/varghesearun/",
+            "Link": "https://www.linkedin.com/in/varghesearun",
             "Icon": "fab fa-linkedin"
         },
         {
@@ -21,12 +21,12 @@
         },
         {
             "Label": "CodePen",
-            "Link": "https://codepen.io/avarghese/",
+            "Link": "https://codepen.io/avarghese",
             "Icon": "fab fa-codepen"
         },
         {
             "Label": "Instagram",
-            "Link": "https://www.instagram.com/chasing_arun/",
+            "Link": "https://www.instagram.com/chasing_arun",
             "Icon": "fab fa-instagram"
         }
     ],

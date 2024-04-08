@@ -1,4 +1,5 @@
 import {Component, HostListener} from '@angular/core';
+import {ThemeService} from "../../../services/theme/theme.service";
 
 @Component({
     selector: 'app-footer',
@@ -8,6 +9,9 @@ import {Component, HostListener} from '@angular/core';
 export class FooterComponent {
 
     scrollPosition = 0;
+
+    constructor(public themeService: ThemeService) {
+    }
 
     @HostListener('window:scroll')
     checkScroll() {

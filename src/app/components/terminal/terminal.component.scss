@@ -1,5 +1,4 @@
 $Red: #F5544D;
-$Orange: rgb(169, 114, 61);
 $Yellow: #FABD2F;
 $Green: #07bc7a;
 
@@ -10,9 +9,9 @@ $Green: #07bc7a;
     display: flex;
     flex-direction: column;
     background-color: var(--bg-color-60);
-    height: 100%;
+    height: 50vh;
     padding: 10px 25px 10px 10px;
-    overflow: auto;
+    overflow: scroll;
 }
 
 .t-wrapper {
@@ -22,21 +21,35 @@ $Green: #07bc7a;
     height: 100vh;
     top: 0;
     left: 0;
+    background: transparent;
+    transition: var(--transition);
+    &.fullscreen {
+        z-index: 1;
+        background: var(--bg-color);
+        .t-container {
+            top: 0;
+            margin: 0;
+            width: 100%;
+            height: 100vh;
+            max-width: 100%;
+            #terminal {
+                height: 90vh;
+            }
+        }
+    }
 }
 
 .t-container {
+    transition: var(--transition);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border: var(--terminal-border);
     position: absolute;
     left: 50%;
     top: 20%;
     transform: translateX(-50%);
     width: 90%;
     max-width: 800px;
-    height: 50%;
-    min-height: 300px;
-    overflow: hidden;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    border: var(--terminal-border);
     margin: 20px 0;
     cursor: text;
 }
@@ -57,6 +70,11 @@ $Green: #07bc7a;
     height: 12px;
     border-radius: 50%;
     margin-right: 8px;
+    cursor: var(--cursor-type);
+}
+
+.t-view-link, .t-help-command {
+    cursor: var(--cursor-type);
 }
 
 .t-tab-1 {
@@ -68,7 +86,7 @@ $Green: #07bc7a;
 }
 
 .t-help-command {
-    width: 12em;
+    width: 120px;
     float: left;
 }
 
@@ -77,10 +95,10 @@ $Green: #07bc7a;
 }
 
 .t-button-red {
-    background: #F5544D;
+    background: $Red;
 }
 
-.t-red {
+.t-error {
     color: $Red;
 }
 
@@ -88,7 +106,7 @@ $Green: #07bc7a;
     background: $Yellow;
 }
 
-.t-yellow {
+.t-warn {
     color: $Yellow;
 }
 
@@ -96,15 +114,15 @@ $Green: #07bc7a;
     background: $Green;
 }
 
-.t-green {
+.t-success {
     color: $Green;
 }
 
 div.t-title {
-    flex: 1;
-    padding: 0 10px;
-    margin-left: -50px;
-    text-align: center;
+    position: fixed;
+    top: 3px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .t-menu {
@@ -122,15 +140,15 @@ div.t-title {
     margin-left: 16px;
 }
 
-.t-success {
-    color: #5AD786;
+.loading {
+    &:after {
+        content: '⠋';
+        margin-left: 5px;
+        animation: .5s loading infinite;
+    }
 }
 
-.t-error {
-    color: #F78F85;
-}
-
-.t-input {
+#terminal-input {
     text-transform: lowercase;
     font: inherit;
     padding: 0;
@@ -138,19 +156,43 @@ div.t-title {
     background: none;
     font-family: var(--code-font);
     color: var(--primary-color);
-    margin: 0 0 50px 0;
+    &:focus {
+        border: none;
+        outline: none;
+        box-shadow: none;
+        background-color: unset;
+    }
 }
 
-.t-input:focus {
-    border: none;
-    outline: none;
-    box-shadow: none;
-    background-color: unset;
-
-}
-
-@media (max-width: 1000px) {
-    .t-title {
-        display: none;
+@keyframes loading {
+    0% {
+        content: '⠋';
+    }
+    10% {
+        content: '⠙';
+    }
+    20% {
+        content: '⠹';
+    }
+    30% {
+        content: '⠸';
+    }
+    40% {
+        content: '⠼';
+    }
+    50% {
+        content: '⠴';
+    }
+    60% {
+        content: '⠦';
+    }
+    70% {
+        content: '⠧';
+    }
+    80% {
+        content: '⠇';
+    }
+    90% {
+        content: '⠏';
     }
 }

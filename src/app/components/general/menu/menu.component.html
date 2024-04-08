@@ -10,24 +10,18 @@
         <li *ngFor='let item of "Menu.NavItems" | translate; let i = index' class="menu-item">
             <a (click)="navigate(item); menuOpen = !menuOpen">{{item['Label']}}</a>
         </li>
-        <li class="overlay-theme-toggle" (click)="switchTheme()">
-            <i class="fas {{theme === 'light' ? 'fa-toggle-on' : 'fa-toggle-off'}}"></i>
+        <li class="overlay-theme-toggle" (click)="themeService.switchTheme()">
+            <i class="fas {{themeService.theme === 'light' ? 'fa-toggle-on' : 'fa-toggle-off'}}"></i>
         </li>
     </ol>
-    <div class="version">v{{appVersion}}</div>
 </div>
 <div class="menu-bar">
     <ol class="menu-bar-items" [ngClass]="{'show-menu-bg': scrollPosition > 100}">
         <li *ngFor='let item of "Menu.NavItems" | translate; let i = index' class="menu-bar-item"
             data-aos="fade-down" data-aos-duration="500" [attr.data-aos-delay]="i*100">
                 <span (click)="navigate(item)" [class.active]="item['Label'].toLowerCase() === route">
-                    <span *ngIf="item['Label'] !== 'Home'">{{item['Label']}}</span>
-                    <i class="fas fa-home" *ngIf="item['Label'] === 'Home'"></i>
+                    {{item['Label']}}
                 </span>
-        </li>
-        <li class="menu-bar-item theme-toggle" (click)="switchTheme()" data-aos="fade-down" data-aos-duration="500"
-            data-aos-delay="700">
-            <i class="fas {{theme === 'light' ? 'fa-toggle-on' : 'fa-toggle-off'}}"></i>
         </li>
     </ol>
 </div>

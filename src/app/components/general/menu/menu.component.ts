@@ -3,7 +3,7 @@ import {NavigationEnd, Router} from '@angular/router';
 import {animate, style, transition, trigger} from '@angular/animations'
 import {FormControl} from '@angular/forms';
 import {LanguageService} from 'src/app/services/language/language.service';
-import * as config from "../../../../environments/environment";
+import {ThemeService} from "../../../services/theme/theme.service";
 
 @Component({
     selector: 'app-menu',
@@ -31,17 +31,16 @@ export class MenuComponent implements OnInit {
     languageFormControl: FormControl = new FormControl();
     fileName = '';
     route = '';
-    theme;
     scrollPosition = 0;
 
     constructor(
         private router: Router,
-        private languageService: LanguageService
+        private languageService: LanguageService,
+        public themeService: ThemeService
     ) {
     }
 
     ngOnInit(): void {
-        this.theme = document.body.getAttribute('data-theme') || 'dark';
         this.languageFormControl.setValue(this.languageService.DEFAULT);
 
         this.router.events.subscribe(event => {
@@ -71,18 +70,11 @@ export class MenuComponent implements OnInit {
     }
 
     switchTheme() {
-        this.theme = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        document.body.setAttribute('data-theme', this.theme);
-        localStorage.setItem('theme', this.theme);
-        document.body.classList.remove('scroll-lock');
+        this.themeService.switchTheme();
     }
 
     @HostListener('window:scroll')
     checkScroll() {
         this.scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    }
-
-    get appVersion() {
-        return config.environment.version;
     }
 }

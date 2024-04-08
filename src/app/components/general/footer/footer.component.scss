@@ -32,6 +32,12 @@ footer {
         li {
             margin: 20px 0px;
             transition: var(--transition);
+            cursor: var(--cursor-type);
+
+            a > .theme-toggle {
+                transform: rotate(90deg);
+                margin-left: -2.7px;
+            }
 
             &:last-of-type {
                 margin-bottom: 33px;

@@ -10,7 +10,7 @@
     right: 0;
     margin-right: 15px;
     margin-top: 15px;
-    z-index: 2;
+    z-index: 3;
 
     .menu-container {
         background: var(--bg-color-60);
@@ -63,7 +63,7 @@
     left: 0;
     background: var(--menu-overlay-bg-color);
     backdrop-filter: blur(3px);
-    z-index: 1;
+    z-index: 2;
 
     .menu-items {
         position: absolute;
@@ -177,21 +177,6 @@
 .theme-toggle {
     font-size: 19px;
     color: var(--primary-color);
-}
-
-.version {
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: var(--code-font);
-    border: var(--border);
-    border-radius: var(--border-radius);
-    padding: 1em 1em .5em;
-    transition: var(--transition) !important;
-    color: var(--scroll-btn-color);
-    background-color: var(--scroll-btn-bg-color);
-    box-shadow: var(--box-shadow);
 }
 
 @media (max-width: 1000px) {

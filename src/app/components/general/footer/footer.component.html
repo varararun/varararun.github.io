@@ -1,16 +1,16 @@
 <footer>
     <ul class="footer-left-bar" data-aos="fade-up" data-aos-duration="500">
-        <li>
-            <a routerLink="terminal">
-                <i class="fas fa-terminal"></i>
-            </a>
-            <span class="label">Terminal</span>
-        </li>
         <li *ngFor='let item of "SocialIcons" | translate; let i = index'>
             <a href="{{item['Link'] | translate}}" target='_blank'>
                 <i class="{{item['Icon']}}"></i>
             </a>
             <span class="label">{{item['Label']}}</span>
+        </li>
+        <li>
+            <a (click)="themeService.switchTheme()">
+                <i class="theme-toggle fas {{themeService.theme === 'light' ? 'fa-toggle-on' : 'fa-toggle-off'}}"></i>
+            </a>
+            <span class="label">Switch Theme</span>
         </li>
     </ul>
 

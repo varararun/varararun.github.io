@@ -418,7 +418,7 @@
             "Tech": ["Published November 2016"]
         },
         {
-            "Tags": ["featured", "work"],
+            "Tags": ["work"],
             "Title": "ISC Portal",
             "Company": "Comcast",
             "CompanyLogo": "assets/images/logos/logo-comcast.png",
@@ -552,6 +552,18 @@
                 "fab fa-sass",
                 "fab fa-gulp",
                 "fab fa-jenkins"
+            ]
+        },
+        {
+            "Tags": ["personal", "featured"],
+            "Title": "Terminal",
+            "Description": "Created a terminal window to provide a more interactive experience learn more about me. Incorporated it into my Angular personal website as a standalone component.",
+            "Link": "https://avarghese.me/terminal",
+            "TechIcons": [
+                "fab fa-angular",
+                "fab fa-html5",
+                "fab fa-js",
+                "fab fa-sass"
             ]
         }
     ],

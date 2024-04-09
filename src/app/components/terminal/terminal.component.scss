@@ -4,17 +4,19 @@ $Green: #07bc7a;
 
 #terminal {
     font-family: var(--code-font);
-    font-size: 14px;
     color: var(--primary-color);
+    background-color: var(--bg-color-60);
+    font-size: 14px;
     display: flex;
     flex-direction: column;
-    background-color: var(--bg-color-60);
+
     height: 50vh;
     padding: 10px 25px 10px 10px;
     overflow: scroll;
 }
 
 .t-wrapper {
+    transition: var(--transition);
     position: fixed;
     overflow: scroll;
     width: 100vw;
@@ -22,10 +24,9 @@ $Green: #07bc7a;
     top: 0;
     left: 0;
     background: transparent;
-    transition: var(--transition);
     &.fullscreen {
-        z-index: 1;
         background: var(--bg-color);
+        z-index: 1;
         .t-container {
             top: 0;
             margin: 0;
@@ -66,32 +67,24 @@ $Green: #07bc7a;
 }
 
 .t-menu .t-button {
+    cursor: var(--cursor-type);
     width: 12px;
     height: 12px;
     border-radius: 50%;
     margin-right: 8px;
+}
+
+.t-previous-input, #terminal-input, .t-view-command, .t-help-command {
     cursor: var(--cursor-type);
 }
 
-.t-view-link, .t-help-command {
-    cursor: var(--cursor-type);
-}
-
-.t-tab-1 {
-    margin-left: 16px;
-}
-
-.t-tab-2 {
-    margin-left: 32px;
-}
-
-.t-help-command {
-    width: 120px;
+.t-view-command, .t-help-command {
+    margin-left: 20px;
+    width: 140px;
     float: left;
-}
-
-.t-blue {
-    color: var(--blue);
+    &:before {
+        content: '=> ';
+    }
 }
 
 .t-button-red {
@@ -120,14 +113,14 @@ $Green: #07bc7a;
 
 div.t-title {
     position: fixed;
-    top: 3px;
+    font-size: small;
     left: 50%;
     transform: translateX(-50%);
 }
 
 .t-menu {
-    font-size: inherit;
     color: var(--white-60);
+    font-size: inherit;
 }
 
 .t-buttons {
@@ -149,13 +142,13 @@ div.t-title {
 }
 
 #terminal-input {
+    font-family: var(--code-font);
+    color: var(--primary-color);
     text-transform: lowercase;
     font: inherit;
     padding: 0;
     border: none;
     background: none;
-    font-family: var(--code-font);
-    color: var(--primary-color);
     &:focus {
         border: none;
         outline: none;

@@ -9,14 +9,14 @@
                 <div class="t-button t-button-green" (click)="fullscreen = !fullscreen"></div>
             </div>
             <div class="t-title">
-                <a href="https://github.com/vararun" target="_blank"><i class='fab fa-github'></i> ~/arun-varghese -avsh</a>
+                <a href="https://github.com/vararun" target="_blank"><i class='fab fa-github'></i> ~/arun-varghese</a>
             </div>
         </div>
         <div id="terminal">
             <li><br></li>
             <li *ngFor="let line of lines; let i = index" [innerHTML]="line"></li>
             <li *ngIf="waitForInput">$ <input id="terminal-input"></li>
-            <li class="loading" *ngIf="loading">loading</li>
+            <li class="loading" *ngIf="loading"><br>loading</li>
             <li><br></li>
             <li id="anchor"><br></li>
         </div>

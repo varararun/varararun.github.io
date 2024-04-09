@@ -24,18 +24,13 @@ export class TerminalComponent implements OnInit {
         if (this.terminal) {
             await this.displayLoading(1000);
             this.lines = JSON.parse(localStorage.getItem('terminal-history') || '[] ');
-            await this.createLine(`last login: ${new Date().toLocaleString()}`, '', true);
-            await this.createLine('in /users/arun-varghese', '', true);
-            await this.createLine('executing ~/avarghese.sh', '', true);
-            await this.displayHelp();
-            await this.wait(50);
-            this.waitForInput = true;
+            await this.displayInit();
         }
     }
 
     @HostListener('window:click', ['$event.target'])
     async click(element: HTMLElement) {
-        if (element.classList.contains('t-view-link')) {
+        if (element.classList.contains('t-view-command')) {
             this.input.value = `view ${element.innerText}`;
             await this.inputActive();
         }
@@ -43,15 +38,39 @@ export class TerminalComponent implements OnInit {
             this.input.value = `${element.innerText}`;
             await this.inputActive();
         }
+        if (element.classList.contains('t-previous-input')) {
+            this.input.value = `${element.innerText.replace('$', '').trim()}`;
+            await this.inputActive();
+        }
+        if (element.id === 'terminal-input' && this.input?.value?.trim()) {
+            await this.executeInput();
+        }
     }
 
     @HostListener('window:keyup', ['$event'])
     async submitInput(event: KeyboardEvent) {
         if (this.terminal && event.key == 'Enter') {
-            await this.checkInputValue(this.input?.value?.toLowerCase()?.trim() || '');
-            await this.inputActive();
-            localStorage.setItem('terminal-history', JSON.stringify(this.lines));
+            await this.executeInput();
         }
+
+    }
+
+    async executeInput() {
+        await this.checkInputValue(this.input?.value?.toLowerCase()?.trim() || '');
+        await this.inputActive();
+        localStorage.setItem('terminal-history', JSON.stringify(this.lines));
+    }
+
+    async displayInit() {
+        this.createNewLine();
+        await this.createLines([
+            `last login: ${new Date().toLocaleString()}`,
+            'in /users/arun-varghese',
+            'executing ~/avarghese.sh',
+            `version: ${this.appVersion}`
+        ]);
+        await this.displayHelp();
+        await this.inputActive();
     }
 
     async displayLoading(delay = 500) {
@@ -70,7 +89,7 @@ export class TerminalComponent implements OnInit {
     }
 
     async inputActive() {
-        if(this.loading) {
+        if (this.loading) {
             return;
         }
         this.waitForInput = true;
@@ -98,34 +117,41 @@ export class TerminalComponent implements OnInit {
         this.lines.push('<br>');
     }
 
-    async createLine(text: string,
-                     level: 't-success' | 't-warn' | 't-error' | '',
-                     noCursor = false,
-                     clear = false,
-                     delay = 50) {
+    async addLine(line, delay = 50) {
         await this.wait(delay);
-        if(clear){
-            this.clearInput();
+        this.lines.push(line);
+        this.anchor?.scrollIntoView();
+    }
+
+    async createLines(input: string[] | string) {
+        const lines = typeof input === 'string' ? [input] : input;
+        for (const line of lines) {
+           await this.addLine(line);
         }
-        this.lines.push(`<span class='${level}'>${noCursor ? '' : '$'} ${text} </span>`);
-        this.anchor?.scrollIntoView();
     }
 
-    async createHelpLine(command, desc, delay = 50) {
-        await this.wait(delay);
-        this.lines.push(`<div class='t-blue t-tab-1 t-help-command'>${command}</div><span> ${desc} </span>`);
-        this.anchor?.scrollIntoView();
+    async createHelpLine(commands: string[][]) {
+        for (const command of commands) {
+            await this.addLine(`<span class='t-help-command'>${command[0]}</span>${command[1] || ''}`);
+        }
     }
 
-    async createContactLine(link, icon, label, delay = 50) {
-        await this.wait(delay);
-        this.lines.push(`<a href='${link}' target='_blank' class="t-tab-1"><i class='${icon} white'></i>&nbsp;${label}</a>`);
-        this.anchor?.scrollIntoView();
+    async createContactLines(lines: string[][]) {
+        for (const line of lines) {
+            await this.addLine(`<a href='${line[0]}' target='_blank'">&nbsp; <i class='${line[1]} white'></i>&nbsp;${line[2]}</a>`);
+        }
     }
 
-    async createNavigationLine(link, delay = 50) {
+    async createNavigationLine(views: string[]) {
+        for (const view of views) {
+            await this.addLine(`<span class='t-view-command'>${view}</span>`);
+        }
+    }
+
+    async createPreviousInput(command, level: 't-success' | 't-warn' | 't-error' | '', delay = 50) {
         await this.wait(delay);
-        this.lines.push(`<a class='t-view-link t-tab-1'>${link}</a>`);
+        this.clearInput();
+        this.lines.push(`<span class='${level} t-previous-input'>$ ${command}</span>`);
         this.anchor?.scrollIntoView();
     }
 
@@ -146,41 +172,67 @@ export class TerminalComponent implements OnInit {
     get appVersion() {
         return config.environment.version;
     }
+
     wait = ms => new Promise(resolve => setTimeout(resolve, ms))
 
     async displayHelp() {
         await this.displayLoading();
-        await this.createLine('usage:', '', true, false, 100);
-        await this.createHelpLine('help', 'commands');
-        await this.createHelpLine('about', 'who am i');
-        await this.createHelpLine('contact', 'contact me');
-        await this.createHelpLine('view', 'view &lt;page&gt;');
-        await this.createHelpLine('theme', 'toggle theme');
-        await this.createHelpLine('version', 'view version');
-        await this.createHelpLine('clear', 'clear terminal');
-        await this.createHelpLine('exit', 'close terminal');
+        this.createNewLine();
+        await this.createLines('usage:');
+        await this.createHelpLine([
+            ['help'], ['about'], ['contact'],
+            ['view', 'website pages'],
+            ['theme', 'toggle themes'],
+            ['fullscreen', 'toggle modes'],
+            ['clear'], ['exit']
+        ]);
+        this.createNewLine();
+    }
+
+    async displayView() {
+        await this.displayLoading();
+        this.createNewLine();
+        await this.createLines('choose page:');
+        await this.createNavigationLine(['highlights', 'experience', 'projects', 'resume']);
+        this.createNewLine();
+    }
+
+    async displayAbout() {
+        await this.displayLoading();
+        this.createNewLine();
+        await this.createLines([
+            'hi, my name is arun',
+            'i have over 10 years of full-stack experience in the complete ' +
+            'development life cycle of distributed web applications, from design to delivery.',
+            'in my free time, I work on front-end web development with popular ' +
+            'frameworks to learn more about ui/ux and software architecture'
+        ]);
+        this.createNewLine();
+    }
+
+    async displayContact() {
+        await this.displayLoading();
+        this.createNewLine();
+        await this.createContactLines([
+            ['mailto:arunv4700@gmail.com', 'fas fa-envelope', 'email'],
+            ['https://www.linkedin.com/in/varghesearun', 'fab fa-linkedin', 'linkedin'],
+            ['https://github.com/vararun', 'fab fa-github', 'github'],
+            ['https://codepen.io/avarghese', 'fab fa-codepen', 'codepen'],
+            ['https://www.instagram.com/chasing_arun', 'fab fa-instagram white', 'instagram']
+        ]);
+        this.createNewLine();
     }
 
     async checkInputValue(value: string) {
         if (value === 'help') {
-            await this.createLine(value, 't-success', false, true);
+            await this.createPreviousInput(value, 't-success');
             await this.displayHelp();
         } else if (value === 'about') {
-            await this.displayLoading();
-            await this.createLine(value, 't-success', false, true);
-            await this.createLine('hi, my name is <span class="t-blue">arun</span>', '', true)
-            await this.createLine('i have over 10 years of full-stack experience in the complete ' +
-                'development life cycle of distributed web applications, from design to delivery.', '', true);
-            await this.createLine('in my free time, I work on front-end web development with popular ' +
-                'frameworks to learn more about ui/ux and software architecture', '', true);
+            await this.createPreviousInput(value, 't-success');
+            await this.displayAbout();
         } else if (value === 'view') {
-            await this.displayLoading();
-            await this.createLine(value, 't-success', false, true);
-            await this.createLine('choose page:', '', true);
-            await this.createNavigationLine('highlights');
-            await this.createNavigationLine('experience');
-            await this.createNavigationLine('projects');
-            await this.createNavigationLine('resume');
+            await this.createPreviousInput(value, 't-success');
+            await this.displayView();
         } else if (value === 'view highlights') {
             await this.displayLoading();
             this.navigate('highlights');
@@ -192,54 +244,60 @@ export class TerminalComponent implements OnInit {
             this.navigate('projects');
         } else if (value === 'view resume') {
             await this.displayLoading();
-            await this.createLine(value, 't-success', false, true);
+            await this.createPreviousInput(value, 't-success');
             this.languageService.translateService.get("Resume").subscribe(val => {
                 window.open(val, "_blank");
             });
         } else if (value === 'contact') {
-            await this.displayLoading();
-            await this.createLine(value, 't-success', false, true);
-            await this.createContactLine('mailto:arunv4700@gmail.com', 'fas fa-envelope', 'email');
-            await this.createContactLine('https://www.linkedin.com/in/varghesearun', 'fab fa-linkedin', 'linkedin');
-            await this.createContactLine('https://github.com/vararun', 'fab fa-github', 'github');
-            await this.createContactLine('https://codepen.io/avarghese', 'fab fa-codepen', 'codepen');
-            await this.createContactLine('https://www.instagram.com/chasing_arun', 'fab fa-instagram white', 'instagram');
+            await this.createPreviousInput(value, 't-success');
+            await this.displayContact();
         } else if (value.startsWith('exit')) {
             await this.displayLoading();
-            await this.createLine(value, 't-error', false, true);
+            await this.createPreviousInput(value, 't-error');
             this.navigate('home');
         } else if (value.startsWith('clear')) {
-            await this.createLine(value, 't-success');
+            await this.createPreviousInput(value, 't-success');
             await this.clearTerminal();
         } else if (value === '') {
-            await this.createLine('', '', false, true);
+            await this.createPreviousInput(value, '');
         } else if (value.startsWith('theme')) {
             await this.displayLoading();
+            await this.createPreviousInput(value, 't-success');
+            this.createNewLine();
+            await this.createLines(`&nbsp; => switched to ${this.themeService.theme} theme`);
             this.themeService.switchTheme();
-            await this.createLine(value, 't-success', false, true);
-            await this.createLine(`switched to ${this.themeService.theme} theme`, '', true);
-        } else if (value.startsWith('ls')) {
-            await this.createLine(value, '', false, true);
-            await this.createLine('avarghese.sh', '', true);
+            this.createNewLine();
+        } else if (value.startsWith('fullscreen')) {
+            await this.displayLoading();
+            await this.createPreviousInput(value, 't-success');
+            this.fullscreen = !this.fullscreen;
+            this.createNewLine();
         } else if (value.startsWith('version')) {
-            await this.createLine(value, 't-success', false, true);
-            await this.createLine(this.appVersion, '', true);
+            await this.createPreviousInput(value, 't-success');
+            this.createNewLine();
+            await this.createLines(`&nbsp; => ${this.appVersion}`);
+            this.createNewLine();
+        } else if (value.startsWith('ls')) {
+            await this.createPreviousInput(value, '');
+            await this.createLines('avarghese.sh');
         } else if (value.startsWith('pwd')) {
-            await this.createLine(value, 't-success', false, true);
-            await this.createLine('/users/arun-varghese', '', true);
+            await this.createPreviousInput(value, 't-success');
+            await this.createLines('/users/arun-varghese');
         } else if (value.startsWith('df')) {
-            await this.createLine(value, 't-success', false, true);
-            await this.createLine('Filesystem       Used         Available', '', true);
-            await this.createLine('/dev/disk1       4096         487159632', '', true);
-        }  else if (value.startsWith('echo')) {
-            await this.createLine(value, 't-success', false, true);
-            await this.createLine(value.split('echo')[1], '', true);
+            await this.createPreviousInput(value, 't-success');
+            await this.createLines([
+                'Filesystem       Used         Available',
+                '/dev/disk1       4096         487159632'
+            ]);
+        } else if (value.startsWith('echo')) {
+            await this.createPreviousInput(value, 't-success');
+            await this.createLines(value.split('echo')[1]);
         } else if (value.startsWith('mkdir') || value.startsWith('rm') || value.startsWith('chmod') || value.startsWith('sudo') || value.startsWith('cd')) {
-            await this.createLine(value, '', false, true);
-            await this.createLine('permission denied', 't-warn', true);
+            await this.createPreviousInput(value, '');
+            await this.createLines('permission denied');
         } else {
-            await this.createLine(value, 't-error', false, true);
-            await this.createLine(`command not found: ${value}`, '', true);
+            await this.createPreviousInput(value, 't-error');
+            await this.createLines(`command not found: ${value}`);
         }
     }
 }

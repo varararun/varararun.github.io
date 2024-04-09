@@ -35,7 +35,7 @@
     "Menu.NavItems": [
         {
             "Label": "Home",
-            "Link": "home"
+            "Link": ""
         },
         {
             "Label": "Highlights",

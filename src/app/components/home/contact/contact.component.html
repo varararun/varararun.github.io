@@ -7,6 +7,7 @@
     </div>
     <div class="contact-btn" data-aos="fade-up" data-aos-delay="100" data-aos-duration="500">
         <a class="main-btn" data-aos="fade-up" data-aos-duration="500"
+           (click)="ga.sendAnalyticEvent('send-email', 'contact', 'click')"
            href="mailto:{{'Email' | translate}}"
            target='_blank'>
             {{"Contact.Btn" | translate}}

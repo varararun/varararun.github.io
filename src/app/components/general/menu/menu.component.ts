@@ -4,6 +4,7 @@ import {animate, style, transition, trigger} from '@angular/animations'
 import {FormControl} from '@angular/forms';
 import {LanguageService} from 'src/app/services/language/language.service';
 import {ThemeService} from "../../../services/theme/theme.service";
+import {AnalyticsService} from "../../../services/analytics/analytics.service";
 
 @Component({
     selector: 'app-menu',
@@ -36,7 +37,8 @@ export class MenuComponent implements OnInit {
     constructor(
         private router: Router,
         private languageService: LanguageService,
-        public themeService: ThemeService
+        public themeService: ThemeService,
+        public ga: AnalyticsService
     ) {
     }
 
@@ -57,6 +59,7 @@ export class MenuComponent implements OnInit {
 
     navigate(item) {
         if (item['Label'] === 'Resume') {
+            this.ga.sendAnalyticEvent('view-resume', 'menu', 'click');
             this.downloadResume();
         }
         this.router.navigate([item['Link']]);

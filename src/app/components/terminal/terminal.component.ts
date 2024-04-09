@@ -3,6 +3,7 @@ import {Router} from "@angular/router";
 import {LanguageService} from "../../services/language/language.service";
 import * as config from "../../../environments/environment";
 import {ThemeService} from "../../services/theme/theme.service";
+import {AnalyticsService} from "../../services/analytics/analytics.service";
 
 
 @Component({
@@ -17,13 +18,16 @@ export class TerminalComponent implements OnInit {
     fullscreen = false;
     loading = true;
 
-    constructor(private router: Router, private languageService: LanguageService, private themeService: ThemeService) {
+    constructor(private router: Router,
+                private languageService: LanguageService,
+                private themeService: ThemeService,
+                private ga: AnalyticsService) {
     }
 
     async ngOnInit() {
         if (this.terminal) {
             await this.displayLoading(1000);
-            this.lines = JSON.parse(localStorage.getItem('terminal-history') || '[] ');
+            this.lines = JSON.parse(localStorage.getItem('av-terminal-history') || '[] ');
             await this.displayInit();
         }
     }
@@ -31,7 +35,7 @@ export class TerminalComponent implements OnInit {
     @HostListener('window:click', ['$event.target'])
     async click(element: HTMLElement) {
         if (element.classList.contains('t-view-command')) {
-            this.input.value = `view ${element.innerText}`;
+            this.input.value = `${element.innerText}`;
             await this.inputActive();
         }
         if (element.classList.contains('t-help-command')) {
@@ -58,7 +62,7 @@ export class TerminalComponent implements OnInit {
     async executeInput() {
         await this.checkInputValue(this.input?.value?.toLowerCase()?.trim() || '');
         await this.inputActive();
-        localStorage.setItem('terminal-history', JSON.stringify(this.lines));
+        localStorage.setItem('av-terminal-history', JSON.stringify(this.lines));
     }
 
     async displayInit() {
@@ -67,9 +71,11 @@ export class TerminalComponent implements OnInit {
             `last login: ${new Date().toLocaleString()}`,
             'in /users/arun-varghese',
             'executing ~/avarghese.sh',
-            `version: ${this.appVersion}`
+            `version: ${this.appVersion}`,
+            '<br>',
+            'type <span class="t-success">help</span> to view available commands'
         ]);
-        await this.displayHelp();
+        this.createNewLine();
         await this.inputActive();
     }
 
@@ -144,7 +150,7 @@ export class TerminalComponent implements OnInit {
 
     async createNavigationLine(views: string[]) {
         for (const view of views) {
-            await this.addLine(`<span class='t-view-command'>${view}</span>`);
+            await this.addLine(`<span class='t-view-command'>view ${view}</span>`);
         }
     }
 
@@ -178,9 +184,9 @@ export class TerminalComponent implements OnInit {
     async displayHelp() {
         await this.displayLoading();
         this.createNewLine();
-        await this.createLines('usage:');
+        await this.createLines('commands:');
         await this.createHelpLine([
-            ['help'], ['about'], ['contact'],
+            ['about'], ['contact'],
             ['view', 'website pages'],
             ['theme', 'toggle themes'],
             ['fullscreen', 'toggle modes'],
@@ -192,7 +198,7 @@ export class TerminalComponent implements OnInit {
     async displayView() {
         await this.displayLoading();
         this.createNewLine();
-        await this.createLines('choose page:');
+        await this.createLines('which page?');
         await this.createNavigationLine(['highlights', 'experience', 'projects', 'resume']);
         this.createNewLine();
     }
@@ -248,6 +254,7 @@ export class TerminalComponent implements OnInit {
             this.languageService.translateService.get("Resume").subscribe(val => {
                 window.open(val, "_blank");
             });
+            this.createNewLine();
         } else if (value === 'contact') {
             await this.createPreviousInput(value, 't-success');
             await this.displayContact();
@@ -271,6 +278,22 @@ export class TerminalComponent implements OnInit {
             await this.displayLoading();
             await this.createPreviousInput(value, 't-success');
             this.fullscreen = !this.fullscreen;
+            this.createNewLine();
+        } else if (value.startsWith('analytics')) {
+            await this.displayLoading();
+            await this.createPreviousInput(value, 't-success');
+            this.createNewLine();
+
+            await this.createLines([
+                'views:',
+                ...Object.entries(this.ga.localPageViews)
+                    .sort((a, b) => a[0] > b[0] ? 1 : b[0] > a[0] ? -1 : 0)
+                    .map(entry => `<span class="analytics">${entry[0]}</span> => ${entry[1] || 0}`),
+                'events:',
+                ...Object.entries(this.ga.localEvents)
+                    .sort((a, b) => a[0] > b[0] ? 1 : b[0] > a[0] ? -1 : 0)
+                    .map(entry => `<span class="analytics">${entry[0]}</span> => ${entry[1] || 0}`)
+            ]);
             this.createNewLine();
         } else if (value.startsWith('version')) {
             await this.createPreviousInput(value, 't-success');

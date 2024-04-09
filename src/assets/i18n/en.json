@@ -59,7 +59,7 @@
         },
         {
             "Label": "Resume",
-            "Link": ""
+            "Link": "resume"
         }
     ],
     "About.Pretitle": "Hello! My name is",

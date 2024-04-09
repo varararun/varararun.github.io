@@ -9,7 +9,7 @@ export class ThemeService {
     switchTheme() {
         this.theme = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
         document.body.setAttribute('data-theme', this.theme);
-        localStorage.setItem('theme', this.theme);
+        localStorage.setItem('av-theme', this.theme);
         document.body.classList.remove('scroll-lock');
     }
 }

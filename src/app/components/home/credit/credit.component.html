@@ -1,7 +1,8 @@
 <div class="credits">
     <div class="credit">Designed by Arun Varghese</div>
     <div>
-        <a href="{{'Repo' | translate}}" rel="nofollow noopener noreferrer" target="_blank">
+        <a (click)="ga.sendAnalyticEvent('view-source', 'credits', 'click')"
+            href="{{'Repo' | translate}}" rel="nofollow noopener noreferrer" target="_blank">
             <i class="fab fa-angular"></i>
         </a>
     </div>

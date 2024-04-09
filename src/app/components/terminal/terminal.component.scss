@@ -78,9 +78,15 @@ $Green: #07bc7a;
     cursor: var(--cursor-type);
 }
 
+.analytics {
+    margin-left: 20px;
+    width: 160px;
+    float: left;
+}
+
 .t-view-command, .t-help-command {
     margin-left: 20px;
-    width: 140px;
+    width: 160px;
     float: left;
     &:before {
         content: '=> ';

@@ -1,5 +1,6 @@
 <section class="about">
-    <div class="profile-img" data-aos="zoom-out" data-aos-duration="1000"></div>
+    <div class="profile-img" [style.transform]="'translate3d(0, 0, 0)'"
+         data-aos="zoom-out" data-aos-duration="1000" cdkDrag cdkDragHandle cdkDragBoundary=".about"></div>
     <div data-aos="fade-right" data-aos-duration="500">
         <h1 class="title">{{"About.Pretitle" | translate}}</h1>
     </div>

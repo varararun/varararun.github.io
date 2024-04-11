@@ -10,6 +10,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {ExperienceComponent} from "./experience/experience.component";
 import {AboutComponent} from './about/about.component';
 import {CreditComponent} from "./credit/credit.component";
+import {DragDropModule} from "@angular/cdk/drag-drop";
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -27,6 +28,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ],
     imports: [
         CommonModule,
+        DragDropModule,
         TranslateModule.forChild({
             loader: {
                 provide: TranslateLoader,

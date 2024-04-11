@@ -7,15 +7,26 @@
     margin-bottom: 10em;
 
     .profile-img {
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
         background: url('../../../../assets/images/profile/profile-small.png') no-repeat;
         transform-origin: center;
         background-size: cover;
         width: 10em;
         height: 10em;
         margin-bottom: 25px;
-        border-radius: var(--border-radius);
         filter: grayscale(1);
-        box-shadow: var(--box-shadow);
+        cursor: move;
+        position: relative;
+        z-index: 1;
+        transition: .2s linear;
+
+        &.cdk-drag-dragging {
+            opacity: .8;
+            filter: grayscale(.2);
+            width: 9em;
+            height: 9em;
+        }
     }
 
     .content {

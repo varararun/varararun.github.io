@@ -2,7 +2,7 @@
     <div class="t-container" (click)="inputActive()" cdkDrag cdkDragBoundary=".t-wrapper" [style.transform]="'translate3d(calc(50vw - 50%), calc(50vh - 50%), 0)'">
         <div class="t-menu" cdkDragHandle>
             <div class="t-buttons">
-                <a (click)="exitTerminal()">
+                <a (click)="navigate('home')">
                     <div class="t-button t-button-red"></div>
                 </a>
                 <div class="t-button t-button-yellow" (click)="clearTerminal()"></div>

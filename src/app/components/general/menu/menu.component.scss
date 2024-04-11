@@ -27,7 +27,7 @@
             height: 2px;
             background-color: var(--menu-btn-color);
             margin: 6px 0;
-            transition: 0.4s;
+            transition: 0.5s ease-in-out;;
         }
 
         &.menu-open {
@@ -39,7 +39,7 @@
             }
 
             .bar1 {
-                transform: translate(0, 10px) rotate(-45deg);
+                transform: translate(0, 10px) rotate(-225deg);
             }
 
             .bar2 {
@@ -47,7 +47,7 @@
             }
 
             .bar3 {
-                transform: translate(0, -6px) rotate(45deg);
+                transform: translate(0, -6px) rotate(225deg);
             }
         }
 

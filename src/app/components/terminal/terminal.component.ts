@@ -185,10 +185,6 @@ export class TerminalComponent implements OnInit {
         this.router.navigate([item]);
     }
 
-    exitTerminal() {
-        this.router.navigate(['home']);
-    }
-
     async clearTerminal() {
         this.clearInput();
         this.lines = [];
@@ -281,7 +277,7 @@ export class TerminalComponent implements OnInit {
         } else if (value === 'contact') {
             await this.displayContact();
         } else if (value.startsWith('exit')) {
-            await this.createPreviousInput(value, 't-error');
+            await this.createPreviousInput(value, 't-success');
             await this.displayLoading();
             this.navigate('home');
         } else if (value.startsWith('clear')) {
@@ -333,7 +329,7 @@ export class TerminalComponent implements OnInit {
         } else if (value.startsWith('echo')) {
             await this.createPreviousInput(value, '');
             await this.createLines(value.split('echo')[1]);
-        } else if (value.startsWith('mkdir') || value.startsWith('rm') || value.startsWith('chmod') || value.startsWith('sudo') || value.startsWith('cd')) {
+        } else if (value.match(/(mkdir|mkfile|rm|chmod|sudo|cd|vi|cat|touch)/g)) {
             await this.createPreviousInput(value, '');
             await this.createLines('permission denied');
         } else {

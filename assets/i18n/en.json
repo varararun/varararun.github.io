@@ -408,17 +408,29 @@
         }
     ],
     "Projects.Title": "My Projects",
-    "Projects.Tags": ["featured", "personal", "work", ""],
+    "Projects.Tags": [
+        "featured",
+        "personal",
+        "work",
+        ""
+    ],
     "Projects.Projects": [
         {
-            "Tags": ["featured", "work"],
+            "Tags": [
+                "featured",
+                "work"
+            ],
             "Title": "US Patent 9491178 B2",
             "Description": "Identifying a measure of online security. A computer-implemented method includes retrieving, by one or more processing devices and from one or more data repositories, user information; generating, based on the retrieved user information, a digital personal profile that is a composite of a set of pre-defined attributes. ",
             "Link": "https://patents.google.com/patent/US9491178",
-            "Tech": ["Published November 2016"]
+            "Tech": [
+                "Published November 2016"
+            ]
         },
         {
-            "Tags": ["work"],
+            "Tags": [
+                "work"
+            ],
             "Title": "ISC Portal",
             "Company": "Comcast",
             "CompanyLogo": "assets/images/logos/logo-comcast.png",
@@ -433,7 +445,9 @@
             ]
         },
         {
-            "Tags": ["work"],
+            "Tags": [
+                "work"
+            ],
             "Title": "Landscape",
             "Company": "Masergy",
             "CompanyLogo": "assets/images/logos/logo-masergy.png",
@@ -449,7 +463,9 @@
             ]
         },
         {
-            "Tags": ["work"],
+            "Tags": [
+                "work"
+            ],
             "Title": "Nspire Platform",
             "CompanyLogo": "assets/images/logos/logo-spireon.png",
             "Description": "Groovy/Grails web application used for internal company operations such as warehousing, customer support, problem diagnosis, and migration operations.",
@@ -462,7 +478,9 @@
             ]
         },
         {
-            "Tags": ["work"],
+            "Tags": [
+                "work"
+            ],
             "Title": "Fund Reference",
             "CompanyLogo": "assets/images/logos/logo-fidelity.png",
             "Description": "Java and Spring based web application for consolidating/provisioning fund attributes to downstream systems.",
@@ -474,7 +492,10 @@
             ]
         },
         {
-            "Tags": ["featured", "personal"],
+            "Tags": [
+                "featured",
+                "personal"
+            ],
             "Title": "Personal Website",
             "Description": "Latest iteration of my personal website. Designed and developed to showcase my web development and design skills using the latest front end technologies.",
             "GithubLink": "https://github.com/varararun/varararun.github.io",
@@ -489,7 +510,9 @@
             ]
         },
         {
-            "Tags": ["personal"],
+            "Tags": [
+                "personal"
+            ],
             "Title": "Personal Website v3",
             "Description": "3rd iteration of my personal website, Hosted on Github Pages. Designed and developed to showcase my web development and design skills.",
             "GithubLink": "https://github.com/varararun/version-3",
@@ -503,7 +526,9 @@
             ]
         },
         {
-            "Tags": ["personal"],
+            "Tags": [
+                "personal"
+            ],
             "Title": "Personal Website v2",
             "Description": "2nd iteration of my personal website. Incorporated better design and included build process automation to streamline development.",
             "GithubLink": "https://github.com/varararun/version-2",
@@ -516,7 +541,9 @@
             ]
         },
         {
-            "Tags": ["personal"],
+            "Tags": [
+                "personal"
+            ],
             "Title": "Personal Website v1",
             "Description": "1st iteration of my personal website created to learn more about front end development.",
             "GithubLink": "https://github.com/varararun/version-1",
@@ -528,7 +555,9 @@
             ]
         },
         {
-            "Tags": ["personal"],
+            "Tags": [
+                "personal"
+            ],
             "Title": "Online Resume",
             "Description": "1st iteration of my online resume using a simple static page and dev pipeline using gulp.",
             "GithubLink": "https://github.com/varararun/resume",
@@ -542,7 +571,10 @@
             ]
         },
         {
-            "Tags": ["personal", "featured"],
+            "Tags": [
+                "personal",
+                "featured"
+            ],
             "Title": "Photo Tiles",
             "Description": "Front End published NPM package, javascript implementation of Mac's Photo Tiles Screensaver.",
             "GithubLink": "https://github.com/varararun/photo-tiles",
@@ -555,7 +587,10 @@
             ]
         },
         {
-            "Tags": ["personal", "featured"],
+            "Tags": [
+                "personal",
+                "featured"
+            ],
             "Title": "Terminal",
             "Description": "Created a terminal window to provide a more interactive experience learn more about me. Incorporated it into my Angular personal website as a standalone component.",
             "Link": "https://avarghese.me/terminal",
@@ -571,5 +606,102 @@
     "Projects.ShowLessBtn": "Show Less",
     "Contact.Pretitle": "Contact",
     "Contact.Title": "Get in Touch!",
-    "Contact.Btn": "Send me an Email"
+    "Contact.Btn": "Send me an Email",
+    "Terminal": {
+        "help.prompts": "commands:",
+        "help.commands": [
+            [
+                "about"
+            ],
+            [
+                "contact"
+            ],
+            [
+                "view",
+                "website pages"
+            ],
+            [
+                "theme",
+                "toggle themes"
+            ],
+            [
+                "fullscreen",
+                "toggle modes"
+            ],
+            [
+                "more",
+                "more commands"
+            ],
+            [
+                "clear"
+            ],
+            [
+                "exit"
+            ]
+        ],
+        "more.prompt": "more commands:",
+        "more.commands": [
+            [
+                "echo",
+                "print arguments"
+            ],
+            [
+                "version",
+                "deployed version"
+            ],
+            [
+                "analytics",
+                "local stats"
+            ],
+            [
+                "source-code",
+                "github repo"
+            ]
+        ],
+        "view.prompt": "which page?",
+        "view.pages": [
+            "highlights",
+            "experience",
+            "projects",
+            "resume"
+        ],
+        "about": [
+            "hi, my name is arun.",
+            "i have over 10 years of full-stack experience in the complete development life cycle of distributed web applications, from design to delivery.",
+            "in my free time, I work on front-end web development with popular frameworks to learn more about ui/ux and software architecture."
+        ],
+        "contact": [
+            [
+                "mailto:arunv4700@gmail.com",
+                "fas fa-envelope",
+                "email"
+            ],
+            [
+                "https://www.linkedin.com/in/varghesearun",
+                "fab fa-linkedin",
+                "linkedin"
+            ],
+            [
+                "https://github.com/vararun",
+                "fab fa-github",
+                "github"
+            ],
+            [
+                "https://codepen.io/avarghese",
+                "fab fa-codepen",
+                "codepen"
+            ],
+            [
+                "https://www.instagram.com/chasing_arun",
+                "fab fa-instagram white",
+                "instagram"
+            ]
+        ],
+        "df": [
+            "Filesystem       Used         Available",
+            "/dev/disk1       4096         487159632"
+        ],
+        "pwd": "/users/arun-varghese",
+        "ls": "avarghese.sh"
+    }
 }

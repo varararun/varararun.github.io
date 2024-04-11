@@ -643,7 +643,7 @@
         "more.commands": [
             [
                 "echo",
-                "print arguments"
+                "print input"
             ],
             [
                 "version",
@@ -654,7 +654,7 @@
                 "local stats"
             ],
             [
-                "source-code",
+                "source",
                 "github repo"
             ]
         ],

@@ -8042,4 +8042,10 @@ ol, ul, li {
   margin-left: 20px;
 }
 
+@media (max-width: 1000px) {
+  body {
+    overflow-x: hidden;
+  }
+}
+
 /*# sourceMappingURL=styles.css.map*/

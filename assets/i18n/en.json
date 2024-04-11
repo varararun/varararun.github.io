@@ -608,7 +608,7 @@
     "Contact.Title": "Get in Touch!",
     "Contact.Btn": "Send me an Email",
     "Terminal": {
-        "help.prompts": "commands:",
+        "help.prompt": "commands:",
         "help.commands": [
             [
                 "about"

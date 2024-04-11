@@ -5,6 +5,7 @@ import {HttpClient} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {TerminalComponent} from "./terminal.component";
 import {RouterModule} from "@angular/router";
+import {DragDropModule} from "@angular/cdk/drag-drop";
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -14,6 +15,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     declarations: [TerminalComponent],
     imports: [
         CommonModule,
+        DragDropModule,
         TranslateModule.forChild({
             loader: {
                 provide: TranslateLoader,

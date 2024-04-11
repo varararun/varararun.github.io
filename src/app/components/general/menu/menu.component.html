@@ -5,13 +5,10 @@
         <div class="bar3"></div>
     </div>
 </div>
-<div @hide-animation *ngIf="menuOpen" class="menu-overlay" data-aos="fade-out" (click)="toggleOverlayMenu()">
-    <ol class="menu-items" data-aos="fade-up" data-aos-duration="500">
-        <li *ngFor='let item of "Menu.NavItems" | translate; let i = index' class="menu-item">
-            <a (click)="navigate(item); menuOpen = !menuOpen">{{item['Label']}}</a>
-        </li>
-        <li class="overlay-theme-toggle" (click)="ga.sendAnalyticEvent('toggle-theme', 'menu', 'click'); themeService.switchTheme()">
-            <i class="fas {{themeService.theme === 'light' ? 'fa-toggle-on' : 'fa-toggle-off'}}"></i>
+<div @hide-animation *ngIf="menuOpen" class="menu-overlay" (click)="toggleOverlayMenu()">
+    <ol class="menu-items">
+        <li *ngFor='let item of "Menu.NavItems" | translate; let i = index' class="menu-item" data-aos="fade-right" data-aos-duration="500" [attr.data-aos-delay]="i*100">
+            <a (click)="navigate(item);">{{item['Label']}}</a>
         </li>
     </ol>
 </div>
@@ -19,9 +16,7 @@
     <ol class="menu-bar-items" [ngClass]="{'show-menu-bg': scrollPosition > 100}">
         <li *ngFor='let item of "Menu.NavItems" | translate; let i = index' class="menu-bar-item"
             data-aos="fade-down" data-aos-duration="500" [attr.data-aos-delay]="i*100">
-                <span (click)="navigate(item)" [class.active]="item['Label'].toLowerCase() === route">
-                    {{item['Label']}}
-                </span>
+                <span (click)="navigate(item)" [class.active]="item['Label'].toLowerCase() === route">{{item['Label']}}</span>
         </li>
     </ol>
 </div>

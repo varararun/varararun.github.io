@@ -18,19 +18,21 @@ $Green: #07bc7a;
 .t-wrapper {
     transition: var(--transition);
     position: fixed;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     width: 100vw;
     height: 100vh;
     top: 0;
     left: 0;
     background: transparent;
+
     &.fullscreen {
         background: var(--bg-color);
         z-index: 1;
         .t-container {
-            top: 0;
+            transform: translate3d(0, 0, 0) !important;
             margin: 0;
-            width: 100%;
+            width: 99.8vw;
             height: 100vh;
             max-width: 100%;
             #terminal {
@@ -41,17 +43,12 @@ $Green: #07bc7a;
 }
 
 .t-container {
-    transition: var(--transition);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     border: var(--terminal-border);
     position: absolute;
-    left: 50%;
-    top: 20%;
-    transform: translateX(-50%);
     width: 90%;
     max-width: 800px;
-    margin: 20px 0;
     cursor: text;
 }
 
@@ -74,7 +71,7 @@ $Green: #07bc7a;
     margin-right: 8px;
 }
 
-.t-previous-input, #terminal-input, .t-view-command, .t-help-command {
+.t-previous-input.t-success, #terminal-input, .t-view-command, .t-help-command {
     cursor: var(--cursor-type);
 }
 
@@ -114,7 +111,7 @@ $Green: #07bc7a;
 }
 
 .t-success {
-    color: $Green;
+    color: var(--blue);
 }
 
 div.t-title {
@@ -127,6 +124,7 @@ div.t-title {
 .t-menu {
     color: var(--white-60);
     font-size: inherit;
+    cursor: move;
 }
 
 .t-buttons {

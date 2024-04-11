@@ -1,6 +1,6 @@
 <div class="t-wrapper" [class.fullscreen]="fullscreen">
-    <div class="t-container" (click)="inputActive()">
-        <div class="t-menu">
+    <div class="t-container" (click)="inputActive()" cdkDrag cdkDragBoundary=".t-wrapper" [style.transform]="'translate3d(calc(50vw - 50%), calc(50vh - 50%), 0)'">
+        <div class="t-menu" cdkDragHandle>
             <div class="t-buttons">
                 <a (click)="exitTerminal()">
                     <div class="t-button t-button-red"></div>
@@ -15,7 +15,7 @@
         <div id="terminal">
             <li><br></li>
             <li *ngFor="let line of lines; let i = index" [innerHTML]="line"></li>
-            <li *ngIf="waitForInput">$ <input id="terminal-input"></li>
+            <li *ngIf="waitForInput">$ <input id="terminal-input" autocomplete="off"></li>
             <li class="loading" *ngIf="loading"><br>loading</li>
             <li><br></li>
             <li id="anchor"><br></li>

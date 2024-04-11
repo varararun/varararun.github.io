@@ -14,9 +14,12 @@ import {AnalyticsService} from "../../services/analytics/analytics.service";
 })
 export class TerminalComponent implements OnInit {
     lines: string[] = [];
+    previousInputList: string[] = [];
     waitForInput = false;
     fullscreen = false;
     loading = true;
+    cursor = 0;
+    inputMap = {};
 
     constructor(private router: Router,
                 private languageService: LanguageService,
@@ -26,6 +29,9 @@ export class TerminalComponent implements OnInit {
 
     async ngOnInit() {
         if (this.terminal) {
+             this.languageService.translateService.get("Terminal").subscribe(val => {
+                 this.inputMap = val;
+            });
             await this.displayLoading(1000);
             this.lines = JSON.parse(localStorage.getItem('av-terminal-history') || '[] ');
             await this.displayInit();
@@ -42,7 +48,7 @@ export class TerminalComponent implements OnInit {
             this.input.value = `${element.innerText}`;
             await this.inputActive();
         }
-        if (element.classList.contains('t-previous-input')) {
+        if (element.classList.contains('t-previous-input') && element.classList.contains('t-success')) {
             this.input.value = `${element.innerText.replace('$', '').trim()}`;
             await this.inputActive();
         }
@@ -57,9 +63,23 @@ export class TerminalComponent implements OnInit {
             await this.executeInput();
         }
 
+        if (this.terminal && event.key == 'ArrowUp') {
+            this.input.value = this.cursor > 0 ? this.previousInputList[--this.cursor] : '';
+            await this.inputActive();
+        }
+
+        if (this.terminal && event.key == 'ArrowDown') {
+            this.input.value = this.cursor < this.previousInputList.length ? this.previousInputList[this.cursor++] : '';
+            await this.inputActive();
+        }
+
     }
 
     async executeInput() {
+        if(this.input?.value?.toLowerCase()?.trim()) {
+            this.previousInputList.push(this.input?.value?.toLowerCase()?.trim());
+            this.cursor = this.previousInputList.length;
+        }
         await this.checkInputValue(this.input?.value?.toLowerCase()?.trim() || '');
         await this.inputActive();
         localStorage.setItem('av-terminal-history', JSON.stringify(this.lines));
@@ -157,7 +177,7 @@ export class TerminalComponent implements OnInit {
     async createPreviousInput(command, level: 't-success' | 't-warn' | 't-error' | '', delay = 50) {
         await this.wait(delay);
         this.clearInput();
-        this.lines.push(`<span class='${level} t-previous-input'>$ ${command}</span>`);
+        this.lines.push(`$ <span class='${level} t-previous-input'>${command}</span>`);
         this.anchor?.scrollIntoView();
     }
 
@@ -172,6 +192,8 @@ export class TerminalComponent implements OnInit {
     async clearTerminal() {
         this.clearInput();
         this.lines = [];
+        await this.createLines('type <span class="t-success">help</span> to view available commands');
+        this.createNewLine();
         await this.inputActive();
     }
 
@@ -182,62 +204,56 @@ export class TerminalComponent implements OnInit {
     wait = ms => new Promise(resolve => setTimeout(resolve, ms))
 
     async displayHelp() {
+        await this.createPreviousInput('help', 't-success');
         await this.displayLoading();
         this.createNewLine();
-        await this.createLines('commands:');
-        await this.createHelpLine([
-            ['about'], ['contact'],
-            ['view', 'website pages'],
-            ['theme', 'toggle themes'],
-            ['fullscreen', 'toggle modes'],
-            ['clear'], ['exit']
-        ]);
+        await this.createLines(this.inputMap['help.prompt']);
+        await this.createHelpLine(this.inputMap['help.commands']);
+        this.createNewLine();
+    }
+
+    async displayMore() {
+        await this.createPreviousInput('more', 't-success');
+        await this.displayLoading();
+        this.createNewLine();
+        await this.createLines(this.inputMap['more.prompt']);
+        await this.createHelpLine(this.inputMap['more.commands']);
         this.createNewLine();
     }
 
     async displayView() {
+        await this.createPreviousInput('view', 't-success');
         await this.displayLoading();
         this.createNewLine();
-        await this.createLines('which page?');
-        await this.createNavigationLine(['highlights', 'experience', 'projects', 'resume']);
+        await this.createLines(this.inputMap['view.prompt']);
+        await this.createNavigationLine(this.inputMap['view.pages']);
         this.createNewLine();
     }
 
     async displayAbout() {
+        await this.createPreviousInput('about', 't-success');
         await this.displayLoading();
         this.createNewLine();
-        await this.createLines([
-            'hi, my name is arun',
-            'i have over 10 years of full-stack experience in the complete ' +
-            'development life cycle of distributed web applications, from design to delivery.',
-            'in my free time, I work on front-end web development with popular ' +
-            'frameworks to learn more about ui/ux and software architecture'
-        ]);
+        await this.createLines(this.inputMap['about']);
         this.createNewLine();
     }
 
     async displayContact() {
+        await this.createPreviousInput('contact', 't-success');
         await this.displayLoading();
         this.createNewLine();
-        await this.createContactLines([
-            ['mailto:arunv4700@gmail.com', 'fas fa-envelope', 'email'],
-            ['https://www.linkedin.com/in/varghesearun', 'fab fa-linkedin', 'linkedin'],
-            ['https://github.com/vararun', 'fab fa-github', 'github'],
-            ['https://codepen.io/avarghese', 'fab fa-codepen', 'codepen'],
-            ['https://www.instagram.com/chasing_arun', 'fab fa-instagram white', 'instagram']
-        ]);
+        await this.createContactLines(this.inputMap['contact']);
         this.createNewLine();
     }
 
     async checkInputValue(value: string) {
         if (value === 'help') {
-            await this.createPreviousInput(value, 't-success');
             await this.displayHelp();
+        } else if (value === 'more') {
+            await this.displayMore();
         } else if (value === 'about') {
-            await this.createPreviousInput(value, 't-success');
             await this.displayAbout();
         } else if (value === 'view') {
-            await this.createPreviousInput(value, 't-success');
             await this.displayView();
         } else if (value === 'view highlights') {
             await this.displayLoading();
@@ -249,18 +265,24 @@ export class TerminalComponent implements OnInit {
             await this.displayLoading();
             this.navigate('projects');
         } else if (value === 'view resume') {
-            await this.displayLoading();
             await this.createPreviousInput(value, 't-success');
+            await this.displayLoading();
             this.languageService.translateService.get("Resume").subscribe(val => {
                 window.open(val, "_blank");
             });
             this.createNewLine();
-        } else if (value === 'contact') {
+        } else if (value === 'source') {
             await this.createPreviousInput(value, 't-success');
+            await this.displayLoading();
+            this.languageService.translateService.get("Repo").subscribe(val => {
+                window.open(val, "_blank");
+            });
+            this.createNewLine();
+        } else if (value === 'contact') {
             await this.displayContact();
         } else if (value.startsWith('exit')) {
-            await this.displayLoading();
             await this.createPreviousInput(value, 't-error');
+            await this.displayLoading();
             this.navigate('home');
         } else if (value.startsWith('clear')) {
             await this.createPreviousInput(value, 't-success');
@@ -268,22 +290,21 @@ export class TerminalComponent implements OnInit {
         } else if (value === '') {
             await this.createPreviousInput(value, '');
         } else if (value.startsWith('theme')) {
-            await this.displayLoading();
             await this.createPreviousInput(value, 't-success');
+            await this.displayLoading(1000);
             this.createNewLine();
             await this.createLines(`&nbsp; => switched to ${this.themeService.theme} theme`);
             this.themeService.switchTheme();
             this.createNewLine();
         } else if (value.startsWith('fullscreen')) {
-            await this.displayLoading();
             await this.createPreviousInput(value, 't-success');
+            await this.displayLoading();
             this.fullscreen = !this.fullscreen;
             this.createNewLine();
         } else if (value.startsWith('analytics')) {
-            await this.displayLoading();
             await this.createPreviousInput(value, 't-success');
+            await this.displayLoading(1000);
             this.createNewLine();
-
             await this.createLines([
                 'views:',
                 ...Object.entries(this.ga.localPageViews)
@@ -302,25 +323,21 @@ export class TerminalComponent implements OnInit {
             this.createNewLine();
         } else if (value.startsWith('ls')) {
             await this.createPreviousInput(value, '');
-            await this.createLines('avarghese.sh');
+            await this.createLines(this.inputMap['ls']);
         } else if (value.startsWith('pwd')) {
-            await this.createPreviousInput(value, 't-success');
-            await this.createLines('/users/arun-varghese');
+            await this.createPreviousInput(value, '');
+            await this.createLines(this.inputMap['pwd']);
         } else if (value.startsWith('df')) {
-            await this.createPreviousInput(value, 't-success');
-            await this.createLines([
-                'Filesystem       Used         Available',
-                '/dev/disk1       4096         487159632'
-            ]);
+            await this.createPreviousInput(value, '');
+            await this.createLines(this.inputMap['df']);
         } else if (value.startsWith('echo')) {
-            await this.createPreviousInput(value, 't-success');
+            await this.createPreviousInput(value, '');
             await this.createLines(value.split('echo')[1]);
         } else if (value.startsWith('mkdir') || value.startsWith('rm') || value.startsWith('chmod') || value.startsWith('sudo') || value.startsWith('cd')) {
             await this.createPreviousInput(value, '');
             await this.createLines('permission denied');
         } else {
             await this.createPreviousInput(value, 't-error');
-            await this.createLines(`command not found: ${value}`);
         }
     }
 }

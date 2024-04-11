@@ -3,7 +3,6 @@ import {NavigationEnd, Router} from '@angular/router';
 import {animate, style, transition, trigger} from '@angular/animations'
 import {FormControl} from '@angular/forms';
 import {LanguageService} from 'src/app/services/language/language.service';
-import {ThemeService} from "../../../services/theme/theme.service";
 import {AnalyticsService} from "../../../services/analytics/analytics.service";
 
 @Component({
@@ -37,7 +36,6 @@ export class MenuComponent implements OnInit {
     constructor(
         private router: Router,
         private languageService: LanguageService,
-        public themeService: ThemeService,
         public ga: AnalyticsService
     ) {
     }
@@ -47,7 +45,7 @@ export class MenuComponent implements OnInit {
 
         this.router.events.subscribe(event => {
             if (event instanceof NavigationEnd) {
-                this.route = event.url.split('/')[1] || 'home';
+                this.route = event.urlAfterRedirects.split('/')[1] || 'home';
             }
         });
     }
@@ -61,8 +59,10 @@ export class MenuComponent implements OnInit {
         if (item['Label'] === 'Resume') {
             this.ga.sendAnalyticEvent('view-resume', 'menu', 'click');
             this.downloadResume();
+        } else {
+            this.router.navigate([item['Link']]);
         }
-        this.router.navigate([item['Link']]);
+        this.menuOpen = false
         document.body.classList.remove('scroll-lock');
     }
 
@@ -70,10 +70,6 @@ export class MenuComponent implements OnInit {
         this.languageService.translateService.get("Resume").subscribe(val => {
             window.open(val, "_blank");
         })
-    }
-
-    switchTheme() {
-        this.themeService.switchTheme();
     }
 
     @HostListener('window:scroll')

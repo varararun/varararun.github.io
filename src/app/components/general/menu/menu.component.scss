@@ -32,6 +32,7 @@
 
         &.menu-open {
             box-shadow: none;
+            background: transparent;
 
             .bar1, .bar2, .bar3 {
                 background-color: var(--primary-color);
@@ -54,6 +55,8 @@
 }
 
 .menu-overlay {
+    background: var(--menu-overlay-bg-color);
+    transition: var(--transition);
     display: none;
     position: fixed;
     overflow: scroll;
@@ -61,7 +64,6 @@
     height: 100vh;
     top: 0;
     left: 0;
-    background: var(--menu-overlay-bg-color);
     backdrop-filter: blur(3px);
     z-index: 2;
 
@@ -80,7 +82,6 @@
             margin: 20px 0;
             font-size: 3em;
             cursor: var(--cursor-type);
-            transition: var(--transition);
 
             &:before {
                 content: '>';
@@ -159,26 +160,6 @@
     color: var(--accent-color);
 }
 
-.menu-bar-item {
-    span {
-        .theme-toggle {
-            font-size: 20px;
-            color: var(--primary-color);
-        }
-    }
-}
-
-.overlay-theme-toggle {
-    font-size: 35px;
-    margin-left: 45px;
-    cursor: pointer;
-}
-
-.theme-toggle {
-    font-size: 19px;
-    color: var(--primary-color);
-}
-
 @media (max-width: 1000px) {
     .menu-btn {
         display: block;
@@ -194,9 +175,6 @@
 @media (max-width: 550px) {
     .menu-item {
         font-size: 2.5em !important;
-    }
-    .overlay-theme-toggle {
-        margin-left: 38px !important;
     }
 }
 

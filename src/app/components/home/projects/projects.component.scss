@@ -84,6 +84,7 @@
     li {
         display: inline;
         cursor: var(--cursor-type);
+        transition: var(--transition);
 
         &.active {
             color: var(--accent-color);

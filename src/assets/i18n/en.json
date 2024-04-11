@@ -183,6 +183,7 @@
     "Experience.Title": "Experience",
     "Experience.Items": [
         {
+            "Category": "Work",
             "Tab": "Comcast",
             "Title": "Senior Software Engineer",
             "Date": "January 2022 - Present",
@@ -227,6 +228,7 @@
             ]
         },
         {
+            "Category": "Work",
             "Tab": "Masergy, Inc.",
             "Title": "Senior Software Engineer",
             "Date": "June 2018 - December 2021",
@@ -284,6 +286,7 @@
             ]
         },
         {
+            "Category": "Work",
             "Tab": "Spireon, Inc.",
             "Title": "Senior Software Engineer",
             "Date": "August 2015 - June 2018",
@@ -339,6 +342,7 @@
             ]
         },
         {
+            "Category": "Work",
             "Tab": "Fidelity",
             "Title": "Software Developer",
             "Date": "July 2012 - August 2015",
@@ -400,6 +404,7 @@
             ]
         },
         {
+            "Category": "Education",
             "Tab": "Education",
             "Title": "[BS] Software Engineering",
             "Date": "Graduated May 2012",

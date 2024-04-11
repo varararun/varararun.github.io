@@ -79,3 +79,29 @@
         }
     }
 }
+
+.experience-categories {
+    margin-bottom: 30px;
+
+    li {
+        display: inline;
+        cursor: var(--cursor-type);
+        transition: var(--transition);
+
+        &.active {
+            color: var(--accent-color);
+        }
+
+        &:after {
+            content: var(--divider);
+            color: var(--accent-color);
+            font-weight: 600;
+            opacity: .7;
+            margin: 10px;
+        }
+
+        &:last-child:after {
+            content: "";
+        }
+    }
+}

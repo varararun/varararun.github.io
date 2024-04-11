@@ -1,5 +1,7 @@
-<div class="t-wrapper" [class.fullscreen]="fullscreen">
-    <div class="t-container" (click)="inputActive()" cdkDrag cdkDragBoundary=".t-wrapper" [style.transform]="'translate3d(calc(50vw - 50%), calc(50vh - 50%), 0)'">
+<div class="t-wrapper" [class.fullscreen]="fullscreen" data-aos="fade-up" data-aos-duration="500">
+    <div class="t-container"
+         (click)="inputActive()" cdkDrag cdkDragBoundary=".t-wrapper"
+         [style.transform]="'translate3d(calc(50vw - 50%), calc(50vh - 50%), 0)'">
         <div class="t-menu" cdkDragHandle>
             <div class="t-buttons">
                 <a (click)="navigate('home')">

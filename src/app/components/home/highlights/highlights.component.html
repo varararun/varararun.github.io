@@ -9,18 +9,17 @@
             <div class="container">
                 <div class="col">
                     <ul class="qualifications-list" data-aos="fade-up">
-                        <li *ngFor='let text of "Highlights.Qualifications" | translate' [innerHTML]="text"
+                        <li *ngFor="let text of 'Highlights.Qualifications' | translate; let i = index" [innerHTML]="text"
                             class="qualifications-element bullet"
-                            data-aos="fade-up" data-aos-duration="500" data-aos-offset="-50">
+                            data-aos="fade-up" data-aos-duration="500" data-aos-offset="-50" [attr.data-aos-delay]="i*50">
                         </li>
                     </ul>
                 </div>
                 <div class="col">
-                    <div *ngFor='let skill of "Highlights.Skills" | translate' class="skills"
-                         data-aos="fade-up" data-aos-duration="500" data-aos-offset="-50">
+                    <div *ngFor="let skill of 'Highlights.Skills' | translate; let i = index" class="skills"
+                         data-aos="fade-up" data-aos-duration="500" data-aos-offset="-50" [attr.data-aos-delay]="i*50">
                         <div><b>{{skill['Category']}}</b></div>
-                        <span *ngFor="let s of skill['Elements']; let i = index" [attr.data-aos-delay]="i*50"
-                              class="skill-element">
+                        <span *ngFor="let s of skill['Elements']" class="skill-element">
                         <span class="highlight">{{s}}</span>
                       </span>
                     </div>

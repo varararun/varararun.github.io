@@ -7,7 +7,9 @@
 </div>
 <div @hide-animation *ngIf="menuOpen" class="menu-overlay" (click)="toggleOverlayMenu()">
     <ol class="menu-items">
-        <li *ngFor='let item of "Menu.NavItems" | translate; let i = index' class="menu-item" data-aos="fade-right" data-aos-duration="500" [attr.data-aos-delay]="i*50">
+        <li *ngFor='let item of "Menu.NavItems" | translate; let i = index'
+            class="menu-item" data-aos="fade-right" data-aos-duration="500" data-aos-offset="-50"
+            [attr.data-aos-delay]="i*50">
             <a (click)="navigate(item);">{{item['Label']}}</a>
         </li>
     </ol>

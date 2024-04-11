@@ -1,7 +1,17 @@
 @import "src/assets/styles/themes";
 
-.description {
+.container {
     margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .col {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 50%;
+    }
 }
 
 .qualifications-list {
@@ -10,11 +20,17 @@
 
     li {
         margin: 15px 0;
+        &:first-child {
+            margin-top: 0;
+        }
     }
 }
 
 .skills {
-    margin: 15px 0px;
+    margin: 5px 0px;
+    &:first-child {
+        margin-top: 15px;
+    }
 
     .skill-element {
         position: relative;
@@ -40,4 +56,9 @@
     }
 }
 
+@media(max-width: 1000px) {
+    .col {
+        flex-basis: 100% !important;
+    }
+}
 

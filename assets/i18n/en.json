@@ -617,6 +617,12 @@
                 "contact"
             ],
             [
+                "clear"
+            ],
+            [
+                "exit"
+            ],
+            [
                 "view",
                 "website pages"
             ],
@@ -626,25 +632,15 @@
             ],
             [
                 "fullscreen",
-                "toggle modes"
+                "toggle size"
             ],
             [
                 "more",
                 "more commands"
-            ],
-            [
-                "clear"
-            ],
-            [
-                "exit"
             ]
         ],
         "more.prompt": "more commands:",
         "more.commands": [
-            [
-                "echo",
-                "print input"
-            ],
             [
                 "version",
                 "deployed version"

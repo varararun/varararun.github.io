@@ -14,7 +14,7 @@ import {animate, style, transition, trigger} from "@angular/animations";
                     ':leave',
                     [
                         style({opacity: 1}),
-                        animate('.5s ease', style({opacity: 0, transform: 'translateY(100px)'}))
+                        animate('.3s ease', style({opacity: 0}))
                     ]
                 )
             ]
@@ -22,10 +22,10 @@ import {animate, style, transition, trigger} from "@angular/animations";
     ]
 })
 export class ExperienceComponent implements OnInit {
+    selectedTag = '';
+    tags = [];
     all = [];
     filtered = [];
-    selectedTag = 'Work';
-    tags = [];
 
     constructor(private languageService: LanguageService) {
     }
@@ -39,12 +39,18 @@ export class ExperienceComponent implements OnInit {
     }
 
     filterExperience(tag: string) {
+        if(this.selectedTag === tag) {
+            return;
+        }
         this.selectedTag = tag;
-        this.filtered = this.all.filter((project) => {
-            if (!this.selectedTag) {
-                return true;
-            }
-            return project['Category'] === this.selectedTag;
-        });
+        this.filtered = [];
+        setTimeout(() => {
+            this.filtered = this.all.filter((project) => {
+                if (!this.selectedTag) {
+                    return true;
+                }
+                return project['Category'] === this.selectedTag;
+            });
+        }, 500);
     }
 }

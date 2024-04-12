@@ -183,7 +183,7 @@
     "Experience.Title": "Experience",
     "Experience.Items": [
         {
-            "Category": "Work",
+            "Category": "Current",
             "Tab": "Comcast",
             "Title": "Senior Software Engineer",
             "Date": "January 2022 - Present",
@@ -228,8 +228,8 @@
             ]
         },
         {
-            "Category": "Work",
-            "Tab": "Masergy, Inc.",
+            "Category": "2018",
+            "Tab": "Masergy",
             "Title": "Senior Software Engineer",
             "Date": "June 2018 - December 2021",
             "Location": "Plano, TX",
@@ -286,8 +286,8 @@
             ]
         },
         {
-            "Category": "Work",
-            "Tab": "Spireon, Inc.",
+            "Category": "2015",
+            "Tab": "Spireon",
             "Title": "Senior Software Engineer",
             "Date": "August 2015 - June 2018",
             "Location": "Irving, TX",
@@ -342,7 +342,7 @@
             ]
         },
         {
-            "Category": "Work",
+            "Category": "2012",
             "Tab": "Fidelity",
             "Title": "Software Developer",
             "Date": "July 2012 - August 2015",
@@ -404,7 +404,7 @@
             ]
         },
         {
-            "Category": "Education",
+            "Category": "Older",
             "Tab": "Education",
             "Title": "[BS] Software Engineering",
             "Date": "Graduated May 2012",

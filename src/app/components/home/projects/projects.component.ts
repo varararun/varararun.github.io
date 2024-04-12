@@ -14,7 +14,7 @@ import {animate, style, transition, trigger} from "@angular/animations";
                     ':leave',
                     [
                         style({opacity: 1}),
-                        animate('.5s ease', style({opacity: 0, transform: 'translateY(100px)'}))
+                        animate('.3s ease', style({opacity: 0}))
                     ]
                 )
             ]
@@ -24,7 +24,7 @@ import {animate, style, transition, trigger} from "@angular/animations";
 export class ProjectsComponent implements OnInit {
     filtered = [];
     all = [];
-    selectedTag = 'featured';
+    selectedTag = '';
 
     constructor(
         private languageService: LanguageService
@@ -34,18 +34,24 @@ export class ProjectsComponent implements OnInit {
     ngOnInit() {
         this.languageService.translateService.get("Projects.Projects").subscribe(val => {
             this.all = val;
-            this.filterProjects(this.selectedTag);
+            this.filterProjects('featured');
         });
     }
 
     filterProjects(tag: string) {
+        if(this.selectedTag === tag) {
+            return;
+        }
         this.selectedTag = tag;
-        this.filtered = this.all.filter((project) => {
-            const tags: string[] = project['Tags'];
-            if (!this.selectedTag) {
-                return true;
-            }
-            return tags ? tags.includes(this.selectedTag) : false
-        });
+        this.filtered = [];
+        setTimeout(() => {
+            this.filtered = this.all.filter((project) => {
+                const tags: string[] = project['Tags'];
+                if (!this.selectedTag) {
+                    return true;
+                }
+                return tags ? tags.includes(this.selectedTag) : false
+            });
+        }, 500);
     }
 }

@@ -10,24 +10,6 @@
     margin-bottom: 25px;
     backdrop-filter: blur(5px);
 
-    &:after {
-        background: none repeat scroll 0 0 transparent;
-        bottom: 0px;
-        content: "";
-        display: block;
-        height: 3px;
-        left: 0%;
-        position: absolute;
-        background: var(--border-color);
-        transition: width 0.3s ease 0s, left 0.3s ease 0s;
-        width: 0;
-    }
-
-    &:hover:after {
-        width: 100%;
-        left: 0;
-    }
-
     .job-time {
         color: var(--accent-color);
         margin-bottom: 30px;
@@ -97,7 +79,7 @@
             color: var(--accent-color);
             font-weight: 600;
             opacity: .7;
-            margin: 10px;
+            margin: 5px;
         }
 
         &:last-child:after {

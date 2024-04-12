@@ -1,4 +1,4 @@
-import {Component, HostListener, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, HostListener, OnInit, VERSION, ViewEncapsulation} from '@angular/core';
 import {Router} from "@angular/router";
 import {LanguageService} from "../../services/language/language.service";
 import * as config from "../../../environments/environment";
@@ -315,7 +315,8 @@ export class TerminalComponent implements OnInit {
         } else if (value.startsWith('version')) {
             await this.createPreviousInput(value, 't-success');
             this.createNewLine();
-            await this.createLines(`&nbsp; => ${this.appVersion}`);
+            await this.createLines(`&nbsp; app => ${this.appVersion}`);
+            await this.createLines(`&nbsp; angular => ${VERSION.full}`);
             this.createNewLine();
         } else if (value.startsWith('ls')) {
             await this.createPreviousInput(value, '');

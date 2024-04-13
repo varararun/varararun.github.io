@@ -69,16 +69,13 @@
     "About.ResumeBtn": "Download Resume",
     "Highlights.Title": "Highlights",
     "Highlights.Qualifications": [
-        "10+ years of java development experience using agile methodology",
+        "10+ years of java and javascript development experience using agile methodology",
         "Strong technical and interactive communication skills, excellent collaboration skills",
-        "Client-focused, interested in working with scalable technologies to solve business problems",
+        "Client-focused, interested in working with scalable technologies to solve enterprise problems",
         "Flexible and capable of performing well on team-oriented tasks and meeting deadlines",
-        "Effective leadership skills with respect to influencing team members and delegating abilities",
-        "Adaptable and successful in handling multiple responsibilities in high-stress environments",
         "Exceptional job at maintaining relationships with business/customers, vendors, and stakeholders",
         "Proactively analyzes and recommends ways to reduce technical debt and automate repetitive tasks",
-        "Able to drive delivery of complex projects with distributed teams, managing time and resources effectively",
-        "Writes scalable and resilient code by utilizing emerging technology and researching latest software patterns"
+        "Able to drive delivery of complex projects with distributed teams, managing time and resources effectively"
     ],
     "Highlights.Skills": [
         {
@@ -91,18 +88,9 @@
             ]
         },
         {
-            "Category": "Source Control",
-            "Elements": [
-                "Github",
-                "Bitbucket"
-            ]
-        },
-        {
             "Category": "Frameworks",
             "Elements": [
                 "Agile",
-                "Scrum",
-                "Micro Services",
                 "Spring Boot",
                 "REST",
                 "SOAP"
@@ -113,10 +101,9 @@
             "Elements": [
                 "Angular 15+",
                 "NPM",
-                "JSON",
-                "CSS3",
+                "Typescript",
                 "SCSS",
-                "HMTL5"
+                "HTML5"
             ]
         },
         {
@@ -125,16 +112,7 @@
                 "JPA",
                 "MyBatis",
                 "Liquibase",
-                "Oracle 11g",
-                "JDBC"
-            ]
-        },
-        {
-            "Category": "Testing",
-            "Elements": [
-                "JUnit",
-                "Karma",
-                "Jasmine"
+                "Oracle 11g"
             ]
         },
         {
@@ -142,10 +120,7 @@
             "Elements": [
                 "Jenkins",
                 "Maven",
-                "Nexus",
-                "Bamboo",
-                "Sonar",
-                "Ant"
+                "Nexus"
             ]
         },
         {
@@ -156,13 +131,6 @@
                 "Postman",
                 "SoapUI",
                 "Chrome Dev Tools"
-            ]
-        },
-        {
-            "Category": "Data Monitoring",
-            "Elements": [
-                "Elastic",
-                "Kibana"
             ]
         },
         {
@@ -434,6 +402,21 @@
         },
         {
             "Tags": [
+                "personal",
+                "featured"
+            ],
+            "Title": "Terminal",
+            "Description": "Created a terminal window to provide a more interactive experience learn more about me. Incorporated it into my Angular personal website as a standalone component.",
+            "Link": "https://avarghese.me/terminal",
+            "TechIcons": [
+                "fab fa-angular",
+                "fab fa-html5",
+                "fab fa-js",
+                "fab fa-sass"
+            ]
+        },
+        {
+            "Tags": [
                 "featured",
                 "personal"
             ],
@@ -525,21 +508,6 @@
                 "fab fa-sass",
                 "fab fa-gulp",
                 "fab fa-jenkins"
-            ]
-        },
-        {
-            "Tags": [
-                "personal",
-                "featured"
-            ],
-            "Title": "Terminal",
-            "Description": "Created a terminal window to provide a more interactive experience learn more about me. Incorporated it into my Angular personal website as a standalone component.",
-            "Link": "https://avarghese.me/terminal",
-            "TechIcons": [
-                "fab fa-angular",
-                "fab fa-html5",
-                "fab fa-js",
-                "fab fa-sass"
             ]
         }
     ],

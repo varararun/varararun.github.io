@@ -98,17 +98,14 @@
             ]
         },
         {
-            "Category": "Frameworks & Architecture",
+            "Category": "Frameworks",
             "Elements": [
                 "Agile",
                 "Scrum",
                 "Micro Services",
                 "Spring Boot",
                 "REST",
-                "SOAP",
-                "Hibernate",
-                "Event Driven",
-                "Domain Driven"
+                "SOAP"
             ]
         },
         {
@@ -152,23 +149,6 @@
             ]
         },
         {
-            "Category": "Tools",
-            "Elements": [
-                "IntelliJ",
-                "Eclipse",
-                "Postman",
-                "SoapUI",
-                "Chrome Dev Tools"
-            ]
-        },
-        {
-            "Category": "Data Monitoring",
-            "Elements": [
-                "Elastic",
-                "Kibana"
-            ]
-        },
-        {
             "Category": "Current Interests",
             "Elements": [
                 "ChatGPT",
@@ -189,7 +169,8 @@
             "Date": "January 2022 - Present",
             "Location": "Plano, TX",
             "Logo": "assets/images/logos/logo-comcast.png",
-            "Description": [
+            "Description": "Digitizing physical forms and adding business validations, api integrations, additional logic to make customer onboarding self-service and a smoother experience. In addition, as one of the UI leads I identify areas for improvement in our internal and customer facing applications and work on creating enhancements and reusable components that streamline the development process",
+            "Highlights": [
                 "Designed and developed reusable Angular Material components to streamline development of new features and provide consistency for the look and feel of internal and external web applications",
                 "Proficiently troubleshooted complex issues across multilayered architecture and documented solutions to reduce repetitive investigations and improve triage times for support teams by 20%",
                 "Identified and revamped workflow tool search/filtering by implementing enhancements like server-side pagination to improve page load performance from 10+sec to <2sec",
@@ -228,7 +209,8 @@
             "Date": "June 2018 - December 2021",
             "Location": "Plano, TX",
             "Logo": "assets/images/logos/logo-masergy.png",
-            "Description": [
+            "Description": "Full Stack, led migration of legacy applications to Angular framework with an emphasis on Material design to improve client side experiences, unify look and feel across products, and transition to a modern tech stack using event driven messaging. In addition I mentor junior developers through onboarding, lunch and learns, and code reviews",
+            "Highlights": [
                 "Decomposed company sales workflow by domains, took isolated contexts and migrated them to micro services that are a part of a new event driven messaging architecture",
                 "Implemented versioned APIs and bounded contexts using DTOs and JPA to reduce dependencies, remove cross-schema communications, improve scalability, and properly define domains",
                 "Leveraged front-end expertise to successfully migrate legacy application pages to Angular, thus reducing page load times, improving maintainability, and enriching the customer experience",
@@ -268,7 +250,8 @@
             "Date": "August 2015 - June 2018",
             "Location": "Irving, TX",
             "Logo": "assets/images/logos/logo-spireon.png",
-            "Description": [
+            "Description": "Java microservice architecture redesign to support scaling of reporting abilities for our customer solutions as part of our push for a more microservice oriented architecture using Spring Boot, Kakfa, JPA, and Docker. In addition, I worked on internal tools development including high priority enhancements, as well as managing ongoing relationships with major carriers like Sprint/T-Mobile/Verizon/AT&T",
+            "Highlights": [
                 "Focused on our core platform, taking part in solution design and implementation of RESTful web services as part of a push for a more micro service-oriented architecture using Spring Boot, Kafka, JPA, and Docker",
                 "Managed onboarding for new team members, including mentorship and best practices. In addition, managed ongoing relationships with major carriers like Sprint/T-Mobile/Verizon/AT&T",
                 "Worked on internal tool development, vendor API integrations for M2M architecture, and UI/UX enhancements while successfully collaborating with distributed teams to drive consistent feature delivery",
@@ -307,7 +290,8 @@
             "Date": "July 2012 - August 2015",
             "Location": "Westlake, TX",
             "Logo": "assets/images/logos/logo-fidelity.png",
-            "Description": [
+            "Description": "Owned and maintained high visibility maturing application as well as supported over five other applications within the company’s data access layer. UI/Middle Tier Java developer for a growing application dealing with Reference Data Consolidation. I have had the opportunity to start on this endeavor in its infantile state and watch it grow into a high visibility project, learning to deal with a variety of challenges along the way",
+            "Highlights": [
                 "Owned and maintained high visibility maturing application dealing with Reference Data Consolidation as well as supported over five other applications within the company’s data access layer",
                 "Automated test data setup by incorporating real time data through Java, reducing testing setup time from hours to minutes; this also reduced scripts and manual inputs required to complete E2E integration tests",
                 "Piloted disaster recovery automation efforts, utilized HP Operations Orchestration studio to create release engineering processes to minimize manual inputs and reduce resources on call",

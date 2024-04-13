@@ -479,7 +479,8 @@
         },
         {
             "Tags": [
-                "personal"
+                "personal",
+                "featured"
             ],
             "Title": "Online Resume",
             "Description": "1st iteration of my online resume using a simple static page and dev pipeline using gulp.",

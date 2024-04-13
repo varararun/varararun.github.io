@@ -1,22 +1,61 @@
 @import "src/assets/styles/themes";
 
-.container {
-    margin-top: 30px;
+#highlights {
+    margin-bottom: 10em;
+    min-height: 550px;
+}
+
+#highlights-carousel {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    gap: 20px;
 
-    .col {
+    .carousel-item {
+        transition: var(--transition);
+        cursor: auto;
         display: flex;
         flex-direction: column;
         flex-basis: 50%;
+        align-items: flex-start;
+        flex-shrink: 0;
+    }
+}
+
+.highlight-categories {
+    display: none;
+    margin-bottom: 25px;
+
+    li {
+        display: inline;
+        cursor: var(--cursor-type);
+        transition: var(--transition);
+
+        &.active {
+            color: var(--accent-color);
+        }
+
+        &:after {
+            content: var(--divider);
+            color: var(--accent-color);
+            font-weight: 600;
+            opacity: .7;
+            margin: 5px;
+        }
+
+        &:last-child:after {
+            content: "";
+        }
     }
 }
 
 .qualifications-list {
-    padding: 0;
+    padding: 0 15px;
     margin-bottom: 50px;
+    margin-top: 0;
 
     li {
         margin: 15px 0;
@@ -29,7 +68,7 @@
 .skills {
     margin: 5px 0px;
     &:first-child {
-        margin-top: 15px;
+        margin-top: 5px;
     }
 
     .skill-element {
@@ -56,9 +95,29 @@
     }
 }
 
+.accent {
+    color: var(--accent-color);
+}
+
 @media(max-width: 1000px) {
-    .col {
-        flex-basis: 100% !important;
+    #highlights-carousel {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+
+        &.scrolling {
+            .carousel-item {
+                transform: scale(1);
+            }
+        }
+
+        .carousel-item {
+            flex-basis: 100%;
+            cursor: var(--cursor-type);
+        }
+    }
+    .highlight-categories {
+        display: block;
     }
 }
 

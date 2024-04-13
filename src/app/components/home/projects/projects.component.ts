@@ -25,6 +25,7 @@ export class ProjectsComponent implements OnInit {
     filtered = [];
     all = [];
     selectedTag = '';
+    scrolling = false;
 
     constructor(
         private languageService: LanguageService
@@ -39,7 +40,7 @@ export class ProjectsComponent implements OnInit {
     }
 
     filterProjects(tag: string) {
-        if(this.selectedTag === tag) {
+        if (this.selectedTag === tag) {
             return;
         }
         this.selectedTag = tag;
@@ -53,5 +54,37 @@ export class ProjectsComponent implements OnInit {
                 return tags ? tags.includes(this.selectedTag) : false
             });
         }, 500);
+    }
+
+    scrollTo(index: number) {
+        document.getElementById(`project-${index}`)?.scrollIntoView({
+            behavior: "smooth",
+            block: 'nearest',
+            inline: 'start'
+        });
+    }
+
+    scroll(index: number, direction: 'right' | 'left') {
+        if (direction === 'right') {
+            if (index === this.filtered.length - 1) {
+                this.scrollTo(0);
+            } else {
+                this.scrollTo(index + 1);
+            }
+        }
+        if (direction === 'left') {
+            if (index === 0) {
+                this.scrollTo(this.filtered.length - 1);
+            } else {
+                this.scrollTo(index - 1);
+            }
+        }
+    }
+
+    getTagCount(tag: string) {
+        return this.all.filter((project) => {
+            const tags: string[] = project['Tags'];
+            return tags ? !tag || tags.includes(tag) : false
+        }).length;
     }
 }

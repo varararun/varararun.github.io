@@ -9,14 +9,13 @@
             <li *ngFor='let tag of "Projects.Tags" | translate; let i = index'
                 data-aos="fade-up" data-aos-duration="500" [attr.data-aos-delay]="i*100"
                 (click)="filterProjects(tag)" [class.active]="selectedTag === tag">
-                {{tag || 'All' | titlecase}}
+                {{tag || 'All' | titlecase}} ({{getTagCount(tag)}})
             </li>
         </ul>
     </div>
-    <div class="grid" data-aos="fade-up" data-aos-duration="500">
-        <div @exit-animation *ngFor='let project of filtered; let i = index' class="grid-item project-box"
-             data-aos="fade-up"
-             data-aos-duration="500">
+    <div id="projects-carousel" (scroll)="scrolling = true" (scrollend)="scrolling = false" [class.scrolling]="scrolling">
+        <div @exit-animation *ngFor="let project of filtered; let i = index" class="carousel-item"
+             data-aos="fade-up" data-aos-duration="500" id="project-{{i}}" (click)="scroll(i, 'right')">
             <div>
                 <div class="header">
                     <div class="title">{{project['Title']}}</div>
@@ -42,6 +41,9 @@
             <div class="tech-icons" *ngIf="project['TechIcons']">
                 <i *ngFor="let icon of project['TechIcons']" class="{{icon}}"></i>
             </div>
+            <span class="next-btn">
+                <i class="fas fa-long-arrow-alt-right"></i>
+            </span>
         </div>
     </div>
 </section>

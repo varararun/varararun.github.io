@@ -9,28 +9,29 @@
             <ul class="experience-categories">
                 <li *ngFor="let tag of tags; let i = index"
                     data-aos="fade-up" data-aos-duration="500" [attr.data-aos-delay]="i*100 + 100"
-                    (click)="filterExperience(tag)" [class.active]="selectedTag === tag">
+                    (click)="scrollTo(tag)" [class.active]="selectedTag === tag">
                     {{tag | titlecase}}
                 </li>
             </ul>
         </div>
-        <ul class="jobs" *ngIf="all.length">
-            <li @exit-animation *ngFor="let item of filtered"
-                [title]="item['Tab']" class="job" data-aos="fade-up" data-aos-duration="500">
-                <h2>{{item['Tab']}} <img [alt]="item['Tab']" [src]="item['Logo']" class="job-logo"></h2>
-                <h3>{{item['Title']}}</h3>
-                <h4 class="job-location">{{item['Location']}} - <span class="job-time">{{item['Date']}}</span></h4>
-                <ul class="job-descriptions">
-                    <li *ngFor="let jobDescriptionParagraph of item['Description']"
-                        [innerHTML]="jobDescriptionParagraph | translate"
-                        class="job-description bullet"></li>
-                </ul>
+        <div id="experience-carousel" *ngIf="all.length" (scroll)="scrolling = true; onScroll($event)" (scrollend)="scrolling = false" [class.scrolling]="scrolling">
+            <div *ngFor="let item of all; let i = index" id="{{item['Category']}}"
+                 (click)="scrollTo(tags[i+1] || tags[0])" [title]="item['Tab']" [class.inactive]="selectedTag !== item['Category']"
+                 class="carousel-item" data-aos="fade-up" data-aos-duration="500">
+                <div>
+                    <h2>{{item['Tab']}} <img [alt]="item['Tab']" [src]="item['Logo']" class="job-logo"></h2>
+                    <h3>{{item['Title']}}</h3>
+                    <h4 class="job-location">{{item['Location']}} - <span class="job-time">{{item['Date']}}</span></h4>
+                    <p class="job-description">
+                        {{item['Description']}}
+                    </p>
+                </div>
                 <div class="job-environment">
                     <span *ngFor="let technology of item['Environment']" class="technology">
                         <span class="highlight">{{technology}}</span>
                     </span>
                 </div>
-            </li>
-        </ul>
+            </div>
+        </div>
     </div>
 </section>

@@ -1,65 +1,5 @@
 @import "src/assets/styles/themes";
 
-.project-box {
-    height: 350px;
-    border: var(--border);
-    box-shadow: var(--box-shadow);
-    transition: var(--transition);
-    background-color: var(--bg-color-30);
-    border-radius: var(--border-radius);
-    backdrop-filter: blur(5px);
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: flex-start;
-    position: relative;
-    padding: 1.5rem;
-
-    .header {
-        width: 100%;
-
-        .title {
-            float: left;
-            text-align: start;
-        }
-
-        .external-links {
-            font-size: 20px;
-            text-align: end;
-        }
-    }
-
-    .project-img {
-        height: 25px;
-        margin-bottom: 10px;
-    }
-
-    .title {
-        margin: 0 0 10px;
-        font-size: 22px;
-        transition: var(--transition);
-    }
-
-    .description {
-        float: left;
-        font-size: 17px;
-    }
-
-    .tech-icons {
-        font-size: 25px;
-
-        i {
-            margin: 10px;
-        }
-    }
-
-    .tech {
-        font-size: 12px;
-        line-height: 1.75;
-        font-family: var(--code-font);
-    }
-}
-
 .project-categories {
     margin-bottom: 30px;
 
@@ -86,21 +26,6 @@
     }
 }
 
-.grid {
-    display: grid;
-    gap: 15px 15px;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-    ". ."
-    ". ."
-    ". .";
-
-    .grid-item {
-        background-color: var(--bg-color-30);
-    }
-}
-
 .show-btn {
     text-align: center;
     margin: 50px 0;
@@ -110,14 +35,129 @@
     margin: 0 10px;
 }
 
+#projects-carousel {
+    flex-direction: row;
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    .carousel-item {
+        border: var(--border);
+        box-shadow: var(--box-shadow);
+        transition: var(--transition);
+        background-color: var(--bg-color-30);
+        border-radius: var(--border-radius);
+        transition: var(--transition);
+        cursor: auto;
+        height: 350px;
+        backdrop-filter: blur(5px);
+        padding: 15px;
+
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: flex-start;
+        flex-basis: 45%;
+        flex-shrink: 0;
+
+        .next-btn {
+            display: none;
+            position: absolute;
+            right: 90px;
+            bottom: 15px;
+            font-size: 30px;
+            animation: scroll-right 1.5s infinite ease-in-out;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        .header {
+            width: 100%;
+
+            .title {
+                float: left;
+                text-align: start;
+            }
+
+            .external-links {
+                font-size: 20px;
+                text-align: end;
+            }
+        }
+
+        .project-img {
+            height: 25px;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            margin: 0 0 10px;
+            font-size: 22px;
+            transition: var(--transition);
+        }
+
+        .description {
+            float: left;
+            font-size: 17px;
+        }
+
+        .tech-icons {
+            font-size: 25px;
+
+            i {
+                margin: 10px;
+            }
+        }
+
+        .tech {
+            font-size: 12px;
+            line-height: 1.75;
+            font-family: var(--code-font);
+        }
+    }
+}
+
+@keyframes scroll-right {
+    0% {
+        transform: translateX(0);
+        filter: blur(2px);
+        opacity: 0;
+    }
+    50% {
+        filter: blur(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(65px);
+        filter: blur(2px);
+        opacity: 0;
+    }
+}
+
 @media(max-width: 1000px) {
-    .grid {
-        grid-template-columns: 100%;
-        grid-template-rows: auto;
-        grid-template-areas:
-    "."
-    "."
-    ".";
+    #projects-carousel {
+        -webkit-overflow-scrolling: touch;
+        flex-wrap: nowrap;
+
+        &.scrolling {
+            .carousel-item {
+                transform: scale(1);
+            }
+        }
+
+        .carousel-item {
+            cursor: var(--cursor-type);
+            flex-basis: 91%;
+            &:first-child {
+                .next-btn {
+                    display: block;
+                }
+            }
+        }
     }
 }
 

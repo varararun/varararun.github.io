@@ -109,3 +109,9 @@ ol, ul, li {
         margin-left: 20px;
     }
 }
+
+@media(max-width: 1000px) {
+    section {
+        min-height: 50vh;
+    }
+}

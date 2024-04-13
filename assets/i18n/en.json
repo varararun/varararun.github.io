@@ -149,6 +149,23 @@
             ]
         },
         {
+            "Category": "Tools",
+            "Elements": [
+                "IntelliJ",
+                "Eclipse",
+                "Postman",
+                "SoapUI",
+                "Chrome Dev Tools"
+            ]
+        },
+        {
+            "Category": "Data Monitoring",
+            "Elements": [
+                "Elastic",
+                "Kibana"
+            ]
+        },
+        {
             "Category": "Current Interests",
             "Elements": [
                 "ChatGPT",
@@ -323,11 +340,12 @@
         },
         {
             "Category": "Older",
-            "Tab": "Education",
+            "Tab": "UT Dallas",
             "Title": "[BS] Software Engineering",
-            "Date": "Graduated May 2012",
             "Location": "Richardson, TX",
-            "Logo": "assets/images/logos/logo-utd.png"
+            "Date": "August 2008 - May 2012",
+            "Logo": "assets/images/logos/logo-utd.png",
+            "Environment": ["University of Texas at Dallas", "Bachelors of Science", "Graduated May 2012"]
         }
     ],
     "Projects.Title": "My Projects",

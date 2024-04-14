@@ -14,7 +14,7 @@
                 </li>
             </ul>
         </div>
-        <div id="experience-carousel" *ngIf="all.length" (scroll)="scrolling = true; onScroll($event)" (scrollend)="scrolling = false" [class.scrolling]="scrolling">
+        <div id="experience-carousel" *ngIf="all.length" (scroll)="onScroll($event)">
             <div *ngFor="let item of all; let i = index" id="{{item['Category']}}"
                  (click)="scrollTo(tags[i+1] || tags[0])" [title]="item['Tab']" [class.inactive]="selectedTag !== item['Category']"
                  class="carousel-item" data-aos="fade-up" data-aos-duration="500">
@@ -33,5 +33,8 @@
                 </div>
             </div>
         </div>
+        <p class="swipe-text" data-aos="fade-up" data-aos-duration="500" data-aos-offset="-50">
+           < {{'Experience.ScrollText' | translate}} >
+        </p>
     </div>
 </section>

@@ -25,7 +25,6 @@ export class ProjectsComponent implements OnInit {
     filtered = [];
     all = [];
     selectedTag = '';
-    scrolling = false;
 
     constructor(
         private languageService: LanguageService

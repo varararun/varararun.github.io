@@ -35,6 +35,11 @@
     margin: 0 10px;
 }
 
+.swipe-text {
+    display: none;
+    text-align: center;
+}
+
 #projects-carousel {
     flex-direction: row;
     display: flex;
@@ -42,6 +47,8 @@
     overflow-y: hidden;
     gap: 20px;
     flex-wrap: wrap;
+    scroll-snap-type: x mandatory;
+    scroll-snap-stop: always;
 
     .carousel-item {
         border: var(--border);
@@ -50,6 +57,7 @@
         background-color: var(--bg-color-30);
         border-radius: var(--border-radius);
         transition: var(--transition);
+        scroll-snap-align: center;
         cursor: auto;
         height: 350px;
         backdrop-filter: blur(5px);
@@ -61,15 +69,6 @@
         align-items: flex-start;
         flex-basis: 45%;
         flex-shrink: 0;
-
-        .next-btn {
-            display: none;
-            position: absolute;
-            right: 90px;
-            bottom: 15px;
-            font-size: 30px;
-            animation: scroll-right 1.5s infinite ease-in-out;
-        }
 
         &:last-child {
             margin-right: 0;
@@ -143,21 +142,13 @@
         -webkit-overflow-scrolling: touch;
         flex-wrap: nowrap;
 
-        &.scrolling {
-            .carousel-item {
-                transform: scale(1);
-            }
-        }
-
         .carousel-item {
             cursor: var(--cursor-type);
             flex-basis: 91%;
-            &:first-child {
-                .next-btn {
-                    display: block;
-                }
-            }
         }
+    }
+    .swipe-text {
+        display: block;
     }
 }
 

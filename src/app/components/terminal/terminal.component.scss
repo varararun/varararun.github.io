@@ -18,13 +18,14 @@ $Green: #07bc7a;
 .t-wrapper {
     transition: var(--transition);
     position: fixed;
-    overflow-y: scroll;
+
     overflow-x: hidden;
     width: 100vw;
     height: 100vh;
     top: 0;
     left: 0;
     background: transparent;
+    overflow-y: scroll;
 
     &.fullscreen {
         background: var(--bg-color);

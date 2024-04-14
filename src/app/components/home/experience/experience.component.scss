@@ -8,8 +8,11 @@
     overflow-x: scroll;
     overflow-y: hidden;
     gap: 20px;
+    scroll-snap-type: x mandatory;
+    scroll-snap-stop: always;
 
     .carousel-item {
+        scroll-snap-align: center;
         cursor: auto;
         display: flex;
         flex-direction: column;
@@ -111,22 +114,24 @@
     }
 }
 
+.swipe-text {
+    display: none;
+    text-align: center;
+}
+
 @media(max-width: 1000px) {
     #experience-carousel {
         flex-direction: row;
         -webkit-overflow-scrolling: touch;
-
-        &.scrolling {
-            .carousel-item {
-                transform: scale(1);
-            }
-        }
 
         .carousel-item {
             cursor: var(--cursor-type);
         }
     }
     .experience-categories {
+        display: block;
+    }
+    .swipe-text {
         display: block;
     }
 }

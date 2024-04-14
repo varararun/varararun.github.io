@@ -12,10 +12,12 @@
     overflow-x: scroll;
     overflow-y: hidden;
     flex-wrap: nowrap;
-    gap: 20px;
+    scroll-snap-type: x mandatory;
+    scroll-snap-stop: always;
 
     .carousel-item {
         transition: var(--transition);
+        scroll-snap-align: center;
         cursor: auto;
         display: flex;
         flex-direction: column;
@@ -53,7 +55,7 @@
 }
 
 .qualifications-list {
-    padding: 0 15px;
+    padding: 0px 40px 0 15px;
     margin-bottom: 50px;
     margin-top: 0;
 
@@ -104,12 +106,6 @@
         flex-direction: row;
         flex-wrap: nowrap;
         -webkit-overflow-scrolling: touch;
-
-        &.scrolling {
-            .carousel-item {
-                transform: scale(1);
-            }
-        }
 
         .carousel-item {
             flex-basis: 100%;

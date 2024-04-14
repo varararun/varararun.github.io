@@ -13,14 +13,15 @@
             </li>
         </ul>
     </div>
-    <div id="projects-carousel" (scroll)="scrolling = true" (scrollend)="scrolling = false" [class.scrolling]="scrolling">
+    <div id="projects-carousel">
         <div @exit-animation *ngFor="let project of filtered; let i = index" class="carousel-item"
              data-aos="fade-up" data-aos-duration="500" id="project-{{i}}" (click)="scroll(i, 'right')">
             <div>
                 <div class="header">
                     <div class="title">{{project['Title']}}</div>
                     <div class="external-links">
-                        <img *ngIf="project['CompanyLogo']" class="project-img" alt="CompanyLogo" [src]="project['CompanyLogo']">
+                        <img *ngIf="project['CompanyLogo']" class="project-img" alt="CompanyLogo"
+                             [src]="project['CompanyLogo']">
                         <a *ngIf="project['GithubLink']" [href]="project['GithubLink']" target="_blank">
                             <i class="external-link-btn fab fa-github" id="ghLink"></i>
                         </a>
@@ -41,10 +42,11 @@
             <div class="tech-icons" *ngIf="project['TechIcons']">
                 <i *ngFor="let icon of project['TechIcons']" class="{{icon}}"></i>
             </div>
-            <span class="next-btn">
-                <i class="fas fa-long-arrow-alt-right"></i>
-            </span>
         </div>
     </div>
+    <p class="swipe-text" data-aos="fade-up" data-aos-duration="500" data-aos-offset="-50"
+       *ngIf="filtered.length">
+        < {{'Projects.ScrollText' | translate}} >
+    </p>
 </section>
 

@@ -7,7 +7,6 @@ import {Component, HostListener} from '@angular/core';
 })
 export class HighlightsComponent {
     selectedSection: 'qualifications' | 'skills' = 'qualifications';
-    scrolling = false;
 
     scrollTo(section) {
         document.getElementById(section)?.scrollIntoView({behavior: "smooth", block: 'nearest', inline: 'start'});

@@ -11,7 +11,6 @@ export class ExperienceComponent implements OnInit {
     selectedTag = '';
     tags = [];
     all = [];
-    scrolling = false;
 
     constructor(private languageService: LanguageService) {
     }

@@ -15,8 +15,7 @@
                 Skills
             </li>
         </ul>
-        <div id="highlights-carousel" (scroll)="scrolling = true; onScroll($event)" (scrollend)="scrolling = false"
-             [class.scrolling]="scrolling">
+        <div id="highlights-carousel" (scroll)="onScroll($event)">
             <div id="qualifications" class="carousel-item" (click)="scrollTo('skills')">
                 <ul class="qualifications-list" data-aos="fade-up">
                     <li *ngFor="let text of 'Highlights.Qualifications' | translate; let i = index"

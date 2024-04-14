@@ -8044,7 +8044,8 @@ ol, ul, li {
 
 @media (max-width: 1000px) {
   section {
-    min-height: 50vh;
+    min-height: 100vh;
+    margin: 5em auto 0 auto;
   }
 }
 

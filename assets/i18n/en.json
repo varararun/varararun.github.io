@@ -146,7 +146,7 @@
         }
     ],
     "Experience.Title": "Experience",
-    "Experience.ScrollText": "scroll to see more",
+    "Experience.ScrollText": "swipe left to see more",
     "Experience.Items": [
         {
             "Category": "Current",
@@ -512,7 +512,7 @@
             ]
         }
     ],
-    "Projects.ScrollText": "scroll to see more",
+    "Projects.ScrollText": "swipe left to see more",
     "Contact.Pretitle": "Contact",
     "Contact.Title": "Get in Touch!",
     "Contact.Btn": "Send me an Email",

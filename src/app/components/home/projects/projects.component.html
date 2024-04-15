@@ -14,8 +14,10 @@
         </ul>
     </div>
     <div id="projects-carousel">
+        <div class="carousel-item-spacer"></div>
         <div @exit-animation *ngFor="let project of filtered; let i = index" class="carousel-item"
-             data-aos="fade-up" data-aos-duration="500" id="project-{{i}}" (click)="scroll(i, 'right')">
+             data-aos="fade-up" data-aos-duration="500" data-aos-offset="-25"
+             id="project-{{i}}" (click)="scroll(i, 'right')">
             <div>
                 <div class="header">
                     <div class="title">{{project['Title']}}</div>
@@ -43,10 +45,11 @@
                 <i *ngFor="let icon of project['TechIcons']" class="{{icon}}"></i>
             </div>
         </div>
+        <div class="carousel-item-spacer"></div>
     </div>
     <p class="swipe-text" data-aos="fade-up" data-aos-duration="500" data-aos-offset="-50"
        *ngIf="filtered.length">
-        < {{'Projects.ScrollText' | translate}} >
+        < &nbsp; {{'Projects.ScrollText' | translate}} &nbsp; >
     </p>
 </section>
 

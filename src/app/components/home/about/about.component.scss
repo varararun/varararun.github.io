@@ -2,9 +2,6 @@
 
 #about {
     vertical-align: middle;
-    min-height: 650px !important;
-    margin-top: 10em;
-    margin-bottom: 10em;
 
     .profile-img {
         border-radius: var(--border-radius);
@@ -95,10 +92,6 @@
     }
 }
 
-.loader {
-    display: none;
-}
-
 @keyframes blink {
     from, to {
         color: transparent;
@@ -118,13 +111,6 @@
 }
 
 @media(max-width: 1000px) {
-    .loader {
-        display: block;
-        width: 100%;
-        margin-left: -35px;
-        margin-bottom: 15vh;
-    }
-
     .social-icons {
         display: block !important;
     }

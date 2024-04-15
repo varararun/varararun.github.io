@@ -20,8 +20,8 @@ body {
 
 section {
     background: transparent;
-    min-height: 100vh;
-    margin: 5em auto 20em;
+    min-height: 80vh;
+    margin: 10vh auto 10vh;
     width: 90%;
     max-width: 850px;
 }
@@ -108,11 +108,5 @@ ol, ul, li {
         background-color: var(--border-color);
         position: relative;
         margin-left: 20px;
-    }
-}
-
-@media(max-width: 1000px) {
-    section {
-        min-height: 50vh;
     }
 }

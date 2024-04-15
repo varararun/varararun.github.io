@@ -58,6 +58,7 @@
         border-radius: var(--border-radius);
         transition: var(--transition);
         scroll-snap-align: center;
+        scroll-margin: 5px;
         cursor: auto;
         height: 350px;
         backdrop-filter: blur(5px);
@@ -69,10 +70,6 @@
         align-items: flex-start;
         flex-basis: 45%;
         flex-shrink: 0;
-
-        &:last-child {
-            margin-right: 0;
-        }
 
         .header {
             width: 100%;
@@ -118,6 +115,10 @@
             font-family: var(--code-font);
         }
     }
+
+    .carousel-item-spacer {
+        display: none;
+    }
 }
 
 @keyframes scroll-right {
@@ -141,10 +142,19 @@
     #projects-carousel {
         -webkit-overflow-scrolling: touch;
         flex-wrap: nowrap;
+        mask: var(--carousel-mask);
 
         .carousel-item {
             cursor: var(--cursor-type);
-            flex-basis: 91%;
+            flex-basis: 75vw;
+            margin: 5px;
+        }
+
+        .carousel-item-spacer {
+            display: block;
+            height: 375px;
+            flex-basis: 1vw;
+            flex-shrink: 0;
         }
     }
     .swipe-text {

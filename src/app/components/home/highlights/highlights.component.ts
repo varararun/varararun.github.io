@@ -14,6 +14,6 @@ export class HighlightsComponent {
 
     @HostListener('scroll', ['$event'])
     onScroll(event) {
-        this.selectedSection = event.target.scrollLeft > event.target.getBoundingClientRect().width ? 'skills' : 'qualifications';
+        this.selectedSection = event.target.scrollLeft > event.target.getBoundingClientRect().width - 50 ? 'skills' : 'qualifications';
     }
 }

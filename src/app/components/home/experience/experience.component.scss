@@ -13,6 +13,7 @@
 
     .carousel-item {
         scroll-snap-align: center;
+        scroll-margin: 5px;
         cursor: auto;
         display: flex;
         flex-direction: column;
@@ -21,6 +22,7 @@
         align-items: flex-start;
         flex-shrink: 0;
         height: 375px;
+        margin: 5px;
 
         background-color: var(--bg-color-30);
         transition: all 0.3s ease-out;
@@ -29,6 +31,10 @@
         box-shadow: var(--box-shadow);
         padding: 0 15px 10px 15px;
         backdrop-filter: blur(5px);
+    }
+
+    .carousel-item-spacer {
+        display: none;
     }
 }
 
@@ -123,9 +129,19 @@
     #experience-carousel {
         flex-direction: row;
         -webkit-overflow-scrolling: touch;
+        mask: var(--carousel-mask);
 
         .carousel-item {
             cursor: var(--cursor-type);
+            flex-basis: 75vw;
+            margin: 5px;
+        }
+
+        .carousel-item-spacer {
+            display: block;
+            height: 375px;
+            flex-basis: 1vw;
+            flex-shrink: 0;
         }
     }
     .experience-categories {

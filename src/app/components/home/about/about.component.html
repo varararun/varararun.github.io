@@ -8,8 +8,8 @@
         <h2 class="name" data-aos="fade-right" data-aos-duration="500" data-aos-delay="100">
             {{"About.Name" | translate}}
         </h2>
-        <h3 class="role" data-aos="fade-right" data-aos-duration="500" data-aos-delay="200" (click)="themeService.switchTheme()">
-            <span class="code-highlight">{{role}}<span class="blinking-cursor">|</span></span>
+        <h3 class="role" data-aos="fade-right" data-aos-duration="500" data-aos-delay="200">
+            <span class="code-highlight" (click)="themeService.switchTheme()">{{role}}<span class="blinking-cursor">|</span></span>
         </h3>
     </div>
     <div class='about-description' data-aos="fade-right" data-aos-duration="500" data-aos-delay="300">

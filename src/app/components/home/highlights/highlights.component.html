@@ -16,6 +16,7 @@
             </li>
         </ul>
         <div id="highlights-carousel" (scroll)="onScroll($event)">
+            <div class="carousel-item-spacer"></div>
             <div id="qualifications" class="carousel-item" (click)="scrollTo('skills')">
                 <ul class="qualifications-list" data-aos="fade-up">
                     <li *ngFor="let text of 'Highlights.Qualifications' | translate; let i = index"
@@ -33,6 +34,7 @@
                     <span *ngFor="let s of skill['Elements']" class="skill-element">{{s}}</span>
                 </div>
             </div>
+            <div class="carousel-item-spacer"></div>
         </div>
     </div>
 </section>

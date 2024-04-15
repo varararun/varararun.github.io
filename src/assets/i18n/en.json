@@ -116,6 +116,14 @@
             ]
         },
         {
+            "Category": "Testing",
+            "Elements": [
+                "JUnit",
+                "Karma",
+                "Jasmine"
+            ]
+        },
+        {
             "Category": "Build & Automation",
             "Elements": [
                 "Jenkins",
@@ -129,8 +137,7 @@
                 "IntelliJ",
                 "Eclipse",
                 "Postman",
-                "SoapUI",
-                "Chrome Dev Tools"
+                "SoapUI"
             ]
         },
         {

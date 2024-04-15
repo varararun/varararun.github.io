@@ -7,13 +7,14 @@
 
 #highlights-carousel {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
     overflow-x: scroll;
     overflow-y: hidden;
     flex-wrap: nowrap;
     scroll-snap-type: x mandatory;
     scroll-snap-stop: always;
+    gap: 20px;
 
     .carousel-item {
         transition: var(--transition);
@@ -24,6 +25,18 @@
         flex-basis: 50%;
         align-items: flex-start;
         flex-shrink: 0;
+
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+        backdrop-filter: blur(0);
+        border-radius: var(--border-radius);
+        padding: 20px 15px 10px 15px;
+
+    }
+
+    .carousel-item-spacer {
+        display: none;
     }
 }
 
@@ -55,12 +68,12 @@
 }
 
 .qualifications-list {
-    padding: 0px 40px 0 15px;
-    margin-bottom: 50px;
     margin-top: 0;
+    margin-left: 15px;
 
     li {
         margin: 15px 0;
+
         &:first-child {
             margin-top: 0;
         }
@@ -69,8 +82,9 @@
 
 .skills {
     margin: 5px 0px;
+
     &:first-child {
-        margin-top: 5px;
+        margin-top: 0;
     }
 
     .skill-element {
@@ -78,6 +92,7 @@
         font-family: var(--code-font);
         position: relative;
         font-size: 12px;
+        display: inline-block;
 
         &:after {
             content: var(--divider);
@@ -106,14 +121,31 @@
         flex-direction: row;
         flex-wrap: nowrap;
         -webkit-overflow-scrolling: touch;
-
+        mask: var(--carousel-mask);
+        
         .carousel-item {
-            flex-basis: 100%;
+            flex-basis: 75vw;
             cursor: var(--cursor-type);
+            background-color: var(--bg-color-30);
+            border: var(--border);
+            box-shadow: var(--box-shadow);
+            backdrop-filter: blur(5px);
         }
+
+        .carousel-item-spacer {
+            display: block;
+            flex-basis: 5vw;
+            flex-shrink: 0;
+        }
+    }
+    .qualifications-list {
+        margin-left: 0;
     }
     .highlight-categories {
         display: block;
+    }
+    .bullet::marker {
+        content: '';
     }
 }
 

@@ -10,13 +10,28 @@ import {ThemeService} from "../../../services/theme/theme.service";
 })
 export class AboutComponent {
 
+    role = '';
+
     constructor(private languageService: LanguageService, public analyticsService: AnalyticsService, public themeService: ThemeService) {
         window.matchMedia('(display-mode: standalone)').matches;
+        this.languageService.translateService.get('About.Role').subscribe(val => {
+            this.type(val);
+        });
     }
 
     downloadResume() {
         this.languageService.translateService.get("Resume").subscribe(val => {
             window.open(val, "_blank");
         })
+    }
+
+    wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+    async type(text: string, delay = 100) {
+        await this.wait(500);
+        for (const letter of text) {
+            this.role += letter;
+            await this.wait(delay);
+        }
     }
 }

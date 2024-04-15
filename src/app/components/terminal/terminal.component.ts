@@ -197,7 +197,7 @@ export class TerminalComponent implements OnInit {
         return config.environment.version;
     }
 
-    wait = ms => new Promise(resolve => setTimeout(resolve, ms))
+    wait = ms => new Promise(resolve => setTimeout(resolve, ms));
 
     async displayHelp() {
         await this.createPreviousInput('help', 't-success');
@@ -243,7 +243,7 @@ export class TerminalComponent implements OnInit {
     }
 
     async checkInputValue(value: string) {
-        if (value === 'help') {
+        if (value.match(/help/g)) {
             await this.displayHelp();
         } else if (value === 'more') {
             await this.displayMore();
@@ -327,7 +327,7 @@ export class TerminalComponent implements OnInit {
         } else if (value.startsWith('df')) {
             await this.createPreviousInput(value, '');
             await this.createLines(this.inputMap['df']);
-        } else if (value.startsWith('echo')) {
+        } else if (value.startsWith('echo ')) {
             await this.createPreviousInput(value, '');
             await this.createLines(value.split('echo')[1]);
         } else if (value.match(/(mkdir|mkfile|rm|chmod|sudo|cd|vi|cat|touch)/g)) {

@@ -30,6 +30,7 @@
     --bullet-color: var(--black);
     --animated-icon-color: var(--black-30);
     --bg-animated-filter: grayscale(1) saturate(0);
+    --profile-img-filters: grayscale(1);
 }
 
 [data-theme="dark"] {
@@ -62,4 +63,5 @@
     --bullet-color: var(--blue);
     --animated-icon-color: var(--white-30);
     --bg-animated-filter: none;
+    --profile-img-filters: none;
 }

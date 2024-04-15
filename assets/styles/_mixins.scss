@@ -1,0 +1,7 @@
+@mixin card {
+    background-color: var(--bg-color-30);
+    border: var(--border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    backdrop-filter: blur(5px);
+}

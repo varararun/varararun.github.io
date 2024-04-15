@@ -7942,6 +7942,55 @@ readers do not read off random characters that represent icons */
   --profile-img-filters: none;
 }
 
+.carousel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  flex-wrap: nowrap;
+  scroll-snap-type: x mandatory;
+  scroll-snap-stop: always;
+  gap: 20px;
+}
+.carousel .carousel-item {
+  transition: var(--transition);
+  scroll-snap-align: center;
+  cursor: auto;
+  scroll-margin: 5px;
+  flex-basis: 50%;
+  flex-shrink: 0;
+}
+.carousel .carousel-item-spacer {
+  display: none;
+}
+
+.scroll-text {
+  display: none;
+  text-align: center;
+}
+
+@media (max-width: 1000px) {
+  .carousel {
+    mask: var(--carousel-mask);
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  .carousel .carousel-item {
+    cursor: var(--cursor-type);
+    flex-basis: 75vw !important;
+    margin: 5px;
+  }
+  .carousel .carousel-item-spacer {
+    display: block;
+    flex-basis: 5vw;
+    flex-shrink: 0;
+  }
+  .scroll-text {
+    display: block;
+  }
+}
 body {
   margin: 0;
   width: 100%;
@@ -7981,7 +8030,6 @@ a:hover {
 ol, ul, li {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
 .highlight {

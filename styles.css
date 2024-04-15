@@ -7969,6 +7969,15 @@ readers do not read off random characters that represent icons */
   display: none;
   text-align: center;
 }
+.scroll-text .left, .scroll-text .right {
+  transition: var(--transition);
+}
+.scroll-text .left {
+  animation: 1s scroll-left ease-in-out infinite;
+}
+.scroll-text .right {
+  animation: 1s scroll-right ease-in-out infinite;
+}
 
 @media (max-width: 1000px) {
   .carousel {
@@ -7989,6 +7998,32 @@ readers do not read off random characters that represent icons */
   }
   .scroll-text {
     display: block;
+  }
+}
+@keyframes scroll-left {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    margin-right: 25px;
+    letter-spacing: 10px;
+  }
+}
+@keyframes scroll-right {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    margin-left: 25px;
+    letter-spacing: 10px;
   }
 }
 body {

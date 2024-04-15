@@ -26,6 +26,16 @@
 .scroll-text {
     display: none;
     text-align: center;
+    .left,.right {
+        transition: var(--transition);
+    }
+
+    .left {
+        animation: 1s scroll-left ease-in-out infinite;
+    }
+    .right {
+        animation: 1s scroll-right ease-in-out infinite;
+    }
 }
 
 @media(max-width: 1000px) {
@@ -50,5 +60,34 @@
 
     .scroll-text {
         display: block;
+    }
+}
+
+@keyframes scroll-left {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        margin-right: 25px;
+        letter-spacing: 10px;
+
+    }
+}
+
+@keyframes scroll-right {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        margin-left: 25px;
+        letter-spacing: 10px;
     }
 }

@@ -153,7 +153,6 @@
         }
     ],
     "Experience.Title": "Experience",
-    "Experience.ScrollText": "scroll",
     "Experience.Items": [
         {
             "Category": "Current",
@@ -519,7 +518,6 @@
             ]
         }
     ],
-    "Projects.ScrollText": "scroll",
     "Contact.Pretitle": "Contact",
     "Contact.Title": "Get in Touch!",
     "Contact.Btn": "Send me an Email",
@@ -615,5 +613,6 @@
         ],
         "pwd": "/users/arun-varghese",
         "ls": "avarghese.sh"
-    }
+    },
+    "ScrollText": "scroll"
 }

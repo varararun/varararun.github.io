@@ -1,4 +1,5 @@
 @import "src/assets/styles/themes";
+@import "src/assets/styles/mixins";
 
 .project-categories {
     margin-bottom: 30px;
@@ -35,31 +36,13 @@
     margin: 0 10px;
 }
 
-.swipe-text {
-    display: none;
-    text-align: center;
-}
-
 #projects-carousel {
     flex-direction: row;
-    display: flex;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    gap: 20px;
     flex-wrap: wrap;
-    scroll-snap-type: x mandatory;
-    scroll-snap-stop: always;
 
     .carousel-item {
-        border: var(--border);
-        box-shadow: var(--box-shadow);
-        transition: var(--transition);
-        background-color: var(--bg-color-30);
-        border-radius: var(--border-radius);
-        transition: var(--transition);
-        scroll-snap-align: center;
-        scroll-margin: 5px;
-        cursor: auto;
+       @include card;
+
         height: 350px;
         backdrop-filter: blur(5px);
         padding: 15px;
@@ -69,7 +52,6 @@
         flex-direction: column;
         align-items: flex-start;
         flex-basis: 45%;
-        flex-shrink: 0;
 
         .header {
             width: 100%;
@@ -115,10 +97,6 @@
             font-family: var(--code-font);
         }
     }
-
-    .carousel-item-spacer {
-        display: none;
-    }
 }
 
 @keyframes scroll-right {
@@ -135,30 +113,6 @@
         transform: translateX(65px);
         filter: blur(2px);
         opacity: 0;
-    }
-}
-
-@media(max-width: 1000px) {
-    #projects-carousel {
-        -webkit-overflow-scrolling: touch;
-        flex-wrap: nowrap;
-        mask: var(--carousel-mask);
-
-        .carousel-item {
-            cursor: var(--cursor-type);
-            flex-basis: 75vw;
-            margin: 5px;
-        }
-
-        .carousel-item-spacer {
-            display: block;
-            height: 375px;
-            flex-basis: 1vw;
-            flex-shrink: 0;
-        }
-    }
-    .swipe-text {
-        display: block;
     }
 }
 

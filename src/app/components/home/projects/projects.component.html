@@ -13,7 +13,7 @@
             </li>
         </ul>
     </div>
-    <div id="projects-carousel">
+    <div id="projects-carousel" class="carousel">
         <div class="carousel-item-spacer"></div>
         <div @exit-animation *ngFor="let project of filtered; let i = index" class="carousel-item"
              data-aos="fade-up" data-aos-duration="500" data-aos-offset="-25"
@@ -47,9 +47,9 @@
         </div>
         <div class="carousel-item-spacer"></div>
     </div>
-    <p class="swipe-text" data-aos="fade-up" data-aos-duration="500" data-aos-offset="-50"
+    <p class="scroll-text" data-aos="fade-up" data-aos-duration="500" data-aos-offset="-50"
        *ngIf="filtered.length">
-        < &nbsp; {{'Projects.ScrollText' | translate}} &nbsp; >
+        <span class="left"><<</span> &nbsp; {{'ScrollText' | translate}} &nbsp; <span class="right">>></span>
     </p>
 </section>
 

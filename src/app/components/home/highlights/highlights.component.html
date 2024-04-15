@@ -15,7 +15,7 @@
                 Skills
             </li>
         </ul>
-        <div id="highlights-carousel" (scroll)="onScroll($event)">
+        <div id="highlights-carousel" class="carousel" (scroll)="onScroll($event)">
             <div class="carousel-item-spacer"></div>
             <div id="qualifications" class="carousel-item" (click)="scrollTo('skills')">
                 <ul class="qualifications-list" data-aos="fade-up">
@@ -36,5 +36,8 @@
             </div>
             <div class="carousel-item-spacer"></div>
         </div>
+        <p class="scroll-text" data-aos="fade-up" data-aos-duration="500" data-aos-offset="-50">
+            <span class="left"><<</span> &nbsp; {{'ScrollText' | translate}} &nbsp; <span class="right">>></span>
+        </p>
     </div>
 </section>

@@ -1,6 +1,7 @@
 @import "src/assets/fonts/fonts.scss";
 @import "src/assets/styles/themes";
 @import "src/assets/styles/mixins";
+@import "src/assets/styles/carousel";
 
 body {
     margin: 0;
@@ -41,7 +42,6 @@ a {
 ol, ul, li {
     list-style: none;
     padding: 0;
-    margin: 0;
 }
 
 .highlight {

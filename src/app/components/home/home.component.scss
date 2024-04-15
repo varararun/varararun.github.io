@@ -1,0 +1,8 @@
+.scroll-wrapper {
+    scroll-snap-type: y mandatory;
+    scroll-snap-stop: always;
+
+    .scroll-item {
+        scroll-snap-align: start;
+    }
+}

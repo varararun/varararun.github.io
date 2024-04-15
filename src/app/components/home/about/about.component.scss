@@ -12,7 +12,7 @@
         width: 10em;
         height: 10em;
         margin-bottom: 25px;
-        filter: grayscale(1);
+        filter: var(--profile-img-filters);
         cursor: move;
         position: relative;
         z-index: 1;
@@ -21,9 +21,6 @@
         &.cdk-drag-dragging {
             border-radius: 50%;
             opacity: .8;
-            filter: grayscale(.2);
-            width: 9em;
-            height: 9em;
         }
     }
 

@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {LanguageService} from "../../../services/language/language.service";
 import {AnalyticsService} from "../../../services/analytics/analytics.service";
+import {ThemeService} from "../../../services/theme/theme.service";
 
 @Component({
     selector: 'app-about',
@@ -9,7 +10,7 @@ import {AnalyticsService} from "../../../services/analytics/analytics.service";
 })
 export class AboutComponent {
 
-    constructor(private languageService: LanguageService, public analyticsService: AnalyticsService) {
+    constructor(private languageService: LanguageService, public analyticsService: AnalyticsService, public themeService: ThemeService) {
         window.matchMedia('(display-mode: standalone)').matches;
     }
 

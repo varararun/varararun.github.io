@@ -74,14 +74,14 @@
     }
 
     .skill-element {
+        color: var(--list-text-color);
+        font-family: var(--code-font);
         position: relative;
         font-size: 12px;
-        color: var(--accent-color);
-        font-family: var(--code-font);
 
         &:after {
             content: var(--divider);
-            color: var(--primary-color);
+            color: var(--divider-color);
             font-weight: 600;
             opacity: .7;
             margin: 5px;

@@ -19,6 +19,8 @@
     --menu-btn-color: var(--black);
     --code-highlight-color: var(--black);
     --code-highlight-text-color: var(--white);
+    --divider-color: var(--blue);
+    --list-text-color: var(--black);
     --btn-bg-color: var(--white);
     --btn-hover-bg-color: var(--white);
     --menu-bar-bg-color: var(--white-30);
@@ -28,6 +30,7 @@
     --bullet-color: var(--black);
     --animated-icon-color: var(--black-30);
     --bg-animated-filter: grayscale(1) saturate(0);
+    --profile-img-filters: grayscale(1);
 }
 
 [data-theme="dark"] {
@@ -49,6 +52,8 @@
     --menu-btn-color: var(--blue);
     --code-highlight-color: var(--black-60);
     --code-highlight-text-color: var(--white);
+    --divider-color: var(--white);
+    --list-text-color: var(--blue);
     --btn-bg-color: var(--bg-color-0);
     --btn-hover-bg-color: var(--black-30);
     --menu-bar-bg-color: var(--black-30);
@@ -58,4 +63,5 @@
     --bullet-color: var(--blue);
     --animated-icon-color: var(--white-30);
     --bg-animated-filter: none;
+    --profile-img-filters: none;
 }

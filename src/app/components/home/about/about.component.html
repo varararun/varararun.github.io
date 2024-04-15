@@ -1,6 +1,6 @@
 <section id="about">
     <div class="profile-img" [style.transform]="'translate3d(0, 0, 0)'"
-         data-aos="zoom-out" data-aos-duration="1000" cdkDrag cdkDragHandle cdkDragBoundary=".about"></div>
+         data-aos="zoom-out" data-aos-duration="1000" cdkDrag cdkDragHandle></div>
     <div data-aos="fade-right" data-aos-duration="500">
         <h1 class="title">{{"About.Pretitle" | translate}}</h1>
     </div>
@@ -8,7 +8,7 @@
         <h2 class="name" data-aos="fade-right" data-aos-duration="500" data-aos-delay="100">
             {{"About.Name" | translate}}
         </h2>
-        <h3 class="role" data-aos="fade-right" data-aos-duration="500" data-aos-delay="200">
+        <h3 class="role" data-aos="fade-right" data-aos-duration="500" data-aos-delay="200" (click)="themeService.switchTheme()">
             <span class="code-highlight">{{"About.Role" | translate}}<span class="blinking-cursor">|</span></span>
         </h3>
     </div>

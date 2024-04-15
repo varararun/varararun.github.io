@@ -75,12 +75,13 @@
 
     .technology {
         font-size: 10px;
-        color: var(--primary-color);
+        color: var(--list-text-color);
         font-family: var(--code-font);
+        display: inline-block;
 
         &:after {
             content: var(--divider);
-            color: var(--primary-color);
+            color: var(--divider-color);
             font-weight: 600;
             opacity: .7;
             margin: 0 5px;

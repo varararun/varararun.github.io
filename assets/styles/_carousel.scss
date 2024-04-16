@@ -25,19 +25,10 @@
 
 .scroll-indicator {
     display: none;
-    text-align: center;
-    .left,.right {
-        transition: var(--transition);
-    }
-    .left {
-        animation: 1s scroll-left ease-in-out infinite;
-    }
+    margin-left: 50%;
     .right {
+        transition: var(--transition);
         animation: 1s scroll-right ease-in-out infinite;
-    }
-
-    &.scrolled {
-        display: none;
     }
 }
 
@@ -91,7 +82,7 @@
     }
     100% {
         opacity: 0;
-        margin-left: 25px;
+        padding-left: 25px;
         letter-spacing: 10px;
     }
 }

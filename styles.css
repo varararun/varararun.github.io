@@ -7969,19 +7969,11 @@ readers do not read off random characters that represent icons */
 
 .scroll-indicator {
   display: none;
-  text-align: center;
-}
-.scroll-indicator .left, .scroll-indicator .right {
-  transition: var(--transition);
-}
-.scroll-indicator .left {
-  animation: 1s scroll-left ease-in-out infinite;
+  margin-left: 50%;
 }
 .scroll-indicator .right {
+  transition: var(--transition);
   animation: 1s scroll-right ease-in-out infinite;
-}
-.scroll-indicator.scrolled {
-  display: none;
 }
 
 @media (max-width: 1000px) {
@@ -8028,7 +8020,7 @@ readers do not read off random characters that represent icons */
   }
   100% {
     opacity: 0;
-    margin-left: 25px;
+    padding-left: 25px;
     letter-spacing: 10px;
   }
 }

@@ -81,9 +81,9 @@
         {
             "Category": "Languages",
             "Elements": [
-                "Java/J2EE",
-                "JavaScript ES5/ES6",
+                "Java",
                 "TypeScript",
+                "SQL",
                 "Shell"
             ]
         },
@@ -145,7 +145,7 @@
             "Elements": [
                 "ChatGPT",
                 "CoPilot",
-                "AI",
+                "Cyber Sec",
                 "AWS",
                 "Kubernetes",
                 "Docker"
@@ -613,6 +613,5 @@
         ],
         "pwd": "/users/arun-varghese",
         "ls": "avarghese.sh"
-    },
-    "ScrollText": "scroll"
+    }
 }

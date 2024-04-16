@@ -102,15 +102,7 @@
 }
 
 @media(max-width: 1000px) {
-    #experience-carousel {
-        .carousel-item {
-            margin: 5px;
-        }
-    }
     .experience-categories {
-        display: block;
-    }
-    .scroll-text {
         display: block;
     }
 }

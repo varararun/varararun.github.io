@@ -47,19 +47,20 @@
 
         .carousel-item {
             cursor: var(--cursor-type);
-            flex-basis: 75vw !important;
+            flex-basis: 80vw !important;
             margin: 5px;
         }
 
         .carousel-item-spacer {
             display: block;
-            flex-basis: 5vw;
+            flex-basis: 1vw;
             flex-shrink: 0;
         }
     }
 
     .scroll-text {
         display: block;
+        color: var(--scroll-indicator-color);
     }
 }
 

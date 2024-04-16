@@ -23,18 +23,21 @@
     }
 }
 
-.scroll-text {
+.scroll-indicator {
     display: none;
     text-align: center;
     .left,.right {
         transition: var(--transition);
     }
-
     .left {
         animation: 1s scroll-left ease-in-out infinite;
     }
     .right {
         animation: 1s scroll-right ease-in-out infinite;
+    }
+
+    &.scrolled {
+        display: none;
     }
 }
 
@@ -58,7 +61,7 @@
         }
     }
 
-    .scroll-text {
+    .scroll-indicator {
         display: block;
         color: var(--scroll-indicator-color);
     }

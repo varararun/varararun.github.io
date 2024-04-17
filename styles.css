@@ -13009,6 +13009,9 @@ ol, ul, li {
 
 .scroll-lock {
   overflow: hidden;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
 }
 
 .main-btn {
@@ -13053,6 +13056,12 @@ ol, ul, li {
   width: 260px;
   position: relative;
   margin-left: 20px;
+}
+
+@media (max-width: 1000px) {
+  body {
+    overflow-x: hidden;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map*/

@@ -7969,7 +7969,7 @@ readers do not read off random characters that represent icons */
 
 .scroll-indicator {
   display: none;
-  margin-left: 50%;
+  margin-left: 45vw;
 }
 .scroll-indicator .right {
   transition: var(--transition);

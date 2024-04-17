@@ -25,7 +25,7 @@
 
 .scroll-indicator {
     display: none;
-    margin-left: 50%;
+    margin-left: 45vw;
     .right {
         transition: var(--transition);
         animation: 1s scroll-right ease-in-out infinite;

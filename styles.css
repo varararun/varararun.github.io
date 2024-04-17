@@ -13049,11 +13049,11 @@ ol, ul, li {
   font-family: var(--primary-font);
 }
 .section-title:after {
+  background-color: var(--border-color);
   content: "";
   display: block;
   height: 1px;
-  width: 300px;
-  background-color: var(--border-color);
+  width: 260px;
   position: relative;
   margin-left: 20px;
 }

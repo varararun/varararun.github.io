@@ -1,17 +1,12 @@
 @import "src/assets/styles/themes";
 
 #about {
-    vertical-align: middle;
-
     .profile-img {
         border-radius: var(--border-radius);
         box-shadow: var(--box-shadow);
         background: url('../../../../assets/images/profile/profile-small.png') no-repeat;
         transform-origin: center;
         background-size: cover;
-        width: 10em;
-        height: 10em;
-        margin-bottom: 25px;
         filter: var(--profile-img-filters);
         cursor: move;
         position: relative;
@@ -31,13 +26,10 @@
     h1 {
         color: var(--title-color);
         margin: 0 0 20px 3px;
-        font-size: 16px;
-        font-weight: normal;
         font-family: var(--code-font);
     }
 
     h2, h3 {
-        font-weight: 600;
         line-height: 1.1;
         margin: 0;
     }
@@ -55,14 +47,10 @@
         font-family: var(--code-font);
     }
 
-    p {
-        max-width: 500px;
-    }
-
     .social-icons {
         display: none;
-        margin: 1.5em 0 2.5em;
-        font-size: 20px;
+        margin: 30px 0 40px;
+        font-size: x-large;
 
         li {
             display: inline;
@@ -75,7 +63,7 @@
     }
 
     .download-resume {
-        margin: 3em 0;
+        margin: 48px 0;
     }
 }
 

@@ -14,7 +14,7 @@
         </li>
     </ol>
 </div>
-<div class="menu-bar">
+<div class="menu-bar w-100v h-50">
     <ol class="menu-bar-items" [ngClass]="{'show-menu-bg': scrollPosition > 100}">
         <li *ngFor='let item of "Menu.NavItems" | translate; let i = index' class="menu-bar-item"
             data-aos="fade-down" data-aos-duration="500" [attr.data-aos-delay]="i*100">

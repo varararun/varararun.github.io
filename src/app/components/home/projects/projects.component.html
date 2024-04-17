@@ -1,11 +1,11 @@
 <section>
-    <div>
+    <div data-aos="fade-up" data-aos-duration="500">
         <h3 class="section-title">
             {{"Projects.Title" | translate}}
         </h3>
     </div>
     <div>
-        <ul class="project-categories">
+        <ul class="project-categories mb-30 ml-15">
             <li *ngFor='let tag of "Projects.Tags" | translate; let i = index'
                 data-aos="fade-up" data-aos-duration="500" [attr.data-aos-delay]="i*100"
                 (click)="filterProjects(tag)" [class.active]="selectedTag === tag">
@@ -13,7 +13,7 @@
             </li>
         </ul>
     </div>
-    <div id="projects-carousel" class="carousel">
+    <div id="projects-carousel" class="carousel" (scroll)="onScroll($event)">
         <div class="carousel-item-spacer"></div>
         <div @exit-animation *ngFor="let project of filtered; let i = index" class="carousel-item"
              data-aos="fade-up" data-aos-duration="500" data-aos-offset="-25"
@@ -47,9 +47,9 @@
         </div>
         <div class="carousel-item-spacer"></div>
     </div>
-    <p class="scroll-text" data-aos="fade-up" data-aos-duration="500" data-aos-offset="-50"
-       *ngIf="filtered.length">
-        <span class="left"><<</span> &nbsp; <i class="fas fa-mouse"></i> &nbsp; <span class="right">>></span>
+    <p class="scroll-indicator" data-aos="fade-up" data-aos-duration="500" data-aos-offset="-50"
+       *ngIf="filtered.length && !scrolled" @exit-animation (click)="scroll(0, 'right')">
+        <i class="fas fa-mouse"></i> &nbsp; <span class="right">>></span>
     </p>
 </section>
 

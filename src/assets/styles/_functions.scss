@@ -1,0 +1,91 @@
+@use "sass:math";
+
+$space-increments: (
+    0,
+    15,
+    20,
+    25,
+    30,
+    40,
+    90,
+    100,
+    160,
+    200,
+    300,
+    400,
+    500,
+    600
+);
+
+$sides: (top, bottom, left, right);
+
+@each $increment in $space-increments {
+    @each $side in $sides {
+        .m-#{$increment} {
+            margin: #{$increment}px !important;
+        }
+        .m#{str-slice($side, 0, 1)}-#{$increment} {
+            margin-#{$side}: #{$increment}px !important;
+        }
+        .p-#{$increment} {
+            padding: #{$increment}px !important;
+        }
+        .p#{str-slice($side, 0, 1)}-#{$increment} {
+            padding-#{$side}: #{$increment}px !important;
+        }
+        .h-#{$increment} {
+            height: #{$increment}px !important;
+        }
+        .h-#{$increment}v {
+            height: #{$increment}vh !important;
+        }
+        .h-#{$increment}p {
+            height: math.percentage(math.div($increment, 100)) !important;
+        }
+        .mxh-#{$increment} {
+            max-height: #{$increment}px !important;
+        }
+        .mxh-#{$increment}v {
+            max-height: #{$increment}vh !important;
+        }
+        .mxh-#{$increment}p {
+            max-height: math.percentage(math.div($increment, 100)) !important;
+        }
+        .mnh-#{$increment} {
+            min-height: #{$increment}px !important;
+        }
+        .mnh-#{$increment}v {
+            min-height: #{$increment}vh !important;
+        }
+        .mnh-#{$increment}p {
+            min-height: math.percentage(math.div($increment, 100)) !important;
+        }
+        .w-#{$increment} {
+            width: #{$increment}px !important;
+        }
+        .w-#{$increment}v {
+            width: #{$increment}vw !important;
+        }
+        .w-#{$increment}p {
+            width: math.percentage(math.div($increment, 100)) !important;
+        }
+        .mxw-#{$increment} {
+            max-width: #{$increment}px !important;
+        }
+        .mxw-#{$increment}v {
+            max-width: #{$increment}vw !important;
+        }
+        .mxw-#{$increment}p {
+            max-width: math.percentage(math.div($increment, 100)) !important;
+        }
+        .mnw-#{$increment} {
+            min-width: #{$increment}px !important;
+        }
+        .mnw-#{$increment}v {
+            min-width: #{$increment}vw !important;
+        }
+        .mnw-#{$increment}p {
+            min-width: math.percentage(math.div($increment, 100)) !important;
+        }
+    }
+}

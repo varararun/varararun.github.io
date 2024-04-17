@@ -1,43 +1,27 @@
-<section id="highlights">
+<section id="highlights" class="w-90v mnh-600 mb-160">
     <div class="content">
-        <div class="title" data-aos="fade-up">
+        <div class="title" data-aos="fade-up" data-aos-duration="500">
             <h3 class="section-title">
                 {{"Highlights.Title" | translate}}
             </h3>
         </div>
-        <ul class="highlight-categories">
-            <li data-aos="fade-up" data-aos-duration="500"
-                (click)="scrollTo('qualifications')" [class.active]="selectedSection === 'qualifications'">
-                Qualifications
-            </li>
-            <li data-aos="fade-up" data-aos-duration="500" data-aos-delay="100"
-                (click)="scrollTo('skills')" [class.active]="selectedSection === 'skills'">
-                Skills
-            </li>
-        </ul>
-        <div id="highlights-carousel" class="carousel" (scroll)="onScroll($event)">
-            <div class="carousel-item-spacer"></div>
-            <div id="qualifications" class="carousel-item" (click)="scrollTo('skills')">
+        <div class="highlights">
+            <div>
                 <ul class="qualifications-list" data-aos="fade-up">
                     <li *ngFor="let text of 'Highlights.Qualifications' | translate; let i = index"
                         [innerHTML]="text"
                         class="qualifications-element bullet"
-                        data-aos="fade-up" data-aos-duration="500" data-aos-offset="-50"
-                        [attr.data-aos-delay]="i*50">
+                        data-aos="fade-up" data-aos-duration="500" data-aos-offset="-50">
                     </li>
                 </ul>
             </div>
-            <div id="skills" class="carousel-item" (click)="scrollTo('qualifications')">
-                <div *ngFor="let skill of 'Highlights.Skills' | translate; let i = index" class="skills"
-                     data-aos="fade-up" data-aos-duration="500" data-aos-offset="-50" [attr.data-aos-delay]="i*50">
+            <div>
+                <div *ngFor="let skill of 'Highlights.Skills' | translate; let i = index" class="skills mb-15"
+                     data-aos="fade-up" data-aos-duration="500" data-aos-offset="-50">
                     <div><b>{{skill['Category']}}</b></div>
                     <span *ngFor="let s of skill['Elements']" class="skill-element">{{s}}</span>
                 </div>
             </div>
-            <div class="carousel-item-spacer"></div>
         </div>
-        <p class="scroll-text" data-aos="fade-up" data-aos-duration="500" data-aos-offset="-50">
-            <span class="left"><<</span> &nbsp; <i class="fas fa-mouse"></i> &nbsp; <span class="right">>></span>
-        </p>
     </div>
 </section>

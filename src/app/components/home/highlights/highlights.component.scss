@@ -1,20 +1,11 @@
 @import "src/assets/styles/themes";
 @import "src/assets/styles/mixins";
 
-#highlights {
-    margin-bottom: 10em;
-    min-height: 550px;
-}
-
-#highlights-carousel {
-    .carousel-item {
-        display: flex;
-        flex-direction: column;
-        flex-basis: 50%;
-        align-items: flex-start;
-        flex-shrink: 0;
-        padding: 20px 15px 10px 15px;
-    }
+.highlights {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
 }
 
 .highlight-categories {
@@ -33,7 +24,6 @@
         &:after {
             content: var(--divider);
             color: var(--accent-color);
-            font-weight: 600;
             opacity: .7;
             margin: 5px;
         }
@@ -68,13 +58,12 @@
         color: var(--list-text-color);
         font-family: var(--code-font);
         position: relative;
-        font-size: 12px;
+        font-size: smaller;
         display: inline-block;
 
         &:after {
             content: var(--divider);
             color: var(--divider-color);
-            font-weight: 600;
             opacity: .7;
             margin: 5px;
         }
@@ -89,16 +78,7 @@
     }
 }
 
-.accent {
-    color: var(--accent-color);
-}
-
 @media(max-width: 1000px) {
-    #highlights-carousel {
-        .carousel-item {
-            flex-basis: 85vw !important;
-        }
-    }
     .qualifications-list {
         margin-left: 0;
     }

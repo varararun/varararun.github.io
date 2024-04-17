@@ -1,16 +1,11 @@
 @import "src/assets/styles/themes";
 
 .contact {
-    min-height: 50vh;
-    margin-top: 30vh;
-
     .contact-title {
         position: relative;
         display: flex;
         align-items: center;
-        white-space: nowrap;
         font-size: 50px;
-        font-weight: 600;
         color: var(--primary-color);
         margin: auto;
         width: fit-content;
@@ -21,12 +16,9 @@
         align-items: center;
         margin: 10px 0 25px;
         width: 100%;
-        white-space: nowrap;
         display: block;
         color: var(--title-color);
-        font-size: 16px;
         font-family: var(--primary-font);
-        font-weight: normal;
         justify-content: center;
         text-align: center;
     }

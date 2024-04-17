@@ -1,5 +1,5 @@
 .credits {
-    font-size: 12px;
+    font-size: small;
     line-height: 1;
     text-align: center;
     margin-bottom: 20px;
@@ -10,12 +10,7 @@
     }
 
     a {
-        font-size: 20px;
+        font-size: larger;
         transition: var(--transition);
-
-        &:hover, &:focus {
-            text-decoration: none;
-            color: var(--accent-color);
-        }
     }
 }

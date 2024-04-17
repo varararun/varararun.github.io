@@ -2,6 +2,7 @@
 @import "src/assets/styles/themes";
 @import "src/assets/styles/mixins";
 @import "src/assets/styles/carousel";
+@import "src/assets/styles/functions";
 
 body {
     margin: 0;
@@ -22,7 +23,7 @@ body {
 section {
     background: transparent;
     min-height: 80vh;
-    margin: 10vh auto 10vh;
+    margin: 100px auto 200px;
     width: 95vw;
     max-width: 850px;
 }
@@ -54,12 +55,15 @@ ol, ul, li {
 
 .bullet::marker {
     content: '> ';
-    font-size: 1.2em;
+    font-size: 20px;
     color: var(--accent-color);
 }
 
 .scroll-lock {
     overflow: hidden;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
 }
 
 .main-btn {
@@ -71,10 +75,9 @@ ol, ul, li {
     font-family: var(--primary-font);
     cursor: var(--cursor-type);
     background-color: transparent;
-    font-size: 13px;
     line-height: 1;
     text-decoration: none;
-    padding: 1.25rem 1.75rem;
+    padding: 20px 30px;
 
     &:hover {
         background-color: var(--bg-color-30);
@@ -86,7 +89,6 @@ ol, ul, li {
     min-height: 100%;
     margin: auto;
     width: 90vw;
-    max-width: 75em;
 }
 
 .section-title {
@@ -95,19 +97,23 @@ ol, ul, li {
     align-items: center;
     margin: 10px 0 40px;
     width: 100%;
-    white-space: nowrap;
-    font-size: 32px;
-    font-weight: 600;
+    font-size: xx-large;
     color: var(--primary-color);
     font-family: var(--primary-font);
 
     &:after {
+        background-color: var(--border-color);
         content: '';
         display: block;
         height: 1px;
-        width: 300px;
-        background-color: var(--border-color);
+        width: 260px;
         position: relative;
         margin-left: 20px;
+    }
+}
+
+@media(max-width: 1000px) {
+    body {
+        overflow-x: hidden;
     }
 }

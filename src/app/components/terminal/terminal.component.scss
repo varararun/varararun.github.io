@@ -6,10 +6,9 @@ $Green: #07bc7a;
     font-family: var(--code-font);
     color: var(--primary-color);
     background-color: var(--bg-color-60);
-    font-size: 14px;
     display: flex;
     flex-direction: column;
-
+    font-size: small;
     height: 50vh;
     padding: 10px 25px 10px 10px;
     overflow: scroll;

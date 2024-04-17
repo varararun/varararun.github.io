@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {LanguageService} from "../../../services/language/language.service";
 import {animate, style, transition, trigger} from "@angular/animations";
 
@@ -25,6 +25,7 @@ export class ProjectsComponent implements OnInit {
     filtered = [];
     all = [];
     selectedTag = '';
+    scrolled = false;
 
     constructor(
         private languageService: LanguageService
@@ -56,6 +57,7 @@ export class ProjectsComponent implements OnInit {
     }
 
     scrollTo(index: number) {
+        this.scrolled = true;
         document.getElementById(`project-${index}`)?.scrollIntoView({
             behavior: "smooth",
             block: 'nearest',
@@ -85,5 +87,12 @@ export class ProjectsComponent implements OnInit {
             const tags: string[] = project['Tags'];
             return tags ? !tag || tags.includes(tag) : false
         }).length;
+    }
+
+    @HostListener('scroll', ['$event'])
+    onScroll(event) {
+        if(event.target.scrollLeft > event.target.getBoundingClientRect().width - 50) {
+            this.scrolled = true;
+        }
     }
 }

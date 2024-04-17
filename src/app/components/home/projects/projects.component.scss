@@ -2,7 +2,6 @@
 @import "src/assets/styles/mixins";
 
 .project-categories {
-    margin-bottom: 30px;
 
     li {
         display: inline;
@@ -16,7 +15,6 @@
         &:after {
             content: var(--divider);
             color: var(--accent-color);
-            font-weight: 600;
             opacity: .7;
             margin: 5px;
         }
@@ -33,7 +31,7 @@
 }
 
 .external-link-btn {
-    margin: 0 10px;
+    margin: 5px 10px;
 }
 
 #projects-carousel {
@@ -58,12 +56,11 @@
 
             .title {
                 float: left;
-                text-align: start;
             }
 
             .external-links {
-                font-size: 20px;
                 text-align: end;
+                font-size: large;
             }
         }
 
@@ -74,17 +71,17 @@
 
         .title {
             margin: 0 0 10px;
-            font-size: 22px;
+            font-size: x-large;
             transition: var(--transition);
         }
 
         .description {
             float: left;
-            font-size: 17px;
+            font-size: larger;
         }
 
         .tech-icons {
-            font-size: 25px;
+            font-size: x-large;
 
             i {
                 margin: 10px;
@@ -92,8 +89,8 @@
         }
 
         .tech {
-            font-size: 12px;
             line-height: 1.75;
+            font-size: small;
             font-family: var(--code-font);
         }
     }

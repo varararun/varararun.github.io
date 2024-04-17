@@ -13020,7 +13020,6 @@ ol, ul, li {
   font-family: var(--primary-font);
   cursor: var(--cursor-type);
   background-color: transparent;
-  font-size: 13px;
   line-height: 1;
   text-decoration: none;
   padding: 20px 30px;
@@ -13042,7 +13041,7 @@ ol, ul, li {
   align-items: center;
   margin: 10px 0 40px;
   width: 100%;
-  font-size: 32px;
+  font-size: xx-large;
   color: var(--primary-color);
   font-family: var(--primary-font);
 }

@@ -323,7 +323,7 @@
             "Environment": ["University of Texas at Dallas", "Bachelors of Science", "Graduated May 2012"]
         }
     ],
-    "Projects.Title": "My Projects",
+    "Projects.Title": "Projects",
     "Projects.Tags": [
         "featured",
         "personal",
@@ -374,8 +374,7 @@
                 "fab fa-angular",
                 "fab fa-npm",
                 "fab fa-js",
-                "fab fa-html5",
-                "fab fa-sass"
+                "fab fa-html5"
             ]
         },
         {

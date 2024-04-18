@@ -82,13 +82,6 @@ export class ProjectsComponent implements OnInit {
         }
     }
 
-    getTagCount(tag: string) {
-        return this.all.filter((project) => {
-            const tags: string[] = project['Tags'];
-            return tags ? !tag || tags.includes(tag) : false
-        }).length;
-    }
-
     @HostListener('scroll', ['$event'])
     onScroll(event) {
         if(event.target.scrollLeft > event.target.getBoundingClientRect().width - 50) {

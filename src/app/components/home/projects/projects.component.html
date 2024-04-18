@@ -9,7 +9,7 @@
             <li *ngFor='let tag of "Projects.Tags" | translate; let i = index'
                 data-aos="fade-up" data-aos-duration="500" [attr.data-aos-delay]="i*100"
                 (click)="filterProjects(tag)" [class.active]="selectedTag === tag">
-                {{tag || 'All' | titlecase}} ({{getTagCount(tag)}})
+                {{tag || 'All' | titlecase}}
             </li>
         </ul>
     </div>

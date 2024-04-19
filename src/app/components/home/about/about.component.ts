@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {LanguageService} from "../../../services/language/language.service";
 import {AnalyticsService} from "../../../services/analytics/analytics.service";
 import {ThemeService} from "../../../services/theme/theme.service";
+import {CdkDragEnd} from "@angular/cdk/drag-drop";
 
 @Component({
     selector: 'app-about',
@@ -33,5 +34,9 @@ export class AboutComponent {
             this.role += letter;
             await this.wait(delay);
         }
+    }
+
+    dragEnded(event: CdkDragEnd) {
+        event.source._dragRef.reset();
     }
 }

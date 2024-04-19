@@ -15,7 +15,8 @@
 
         &.cdk-drag-dragging {
             border-radius: 50%;
-            opacity: .8;
+            backdrop-filter: invert(1) grayscale(1);
+            background: rgba(0,0,0, .5);
         }
     }
 

@@ -1,6 +1,6 @@
 <section id="about" class="w-90v">
     <div class="profile-img w-160 h-160 mb-25" [style.transform]="'translate3d(0, 0, 0)'"
-         data-aos="zoom-out" data-aos-duration="1000" cdkDrag cdkDragHandle></div>
+         data-aos="zoom-out" data-aos-duration="1000" cdkDrag cdkDragHandle (cdkDragEnded)="dragEnded($event)"></div>
     <div data-aos="fade-right" data-aos-duration="500">
         <h1 class="title">{{"About.Pretitle" | translate}}</h1>
     </div>

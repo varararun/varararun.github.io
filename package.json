@@ -1,6 +1,6 @@
 {
   "name": "ng",
-  "version": "1.0.47",
+  "version": "1.0.48",
   "engines": {
     "node": "^18.10.0",
     "yarn": ">=1.22.0 <2",

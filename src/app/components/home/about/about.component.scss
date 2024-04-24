@@ -11,7 +11,7 @@
         cursor: move;
         position: relative;
         z-index: 1;
-        transition: .2s linear;
+        transition: .5s ease-out;
 
         &.cdk-drag-dragging {
             border-radius: 50%;

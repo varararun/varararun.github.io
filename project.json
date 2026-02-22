@@ -84,7 +84,8 @@
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
       "options": {
-        "buildTarget": "ng:build"
+        "buildTarget": "ng:build",
+        "open": true
       },
       "configurations": {
         "production": {

@@ -1,10 +1,10 @@
 {
   "name": "ng",
-  "version": "1.0.48",
+  "version": "1.0.50",
   "engines": {
     "node": "^18.10.0",
-    "yarn": ">=1.22.0 <2",
-    "npm": "Please use yarn instead of NPM to install dependencies"
+    "pnpm": ">=8.0.0",
+    "npm": "Please use pnpm instead of NPM to install dependencies"
   },
   "scripts": {
     "prepare": "husky install",

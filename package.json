@@ -1,6 +1,6 @@
 {
     "name": "ng",
-    "version": "1.0.64",
+    "version": "1.0.65",
     "engines": {
         "node": ">=20.0.0",
         "pnpm": ">=8.0.0",
@@ -12,7 +12,7 @@
         "test": "nx test",
         "lint": "nx lint",
         "bump": "npm --no-git-tag-version version patch",
-        "deploy": "nx build && cp dist/ng/index.html dist/ng/404.html && gh-pages -d dist/ng && exit 1"
+        "deploy": "nx build && cp dist/ng/index.html dist/ng/404.html && gh-pages -d dist/ng"
     },
     "private": true,
     "dependencies": {

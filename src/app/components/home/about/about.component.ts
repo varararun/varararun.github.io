@@ -1,7 +1,8 @@
-import {Component, inject} from '@angular/core';
+import {ChangeDetectorRef, Component, inject} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { TranslateModule } from '@ngx-translate/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import {LanguageService} from "../../../services/language/language.service";
 import {AnalyticsService} from "../../../services/analytics/analytics.service";
 import {ThemeService} from "../../../services/theme/theme.service";
@@ -16,15 +17,19 @@ import {CdkDragEnd} from "@angular/cdk/drag-drop";
 })
 export class AboutComponent {
     role = '';
+    private typingToken = 0;
+    private cdr = inject(ChangeDetectorRef);
     private languageService = inject(LanguageService);
     analyticsService = inject(AnalyticsService);
     themeService = inject(ThemeService);
 
     constructor() {
-        window.matchMedia('(display-mode: standalone)').matches;
-        this.languageService.translateService.get('About.Role').subscribe(val => {
-            this.type(val);
-        });
+        this.languageService.translateService
+            .stream('About.Role')
+            .pipe(takeUntilDestroyed())
+            .subscribe((val: string) => {
+                this.type(val);
+            });
     }
 
     downloadResume() {
@@ -33,12 +38,22 @@ export class AboutComponent {
         })
     }
 
-    wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+    wait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
     async type(text: string, delay = 100) {
+        const token = ++this.typingToken;
+        this.role = '';
+        this.cdr.detectChanges();
         await this.wait(500);
+        if (token !== this.typingToken) {
+            return;
+        }
         for (const letter of text) {
+            if (token !== this.typingToken) {
+                return;
+            }
             this.role += letter;
+            this.cdr.detectChanges();
             await this.wait(delay);
         }
     }

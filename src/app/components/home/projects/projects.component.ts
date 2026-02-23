@@ -47,13 +47,28 @@ export class ProjectsComponent implements OnInit {
         this.filtered = [];
         setTimeout(() => {
             this.filtered = this.all.filter((project) => {
-                const tags: string[] = project['Tags'];
+                const tags = this.getTags(project);
                 if (!this.selectedTag) {
                     return true;
                 }
                 return tags ? tags.includes(this.selectedTag) : false
             });
         }, 500);
+    }
+
+    getTags(project: Record<string, unknown>): string[] {
+        const tags = project['Tags'];
+        return Array.isArray(tags) ? tags.filter((tag): tag is string => typeof tag === 'string') : [];
+    }
+
+    getTech(project: Record<string, unknown>): string[] {
+        const tech = project['Tech'];
+        return Array.isArray(tech) ? tech.filter((item): item is string => typeof item === 'string') : [];
+    }
+
+    getTechIcons(project: Record<string, unknown>): string[] {
+        const icons = project['TechIcons'];
+        return Array.isArray(icons) ? icons.filter((item): item is string => typeof item === 'string') : [];
     }
 
     scrollTo(index: number) {

@@ -1,8 +1,8 @@
-@import "src/assets/fonts/fonts.scss";
-@import "src/assets/styles/themes";
-@import "src/assets/styles/mixins";
-@import "src/assets/styles/carousel";
-@import "src/assets/styles/functions";
+@use "src/assets/fonts/fonts.scss";
+@use "src/assets/styles/themes" as *;
+@use "src/assets/styles/mixins" as *;
+@use "src/assets/styles/carousel" as *;
+@use "src/assets/styles/functions" as *;
 
 body {
     margin: 0;

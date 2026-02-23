@@ -1,7 +1,8 @@
-import {Component, HostListener, OnInit, VERSION, ViewEncapsulation, inject} from '@angular/core';
+import {ChangeDetectorRef, Component, HostListener, OnInit, VERSION, ViewEncapsulation, inject} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import {Router} from "@angular/router";
 import {LanguageService} from "../../services/language/language.service";
 import * as config from "../../../environments/environment";
@@ -12,7 +13,7 @@ import {AnalyticsService} from "../../services/analytics/analytics.service";
 @Component({
     selector: 'app-terminal',
     standalone: true,
-    imports: [CommonModule, RouterModule, TranslateModule],
+    imports: [CommonModule, RouterModule, TranslateModule, DragDropModule],
     templateUrl: './terminal.component.html',
     styleUrls: ['./terminal.component.scss'],
     encapsulation: ViewEncapsulation.None
@@ -25,6 +26,7 @@ export class TerminalComponent implements OnInit {
     loading = true;
     cursor = 0;
     inputMap = {};
+    private cdr = inject(ChangeDetectorRef);
     private router = inject(Router);
     private languageService = inject(LanguageService);
     private themeService = inject(ThemeService);
@@ -42,8 +44,9 @@ export class TerminalComponent implements OnInit {
     }
 
     @HostListener('window:click', ['$event.target'])
-    async click(element: HTMLElement | null) {
-        if (!element || !(element instanceof HTMLElement)) return;
+    async click(target: EventTarget | null) {
+        const element = target instanceof HTMLElement ? target : null;
+        if (!element) return;
         if (element.classList.contains('t-view-command')) {
             this.input.value = `${element.innerText}`;
             await this.inputActive();
@@ -105,10 +108,12 @@ export class TerminalComponent implements OnInit {
 
     async displayLoading(delay = 500) {
         this.loading = true;
+        this.cdr.detectChanges();
         await this.wait(100);
         this.anchor?.scrollIntoView();
         await this.wait(delay);
         this.loading = false;
+        this.cdr.detectChanges();
     }
 
     clearInput() {
@@ -116,6 +121,7 @@ export class TerminalComponent implements OnInit {
             this.input.value = '';
         }
         this.waitForInput = false;
+        this.cdr.detectChanges();
     }
 
     async inputActive() {
@@ -123,6 +129,7 @@ export class TerminalComponent implements OnInit {
             return;
         }
         this.waitForInput = true;
+        this.cdr.detectChanges();
         await this.wait(100);
         if (this.input && this.anchor) {
             this.input.focus();
@@ -145,11 +152,13 @@ export class TerminalComponent implements OnInit {
 
     createNewLine() {
         this.lines.push('<br>');
+        this.cdr.detectChanges();
     }
 
     async addLine(line, delay = 50) {
         await this.wait(delay);
         this.lines.push(line);
+        this.cdr.detectChanges();
         this.anchor?.scrollIntoView();
     }
 
@@ -182,6 +191,7 @@ export class TerminalComponent implements OnInit {
         await this.wait(delay);
         this.clearInput();
         this.lines.push(`$ <span class='${level} t-previous-input'>${command}</span>`);
+        this.cdr.detectChanges();
         this.anchor?.scrollIntoView();
     }
 
@@ -192,6 +202,7 @@ export class TerminalComponent implements OnInit {
     async clearTerminal() {
         this.clearInput();
         this.lines = [];
+        this.cdr.detectChanges();
         await this.createLines('type <span class="t-success">help</span> to view available commands');
         this.createNewLine();
         await this.inputActive();

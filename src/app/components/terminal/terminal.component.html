@@ -16,7 +16,7 @@
         </div>
         <div id="terminal">
             <li><br></li>
-            @for (line of lines; track line) {
+            @for (line of lines; track $index) {
                 <li [innerHTML]="line"></li>
             }
             @if (waitForInput) {

@@ -46,7 +46,7 @@
                 </div>
                 @if (project['Tech']) {
                     <div>
-                         @for (technology of project['Tech']; track technology) {
+                         @for (technology of getTech(project); track technology) {
                             <span class="tech">
                                 <span class="highlight">{{technology}}</span>
                             </span>
@@ -55,7 +55,7 @@
                 }
                 @if (project['TechIcons']) {
                     <div class="tech-icons">
-                        @for (icon of project['TechIcons']; track icon) {
+                        @for (icon of getTechIcons(project); track icon) {
                             <i class="{{icon}}"></i>
                         }
                     </div>

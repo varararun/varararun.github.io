@@ -5,37 +5,46 @@
                 {{"Experience.Title" | translate}}
             </h3>
         </div>
-        <div *ngIf="all.length">
+        @if (all.length) {
             <ul class="experience-categories mb-30 ml-15">
-                <li *ngFor="let tag of tags; let i = index"
-                    data-aos="fade-up" data-aos-duration="500" [attr.data-aos-delay]="i*100 + 100"
-                    (click)="scrollTo(tag)" [class.active]="selectedTag === tag">
-                    {{tag | titlecase}}
-                </li>
+                @for (tag of tags; track tag) {
+                    <li data-aos="fade-up" data-aos-duration="500" [attr.data-aos-delay]="$index*100 + 100"
+                        (click)="scrollTo(tag)" [class.active]="selectedTag === tag">
+                        {{tag | titlecase}}
+                    </li>
+                }
             </ul>
-        </div>
-        <div id="experience-carousel" class="carousel mt-30" *ngIf="all.length" (scroll)="onScroll($event)">
-            <div class="carousel-item-spacer"></div>
-            <div *ngFor="let item of all; let i = index" id="{{item['Category']}}"
-                 (click)="scrollTo(tags[i+1] || tags[0])" [title]="item['Tab']" [class.inactive]="selectedTag !== item['Category']"
-                 class="carousel-item" data-aos="fade-up" data-aos-duration="500">
-                <div class="w-100p">
-                    <h2 class="job-tag">{{item['Tab']}} <img [alt]="item['Tab']" [src]="item['Logo']" class="job-logo"></h2>
-                    <h3>{{item['Title']}}</h3>
-                    <h4 class="job-location">{{item['Location']}} - <span class="job-time">{{item['Date']}}</span></h4>
-                    <p class="job-description">
-                        {{item['Description']}}
-                    </p>
-                </div>
-                <div class="job-environment">
-                    <span *ngFor="let technology of item['Environment']" class="technology">{{technology}}</span>
-                </div>
+        }
+        @if (all.length) {
+            <div id="experience-carousel" class="carousel mt-30" (scroll)="onScroll($event)">
+                <div class="carousel-item-spacer"></div>
+                @for (item of all; track item) {
+                    <div id="{{item['Category']}}"
+                         (click)="scrollTo(tags[($index)+1] || tags[0])" [title]="item['Tab']" [class.inactive]="selectedTag !== item['Category']"
+                         class="carousel-item" data-aos="fade-up" data-aos-duration="500">
+                        <div class="w-100p">
+                            <h2 class="job-tag">{{item['Tab']}} <img [alt]="item['Tab']" [src]="item['Logo']" class="job-logo"></h2>
+                            <h3>{{item['Title']}}</h3>
+                            <h4 class="job-location">{{item['Location']}} - <span class="job-time">{{item['Date']}}</span></h4>
+                            <p class="job-description">
+                                {{item['Description']}}
+                            </p>
+                        </div>
+                        <div class="job-environment">
+                            @for (technology of getEnvironment(item); track technology) {
+                                <span class="technology">{{technology}}</span>
+                            }
+                        </div>
+                    </div>
+                }
+                <div class="carousel-item-spacer"></div>
             </div>
-            <div class="carousel-item-spacer"></div>
-        </div>
-        <p class="scroll-indicator" @exit-animation *ngIf="!scrolled" (click)="scrollTo(tags[1])"
-           data-aos="fade-up" data-aos-duration="500" data-aos-offset="-50">
-           <i class="fas fa-mouse"></i> &nbsp; <span class="right">>></span>
-        </p>
+        }
+        @if (!scrolled) {
+            <p class="scroll-indicator" @exit-animation (click)="scrollTo(tags[1])"
+               data-aos="fade-up" data-aos-duration="500" data-aos-offset="-50">
+               <i class="fas fa-mouse"></i> &nbsp; <span class="right">>></span>
+            </p>
+        }
     </div>
 </section>

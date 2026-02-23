@@ -6,50 +6,69 @@
     </div>
     <div>
         <ul class="project-categories mb-30 ml-15">
-            <li *ngFor='let tag of "Projects.Tags" | translate; let i = index'
-                data-aos="fade-up" data-aos-duration="500" [attr.data-aos-delay]="i*100"
-                (click)="filterProjects(tag)" [class.active]="selectedTag === tag">
-                {{tag || 'All' | titlecase}}
-            </li>
+            @for (tag of "Projects.Tags" | translate; track tag) {
+                <li data-aos="fade-up" data-aos-duration="500" [attr.data-aos-delay]="$index*100"
+                    (click)="filterProjects(tag)" [class.active]="selectedTag === tag">
+                    {{tag || 'All' | titlecase}}
+                </li>
+            }
         </ul>
     </div>
     <div id="projects-carousel" class="carousel" (scroll)="onScroll($event)">
         <div class="carousel-item-spacer"></div>
-        <div @exit-animation *ngFor="let project of filtered; let i = index" class="carousel-item"
-             data-aos="fade-up" data-aos-duration="500" data-aos-offset="-25"
-             id="project-{{i}}" (click)="scroll(i, 'right')">
-            <div>
-                <div class="header">
-                    <div class="title">{{project['Title']}}</div>
-                    <div class="external-links">
-                        <img *ngIf="project['CompanyLogo']" class="project-img" alt="CompanyLogo"
-                             [src]="project['CompanyLogo']">
-                        <a *ngIf="project['GithubLink']" [href]="project['GithubLink']" target="_blank">
-                            <i class="external-link-btn fab fa-github" id="ghLink"></i>
-                        </a>
-                        <a *ngIf="project['Link']" [href]="project['Link']" target="_blank">
-                            <i class="external-link-btn fas fa-external-link-alt"></i>
-                        </a>
+        @for (project of filtered; track project) {
+            <div @exit-animation class="carousel-item"
+                 data-aos="fade-up" data-aos-duration="500" data-aos-offset="-25"
+                 id="project-{{$index}}" (click)="scroll($index, 'right')">
+                <div>
+                    <div class="header">
+                        <div class="title">{{project['Title']}}</div>
+                        <div class="external-links">
+                            @if (project['CompanyLogo']) {
+                                <img class="project-img" alt="CompanyLogo"
+                                     [src]="project['CompanyLogo']">
+                            }
+                            @if (project['GithubLink']) {
+                                <a [href]="project['GithubLink']" target="_blank">
+                                    <i class="external-link-btn fab fa-github" id="ghLink"></i>
+                                </a>
+                            }
+                            @if (project['Link']) {
+                                <a [href]="project['Link']" target="_blank">
+                                    <i class="external-link-btn fas fa-external-link-alt"></i>
+                                </a>
+                            }
+                        </div>
                     </div>
+                    <p class="description">
+                        {{project['Description']}}
+                    </p>
                 </div>
-                <p class="description">
-                    {{project['Description']}}
-                </p>
+                @if (project['Tech']) {
+                    <div>
+                         @for (technology of project['Tech']; track technology) {
+                            <span class="tech">
+                                <span class="highlight">{{technology}}</span>
+                            </span>
+                         }
+                    </div>
+                }
+                @if (project['TechIcons']) {
+                    <div class="tech-icons">
+                        @for (icon of project['TechIcons']; track icon) {
+                            <i class="{{icon}}"></i>
+                        }
+                    </div>
+                }
             </div>
-            <div *ngIf="project['Tech']">
-                 <span *ngFor="let technology of project['Tech']" class="tech">
-                    <span class="highlight">{{technology}}</span>
-                </span>
-            </div>
-            <div class="tech-icons" *ngIf="project['TechIcons']">
-                <i *ngFor="let icon of project['TechIcons']" class="{{icon}}"></i>
-            </div>
-        </div>
+        }
         <div class="carousel-item-spacer"></div>
     </div>
-    <p class="scroll-indicator" data-aos="fade-up" data-aos-duration="500" data-aos-offset="-50"
-       *ngIf="filtered.length && !scrolled" @exit-animation (click)="scroll(0, 'right')">
-        <i class="fas fa-mouse"></i> &nbsp; <span class="right">>></span>
-    </p>
+    @if (filtered.length && !scrolled) {
+        <p class="scroll-indicator" data-aos="fade-up" data-aos-duration="500" data-aos-offset="-50"
+           @exit-animation (click)="scroll(0, 'right')">
+            <i class="fas fa-mouse"></i> &nbsp; <span class="right">>></span>
+        </p>
+    }
 </section>
 

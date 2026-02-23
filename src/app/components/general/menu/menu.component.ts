@@ -1,12 +1,18 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit, inject} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
 import {animate, style, transition, trigger} from '@angular/animations'
 import {FormControl} from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 import {LanguageService} from 'src/app/services/language/language.service';
 import {AnalyticsService} from "../../../services/analytics/analytics.service";
 
 @Component({
     selector: 'app-menu',
+    standalone: true,
+    imports: [CommonModule, RouterModule, ReactiveFormsModule, TranslateModule],
     templateUrl: './menu.component.html',
     styleUrls: ['./menu.component.scss'],
     animations: [
@@ -26,19 +32,14 @@ import {AnalyticsService} from "../../../services/analytics/analytics.service";
     ]
 })
 export class MenuComponent implements OnInit {
-
     menuOpen = false;
     languageFormControl: FormControl = new FormControl();
     fileName = '';
     route = '';
     scrollPosition = 0;
-
-    constructor(
-        private router: Router,
-        private languageService: LanguageService,
-        public ga: AnalyticsService
-    ) {
-    }
+    private router = inject(Router);
+    private languageService = inject(LanguageService);
+    ga = inject(AnalyticsService);
 
     ngOnInit(): void {
         this.languageFormControl.setValue(this.languageService.DEFAULT);

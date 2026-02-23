@@ -1,4 +1,6 @@
 <div class="bg-animated-elements">
-    <i *ngFor="let icon of ICON_LIST" class="fab {{icon}}"></i>
+    @for (icon of ICON_LIST; track icon) {
+        <i class="fab {{icon}}"></i>
+    }
 </div>
 <div class="bg-img"></div>

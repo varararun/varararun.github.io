@@ -1,4 +1,7 @@
-import {Component, HostListener, OnInit, VERSION, ViewEncapsulation} from '@angular/core';
+import {Component, HostListener, OnInit, VERSION, ViewEncapsulation, inject} from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 import {Router} from "@angular/router";
 import {LanguageService} from "../../services/language/language.service";
 import * as config from "../../../environments/environment";
@@ -8,6 +11,8 @@ import {AnalyticsService} from "../../services/analytics/analytics.service";
 
 @Component({
     selector: 'app-terminal',
+    standalone: true,
+    imports: [CommonModule, RouterModule, TranslateModule],
     templateUrl: './terminal.component.html',
     styleUrls: ['./terminal.component.scss'],
     encapsulation: ViewEncapsulation.None
@@ -20,12 +25,10 @@ export class TerminalComponent implements OnInit {
     loading = true;
     cursor = 0;
     inputMap = {};
-
-    constructor(private router: Router,
-                private languageService: LanguageService,
-                private themeService: ThemeService,
-                private ga: AnalyticsService) {
-    }
+    private router = inject(Router);
+    private languageService = inject(LanguageService);
+    private themeService = inject(ThemeService);
+    private ga = inject(AnalyticsService);
 
     async ngOnInit() {
         if (this.terminal) {
@@ -39,7 +42,8 @@ export class TerminalComponent implements OnInit {
     }
 
     @HostListener('window:click', ['$event.target'])
-    async click(element: HTMLElement) {
+    async click(element: HTMLElement | null) {
+        if (!element || !(element instanceof HTMLElement)) return;
         if (element.classList.contains('t-view-command')) {
             this.input.value = `${element.innerText}`;
             await this.inputActive();

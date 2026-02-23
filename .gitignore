@@ -85,3 +85,4 @@ dist/
 docs/
 
 .nx/cache
+.nx/workspace-data

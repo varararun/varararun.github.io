@@ -1,9 +1,13 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit, inject} from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 import {LanguageService} from "../../../services/language/language.service";
 import {animate, style, transition, trigger} from "@angular/animations";
 
 @Component({
     selector: 'app-projects',
+    standalone: true,
+    imports: [CommonModule, TranslateModule],
     templateUrl: './projects.component.html',
     styleUrls: ['./projects.component.scss'],
     animations: [
@@ -22,15 +26,11 @@ import {animate, style, transition, trigger} from "@angular/animations";
     ]
 })
 export class ProjectsComponent implements OnInit {
-    filtered = [];
-    all = [];
+    filtered: Record<string, unknown>[] = [];
+    all: Record<string, unknown>[] = [];
     selectedTag = '';
     scrolled = false;
-
-    constructor(
-        private languageService: LanguageService
-    ) {
-    }
+    private languageService = inject(LanguageService);
 
     ngOnInit() {
         this.languageService.translateService.get("Projects.Projects").subscribe(val => {

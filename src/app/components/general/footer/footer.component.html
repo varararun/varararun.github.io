@@ -1,14 +1,16 @@
 <footer>
     <ul class="footer-left-bar" data-aos="fade-up" data-aos-duration="500">
-        <li *ngFor='let item of "SocialIcons" | translate; let i = index'>
-            <a href="{{item['Link'] | translate}}" target='_blank'
-               (click)="item['Label'].toLowerCase() === 'email' ?
-               ga.sendAnalyticEvent('send-email', 'footer', 'click') :
-               ga.sendAnalyticPageView(item['Label'].toLowerCase(), item['Label']);" >
-                <i class="{{item['Icon']}}"></i>
-            </a>
-            <span class="label">{{item['Label']}}</span>
-        </li>
+        @for (item of "SocialIcons" | translate; track item) {
+            <li>
+                <a href="{{item['Link'] | translate}}" target='_blank'
+                   (click)="item['Label'].toLowerCase() === 'email' ?
+                   ga.sendAnalyticEvent('send-email', 'footer', 'click') :
+                   ga.sendAnalyticPageView(item['Label'].toLowerCase(), item['Label']);" >
+                    <i class="{{item['Icon']}}"></i>
+                </a>
+                <span class="label">{{item['Label']}}</span>
+            </li>
+        }
         <li>
             <a (click)="ga.sendAnalyticEvent('change-theme', 'footer', 'click'); themeService.switchTheme()">
                 <i class="theme-toggle fas {{themeService.theme === 'light' ? 'fa-toggle-on' : 'fa-toggle-off'}}"></i>

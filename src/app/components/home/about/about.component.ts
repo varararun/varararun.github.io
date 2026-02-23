@@ -1,4 +1,7 @@
-import {Component} from '@angular/core';
+import {Component, inject} from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { TranslateModule } from '@ngx-translate/core';
 import {LanguageService} from "../../../services/language/language.service";
 import {AnalyticsService} from "../../../services/analytics/analytics.service";
 import {ThemeService} from "../../../services/theme/theme.service";
@@ -6,14 +9,18 @@ import {CdkDragEnd} from "@angular/cdk/drag-drop";
 
 @Component({
     selector: 'app-about',
+    standalone: true,
+    imports: [CommonModule, DragDropModule, TranslateModule],
     templateUrl: './about.component.html',
     styleUrls: ['./about.component.scss']
 })
 export class AboutComponent {
-
     role = '';
+    private languageService = inject(LanguageService);
+    analyticsService = inject(AnalyticsService);
+    themeService = inject(ThemeService);
 
-    constructor(private languageService: LanguageService, public analyticsService: AnalyticsService, public themeService: ThemeService) {
+    constructor() {
         window.matchMedia('(display-mode: standalone)').matches;
         this.languageService.translateService.get('About.Role').subscribe(val => {
             this.type(val);

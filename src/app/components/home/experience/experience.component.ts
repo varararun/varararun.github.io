@@ -1,9 +1,13 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit, inject} from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 import {LanguageService} from "../../../services/language/language.service";
 import {animate, style, transition, trigger} from "@angular/animations";
 
 @Component({
     selector: 'app-experience',
+    standalone: true,
+    imports: [CommonModule, TranslateModule],
     templateUrl: './experience.component.html',
     styleUrls: ['./experience.component.scss'],
     animations: [
@@ -26,9 +30,7 @@ export class ExperienceComponent implements OnInit {
     tags = [];
     all = [];
     scrolled = false;
-
-    constructor(private languageService: LanguageService) {
-    }
+    private languageService = inject(LanguageService);
 
     ngOnInit() {
         this.languageService.translateService.get('Experience.Items').subscribe(val => {
@@ -48,5 +50,9 @@ export class ExperienceComponent implements OnInit {
             this.scrolled = true;
         }
         this.selectedTag = this.tags[Math.floor(event.target.scrollLeft / (event.target.getBoundingClientRect().width - 30))] || this.tags[0];
+    }
+
+    getEnvironment(item: Record<string, string[]>): string[] {
+        return item['Environment'] || [];
     }
 }

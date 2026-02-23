@@ -1,4 +1,4 @@
-@import "src/assets/styles/themes";
+@use "src/assets/styles/themes" as *;
 
 footer {
     color: var(--primary-color);

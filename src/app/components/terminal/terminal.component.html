@@ -16,9 +16,15 @@
         </div>
         <div id="terminal">
             <li><br></li>
-            <li *ngFor="let line of lines; let i = index" [innerHTML]="line"></li>
-            <li *ngIf="waitForInput">$ <input id="terminal-input" autocomplete="off"></li>
-            <li class="loading" *ngIf="loading"><br>loading</li>
+            @for (line of lines; track line) {
+                <li [innerHTML]="line"></li>
+            }
+            @if (waitForInput) {
+                <li>$ <input id="terminal-input" autocomplete="off"></li>
+            }
+            @if (loading) {
+                <li class="loading"><br>loading</li>
+            }
             <li><br></li>
             <li id="anchor"><br></li>
         </div>

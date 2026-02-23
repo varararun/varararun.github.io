@@ -5,20 +5,25 @@
         <div class="bar3"></div>
     </div>
 </div>
-<div @hide-animation *ngIf="menuOpen" class="menu-overlay" (click)="toggleOverlayMenu()">
-    <ol class="menu-items">
-        <li *ngFor='let item of "Menu.NavItems" | translate; let i = index'
-            class="menu-item" data-aos="fade-right" data-aos-duration="500" data-aos-offset="-50"
-            [attr.data-aos-delay]="i*50">
-            <a (click)="navigate(item);">{{item['Label']}}</a>
-        </li>
-    </ol>
-</div>
+@if (menuOpen) {
+    <div @hide-animation class="menu-overlay" (click)="toggleOverlayMenu()">
+        <ol class="menu-items">
+            @for (item of "Menu.NavItems" | translate; track item) {
+                <li class="menu-item" data-aos="fade-right" data-aos-duration="500" data-aos-offset="-50"
+                    [attr.data-aos-delay]="$index*50">
+                    <a (click)="navigate(item);">{{item['Label']}}</a>
+                </li>
+            }
+        </ol>
+    </div>
+}
 <div class="menu-bar w-100v h-50">
     <ol class="menu-bar-items" [ngClass]="{'show-menu-bg': scrollPosition > 100}">
-        <li *ngFor='let item of "Menu.NavItems" | translate; let i = index' class="menu-bar-item"
-            data-aos="fade-down" data-aos-duration="500" [attr.data-aos-delay]="i*100">
-                <span (click)="navigate(item)" [class.active]="item['Label'].toLowerCase() === route">{{item['Label']}}</span>
-        </li>
+        @for (item of "Menu.NavItems" | translate; track item) {
+            <li class="menu-bar-item"
+                data-aos="fade-down" data-aos-duration="500" [attr.data-aos-delay]="$index*100">
+                    <span (click)="navigate(item)" [class.active]="item['Label'].toLowerCase() === route">{{item['Label']}}</span>
+            </li>
+        }
     </ol>
 </div>

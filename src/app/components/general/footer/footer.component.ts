@@ -1,19 +1,20 @@
-import {Component, HostListener} from '@angular/core';
+import {Component, HostListener, inject} from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 import {ThemeService} from "../../../services/theme/theme.service";
 import {AnalyticsService} from "../../../services/analytics/analytics.service";
 
 @Component({
     selector: 'app-footer',
+    standalone: true,
+    imports: [CommonModule, TranslateModule],
     templateUrl: './footer.component.html',
     styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
-
     scrollPosition = 0;
-
-    constructor(public themeService: ThemeService,
-                public ga: AnalyticsService) {
-    }
+    themeService = inject(ThemeService);
+    ga = inject(AnalyticsService);
 
     @HostListener('window:scroll')
     checkScroll() {

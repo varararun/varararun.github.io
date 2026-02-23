@@ -1,5 +1,6 @@
 @use 'sass:list';
-@import "src/assets/styles/themes";
+@use 'sass:math';
+@use "src/assets/styles/themes" as *;
 
 $Pink: rgb(77 33 47);
 $Green: rgb(63 77 31);
@@ -44,15 +45,15 @@ $Colors: [$Pink, $Green, $Blue, $White, $Orange, $Yellow];
 
     @for $i from 1 through 9 {
         i:nth-child(#{$i}) {
-            animation-duration: random(4)*10 + 10+s;
-            animation-delay: random(20)+s;
+            animation-duration: math.random(4)*10 + 10+s;
+            animation-delay: math.random(20)+s;
             animation-timing-function: linear;
             animation-direction: normal;
             animation-iteration-count: infinite;
             animation-name: scroll;
 
-            filter: blur(random(4)+2+px);
-            font-size: random(100)+50+px;
+            filter: blur(math.random(4)+2+px);
+            font-size: math.random(100)+50+px;
             position: absolute;
             left: $i*10-5+vw;
             opacity: 0;

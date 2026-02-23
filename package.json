@@ -1,6 +1,6 @@
 {
     "name": "ng",
-    "version": "1.0.59",
+    "version": "1.0.61",
     "engines": {
         "node": ">=20.0.0",
         "pnpm": ">=8.0.0",

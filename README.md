@@ -27,7 +27,7 @@ A modern, responsive resume/portfolio website built with Angular and Nx, featuri
 
 Before running this project, make sure you have the following installed:
 
-- **Node.js**: Version 18.10.0 or higher
+- **Node.js**: Version 20.0.0 or higher (or run `nvm use` in this repo)
 - **pnpm**: Version 8.0.0 or higher
 - **Nx CLI**: `npm install -g nx`
 

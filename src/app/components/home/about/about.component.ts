@@ -38,14 +38,17 @@ export class AboutComponent {
         })
     }
 
-    wait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+    wait(ms: number, token: number): Promise<boolean> {
+        return new Promise(resolve => {
+            setTimeout(() => resolve(token === this.typingToken), ms);
+        });
+    }
 
     async type(text: string, delay = 100) {
         const token = ++this.typingToken;
         this.role = '';
         this.cdr.detectChanges();
-        await this.wait(500);
-        if (token !== this.typingToken) {
+        if (!(await this.wait(500, token))) {
             return;
         }
         for (const letter of text) {
@@ -54,7 +57,9 @@ export class AboutComponent {
             }
             this.role += letter;
             this.cdr.detectChanges();
-            await this.wait(delay);
+            if (!(await this.wait(delay, token))) {
+                return;
+            }
         }
     }
 

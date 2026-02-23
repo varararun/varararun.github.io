@@ -32,7 +32,6 @@
         ]
     },
     "defaultProject": "ng",
-    "nxCloudAccessToken": "YWYwZmIyNTYtZTVhYS00NGZhLTgxMmMtZjMzNGFlZjhhOGQ3fHJlYWQtd3JpdGU=",
     "generators": {
         "@nx/angular:component": {
             "style": "scss"

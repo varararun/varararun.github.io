@@ -34,26 +34,32 @@ export class ProjectsComponent implements OnInit {
 
     ngOnInit() {
         this.languageService.translateService.get("Projects.Projects").subscribe(val => {
-            this.all = val;
+            this.all = Array.isArray(val) ? val : [];
             this.filterProjects('featured');
         });
     }
 
-    filterProjects(tag: string) {
-        if (this.selectedTag === tag) {
+    filterProjects(tag: unknown) {
+        const normalizedTag = this.normalizeTag(tag);
+        if (this.selectedTag === normalizedTag) {
             return;
         }
-        this.selectedTag = tag;
-        this.filtered = [];
-        setTimeout(() => {
-            this.filtered = this.all.filter((project) => {
-                const tags = this.getTags(project);
-                if (!this.selectedTag) {
-                    return true;
-                }
-                return tags ? tags.includes(this.selectedTag) : false
-            });
-        }, 500);
+        this.selectedTag = normalizedTag;
+        this.filtered = this.all.filter((project) => {
+            const tags = this.getTags(project);
+            if (!this.selectedTag) {
+                return true;
+            }
+            return tags.some(tagItem => this.normalizeTag(tagItem) === this.selectedTag);
+        });
+    }
+
+    isSelectedTag(tag: unknown): boolean {
+        return this.selectedTag === this.normalizeTag(tag);
+    }
+
+    normalizeTag(tag: unknown): string {
+        return typeof tag === 'string' ? tag.trim().toLowerCase() : '';
     }
 
     getTags(project: Record<string, unknown>): string[] {

@@ -8,7 +8,7 @@
         <ul class="project-categories mb-30 ml-15">
             @for (tag of "Projects.Tags" | translate; track tag) {
                 <li data-aos="fade-up" data-aos-duration="500" [attr.data-aos-delay]="$index*100"
-                    (click)="filterProjects(tag)" [class.active]="selectedTag === tag">
+                    (click)="filterProjects(tag)" [class.active]="isSelectedTag(tag)">
                     {{tag || 'All' | titlecase}}
                 </li>
             }
